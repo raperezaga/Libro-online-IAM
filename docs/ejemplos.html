@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.9 Ejemplos | Chapter 4</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.9 Ejemplos | Chapter 4" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.9 Ejemplos | Chapter 4" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="componentes-principales-muestrales.html"/>
+<link rel="next" href="cómo-elegir-el-número-de-componentes-principales.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="descripción.html"><a href="descripción.html"><i class="fa fa-check"></i>Descripción</a></li>
+<li class="chapter" data-level="" data-path="acerca-del-autor.html"><a href="acerca-del-autor.html"><i class="fa fa-check"></i>Acerca del Autor</a></li>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+<li class="chapter" data-level="0.1" data-path="automatically-installing-needed-packages-not-yet-installed.html"><a href="automatically-installing-needed-packages-not-yet-installed.html"><i class="fa fa-check"></i><b>0.1</b> Automatically installing needed packages not yet installed</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep_al.html"><a href="rep_al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="algunos-conceptos-básicos.html"><a href="algunos-conceptos-básicos.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos</a></li>
+<li class="chapter" data-level="1.2" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.2</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinex"><i class="fa fa-check"></i><b>1.2.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{x})\)</span>:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>1.3</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="org_pres_dat.html"><a href="org_pres_dat.html#resumenes-descriptivos"><i class="fa fa-check"></i><b>1.3.1</b> Resumenes Descriptivos</a></li>
+<li class="chapter" data-level="1.3.2" data-path="org_pres_dat.html"><a href="org_pres_dat.html#representación-gráfica-de-observaciones-multivariadas"><i class="fa fa-check"></i><b>1.3.2</b> Representación Gráfica de Observaciones multivariadas</a></li>
+<li class="chapter" data-level="1.3.3" data-path="org_pres_dat.html"><a href="org_pres_dat.html#vectores-y-matrices-aleatorias"><i class="fa fa-check"></i><b>1.3.3</b> Vectores y Matrices Aleatorias</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>1.4</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>1.4.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="1.4.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>1.4.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>1.5</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="1.6" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>1.6</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>1.6.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="1.6.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>1.6.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>1.7</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="1.8" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>1.8</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="1.9" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>1.9</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>1.9.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="1.9.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>1.9.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="1.9.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>1.9.3</b> Varianza Generalizada Determinada por la matriz de correlación muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="1.9.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>1.9.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+<li class="chapter" data-level="1.9.5" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-total-muestral"><i class="fa fa-check"></i><b>1.9.5</b> Varianza Total Muestral</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>1.10</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="1.11" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>1.11</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="distancias.html"><a href="distancias.html#introducción"><i class="fa fa-check"></i><b>1.11.1</b> Introducción</a></li>
+<li class="chapter" data-level="1.11.2" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>1.11.2</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>2</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>2.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="2.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>2.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="2.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>2.3</b> Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="normal-multivariada.html"><a href="normal-multivariada.html#algunos-aspectos-geométricos-de-la-nm"><i class="fa fa-check"></i><b>2.3.1</b> Algunos Aspectos Geométricos de la NM</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="propiedades-de-la-distribución-normal-multivariada.html"><a href="propiedades-de-la-distribución-normal-multivariada.html"><i class="fa fa-check"></i><b>2.4</b> Propiedades de la distribución Normal Multivariada</a></li>
+<li class="chapter" data-level="2.5" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>2.5</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>2.5.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>2.5.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>2.6</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="2.7" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>2.7</b> Transformaciones para acercar a la normalidad multivariada</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>2.7.1</b> Familia de transformaciones de potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>2.7.2</b> Transformaciones para el caso multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>2.8</b> Muestra aleatoria normal <span class="math inline">\(p\)</span>-variada</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>2.8.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="2.8.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>2.8.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="2.8.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>2.8.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para tamaños muestrales grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>3</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>3.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><i class="fa fa-check"></i><b>3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>3.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>3.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>3.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><i class="fa fa-check"></i><b>3.4</b> PH para Igualdad de vectores de medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1=\underline{\boldsymbol{\mu}}_2\)</span></a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida"><i class="fa fa-check"></i><b>3.4.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="3.4.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida"><i class="fa fa-check"></i><b>3.4.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="3.4.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1neq-mathbfsigma_2-desconocida"><i class="fa fa-check"></i><b>3.4.3</b> <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><i class="fa fa-check"></i><b>3.5</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida-1"><i class="fa fa-check"></i><b>3.5.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="3.5.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>3.5.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="3.5.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1-neq-mathbfsigma_2-desconocidas"><i class="fa fa-check"></i><b>3.5.3</b> <span class="math inline">\(\mathbf{\Sigma}_1 \neq \mathbf{\Sigma}_2\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><i class="fa fa-check"></i><b>3.6</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,      Observaciones Pareadas</a></li>
+<li class="chapter" data-level="3.7" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>3.7</b> PH Acerca de Contrastes para el vector de medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-desconocida"><i class="fa fa-check"></i><b>3.7.1</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocida</a></li>
+<li class="chapter" data-level="3.7.2" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-es-conocida"><i class="fa fa-check"></i><b>3.7.2</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-es conocida</a></li>
+<li class="chapter" data-level="3.7.3" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-desconocida-y-n-grande"><i class="fa fa-check"></i><b>3.7.3</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-Desconocida y n-Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html"><i class="fa fa-check"></i><b>3.8</b> Inferencia para la Matriz de Covarianza</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#pruba-de-razón-de-verosimilitud"><i class="fa fa-check"></i><b>3.8.1</b> Pruba de Razón de Verosimilitud</a></li>
+<li class="chapter" data-level="3.8.2" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#prueba-de-bartlet"><i class="fa fa-check"></i><b>3.8.2</b> Prueba de Bartlet</a></li>
+<li class="chapter" data-level="3.8.3" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#dos-o-más-matrices-de-covarianzas"><i class="fa fa-check"></i><b>3.8.3</b> Dos o más Matrices de Covarianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><i class="fa fa-check"></i><b>3.9</b> Regiones de Confianza y comparaciones simultáneas entre las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#construcción-de-una-región-de-confianza-para-underlinemu-cuando-la-población-tiene-distribución-n_punderlinemumathbfsigma-con-underlinemu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>3.9.1</b> Construcción de una región de confianza para <span class="math inline">\(\underline{\mu}\)</span> cuando la población tiene distribución <span class="math inline">\(N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="3.9.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#región-de-confianza-para-el-caso-de-p2-elipse-de-confianza"><i class="fa fa-check"></i><b>3.9.2</b> Región de Confianza para el caso de <span class="math inline">\(p=2\)</span> (Elipse de Confianza)</a></li>
+<li class="chapter" data-level="3.9.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlinemu"><i class="fa fa-check"></i><b>3.9.3</b> Intervalos de confianza simultáneos para las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a></li>
+<li class="chapter" data-level="3.9.4" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-t2-simultáneos-para-diferencias-de-medias"><i class="fa fa-check"></i><b>3.9.4</b> IC <span class="math inline">\(T^2\)</span> Simultáneos para Diferencias de Medias</a></li>
+<li class="chapter" data-level="3.9.5" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#método-de-bonferroni-para-comparaciones-múltiples"><i class="fa fa-check"></i><b>3.9.5</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+<li class="chapter" data-level="3.9.6" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-chi2-caso-n-grande"><i class="fa fa-check"></i><b>3.9.6</b> Intervalos de Confianza Simultáneos <span class="math inline">\(\chi^2\)</span> (caso n-Grande)</a></li>
+<li class="chapter" data-level="3.9.7" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-simultáneos-para-n-grande-usando-la-normal-estándar-z_alpha"><i class="fa fa-check"></i><b>3.9.7</b> IC simultáneos para n-Grande Usando la Normal Estándar <span class="math inline">\(Z_\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>4</b> Análisis de Componentes Principales (AC)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="interpretación-del-acp.html"><a href="interpretación-del-acp.html"><i class="fa fa-check"></i><b>4.2</b> Interpretación del ACP</a></li>
+<li class="chapter" data-level="4.3" data-path="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple.html"><a href="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple.html"><i class="fa fa-check"></i><b>4.3</b> Interpretación Geométrica del ACP Mediante un Ejemplo Simple</a></li>
+<li class="chapter" data-level="4.4" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html"><i class="fa fa-check"></i><b>4.4</b> Mas de dos Ejes</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#min-cuadrados"><i class="fa fa-check"></i><b>4.4.1</b> Ajuste de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="4.4.2" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#relación-entre-los-sub-espacios-de-mathbbrp-y-de-mathbbrn"><i class="fa fa-check"></i><b>4.4.2</b> Relación entre los Sub-espacios de <span class="math inline">\(\mathbb{R}^p\)</span> y de <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="componentes-principales-en-análisis-de-regresión.html"><a href="componentes-principales-en-análisis-de-regresión.html"><i class="fa fa-check"></i><b>4.5</b> Componentes Principales en Análisis de Regresión</a></li>
+<li class="chapter" data-level="4.6" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>4.6</b> Componentes Principales Poblacionales</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#determinación-de-las-cps"><i class="fa fa-check"></i><b>4.6.1</b> Determinación de las CPs</a></li>
+<li class="chapter" data-level="4.6.2" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>4.6.2</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="4.6.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>4.6.3</b> Componentes principales usando variables estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><i class="fa fa-check"></i><b>4.7</b> Componentes Principales para Matrices de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span> con Estructuras Especiales</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-no-correlacionadas"><i class="fa fa-check"></i><b>4.7.1</b> Variables No-Correlacionadas</a></li>
+<li class="chapter" data-level="4.7.2" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-altamente-correlacionadas"><i class="fa fa-check"></i><b>4.7.2</b> Variables Altamente Correlacionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.8</b> Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="4.9" data-path="ejemplos.html"><a href="ejemplos.html"><i class="fa fa-check"></i><b>4.9</b> Ejemplos</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="ejemplos.html"><a href="ejemplos.html#ejemplo-1"><i class="fa fa-check"></i><b>4.9.1</b> Ejemplo 1</a></li>
+<li class="chapter" data-level="4.9.2" data-path="ejemplos.html"><a href="ejemplos.html#ejemplo-2"><i class="fa fa-check"></i><b>4.9.2</b> Ejemplo-2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>4.10</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="4.11" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.11</b> Interpretación de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="4.12" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.12</b> Estandarización de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="4.13" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>4.13</b> Gráficos en una Análisis de componentes principales</a>
+<ul>
+<li class="chapter" data-level="4.13.1" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>4.13.1</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.14" data-path="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>4.14</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{e}}_i\)</span> en muestras grandes</a></li>
+<li class="chapter" data-level="4.15" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html"><i class="fa fa-check"></i><b>4.15</b> Ejemplos Finales</a>
+<ul>
+<li class="chapter" data-level="4.15.1" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-1-1"><i class="fa fa-check"></i><b>4.15.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="4.15.2" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-2-1"><i class="fa fa-check"></i><b>4.15.2</b> Ejemplo-2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 4</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejemplos" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Ejemplos<a href="ejemplos.html#ejemplos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ejemplo-1" class="section level3 hasAnchor" number="4.9.1">
+<h3><span class="header-section-number">4.9.1</span> Ejemplo 1<a href="ejemplos.html#ejemplo-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="example">
+<p><span id="exm:ejemplo1-cp-muestrales" class="example"><strong>Ejemplo 4.4  (ACP Muestral Datos No Centrados) </strong></span>Un censo proporciona información de cinco variables socioeconómicas para 14 áreas de una región.</p>
+<p>Las variables de interés fueron:</p>
+<p><span class="math inline">\(X_1:\)</span> Población total (en miles)</p>
+<p><span class="math inline">\(X_2:\)</span> mediana de los años escolaridad</p>
+<p><span class="math inline">\(X_3:\)</span> Total de empleados (en miles)</p>
+<p><span class="math inline">\(X_4:\)</span> Empleados de servicios de salud (en cientos) y</p>
+<p><span class="math inline">\(X_5:\)</span> mediana del valor de la casa (en diez miles).</p>
+</div>
+<p>Los datos de las 14 regiones se muestran en la siguiente tabla.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">5.935</td>
+<td align="right">14.200</td>
+<td align="right">2.265</td>
+<td align="right">2.270</td>
+<td align="right">2.910</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1.523</td>
+<td align="right">13.100</td>
+<td align="right">0.597</td>
+<td align="right">0.750</td>
+<td align="right">2.620</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">2.599</td>
+<td align="right">12.700</td>
+<td align="right">1.237</td>
+<td align="right">1.110</td>
+<td align="right">1.720</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">4.009</td>
+<td align="right">15.200</td>
+<td align="right">1.649</td>
+<td align="right">0.810</td>
+<td align="right">3.020</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">4.687</td>
+<td align="right">14.700</td>
+<td align="right">2.312</td>
+<td align="right">2.500</td>
+<td align="right">2.220</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">8.044</td>
+<td align="right">15.600</td>
+<td align="right">3.641</td>
+<td align="right">4.510</td>
+<td align="right">2.360</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">2.766</td>
+<td align="right">13.300</td>
+<td align="right">1.244</td>
+<td align="right">1.030</td>
+<td align="right">1.970</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">6.538</td>
+<td align="right">17.000</td>
+<td align="right">2.618</td>
+<td align="right">2.390</td>
+<td align="right">1.850</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">6.451</td>
+<td align="right">12.900</td>
+<td align="right">3.147</td>
+<td align="right">5.520</td>
+<td align="right">2.010</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">3.314</td>
+<td align="right">12.200</td>
+<td align="right">1.606</td>
+<td align="right">2.180</td>
+<td align="right">1.820</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">3.777</td>
+<td align="right">13.000</td>
+<td align="right">2.119</td>
+<td align="right">2.830</td>
+<td align="right">1.800</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">1.530</td>
+<td align="right">13.800</td>
+<td align="right">0.798</td>
+<td align="right">0.840</td>
+<td align="right">4.250</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">2.768</td>
+<td align="right">13.600</td>
+<td align="right">1.336</td>
+<td align="right">1.750</td>
+<td align="right">2.640</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">6.585</td>
+<td align="right">14.900</td>
+<td align="right">2.763</td>
+<td align="right">1.910</td>
+<td align="right">3.170</td>
+</tr>
+</tbody>
+</table>
+<p><strong>De los datos se obtiene que:</strong></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf1-datos-ejemplo-acp"></span>
+<img src="imagenes/graficas_pairsa.jpg" alt="Gráfico de Dispersión ACP" width="70%" />
+<p class="caption">
+Figura 4.14: Gráfico de Dispersión ACP
+</p>
+</div>
+<p><strong>Vector de Medias:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">4.323</td>
+<td align="right">14.014</td>
+<td align="right">1.952</td>
+<td align="right">2.171</td>
+<td align="right">2.454</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Matriz de Var-Cov y de Correlaciones (<span class="math inline">\(S\)</span>, <span class="math inline">\(S_n\)</span> y <span class="math inline">\(R\)</span>):</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">4.308</td>
+<td align="right">1.684</td>
+<td align="right">1.803</td>
+<td align="right">2.155</td>
+<td align="right">-0.253</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">1.684</td>
+<td align="right">1.767</td>
+<td align="right">0.588</td>
+<td align="right">0.178</td>
+<td align="right">0.176</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">1.803</td>
+<td align="right">0.588</td>
+<td align="right">0.801</td>
+<td align="right">1.065</td>
+<td align="right">-0.158</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">2.155</td>
+<td align="right">0.178</td>
+<td align="right">1.065</td>
+<td align="right">1.969</td>
+<td align="right">-0.357</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.253</td>
+<td align="right">0.176</td>
+<td align="right">-0.158</td>
+<td align="right">-0.357</td>
+<td align="right">0.504</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">4.000</td>
+<td align="right">1.563</td>
+<td align="right">1.674</td>
+<td align="right">2.001</td>
+<td align="right">-0.235</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">1.563</td>
+<td align="right">1.641</td>
+<td align="right">0.546</td>
+<td align="right">0.165</td>
+<td align="right">0.163</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">1.674</td>
+<td align="right">0.546</td>
+<td align="right">0.743</td>
+<td align="right">0.989</td>
+<td align="right">-0.147</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">2.001</td>
+<td align="right">0.165</td>
+<td align="right">0.989</td>
+<td align="right">1.829</td>
+<td align="right">-0.331</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.235</td>
+<td align="right">0.163</td>
+<td align="right">-0.147</td>
+<td align="right">-0.331</td>
+<td align="right">0.468</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">1.000</td>
+<td align="right">0.610</td>
+<td align="right">0.971</td>
+<td align="right">0.740</td>
+<td align="right">-0.172</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">0.610</td>
+<td align="right">1.000</td>
+<td align="right">0.494</td>
+<td align="right">0.095</td>
+<td align="right">0.186</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">0.971</td>
+<td align="right">0.494</td>
+<td align="right">1.000</td>
+<td align="right">0.848</td>
+<td align="right">-0.249</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">0.740</td>
+<td align="right">0.095</td>
+<td align="right">0.848</td>
+<td align="right">1.000</td>
+<td align="right">-0.358</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.172</td>
+<td align="right">0.186</td>
+<td align="right">-0.249</td>
+<td align="right">-0.358</td>
+<td align="right">1.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Coordenadas, Cosenos Cuadrados (Correlaciones al cuadrado), Contribuciones y Correlaciones de las variables:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Coordenadas</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">1.982</td>
+<td align="right">0.091</td>
+<td align="right">0.002</td>
+<td align="right">-0.250</td>
+<td align="right">-0.035</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">0.775</td>
+<td align="right">0.983</td>
+<td align="right">-0.097</td>
+<td align="right">0.252</td>
+<td align="right">-0.001</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">0.848</td>
+<td align="right">-0.107</td>
+<td align="right">0.009</td>
+<td align="right">-0.024</td>
+<td align="right">0.107</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">1.081</td>
+<td align="right">-0.746</td>
+<td align="right">0.133</td>
+<td align="right">0.294</td>
+<td align="right">-0.020</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">-0.138</td>
+<td align="right">0.338</td>
+<td align="right">0.579</td>
+<td align="right">-0.024</td>
+<td align="right">0.003</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Cosenos Cuadrados</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">0.982</td>
+<td align="right">0.002</td>
+<td align="right">0.000</td>
+<td align="right">0.016</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">0.366</td>
+<td align="right">0.589</td>
+<td align="right">0.006</td>
+<td align="right">0.039</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">0.968</td>
+<td align="right">0.015</td>
+<td align="right">0.000</td>
+<td align="right">0.001</td>
+<td align="right">0.016</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">0.639</td>
+<td align="right">0.304</td>
+<td align="right">0.010</td>
+<td align="right">0.047</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">0.041</td>
+<td align="right">0.244</td>
+<td align="right">0.715</td>
+<td align="right">0.001</td>
+<td align="right">0.000</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Contribuciones</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">61.029</td>
+<td align="right">0.502</td>
+<td align="right">0.001</td>
+<td align="right">29.345</td>
+<td align="right">9.123</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">9.342</td>
+<td align="right">58.350</td>
+<td align="right">2.618</td>
+<td align="right">29.681</td>
+<td align="right">0.009</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">11.186</td>
+<td align="right">0.687</td>
+<td align="right">0.022</td>
+<td align="right">0.260</td>
+<td align="right">87.845</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">18.148</td>
+<td align="right">33.577</td>
+<td align="right">4.860</td>
+<td align="right">40.451</td>
+<td align="right">2.963</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">0.295</td>
+<td align="right">6.883</td>
+<td align="right">92.498</td>
+<td align="right">0.263</td>
+<td align="right">0.060</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Correlaciones</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">0.991</td>
+<td align="right">0.046</td>
+<td align="right">0.001</td>
+<td align="right">-0.125</td>
+<td align="right">-0.017</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">0.605</td>
+<td align="right">0.768</td>
+<td align="right">-0.076</td>
+<td align="right">0.196</td>
+<td align="right">-0.001</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">0.984</td>
+<td align="right">-0.124</td>
+<td align="right">0.010</td>
+<td align="right">-0.027</td>
+<td align="right">0.125</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">0.799</td>
+<td align="right">-0.552</td>
+<td align="right">0.098</td>
+<td align="right">0.217</td>
+<td align="right">-0.015</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">-0.201</td>
+<td align="right">0.494</td>
+<td align="right">0.845</td>
+<td align="right">-0.035</td>
+<td align="right">0.004</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Coordenadas ( puntajes o scores}), Cosenos Cuadrados y Contribuciones de los Individuos:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Coordenadas</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="right">1.438</td>
+<td align="right">0.293</td>
+<td align="right">0.441</td>
+<td align="right">-0.749</td>
+<td align="right">-0.201</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="right">-3.535</td>
+<td align="right">0.083</td>
+<td align="right">-0.036</td>
+<td align="right">0.175</td>
+<td align="right">-0.167</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="right">-2.400</td>
+<td align="right">-0.644</td>
+<td align="right">-0.744</td>
+<td align="right">-0.383</td>
+<td align="right">0.027</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="right">-0.595</td>
+<td align="right">1.846</td>
+<td align="right">0.046</td>
+<td align="right">-0.063</td>
+<td align="right">0.048</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="right">0.767</td>
+<td align="right">0.268</td>
+<td align="right">-0.257</td>
+<td align="right">0.379</td>
+<td align="right">0.159</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="right">4.957</td>
+<td align="right">-0.045</td>
+<td align="right">0.207</td>
+<td align="right">0.254</td>
+<td align="right">0.039</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="right">-2.132</td>
+<td align="right">-0.063</td>
+<td align="right">-0.618</td>
+<td align="right">-0.211</td>
+<td align="right">-0.002</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="right">2.991</td>
+<td align="right">2.097</td>
+<td align="right">-0.998</td>
+<td align="right">0.563</td>
+<td align="right">-0.125</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="right">3.172</td>
+<td align="right">-2.856</td>
+<td align="right">0.517</td>
+<td align="right">0.332</td>
+<td align="right">-0.100</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="right">-1.421</td>
+<td align="right">-1.600</td>
+<td align="right">-0.323</td>
+<td align="right">-0.386</td>
+<td align="right">-0.020</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="right">-0.365</td>
+<td align="right">-1.381</td>
+<td align="right">-0.319</td>
+<td align="right">0.187</td>
+<td align="right">0.201</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="right">-3.298</td>
+<td align="right">0.977</td>
+<td align="right">1.441</td>
+<td align="right">0.516</td>
+<td align="right">0.037</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="right">-1.737</td>
+<td align="right">-0.083</td>
+<td align="right">0.138</td>
+<td align="right">0.371</td>
+<td align="right">-0.027</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="right">2.158</td>
+<td align="right">1.109</td>
+<td align="right">0.508</td>
+<td align="right">-0.987</td>
+<td align="right">0.131</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Cosenos Cuadrados</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="right">0.701</td>
+<td align="right">0.029</td>
+<td align="right">0.066</td>
+<td align="right">0.190</td>
+<td align="right">0.014</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="right">0.995</td>
+<td align="right">0.001</td>
+<td align="right">0.000</td>
+<td align="right">0.002</td>
+<td align="right">0.002</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="right">0.838</td>
+<td align="right">0.060</td>
+<td align="right">0.081</td>
+<td align="right">0.021</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="right">0.094</td>
+<td align="right">0.904</td>
+<td align="right">0.001</td>
+<td align="right">0.001</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="right">0.657</td>
+<td align="right">0.080</td>
+<td align="right">0.074</td>
+<td align="right">0.161</td>
+<td align="right">0.028</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="right">0.995</td>
+<td align="right">0.000</td>
+<td align="right">0.002</td>
+<td align="right">0.003</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="right">0.914</td>
+<td align="right">0.001</td>
+<td align="right">0.077</td>
+<td align="right">0.009</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="right">0.610</td>
+<td align="right">0.300</td>
+<td align="right">0.068</td>
+<td align="right">0.022</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="right">0.541</td>
+<td align="right">0.438</td>
+<td align="right">0.014</td>
+<td align="right">0.006</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="right">0.418</td>
+<td align="right">0.530</td>
+<td align="right">0.022</td>
+<td align="right">0.031</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="right">0.060</td>
+<td align="right">0.860</td>
+<td align="right">0.046</td>
+<td align="right">0.016</td>
+<td align="right">0.018</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="right">0.767</td>
+<td align="right">0.067</td>
+<td align="right">0.146</td>
+<td align="right">0.019</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="right">0.948</td>
+<td align="right">0.002</td>
+<td align="right">0.006</td>
+<td align="right">0.043</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="right">0.653</td>
+<td align="right">0.172</td>
+<td align="right">0.036</td>
+<td align="right">0.136</td>
+<td align="right">0.002</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Contribuciones</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="right">2.294</td>
+<td align="right">0.369</td>
+<td align="right">3.831</td>
+<td align="right">18.778</td>
+<td align="right">21.998</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="right">13.868</td>
+<td align="right">0.029</td>
+<td align="right">0.026</td>
+<td align="right">1.032</td>
+<td align="right">15.192</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="right">6.394</td>
+<td align="right">1.790</td>
+<td align="right">10.941</td>
+<td align="right">4.913</td>
+<td align="right">0.404</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="right">0.393</td>
+<td align="right">14.683</td>
+<td align="right">0.043</td>
+<td align="right">0.134</td>
+<td align="right">1.249</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="right">0.652</td>
+<td align="right">0.309</td>
+<td align="right">1.306</td>
+<td align="right">4.819</td>
+<td align="right">13.670</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="right">27.276</td>
+<td align="right">0.009</td>
+<td align="right">0.845</td>
+<td align="right">2.169</td>
+<td align="right">0.841</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="right">5.043</td>
+<td align="right">0.017</td>
+<td align="right">7.540</td>
+<td align="right">1.486</td>
+<td align="right">0.003</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="right">9.931</td>
+<td align="right">18.954</td>
+<td align="right">19.669</td>
+<td align="right">10.620</td>
+<td align="right">8.515</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="right">11.166</td>
+<td align="right">35.156</td>
+<td align="right">5.271</td>
+<td align="right">3.692</td>
+<td align="right">5.426</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="right">2.240</td>
+<td align="right">11.032</td>
+<td align="right">2.065</td>
+<td align="right">4.994</td>
+<td align="right">0.216</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="right">0.148</td>
+<td align="right">8.213</td>
+<td align="right">2.015</td>
+<td align="right">1.175</td>
+<td align="right">22.002</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="right">12.075</td>
+<td align="right">4.110</td>
+<td align="right">40.985</td>
+<td align="right">8.937</td>
+<td align="right">0.750</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="right">3.350</td>
+<td align="right">0.029</td>
+<td align="right">0.375</td>
+<td align="right">4.605</td>
+<td align="right">0.393</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="right">5.171</td>
+<td align="right">5.299</td>
+<td align="right">5.088</td>
+<td align="right">32.647</td>
+<td align="right">9.340</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Valores Propios, Porc. de Var y VarAcumulada:</strong></p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="15%" />
+<col width="30%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">eigenvalue</th>
+<th align="right">percentage of variance</th>
+<th align="right">cumulative percentage of variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">comp 1</td>
+<td align="right">6.436</td>
+<td align="right">74.133</td>
+<td align="right">74.133</td>
+</tr>
+<tr class="even">
+<td align="right">comp 2</td>
+<td align="right">1.658</td>
+<td align="right">19.093</td>
+<td align="right">93.226</td>
+</tr>
+<tr class="odd">
+<td align="right">comp 3</td>
+<td align="right">0.362</td>
+<td align="right">4.168</td>
+<td align="right">97.394</td>
+</tr>
+<tr class="even">
+<td align="right">comp 4</td>
+<td align="right">0.213</td>
+<td align="right">2.455</td>
+<td align="right">99.849</td>
+</tr>
+<tr class="odd">
+<td align="right">comp 5</td>
+<td align="right">0.013</td>
+<td align="right">0.151</td>
+<td align="right">100.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cargas o coeficientes de las CP (loadings-Vectores Propios):</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">PC1</th>
+<th align="right">PC2</th>
+<th align="right">PC3</th>
+<th align="right">PC4</th>
+<th align="right">PC5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">0.781</td>
+<td align="right">0.071</td>
+<td align="right">-0.004</td>
+<td align="right">0.542</td>
+<td align="right">0.302</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">0.306</td>
+<td align="right">0.764</td>
+<td align="right">0.162</td>
+<td align="right">-0.545</td>
+<td align="right">0.009</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">0.334</td>
+<td align="right">-0.083</td>
+<td align="right">-0.015</td>
+<td align="right">0.051</td>
+<td align="right">-0.937</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">0.426</td>
+<td align="right">-0.579</td>
+<td align="right">-0.220</td>
+<td align="right">-0.636</td>
+<td align="right">0.172</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.054</td>
+<td align="right">0.262</td>
+<td align="right">-0.962</td>
+<td align="right">0.051</td>
+<td align="right">-0.025</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+\text{Loadings}=\frac{\text{Coordenadas}}{\sqrt{\lambda_s}}\ \ \ (\text{Vectores propios de} \ \ S\ \ o \ \ R)
+\]</span></p>
+<p><span class="math display">\[
+(\text{Loadings})\sqrt{\lambda_s}=\text{Coordenadas}=r_{y_s,x_k}\times S_{kk}=\cos(\theta)\times S_{kk}
+\]</span></p>
+<span class="math display">\[
+\text{Contribuciones}= \frac{({\text{Contribución-variable}_i)^2}}{\text{Inercia Total del Eje}} =\frac{(\text{Coordenada})^2}{\lambda_s}
+\]</span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf3a-acp"></span>
+<img src="imagenes/graficas_pve_no_escalados.jpg" alt="Gráfico de PVE ACP" width="70%" />
+<p class="caption">
+Figura 4.15: Gráfico de PVE ACP
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf4a-acp"></span>
+<img src="imagenes/graficas_no_escalados.jpg" alt="Gráficos del ACP" width="70%" />
+<p class="caption">
+Figura 4.16: Gráficos del ACP
+</p>
+</div>
+<p><strong>La primera CP es:</strong></p>
+<p><span class="math display">\[
+Y1=0.781X_1+0.306X^{\star}_2+0.334X^{\star}_3+0.426X^{\star}_4-0.054X^{\star}_5
+\]</span></p>
+<p><strong>La segunda CP es:</strong></p>
+<p><span class="math display">\[
+Y2=0.071X^{\star}_1+0.764X^{\star}_2-0.083X^{\star}_3-0.579X^{\star}_4+0.262X^{\star}_5
+\]</span></p>
+<p>con
+<span class="math display">\[
+X^{\star}_i=X_{ik}-\bar{X}_K
+\]</span>
+para ACP No-Normado (Centrado).</p>
+<p><strong>De lo anterior se tienen las siguientes conclusiones:</strong></p>
+<ul>
+<li><p>La primera CP explica el <span class="math inline">\(74.13\%\)</span> de la varianza muestral total.</p></li>
+<li><p>Las dos primeras CPs juntas explican el <span class="math inline">\(93.23\%\)</span> de la varianza muestral total.</p></li>
+<li><p>Por lo tanto, la variación muestral puede ser resumida adecuadamente por medio de las dos primeras componentes principales.</p></li>
+<li><p>Dados los coeficientes de las componentes principales, la primera CP parece ser esencialmente un promedio ponderado de las primeras cuatro variables.</p></li>
+</ul>
+<p>La segunda CP parece contrastar los servicios de empleos en salud (<span class="math inline">\(X_4\)</span>) con un promedio ponderado de la mediana de los años de escolaridad (<span class="math inline">\(X_2\)</span>) y la mediana del valor de la casa (<span class="math inline">\(X_5\)</span>).</p>
+<ul>
+<li><p>En la interpretación de las CPs se deben tener en cuenta tanto los coeficientes <span class="math inline">\(\hat{e}_{ik}\)</span> (cantidad=<span class="math inline">\(\sqrt{\lambda_s}\times loadings\)</span>) de las componentes como las correlaciones <span class="math inline">\(r_{\hat{y}_i,x_k}\)</span> (calidad=<span class="math inline">\(\cos (\theta)\)</span>).</p></li>
+<li><p>Las correlaciones <span class="math inline">\(r_{\hat{y}_i,x_k}\)</span> ( <span class="math inline">\(\cos(\theta)\)</span>}), permiten analizar la importancia (o significancia o calidad) de las variables aunque tengan diferentes varianzas (longiltudes<span class="math inline">\(\approx\)</span> var). Sin embargo, éstas correlaciones miden solamente la importancia de una sola variable <span class="math inline">\(X_j\)</span> sin tener en cuenta las otras variables presentes en la formación de la componente.</p></li>
+</ul>
+</div>
+<div id="ejemplo-2" class="section level3 hasAnchor" number="4.9.2">
+<h3><span class="header-section-number">4.9.2</span> Ejemplo-2<a href="ejemplos.html#ejemplo-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="example">
+<p><span id="exm:ejemplo2-cp-muestrales" class="example"><strong>Ejemplo 4.5  (ACP Muestral Datos Centrados) </strong></span>Un censo proporciona información de cinco variables socioeconómicas para 14 áreas de una región.</p>
+<p>Las variables de interés fueron:</p>
+<p><span class="math inline">\(X_1:\)</span> Población total (en miles)</p>
+<p><span class="math inline">\(X_2:\)</span> mediana de los años escolaridad</p>
+<p><span class="math inline">\(X_3:\)</span> Total de empleados (en miles)</p>
+<p><span class="math inline">\(X_4:\)</span> Empleados de servicios de salud (en cientos) y</p>
+<p><span class="math inline">\(X_5:\)</span> mediana del valor de la casa (en diez miles).</p>
+</div>
+<p>Los datos de las 14 regiones se muestran en la siguiente tabla.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">5.935</td>
+<td align="right">14.200</td>
+<td align="right">2.265</td>
+<td align="right">2.270</td>
+<td align="right">2.910</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1.523</td>
+<td align="right">13.100</td>
+<td align="right">0.597</td>
+<td align="right">0.750</td>
+<td align="right">2.620</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">2.599</td>
+<td align="right">12.700</td>
+<td align="right">1.237</td>
+<td align="right">1.110</td>
+<td align="right">1.720</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">4.009</td>
+<td align="right">15.200</td>
+<td align="right">1.649</td>
+<td align="right">0.810</td>
+<td align="right">3.020</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">4.687</td>
+<td align="right">14.700</td>
+<td align="right">2.312</td>
+<td align="right">2.500</td>
+<td align="right">2.220</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">8.044</td>
+<td align="right">15.600</td>
+<td align="right">3.641</td>
+<td align="right">4.510</td>
+<td align="right">2.360</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">2.766</td>
+<td align="right">13.300</td>
+<td align="right">1.244</td>
+<td align="right">1.030</td>
+<td align="right">1.970</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">6.538</td>
+<td align="right">17.000</td>
+<td align="right">2.618</td>
+<td align="right">2.390</td>
+<td align="right">1.850</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">6.451</td>
+<td align="right">12.900</td>
+<td align="right">3.147</td>
+<td align="right">5.520</td>
+<td align="right">2.010</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">3.314</td>
+<td align="right">12.200</td>
+<td align="right">1.606</td>
+<td align="right">2.180</td>
+<td align="right">1.820</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">3.777</td>
+<td align="right">13.000</td>
+<td align="right">2.119</td>
+<td align="right">2.830</td>
+<td align="right">1.800</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">1.530</td>
+<td align="right">13.800</td>
+<td align="right">0.798</td>
+<td align="right">0.840</td>
+<td align="right">4.250</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">2.768</td>
+<td align="right">13.600</td>
+<td align="right">1.336</td>
+<td align="right">1.750</td>
+<td align="right">2.640</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">6.585</td>
+<td align="right">14.900</td>
+<td align="right">2.763</td>
+<td align="right">1.910</td>
+<td align="right">3.170</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Vector de Medias:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">4.323</td>
+<td align="right">14.014</td>
+<td align="right">1.952</td>
+<td align="right">2.171</td>
+<td align="right">2.454</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Matriz de Var-Cov y de Correlaciones (<span class="math inline">\(S\)</span>, <span class="math inline">\(S_n\)</span> y <span class="math inline">\(R\)</span>):</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">4.308</td>
+<td align="right">1.684</td>
+<td align="right">1.803</td>
+<td align="right">2.155</td>
+<td align="right">-0.253</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">1.684</td>
+<td align="right">1.767</td>
+<td align="right">0.588</td>
+<td align="right">0.178</td>
+<td align="right">0.176</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">1.803</td>
+<td align="right">0.588</td>
+<td align="right">0.801</td>
+<td align="right">1.065</td>
+<td align="right">-0.158</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">2.155</td>
+<td align="right">0.178</td>
+<td align="right">1.065</td>
+<td align="right">1.969</td>
+<td align="right">-0.357</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.253</td>
+<td align="right">0.176</td>
+<td align="right">-0.158</td>
+<td align="right">-0.357</td>
+<td align="right">0.504</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">4.000</td>
+<td align="right">1.563</td>
+<td align="right">1.674</td>
+<td align="right">2.001</td>
+<td align="right">-0.235</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">1.563</td>
+<td align="right">1.641</td>
+<td align="right">0.546</td>
+<td align="right">0.165</td>
+<td align="right">0.163</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">1.674</td>
+<td align="right">0.546</td>
+<td align="right">0.743</td>
+<td align="right">0.989</td>
+<td align="right">-0.147</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">2.001</td>
+<td align="right">0.165</td>
+<td align="right">0.989</td>
+<td align="right">1.829</td>
+<td align="right">-0.331</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.235</td>
+<td align="right">0.163</td>
+<td align="right">-0.147</td>
+<td align="right">-0.331</td>
+<td align="right">0.468</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">1.000</td>
+<td align="right">0.610</td>
+<td align="right">0.971</td>
+<td align="right">0.740</td>
+<td align="right">-0.172</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">0.610</td>
+<td align="right">1.000</td>
+<td align="right">0.494</td>
+<td align="right">0.095</td>
+<td align="right">0.186</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">0.971</td>
+<td align="right">0.494</td>
+<td align="right">1.000</td>
+<td align="right">0.848</td>
+<td align="right">-0.249</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">0.740</td>
+<td align="right">0.095</td>
+<td align="right">0.848</td>
+<td align="right">1.000</td>
+<td align="right">-0.358</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.172</td>
+<td align="right">0.186</td>
+<td align="right">-0.249</td>
+<td align="right">-0.358</td>
+<td align="right">1.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Coordenadas, Cosenos Cuadrados ( Correlaciones al cuadrado}), Contribuciones y Correlaciones de las variables:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Coordenadas</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">0.972</td>
+<td align="right">0.149</td>
+<td align="right">0.006</td>
+<td align="right">-0.170</td>
+<td align="right">0.067</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">0.545</td>
+<td align="right">0.715</td>
+<td align="right">-0.415</td>
+<td align="right">0.140</td>
+<td align="right">-0.001</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">0.989</td>
+<td align="right">0.005</td>
+<td align="right">0.089</td>
+<td align="right">-0.083</td>
+<td align="right">-0.085</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">0.847</td>
+<td align="right">-0.352</td>
+<td align="right">0.344</td>
+<td align="right">0.200</td>
+<td align="right">0.022</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">-0.303</td>
+<td align="right">0.797</td>
+<td align="right">0.523</td>
+<td align="right">-0.005</td>
+<td align="right">-0.002</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Cosenos Cuadrados</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">0.944</td>
+<td align="right">0.022</td>
+<td align="right">0.000</td>
+<td align="right">0.029</td>
+<td align="right">0.004</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">0.297</td>
+<td align="right">0.511</td>
+<td align="right">0.173</td>
+<td align="right">0.020</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">0.978</td>
+<td align="right">0.000</td>
+<td align="right">0.008</td>
+<td align="right">0.007</td>
+<td align="right">0.007</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">0.717</td>
+<td align="right">0.124</td>
+<td align="right">0.118</td>
+<td align="right">0.040</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">0.092</td>
+<td align="right">0.634</td>
+<td align="right">0.274</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Contribuciones</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">31.176</td>
+<td align="right">1.726</td>
+<td align="right">0.006</td>
+<td align="right">30.311</td>
+<td align="right">36.780</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">9.815</td>
+<td align="right">39.548</td>
+<td align="right">30.143</td>
+<td align="right">20.490</td>
+<td align="right">0.004</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">32.292</td>
+<td align="right">0.002</td>
+<td align="right">1.375</td>
+<td align="right">7.189</td>
+<td align="right">59.142</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">23.680</td>
+<td align="right">9.583</td>
+<td align="right">20.696</td>
+<td align="right">41.988</td>
+<td align="right">4.053</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">3.037</td>
+<td align="right">49.141</td>
+<td align="right">47.779</td>
+<td align="right">0.023</td>
+<td align="right">0.020</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Correlaciones</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">x1</td>
+<td align="right">0.972</td>
+<td align="right">0.149</td>
+<td align="right">0.006</td>
+<td align="right">-0.170</td>
+<td align="right">0.067</td>
+</tr>
+<tr class="odd">
+<td align="center">x2</td>
+<td align="right">0.545</td>
+<td align="right">0.715</td>
+<td align="right">-0.415</td>
+<td align="right">0.140</td>
+<td align="right">-0.001</td>
+</tr>
+<tr class="even">
+<td align="center">x3</td>
+<td align="right">0.989</td>
+<td align="right">0.005</td>
+<td align="right">0.089</td>
+<td align="right">-0.083</td>
+<td align="right">-0.085</td>
+</tr>
+<tr class="odd">
+<td align="center">x4</td>
+<td align="right">0.847</td>
+<td align="right">-0.352</td>
+<td align="right">0.344</td>
+<td align="right">0.200</td>
+<td align="right">0.022</td>
+</tr>
+<tr class="even">
+<td align="center">x5</td>
+<td align="right">-0.303</td>
+<td align="right">0.797</td>
+<td align="right">0.523</td>
+<td align="right">-0.005</td>
+<td align="right">-0.002</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Coordenadas ( puntajes o scores}), Cosenos Cuadrados y Contribuciones de los Individuos:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Coordenadas</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="right">0.621</td>
+<td align="right">0.643</td>
+<td align="right">0.463</td>
+<td align="right">-0.438</td>
+<td align="right">0.214</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="right">-2.452</td>
+<td align="right">-0.144</td>
+<td align="right">-0.114</td>
+<td align="right">0.184</td>
+<td align="right">0.149</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="right">-1.469</td>
+<td align="right">-1.271</td>
+<td align="right">-0.640</td>
+<td align="right">-0.260</td>
+<td align="right">-0.021</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="right">-0.632</td>
+<td align="right">1.451</td>
+<td align="right">-0.437</td>
+<td align="right">-0.065</td>
+<td align="right">-0.045</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="right">0.684</td>
+<td align="right">0.047</td>
+<td align="right">-0.370</td>
+<td align="right">0.193</td>
+<td align="right">-0.160</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="right">3.405</td>
+<td align="right">0.399</td>
+<td align="right">0.256</td>
+<td align="right">0.134</td>
+<td align="right">-0.036</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="right">-1.364</td>
+<td align="right">-0.691</td>
+<td align="right">-0.670</td>
+<td align="right">-0.140</td>
+<td align="right">0.003</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="right">2.020</td>
+<td align="right">0.945</td>
+<td align="right">-1.717</td>
+<td align="right">0.356</td>
+<td align="right">0.108</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="right">2.427</td>
+<td align="right">-1.623</td>
+<td align="right">1.326</td>
+<td align="right">0.263</td>
+<td align="right">0.093</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="right">-0.789</td>
+<td align="right">-1.610</td>
+<td align="right">0.089</td>
+<td align="right">-0.237</td>
+<td align="right">0.027</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="right">0.113</td>
+<td align="right">-1.354</td>
+<td align="right">0.016</td>
+<td align="right">0.070</td>
+<td align="right">-0.198</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="right">-2.529</td>
+<td align="right">1.850</td>
+<td align="right">1.290</td>
+<td align="right">0.375</td>
+<td align="right">-0.052</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="right">-1.141</td>
+<td align="right">-0.022</td>
+<td align="right">0.133</td>
+<td align="right">0.267</td>
+<td align="right">0.014</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="right">1.106</td>
+<td align="right">1.380</td>
+<td align="right">0.375</td>
+<td align="right">-0.703</td>
+<td align="right">-0.096</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Cosenos Cuadrados</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="right">0.308</td>
+<td align="right">0.330</td>
+<td align="right">0.171</td>
+<td align="right">0.153</td>
+<td align="right">0.037</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="right">0.985</td>
+<td align="right">0.003</td>
+<td align="right">0.002</td>
+<td align="right">0.006</td>
+<td align="right">0.004</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="right">0.508</td>
+<td align="right">0.380</td>
+<td align="right">0.096</td>
+<td align="right">0.016</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="right">0.148</td>
+<td align="right">0.779</td>
+<td align="right">0.071</td>
+<td align="right">0.002</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="right">0.699</td>
+<td align="right">0.003</td>
+<td align="right">0.204</td>
+<td align="right">0.056</td>
+<td align="right">0.038</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="right">0.979</td>
+<td align="right">0.013</td>
+<td align="right">0.006</td>
+<td align="right">0.002</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="right">0.663</td>
+<td align="right">0.170</td>
+<td align="right">0.160</td>
+<td align="right">0.007</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="right">0.506</td>
+<td align="right">0.111</td>
+<td align="right">0.366</td>
+<td align="right">0.016</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="right">0.569</td>
+<td align="right">0.254</td>
+<td align="right">0.170</td>
+<td align="right">0.007</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="right">0.190</td>
+<td align="right">0.790</td>
+<td align="right">0.002</td>
+<td align="right">0.017</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="right">0.007</td>
+<td align="right">0.970</td>
+<td align="right">0.000</td>
+<td align="right">0.003</td>
+<td align="right">0.021</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="right">0.550</td>
+<td align="right">0.294</td>
+<td align="right">0.143</td>
+<td align="right">0.012</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="right">0.935</td>
+<td align="right">0.000</td>
+<td align="right">0.013</td>
+<td align="right">0.051</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="right">0.324</td>
+<td align="right">0.505</td>
+<td align="right">0.037</td>
+<td align="right">0.131</td>
+<td align="right">0.002</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Contribuciones</th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right">Dim.1</td>
+<td align="right">Dim.2</td>
+<td align="right">Dim.3</td>
+<td align="right">Dim.4</td>
+<td align="right">Dim.5</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="right">0.909</td>
+<td align="right">2.286</td>
+<td align="right">2.672</td>
+<td align="right">14.372</td>
+<td align="right">27.030</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="right">14.181</td>
+<td align="right">0.115</td>
+<td align="right">0.163</td>
+<td align="right">2.549</td>
+<td align="right">13.139</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="right">5.090</td>
+<td align="right">8.939</td>
+<td align="right">5.104</td>
+<td align="right">5.049</td>
+<td align="right">0.259</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="right">0.941</td>
+<td align="right">11.648</td>
+<td align="right">2.386</td>
+<td align="right">0.317</td>
+<td align="right">1.210</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="right">1.104</td>
+<td align="right">0.012</td>
+<td align="right">1.705</td>
+<td align="right">2.787</td>
+<td align="right">15.149</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="right">27.341</td>
+<td align="right">0.882</td>
+<td align="right">0.820</td>
+<td align="right">1.336</td>
+<td align="right">0.761</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="right">4.385</td>
+<td align="right">2.643</td>
+<td align="right">5.593</td>
+<td align="right">1.461</td>
+<td align="right">0.006</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="right">9.620</td>
+<td align="right">4.945</td>
+<td align="right">36.786</td>
+<td align="right">9.508</td>
+<td align="right">6.830</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="right">13.891</td>
+<td align="right">14.571</td>
+<td align="right">21.946</td>
+<td align="right">5.194</td>
+<td align="right">5.110</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="right">1.468</td>
+<td align="right">14.345</td>
+<td align="right">0.098</td>
+<td align="right">4.221</td>
+<td align="right">0.415</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td align="right">0.030</td>
+<td align="right">10.141</td>
+<td align="right">0.003</td>
+<td align="right">0.369</td>
+<td align="right">23.010</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td align="right">15.087</td>
+<td align="right">18.929</td>
+<td align="right">20.750</td>
+<td align="right">10.503</td>
+<td align="right">1.589</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td align="right">3.068</td>
+<td align="right">0.003</td>
+<td align="right">0.222</td>
+<td align="right">5.352</td>
+<td align="right">0.109</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td align="right">2.885</td>
+<td align="right">10.541</td>
+<td align="right">1.751</td>
+<td align="right">36.984</td>
+<td align="right">5.384</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Valores Propios, Porc. de Var y VarAcumulada:</strong></p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="16%" />
+<col width="32%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">eigenvalue</th>
+<th align="right">percentage of variance</th>
+<th align="right">cumulative perge of variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">comp 1</td>
+<td align="right">3.029</td>
+<td align="right">60.578</td>
+<td align="right">60.578</td>
+</tr>
+<tr class="even">
+<td align="right">comp 2</td>
+<td align="right">1.291</td>
+<td align="right">25.823</td>
+<td align="right">86.401</td>
+</tr>
+<tr class="odd">
+<td align="right">comp 3</td>
+<td align="right">0.572</td>
+<td align="right">11.449</td>
+<td align="right">97.850</td>
+</tr>
+<tr class="even">
+<td align="right">comp 4</td>
+<td align="right">0.095</td>
+<td align="right">1.908</td>
+<td align="right">99.758</td>
+</tr>
+<tr class="odd">
+<td align="right">comp 5</td>
+<td align="right">0.012</td>
+<td align="right">0.242</td>
+<td align="right">100.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cargas o coeficientes de las CP ( loadings-Vectores Propios}):</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">PC1</th>
+<th align="right">PC2</th>
+<th align="right">PC3</th>
+<th align="right">PC4</th>
+<th align="right">PC5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x1</td>
+<td align="right">0.558</td>
+<td align="right">0.131</td>
+<td align="right">0.008</td>
+<td align="right">-0.551</td>
+<td align="right">0.606</td>
+</tr>
+<tr class="even">
+<td align="right">x2</td>
+<td align="right">0.313</td>
+<td align="right">0.629</td>
+<td align="right">-0.549</td>
+<td align="right">0.453</td>
+<td align="right">-0.007</td>
+</tr>
+<tr class="odd">
+<td align="right">x3</td>
+<td align="right">0.568</td>
+<td align="right">0.004</td>
+<td align="right">0.117</td>
+<td align="right">-0.268</td>
+<td align="right">-0.769</td>
+</tr>
+<tr class="even">
+<td align="right">x4</td>
+<td align="right">0.487</td>
+<td align="right">-0.310</td>
+<td align="right">0.455</td>
+<td align="right">0.648</td>
+<td align="right">0.201</td>
+</tr>
+<tr class="odd">
+<td align="right">x5</td>
+<td align="right">-0.174</td>
+<td align="right">0.701</td>
+<td align="right">0.691</td>
+<td align="right">-0.015</td>
+<td align="right">-0.014</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+\text{Loadings}=\frac{\text{Coordenadas}}{\sqrt{\lambda_s}}\ \ \ (\text{Vectores propios de} \ \ S\ \ o \ \ R)
+\]</span></p>
+<p><span class="math display">\[
+(\text{Loadings})\sqrt{\lambda_s}=\text{Coordenadas}=r_{y_s,x_k}\times S_{kk}=\cos(\theta)\times S_{kk}
+\]</span></p>
+<p><span class="math display">\[
+\text{Contribuciones}= \frac{({\text{Contribución-variable}_i)^2}}{\text{Inercia Total del Eje}} =\frac{(\text{Coordenada})^2}{\lambda_s}
+\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf1a-datos-ejemplo-acp-norm"></span>
+<img src="imagenes/graficas_pve.jpg" alt="Gráfico de Dispersión ACP" width="70%" />
+<p class="caption">
+Figura 4.17: Gráfico de Dispersión ACP
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf2a-datos-ejemplo-acp-norm"></span>
+<img src="imagenes/graficas.jpg" alt="Gráfico de Dispersión ACP" width="70%" />
+<p class="caption">
+Figura 4.18: Gráfico de Dispersión ACP
+</p>
+</div>
+<p><strong>La primera CP es:</strong></p>
+<p><span class="math display">\[
+Y1=0.558Z_1+0.313Z_2+0.568Z_3+0.487Z_4-0.174Z_5
+\]</span></p>
+<p><strong>La segunda CP es:</strong>
+<span class="math display">\[
+Y2=0.131Z_1+0.629Z_2+0.004Z_3-0.310Z_4+0.701Z_5
+\]</span>
+con
+<span class="math display">\[
+Z_i=\frac{X_{ik}-\bar{X}_K}{S_{k}}
+\]</span>
+para ACP Normado.</p>
+<p><strong>De lo anterior se tienen las siguientes conclusiones:</strong></p>
+<ul>
+<li><p>La primera CP explica el <span class="math inline">\(60.58\%\)</span> de la varianza muestral total.</p></li>
+<li><p>Las dos primeras CPs juntas explican el <span class="math inline">\(86.40\%\)</span> de la varianza muestral total.</p></li>
+<li><p>Por lo tanto, la variación muestral puede ser resumida adecuadamente por medio de las dos primeras componentes principales.</p></li>
+<li><p>Dados los coeficientes de las componentes principales, la primera CP parece ser esencialmente un promedio ponderado de las primeras cuatro variables.</p></li>
+<li><p>La segunda CP parece contrastar los servicios de empleos en salud (<span class="math inline">\(X_4\)</span>) con un promedio ponderado de la mediana de los años de escolaridad (<span class="math inline">\(X_2\)</span>) y la mediana del valor de la casa (<span class="math inline">\(X_5\)</span>).</p></li>
+<li><p>En la interpretación de las CPs se deben tener en cuenta tanto los coeficientes <span class="math inline">\(\hat{e}_{ik}\)</span> ( cantidad=<span class="math inline">\(\sqrt{\lambda_s}\times loadings=\cos(\theta)\)</span>) de las componentes como las correlaciones <span class="math inline">\(r_{\hat{y}_i,x_k}\)</span> (calidad=<span class="math inline">\(\cos (\theta)=\rho_{y_i,x_k}\)</span>).</p></li>
+<li><p>Las correlaciones <span class="math inline">\(r_{\hat{y}_i,x_k}\)</span> (<span class="math inline">\(\cos(\theta)\)</span>), permiten analizar la importancia (o significancia o calidad) de las variables aunque tengan diferentes varianzas (longiltudes<span class="math inline">\(\approx\)</span> var). Sin embargo, éstas correlaciones miden solamente la importancia de una sola variable <span class="math inline">\(X_j\)</span> sin tener en cuenta las otras variables presentes en la formación de la componente.</p></li>
+</ul>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="componentes-principales-muestrales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cómo-elegir-el-número-de-componentes-principales.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

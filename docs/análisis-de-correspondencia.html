@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10.10 Análisis de Correspondencia | Chapter 10</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10.10 Análisis de Correspondencia | Chapter 10" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10.10 Análisis de Correspondencia | Chapter 10" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="escalamiento-multidimensional.html"/>
+<link rel="next" href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/kePrint/kePrint.js"></script>
+<link href="libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="descripción.html"><a href="descripción.html"><i class="fa fa-check"></i>Descripción</a></li>
+<li class="chapter" data-level="" data-path="acerca-del-autor.html"><a href="acerca-del-autor.html"><i class="fa fa-check"></i>Acerca del Autor</a></li>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep-al.html"><a href="rep-al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="acb-al.html"><a href="acb-al.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="acb-al.html"><a href="acb-al.html#matrices"><i class="fa fa-check"></i><b>1.1.1</b> Matrices</a></li>
+<li class="chapter" data-level="1.1.2" data-path="acb-al.html"><a href="acb-al.html#vectores"><i class="fa fa-check"></i><b>1.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="1.1.3" data-path="acb-al.html"><a href="acb-al.html#operaciones-matrices"><i class="fa fa-check"></i><b>1.1.3</b> Operaciones Matriciales</a></li>
+<li class="chapter" data-level="1.1.4" data-path="acb-al.html"><a href="acb-al.html#matrices-especiales"><i class="fa fa-check"></i><b>1.1.4</b> Matrices Especiales</a></li>
+<li class="chapter" data-level="1.1.5" data-path="acb-al.html"><a href="acb-al.html#descomp-espectral"><i class="fa fa-check"></i><b>1.1.5</b> Descomposición Espectral de una Matriz (eigen-descomposición)</a></li>
+<li class="chapter" data-level="1.1.6" data-path="acb-al.html"><a href="acb-al.html#diagonalización-de-una-matriz"><i class="fa fa-check"></i><b>1.1.6</b> Diagonalización de una Matriz</a></li>
+<li class="chapter" data-level="1.1.7" data-path="acb-al.html"><a href="acb-al.html#diagonalización-ortogonal"><i class="fa fa-check"></i><b>1.1.7</b> Diagonalización Ortogonal</a></li>
+<li class="chapter" data-level="1.1.8" data-path="acb-al.html"><a href="acb-al.html#diagonalizacion-inversa"><i class="fa fa-check"></i><b>1.1.8</b> Diagonalización de la Inversa de una Matriz</a></li>
+<li class="chapter" data-level="1.1.9" data-path="acb-al.html"><a href="acb-al.html#diagonalización-de-la-matriz-raíz-cuadrada"><i class="fa fa-check"></i><b>1.1.9</b> Diagonalización de la Matriz Raíz Cuadrada</a></li>
+<li class="chapter" data-level="1.1.10" data-path="acb-al.html"><a href="acb-al.html#traza-determinante-y-rango-de-una-matriz"><i class="fa fa-check"></i><b>1.1.10</b> Traza, Determinante y Rango de una Matriz</a></li>
+<li class="chapter" data-level="1.1.11" data-path="acb-al.html"><a href="acb-al.html#formas-cuadraticas"><i class="fa fa-check"></i><b>1.1.11</b> Formas Cuadráticas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="algunas-propiedades-estadísticas-de-la-descomposición-de-una-matriz-en-valores-y-vectores-propios.html"><a href="algunas-propiedades-estadísticas-de-la-descomposición-de-una-matriz-en-valores-y-vectores-propios.html"><i class="fa fa-check"></i><b>1.2</b> Algunas Propiedades Estadísticas de la Descomposición de una Matriz en Valores y Vectores Propios</a></li>
+<li class="chapter" data-level="1.3" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.3</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinemathbfx"><i class="fa fa-check"></i><b>1.3.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{\mathbf{x}})\)</span>:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>2</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html"><i class="fa fa-check"></i><b>2.1</b> Resumenes Descriptivos</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#matriz-de-datos"><i class="fa fa-check"></i><b>2.1.1</b> Matriz de Datos</a></li>
+<li class="chapter" data-level="2.1.2" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#estadísticos-descriptivos"><i class="fa fa-check"></i><b>2.1.2</b> Estadísticos descriptivos</a></li>
+<li class="chapter" data-level="2.1.3" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#algunas-notaciones"><i class="fa fa-check"></i><b>2.1.3</b> Algunas Notaciones</a></li>
+<li class="chapter" data-level="2.1.4" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#representación-gráfica-de-observaciones-multivariadas"><i class="fa fa-check"></i><b>2.1.4</b> Representación Gráfica de Observaciones multivariadas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectores-y-matrices-aleatorias.html"><a href="vectores-y-matrices-aleatorias.html"><i class="fa fa-check"></i><b>2.2</b> Vectores y Matrices Aleatorias</a></li>
+<li class="chapter" data-level="2.3" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>2.3</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>2.3.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="2.3.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>2.3.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.4</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.5" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>2.5</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>2.5.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="2.5.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>2.5.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>2.6</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="2.7" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.7</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.8" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>2.8</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.8.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.8.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.8.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.8.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>2.8.3</b> Varianza Generalizada Determinada por la Matriz de Correlación Muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="2.8.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>2.8.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="varianza-total-muestral.html"><a href="varianza-total-muestral.html"><i class="fa fa-check"></i><b>2.9</b> Varianza Total Muestral</a></li>
+<li class="chapter" data-level="2.10" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>2.10</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="2.11" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>2.11</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="distancias.html"><a href="distancias.html#dist_euclidea"><i class="fa fa-check"></i><b>2.11.1</b> Definición de Algunas Distancias</a></li>
+<li class="chapter" data-level="2.11.2" data-path="distancias.html"><a href="distancias.html#relación-de-la-distancia-de-mahalanobis-con-la-distribución-chi-cuadrado"><i class="fa fa-check"></i><b>2.11.2</b> Relación de la Distancia de Mahalanobis con la Distribución chi-Cuadrado</a></li>
+<li class="chapter" data-level="2.11.3" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>2.11.3</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>3</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>3.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="3.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>3.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="3.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>3.3</b> Normal Multivariada</a></li>
+<li class="chapter" data-level="3.4" data-path="algunos-aspectos-geométricos-de-la-nm.html"><a href="algunos-aspectos-geométricos-de-la-nm.html"><i class="fa fa-check"></i><b>3.4</b> Algunos Aspectos Geométricos de la NM</a></li>
+<li class="chapter" data-level="3.5" data-path="prop-nm.html"><a href="prop-nm.html"><i class="fa fa-check"></i><b>3.5</b> Propiedades de la distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="prop-nm.html"><a href="prop-nm.html#prop1"><i class="fa fa-check"></i><b>3.5.1</b> <strong>Propiedad-1:</strong></a></li>
+<li class="chapter" data-level="3.5.2" data-path="prop-nm.html"><a href="prop-nm.html#prop2"><i class="fa fa-check"></i><b>3.5.2</b> <strong>Propiedad-2:</strong></a></li>
+<li class="chapter" data-level="3.5.3" data-path="prop-nm.html"><a href="prop-nm.html#prop3"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Propiedad-3:</strong></a></li>
+<li class="chapter" data-level="3.5.4" data-path="prop-nm.html"><a href="prop-nm.html#prop4"><i class="fa fa-check"></i><b>3.5.4</b> <strong>Propiedad-4:</strong></a></li>
+<li class="chapter" data-level="3.5.5" data-path="prop-nm.html"><a href="prop-nm.html#prop5"><i class="fa fa-check"></i><b>3.5.5</b> <strong>Propiedad-5:</strong></a></li>
+<li class="chapter" data-level="3.5.6" data-path="prop-nm.html"><a href="prop-nm.html#prop6"><i class="fa fa-check"></i><b>3.5.6</b> <strong>Propiedad-6:</strong></a></li>
+<li class="chapter" data-level="3.5.7" data-path="prop-nm.html"><a href="prop-nm.html#prop7"><i class="fa fa-check"></i><b>3.5.7</b> <strong>Propiedad-7:</strong></a></li>
+<li class="chapter" data-level="3.5.8" data-path="prop-nm.html"><a href="prop-nm.html#prop8"><i class="fa fa-check"></i><b>3.5.8</b> <strong>Propiedad-8:</strong></a></li>
+<li class="chapter" data-level="3.5.9" data-path="prop-nm.html"><a href="prop-nm.html#prop9"><i class="fa fa-check"></i><b>3.5.9</b> <strong>Propiedad-9:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.6</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>3.6.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="3.6.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>3.6.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>3.7</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="3.8" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.8</b> Transformaciones para Acercar a la Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>3.8.1</b> Familia de Transformaciones de Potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="3.8.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>3.8.2</b> Transformaciones para el Caso Multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>3.9</b> Muestra Aleatoria Normal <span class="math inline">\(p\)</span>-Variada</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>3.9.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="3.9.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>3.9.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="3.9.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>3.9.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para Tamaños Muestrales Grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>4.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="4.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><i class="fa fa-check"></i><b>4.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>4.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>4.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>4.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>4.4</b> PH Acerca de Contrastes del Vector de Medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#ph-de-contrastes-para-el-caso-de-pnm"><i class="fa fa-check"></i><b>4.4.1</b> PH de Contrastes para el Caso de PNM</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#ph-de-contrastes-en-en-caso-de-n-grande"><i class="fa fa-check"></i><b>4.4.2</b> PH de Contrastes en en caso de <span class="math inline">\(n\)</span>-Grande</a></li>
+<li class="chapter" data-level="4.4.3" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#prueba-de-hipótesis-para-igualdad-de-medias"><i class="fa fa-check"></i><b>4.4.3</b> Prueba de hipótesis para igualdad de medias</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><i class="fa fa-check"></i><b>4.5</b> PH para Igualdad de Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}=\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-1.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-conocida"><i class="fa fa-check"></i><b>4.5.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.5.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-2.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-desconocida"><i class="fa fa-check"></i><b>4.5.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.5.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-3.-mathbfsigma_-underlinemathbfxneq-mathbfsigma_-underlinemathbfy-desconocida"><i class="fa fa-check"></i><b>4.5.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}\neq \mathbf{\Sigma}_{\ \underline{\mathbf{y}}}\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><i class="fa fa-check"></i><b>4.6</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-1.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-conocida-1"><i class="fa fa-check"></i><b>4.6.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.6.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-2.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>4.6.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.6.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-3.-mathbfsigma_-underlinemathbfx-neq-mathbfsigma_-underlinemathbfy-desconocidas"><i class="fa fa-check"></i><b>4.6.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}} \neq \mathbf{\Sigma}_{\ \underline{\mathbf{y}}}\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><i class="fa fa-check"></i><b>4.7</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span>,      Observaciones Pareadas</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#caso-univariado"><i class="fa fa-check"></i><b>4.7.1</b> Caso Univariado</a></li>
+<li class="chapter" data-level="4.7.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#caso-multivariado"><i class="fa fa-check"></i><b>4.7.2</b> Caso Multivariado</a></li>
+<li class="chapter" data-level="4.7.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#uso-de-contrastes-para-la-comparación-de-medias-en-muestras-pareadas"><i class="fa fa-check"></i><b>4.7.3</b> Uso de Contrastes para la Comparación de Medias en Muestras Pareadas</a></li>
+<li class="chapter" data-level="4.7.4" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#un-diseño-de-medidas-repetidas-para-comparar-tratamientos"><i class="fa fa-check"></i><b>4.7.4</b> Un Diseño de Medidas Repetidas para Comparar Tratamientos</a></li>
+<li class="chapter" data-level="4.7.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#análisis-de-perfiles"><i class="fa fa-check"></i><b>4.7.5</b> Análisis de Perfiles</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html"><i class="fa fa-check"></i><b>4.8</b> Inferencia para la Matriz de Varianzas Covarianza</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#prueva-de-rv-sigma"><i class="fa fa-check"></i><b>4.8.1</b> Pruba de Razón de Verosimilitud</a></li>
+<li class="chapter" data-level="4.8.2" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#prueba-de-bartlet"><i class="fa fa-check"></i><b>4.8.2</b> Prueba de Bartlet</a></li>
+<li class="chapter" data-level="4.8.3" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#dos-o-más-matrices-de-varianzas-covarianzas"><i class="fa fa-check"></i><b>4.8.3</b> Dos o más Matrices de Varianzas Covarianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><i class="fa fa-check"></i><b>4.9</b> Regiones de Confianza y Comparaciones Simultáneas entre las Componentes del Vector de Medias <span class="math inline">\(\underline{\boldsymbol \mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#construcción-de-una-región-de-confianza-para-underlineboldsymbol-mu-cuando-la-población-tiene-distribución-n_punderlineboldsymbol-mumathbfsigma-con-underlineboldsymbol-mu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>4.9.1</b> Construcción de una Región de Confianza para <span class="math inline">\(\underline{\boldsymbol \mu}\)</span> Cuando la Población tiene Distribución <span class="math inline">\(N_p(\underline{\boldsymbol \mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\boldsymbol \mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="4.9.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#región-de-confianza-para-el-caso-de-p2-elipse-de-confianza"><i class="fa fa-check"></i><b>4.9.2</b> Región de Confianza para el Caso de <span class="math inline">\(p=2\)</span> (Elipse de Confianza)</a></li>
+<li class="chapter" data-level="4.9.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlineboldsymbol-mu"><i class="fa fa-check"></i><b>4.9.3</b> Intervalos de Confianza Simultáneos para las Componentes del Vector de Medias <span class="math inline">\(\underline{\boldsymbol \mu}\)</span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#ic-t2-simultáneos-para-diferencias-de-medias"><i class="fa fa-check"></i><b>4.9.4</b> IC <span class="math inline">\(T^2\)</span> Simultáneos para Diferencias de Medias</a></li>
+<li class="chapter" data-level="4.9.5" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#IC-Bonferroni"><i class="fa fa-check"></i><b>4.9.5</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+<li class="chapter" data-level="4.9.6" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#intervalos-de-confianza-simultáneos-chi2-caso-n-grande"><i class="fa fa-check"></i><b>4.9.6</b> Intervalos de Confianza Simultáneos <span class="math inline">\(\chi^2\)</span> (caso n-Grande)</a></li>
+<li class="chapter" data-level="4.9.7" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#ic-simultáneos-para-n-grande-usando-la-normal-estándar-z_alpha"><i class="fa fa-check"></i><b>4.9.7</b> IC Simultáneos para n-Grande Usando la Normal Estándar <span class="math inline">\(Z_\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mrlm.html"><a href="mrlm.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regresión Lineal Multivariados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="rlm.html"><a href="rlm.html"><i class="fa fa-check"></i><b>5.2</b> Modelo de Regresión Lineal Múltiple (RLM)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rlm.html"><a href="rlm.html#estimación-de-mínimos-cuadrados"><i class="fa fa-check"></i><b>5.2.1</b> Estimación de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rlm.html"><a href="rlm.html#inferencias-acerca-del-modelo-de-regresión-lineal-múltiple"><i class="fa fa-check"></i><b>5.2.2</b> Inferencias Acerca del Modelo de Regresión Lineal Múltiple</a></li>
+<li class="chapter" data-level="5.2.3" data-path="rlm.html"><a href="rlm.html#inferencias-a-partir-de-la-función-de-regresión-estimada"><i class="fa fa-check"></i><b>5.2.3</b> Inferencias A partir de la Función de Regresión Estimada</a></li>
+<li class="chapter" data-level="5.2.4" data-path="rlm.html"><a href="rlm.html#validación-de-los-supuestos-del-modelo-y-otros-aspectos-del-la-regresión"><i class="fa fa-check"></i><b>5.2.4</b> Validación de los Supuestos del Modelo y Otros Aspectos del la Regresión</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mrl-multiv.html"><a href="mrl-multiv.html"><i class="fa fa-check"></i><b>5.3</b> Modelo de Regresión Lineal Multivariado (RL-Multivariado)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="mrl-multiv.html"><a href="mrl-multiv.html#algunas-notaciones-1"><i class="fa fa-check"></i><b>5.3.1</b> Algunas Notaciones</a></li>
+<li class="chapter" data-level="5.3.2" data-path="mrl-multiv.html"><a href="mrl-multiv.html#mrl-multivariado-en-forma-matricial"><i class="fa fa-check"></i><b>5.3.2</b> MRL-Multivariado en forma Matricial</a></li>
+<li class="chapter" data-level="5.3.3" data-path="mrl-multiv.html"><a href="mrl-multiv.html#m-mrl-múltiples"><i class="fa fa-check"></i><b>5.3.3</b> <span class="math inline">\(m\)</span>-MRL-Múltiples</a></li>
+<li class="chapter" data-level="5.3.4" data-path="mrl-multiv.html"><a href="mrl-multiv.html#estimador-de-mínimos-cuadrados-de-los-parámetros"><i class="fa fa-check"></i><b>5.3.4</b> Estimador de Mínimos Cuadrados de los Parámetros</a></li>
+<li class="chapter" data-level="5.3.5" data-path="mrl-multiv.html"><a href="mrl-multiv.html#propiedades-de-estimadores-de-mínimos-cuadrados-del-mrl-multivariado"><i class="fa fa-check"></i><b>5.3.5</b> Propiedades de Estimadores de Mínimos Cuadrados del MRL-Multivariado</a></li>
+<li class="chapter" data-level="5.3.6" data-path="mrl-multiv.html"><a href="mrl-multiv.html#prv-mrl-multivariado"><i class="fa fa-check"></i><b>5.3.6</b> Prueba de Razón de Verosimilitud para Parámetros de Regresión en MRL-Multivariados</a></li>
+<li class="chapter" data-level="5.3.7" data-path="mrl-multiv.html"><a href="mrl-multiv.html#otras-pruebas-estadísticas-multivariadas"><i class="fa fa-check"></i><b>5.3.7</b> Otras Pruebas Estadísticas Multivariadas</a></li>
+<li class="chapter" data-level="5.3.8" data-path="mrl-multiv.html"><a href="mrl-multiv.html#predicciones-a-partir-de-un-modelo-de-regresión-múltiple-multivariado"><i class="fa fa-check"></i><b>5.3.8</b> Predicciones A Partir de un Modelo de Regresión Múltiple Multivariado</a></li>
+<li class="chapter" data-level="5.3.9" data-path="mrl-multiv.html"><a href="mrl-multiv.html#el-concepto-de-regresión-lineal"><i class="fa fa-check"></i><b>5.3.9</b> El Concepto de Regresión Lineal</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>6</b> Análisis de Componentes Principales (ACP)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="interpretaciones-geométricas-y-algebraícas-del-acp.html"><a href="interpretaciones-geométricas-y-algebraícas-del-acp.html"><i class="fa fa-check"></i><b>6.2</b> Interpretaciones Geométricas y Algebraícas del ACP</a></li>
+<li class="chapter" data-level="6.3" data-path="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple-p2.html"><a href="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple-p2.html"><i class="fa fa-check"></i><b>6.3</b> Interpretación Geométrica del ACP Mediante un Ejemplo Simple <span class="math inline">\(p=2\)</span></a></li>
+<li class="chapter" data-level="6.4" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html"><i class="fa fa-check"></i><b>6.4</b> Mas de dos Ejes</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#min-cuadrados"><i class="fa fa-check"></i><b>6.4.1</b> Ajuste de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="6.4.2" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#relación-entre-los-sub-espacios-de-mathbbrp-y-de-mathbbrn"><i class="fa fa-check"></i><b>6.4.2</b> Relación entre los Sub-espacios de <span class="math inline">\(\mathbb{R}^p\)</span> y de <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="componentes-principales-en-análisis-de-regresión.html"><a href="componentes-principales-en-análisis-de-regresión.html"><i class="fa fa-check"></i><b>6.5</b> Componentes Principales en Análisis de Regresión</a></li>
+<li class="chapter" data-level="6.6" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>6.6</b> Componentes Principales Poblacionales</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#definicón-de-las-cps-poblacionales"><i class="fa fa-check"></i><b>6.6.1</b> Definicón de las CPs Poblacionales</a></li>
+<li class="chapter" data-level="6.6.2" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#determinación-de-las-cps-poblacionales"><i class="fa fa-check"></i><b>6.6.2</b> Determinación de las CPs Poblacionales</a></li>
+<li class="chapter" data-level="6.6.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>6.6.3</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="6.6.4" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>6.6.4</b> Componentes Principales usando Variables Estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><i class="fa fa-check"></i><b>6.7</b> Componentes Principales para Matrices de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span> con Estructuras Especiales</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-no-correlacionadas"><i class="fa fa-check"></i><b>6.7.1</b> Variables No-Correlacionadas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#var-correlacionadas"><i class="fa fa-check"></i><b>6.7.2</b> Variables Altamente Correlacionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.8</b> Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.9" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html"><i class="fa fa-check"></i><b>6.9</b> Algunos Ejemplos de ACP</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo1"><i class="fa fa-check"></i><b>6.9.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="6.9.2" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo-2"><i class="fa fa-check"></i><b>6.9.2</b> Ejemplo-2</a></li>
+<li class="chapter" data-level="6.9.3" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo-3"><i class="fa fa-check"></i><b>6.9.3</b> Ejemplo-3</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>6.10</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="6.11" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.11</b> Interpretación de las Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.12" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.12</b> Estandarización de las Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.13" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>6.13</b> Gráficas en un Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="6.13.1" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html#graficos-de-las-cps"><i class="fa fa-check"></i><b>6.13.1</b> Graficos de las CPS</a></li>
+<li class="chapter" data-level="6.13.2" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>6.13.2</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="6.14" data-path="propiedades-de-hatlambda_i-y-underlinehatmathbfe_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehatmathbfe_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>6.14</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{\mathbf{e}}}_i\)</span> en Muestras Grandes</a></li>
+<li class="chapter" data-level="6.15" data-path="prueba-de-hipótesis-para-estructura-de-correlación-igual.html"><a href="prueba-de-hipótesis-para-estructura-de-correlación-igual.html"><i class="fa fa-check"></i><b>6.15</b> Prueba de Hipótesis para Estructura de Correlación Igual</a></li>
+<li class="chapter" data-level="6.16" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html"><i class="fa fa-check"></i><b>6.16</b> Ejemplos Finales</a>
+<ul>
+<li class="chapter" data-level="6.16.1" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-1"><i class="fa fa-check"></i><b>6.16.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="6.16.2" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-acp-con-individuos-y-variables-suplementarias"><i class="fa fa-check"></i><b>6.16.2</b> Ejemplo ACP con Individuos y Variables Suplementarias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="affc.html"><a href="affc.html"><i class="fa fa-check"></i><b>7</b> Análisis Factorial de Factores Comunes</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="tipos-de-factores.html"><a href="tipos-de-factores.html"><i class="fa fa-check"></i><b>7.2</b> Tipos de Factores</a></li>
+<li class="chapter" data-level="7.3" data-path="motivación-del-análisis-factorial.html"><a href="motivación-del-análisis-factorial.html"><i class="fa fa-check"></i><b>7.3</b> Motivación del Análisis Factorial</a></li>
+<li class="chapter" data-level="7.4" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html"><i class="fa fa-check"></i><b>7.4</b> Enfoques del AF</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#métodos-para-realizar-la-extracción-de-los-factores"><i class="fa fa-check"></i><b>7.4.1</b> Métodos para realizar la extracción de los factores</a></li>
+<li class="chapter" data-level="7.4.2" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#rotación-de-ejes"><i class="fa fa-check"></i><b>7.4.2</b> Rotación de Ejes</a></li>
+<li class="chapter" data-level="7.4.3" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#puntuaciones-o-scores-de-los-sujetos-en-los-factores-extraídos"><i class="fa fa-check"></i><b>7.4.3</b> Puntuaciones o Scores de los Sujetos en los Factores Extraídos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html"><i class="fa fa-check"></i><b>7.5</b> El Modelo de Factor Ortogonal</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html#estructura-de-covarianzas-del-modelo-de-factor-ortogonal"><i class="fa fa-check"></i><b>7.5.1</b> Estructura de Covarianzas del Modelo de Factor Ortogonal</a></li>
+<li class="chapter" data-level="7.5.2" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html#ejemplos"><i class="fa fa-check"></i><b>7.5.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html"><i class="fa fa-check"></i><b>7.6</b> Métodos de Estimación</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-cp"><i class="fa fa-check"></i><b>7.6.1</b> El Método de la Componente Principal</a></li>
+<li class="chapter" data-level="7.6.2" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-pa"><i class="fa fa-check"></i><b>7.6.2</b> Una Aproximación Modificada (La Solución del Factor Principal o de las CP-Iteradas o de Ejes Principales-PA)</a></li>
+<li class="chapter" data-level="7.6.3" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-mle"><i class="fa fa-check"></i><b>7.6.3</b> El Método de Máxima Verosimilitud</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="prueba-para-el-número-de-factores-muestra-grande..html"><a href="prueba-para-el-número-de-factores-muestra-grande..html"><i class="fa fa-check"></i><b>7.7</b> Prueba para el Número de Factores (Muestra Grande).</a></li>
+<li class="chapter" data-level="7.8" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html"><i class="fa fa-check"></i><b>7.8</b> Rotación de Factores</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#rotaciones-cuando-m2-factores"><i class="fa fa-check"></i><b>7.8.1</b> Rotaciones cuando <span class="math inline">\(m=2\)</span>-Factores</a></li>
+<li class="chapter" data-level="7.8.2" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#criterio-varimáx"><i class="fa fa-check"></i><b>7.8.2</b> Criterio Varimáx:</a></li>
+<li class="chapter" data-level="7.8.3" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#rotaciones-oblicuas"><i class="fa fa-check"></i><b>7.8.3</b> Rotaciones Oblicuas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html"><i class="fa fa-check"></i><b>7.9</b> Factores-Scores (o Puntuaciones) de los Factores</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html#método-de-los-mínimos-cuadrados-ponderados"><i class="fa fa-check"></i><b>7.9.1</b> Método de los Mínimos Cuadrados Ponderados</a></li>
+<li class="chapter" data-level="7.9.2" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html#el-método-de-la-regresión"><i class="fa fa-check"></i><b>7.9.2</b> El Método de la Regresión</a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="perspectivas-y-estrategías-para-el-análisis-de-factor.html"><a href="perspectivas-y-estrategías-para-el-análisis-de-factor.html"><i class="fa fa-check"></i><b>7.10</b> Perspectivas y Estrategías para el Análisis de Factor</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="avm.html"><a href="avm.html"><i class="fa fa-check"></i><b>8</b> Análisis de Varianza Multivariado (MANOVA)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i><b>8.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="introducción-5.html"><a href="introducción-5.html#suposiciones-del-manova"><i class="fa fa-check"></i><b>8.1.1</b> Suposiciones del MANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>8.2</b> Análisis de Varianza Univariado (ANOVA)</a></li>
+<li class="chapter" data-level="8.3" data-path="manova.html"><a href="manova.html"><i class="fa fa-check"></i><b>8.3</b> Análisis de Varianza Multivariado (MANOVA)</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="manova.html"><a href="manova.html#modelo-manova-para-comparar-g-vectores-de-medias-poblacionales"><i class="fa fa-check"></i><b>8.3.1</b> Modelo MANOVA para comparar <span class="math inline">\(g\)</span>-Vectores de Medias Poblacionales</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="adiscriminante.html"><a href="adiscriminante.html"><i class="fa fa-check"></i><b>9</b> Análisis Discriminante y Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="introducción-6.html"><a href="introducción-6.html"><i class="fa fa-check"></i><b>9.1</b> Introducción</a></li>
+<li class="chapter" data-level="9.2" data-path="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><a href="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.2</b> Separación y Clasificación para el caso de dos poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><a href="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html#clasificación-de-dos-poblaciones"><i class="fa fa-check"></i><b>9.2.1</b> Clasificación de dos Poblaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.3</b> Regla de Discriminación para dos Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#costo-esperado-de-mal-clasificación"><i class="fa fa-check"></i><b>9.3.1</b> Costo Esperado de Mal Clasificación</a></li>
+<li class="chapter" data-level="9.3.2" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#probabilidad-total-de-mal-clasificación"><i class="fa fa-check"></i><b>9.3.2</b> Probabilidad Total de Mal Clasificación</a></li>
+<li class="chapter" data-level="9.3.3" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#regla-de-clasificación-de-bayes"><i class="fa fa-check"></i><b>9.3.3</b> Regla de Clasificación de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html"><i class="fa fa-check"></i><b>9.4</b> Clasificación con Dos Poblaciones Normales Multivariadas</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html#clasificación-con-dos-poblaciones-normales-donde-mathbfsigma_1mathbfsigma_2mathbfsigma"><i class="fa fa-check"></i><b>9.4.1</b> Clasificación con dos Poblaciones Normales donde <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span></a></li>
+<li class="chapter" data-level="9.4.2" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html#clasificación-con-dos-poblaciones-normales-donde-mathbfsigma_1neq-mathbfsigma_2"><i class="fa fa-check"></i><b>9.4.2</b> Clasificación con dos Poblaciones Normales donde <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html"><i class="fa fa-check"></i><b>9.5</b> Evaluación de las Funciones de Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-óptimo-teo"><i class="fa fa-check"></i><b>9.5.1</b> Tasa de Error Óptimo (TEO)</a></li>
+<li class="chapter" data-level="9.5.2" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-actual"><i class="fa fa-check"></i><b>9.5.2</b> Tasa de Error Actual</a></li>
+<li class="chapter" data-level="9.5.3" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-aparente-teap"><i class="fa fa-check"></i><b>9.5.3</b> Tasa de Error Aparente (TEAP)</a></li>
+<li class="chapter" data-level="9.5.4" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-actual-esperada"><i class="fa fa-check"></i><b>9.5.4</b> Tasa de Error Actual Esperada</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><a href="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.6</b> Clasificación con Varias Poblaciones (Es decir Más de dos Poblaciones)</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><a href="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html#costo-esperado-de-mal-clasificación-ecm"><i class="fa fa-check"></i><b>9.6.1</b> Costo Esperado de Mal Clasificación (ECM)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.7</b> Clasificación con Poblaciones Normales y más de dos Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#un-clasificador-equivalente-para-el-caso-de-matrices-de-var-cov-iguales"><i class="fa fa-check"></i><b>9.7.1</b> Un Clasificador Equivalente para el Caso de Matrices de Var-Cov Iguales</a></li>
+<li class="chapter" data-level="9.7.2" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#comparación-dos-a-dos-de-los-scores-de-la-función-de-clasificación-lineal"><i class="fa fa-check"></i><b>9.7.2</b> Comparación Dos a Dos de los Scores de la Función de Clasificación Lineal</a></li>
+<li class="chapter" data-level="9.7.3" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#tasa-de-error-actual-esperada-aer-estimada"><i class="fa fa-check"></i><b>9.7.3</b> Tasa de Error Actual Esperada (AER) Estimada</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><i class="fa fa-check"></i><b>9.8</b> Método de Fisher Para Discriminar Entre Varias Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#uso-de-la-función-de-discriminación-de-fisher-para-clasificación"><i class="fa fa-check"></i><b>9.8.1</b> Uso de la Función de Discriminación de Fisher Para Clasificación</a></li>
+<li class="chapter" data-level="9.8.2" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#relación-entre-la-regla-de-clasificación-de-fisher-y-las-funciones-de-discriminación-de-la-teoría-normal"><i class="fa fa-check"></i><b>9.8.2</b> Relación entre la Regla de Clasificación de Fisher y las Funciones de Discriminación de la Teoría Normal</a></li>
+<li class="chapter" data-level="9.8.3" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#regla-de-clasificación-de-fisher-basado-en-discriminantes-muestrales"><i class="fa fa-check"></i><b>9.8.3</b> Regla de Clasificación de Fisher Basado en Discriminantes Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html"><i class="fa fa-check"></i><b>9.9</b> Regresión Logística y Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#el-modelo-logit"><i class="fa fa-check"></i><b>9.9.1</b> El Modelo Logit</a></li>
+<li class="chapter" data-level="9.9.2" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#análisis-de-regresión-logística"><i class="fa fa-check"></i><b>9.9.2</b> Análisis de Regresión Logística</a></li>
+<li class="chapter" data-level="9.9.3" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#regresión-logística-con-respuestas-binomiales"><i class="fa fa-check"></i><b>9.9.3</b> Regresión Logística con Respuestas Binomiales</a></li>
+<li class="chapter" data-level="9.9.4" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#chequeo-del-modelo"><i class="fa fa-check"></i><b>9.9.4</b> Chequeo del Modelo</a></li>
+<li class="chapter" data-level="9.9.5" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#prueba-de-residuales-y-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>9.9.5</b> Prueba de Residuales y de Bondad de Ajuste</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="acluster.html"><a href="acluster.html"><i class="fa fa-check"></i><b>10</b> Análisis de Agrupamiento o Cluster</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="introducción-7.html"><a href="introducción-7.html"><i class="fa fa-check"></i><b>10.1</b> Introducción</a></li>
+<li class="chapter" data-level="10.2" data-path="consideraciones-iniciales.html"><a href="consideraciones-iniciales.html"><i class="fa fa-check"></i><b>10.2</b> Consideraciones Iniciales</a></li>
+<li class="chapter" data-level="10.3" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html"><i class="fa fa-check"></i><b>10.3</b> Medidas de Similaridad entre Pares de Observaciones</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#medidas-de-distancia"><i class="fa fa-check"></i><b>10.3.1</b> Medidas de Distancia</a></li>
+<li class="chapter" data-level="10.3.2" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-de-correlación-entre-casos"><i class="fa fa-check"></i><b>10.3.2</b> Coeficientes de Correlación (entre casos)</a></li>
+<li class="chapter" data-level="10.3.3" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-binarios-de-asociación-o-similaridad-entre-observaciones"><i class="fa fa-check"></i><b>10.3.3</b> Coeficientes Binarios de Asociación o Similaridad Entre Observaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="medidas-de-similaridad-o-asociación-para-pares-de-variables.html"><a href="medidas-de-similaridad-o-asociación-para-pares-de-variables.html"><i class="fa fa-check"></i><b>10.4</b> Medidas de Similaridad o Asociación para Pares de Variables</a></li>
+<li class="chapter" data-level="10.5" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html"><i class="fa fa-check"></i><b>10.5</b> Métodos Jerárquicos de Agrupamiento</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html#métodos-jerarquicos-de-enlaces-para-agupamientos-aglomerativos"><i class="fa fa-check"></i><b>10.5.1</b> Métodos Jerarquicos de Enlaces para Agupamientos Aglomerativos</a></li>
+<li class="chapter" data-level="10.5.2" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html#métodos-jerarquicos-de-agrupamientos-desaglomerativos"><i class="fa fa-check"></i><b>10.5.2</b> Métodos Jerarquicos de Agrupamientos Desaglomerativos</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><i class="fa fa-check"></i><b>10.6</b> Métodos NO-Jerárquicos de Partición o Agrupamiento</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html#pasos-o-etapas-de-un-método-de-clasificación-no-jararquico"><i class="fa fa-check"></i><b>10.6.1</b> Pasos o etapas de un Método de Clasificación No-Jararquico</a></li>
+<li class="chapter" data-level="10.6.2" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html#método-de-las-k-medias-o-k-means"><i class="fa fa-check"></i><b>10.6.2</b> Método de las <span class="math inline">\(k\)</span>-Medias o <span class="math inline">\(k\)</span>-means</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="cómo-determinar-el-número-apropiado-de-conglomerados.html"><a href="cómo-determinar-el-número-apropiado-de-conglomerados.html"><i class="fa fa-check"></i><b>10.7</b> Cómo determinar el número apropiado de conglomerados?</a></li>
+<li class="chapter" data-level="10.8" data-path="agrupamientos-basados-en-modelos-estadísticos.html"><a href="agrupamientos-basados-en-modelos-estadísticos.html"><i class="fa fa-check"></i><b>10.8</b> Agrupamientos Basados en Modelos Estadísticos</a></li>
+<li class="chapter" data-level="10.9" data-path="escalamiento-multidimensional.html"><a href="escalamiento-multidimensional.html"><i class="fa fa-check"></i><b>10.9</b> Escalamiento Multidimensional</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="escalamiento-multidimensional.html"><a href="escalamiento-multidimensional.html#el-algoritmo-básico"><i class="fa fa-check"></i><b>10.9.1</b> El Algoritmo Básico</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html"><i class="fa fa-check"></i><b>10.10</b> Análisis de Correspondencia</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#desarrollo-algebraíco-del-análsisi-de-correspondencia"><i class="fa fa-check"></i><b>10.10.1</b> Desarrollo Algebraíco del Análsisi de Correspondencia</a></li>
+<li class="chapter" data-level="10.10.2" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#análisis-de-correspondencia-como-un-problema-de-mínimos-cuadrados-ponderado"><i class="fa fa-check"></i><b>10.10.2</b> Análisis de Correspondencia como un Problema de Mínimos Cuadrados Ponderado</a></li>
+<li class="chapter" data-level="10.10.3" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#análisis-de-correspondencia-medinate-el-método-de-aproximación-de-perfiles"><i class="fa fa-check"></i><b>10.10.3</b> Análisis de Correspondencia Medinate el Método de Aproximación de Perfiles</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><a href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><i class="fa fa-check"></i><b>10.11</b> Biplots para la Visualización de Unidades Muestrales y Variables</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><a href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html#construcción-de-un-biplot"><i class="fa fa-check"></i><b>10.11.1</b> Construcción de un Biplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 10</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="análisis-de-correspondencia" class="section level2 hasAnchor" number="10.10">
+<h2><span class="header-section-number">10.10</span> Análisis de Correspondencia<a href="análisis-de-correspondencia.html#análisis-de-correspondencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Desarrollado por los Franceses, <em>El Análisis de Correspondencia</em> es un procedimiento gráfico para representar las asociaciones de una tabla de frecuencias o conteos. Por ahora, nos enfocaremos sobre una tabla de frecuencias de dos vías o tabla de contingencia. Si la tabla de contingencia tiene <span class="math inline">\(I\)</span>-filas y <span class="math inline">\(J\)</span>-columnas, el gráfico producido por El Análisis de Correspondencia contiene dos conjuntos de puntos: (1) Un conjunto de puntos que corresponde a las filas y (2) Un conjunto de puntos que corresponde a las columnas. Las posiciones de dichos puntos reflejarán las posibles asociaciones.</p>
+<p>Los puntos fila que están más cercanos indican filas que tienen perfiles similares (es decir, con distribuciones condicionales) en las columnas. Similarmente, los puntos de columna que están más cercanos indican columnas con perfiles similares (es decir con distribuciones condicionales) a lo largo de las filas. Finalmente, los puntos fila que están cerca de los puntos columna representan las combinaciones que
+ocurren con más frecuencia de lo que se esperaría en un modelo de independencia, es decir, en un modelo en el que las categorías de filas no están relacionadas con las categorías de columnas.</p>
+<p>El resultado habitual de un Análisis de Correspondencia incluye la “mejor” representación bi-dimensional de los datos, junto con las coordenadas de los puntos del gráfico, y una medida de la cantidad de información (llamada inercia) retenida en cada dimensión.</p>
+<p>Antes de discutir brevemente el desarrollo algebraico del Análisis de Correspondencia, se ilustran las ideas introducidas con un ejemplo.</p>
+<div class="example">
+<p><span id="exm:ejemplo1-analisis-de-correspondencia" class="example"><strong>Ejemplo 10.23  (Ejemplo-1 Sobre Análisis de Correspondencia) </strong></span>La siguiente tabla muestra las distancias aéreas entre pares de ciudades de Estados Unidos.</p>
+</div>
+<p>La siguiente tabla contiene las frecuencias (o conteostos) de <span class="math inline">\(J=7\)</span>-tipos diferentes de cerámica (llamadas tiestos) encontradas en <span class="math inline">\(I=7\)</span>sitios arqueológicos en una área del suroeste americano. Si se dividen las frecuencias de cada fila (ie. de cada sitio arqueológico) por el total de la fila correspondiente, se obtiene un perfil de los distintos tipos de cerámica. Los perfiles de los distintos sitios arqueológicos (o filas) se muestran en un gráfico de barras en la figura xxxx. El ancho de las barras es proporcional a las frecuencias totales de las filas. En general, los perfiles son diferentes; sin embargo, los perfiles de los sitios <span class="math inline">\(P1\)</span> y <span class="math inline">\(P2\)</span> son similares, al igual que los perfiles de los sitios <span class="math inline">\(P4\)</span> y <span class="math inline">\(P5\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Frecuencia de Tipos de Cerámicas</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Tipos</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Sitios</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">P0</td>
+<td align="center">30</td>
+<td align="center">10</td>
+<td align="center">10</td>
+<td align="center">39</td>
+<td align="center">89</td>
+</tr>
+<tr class="even">
+<td align="center">P1</td>
+<td align="center">53</td>
+<td align="center">4</td>
+<td align="center">16</td>
+<td align="center">2</td>
+<td align="center">75</td>
+</tr>
+<tr class="odd">
+<td align="center">P2</td>
+<td align="center">73</td>
+<td align="center">1</td>
+<td align="center">41</td>
+<td align="center">1</td>
+<td align="center">116</td>
+</tr>
+<tr class="even">
+<td align="center">P3</td>
+<td align="center">20</td>
+<td align="center">6</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">31</td>
+</tr>
+<tr class="odd">
+<td align="center">P4</td>
+<td align="center">46</td>
+<td align="center">36</td>
+<td align="center">37</td>
+<td align="center">13</td>
+<td align="center">132</td>
+</tr>
+<tr class="even">
+<td align="center">P5</td>
+<td align="center">45</td>
+<td align="center">6</td>
+<td align="center">59</td>
+<td align="center">10</td>
+<td align="center">120</td>
+</tr>
+<tr class="odd">
+<td align="center">P6</td>
+<td align="center">16</td>
+<td align="center">28</td>
+<td align="center">169</td>
+<td align="center">5</td>
+<td align="center">218</td>
+</tr>
+<tr class="even">
+<td align="center">Total</td>
+<td align="center">30</td>
+<td align="center">10</td>
+<td align="center">10</td>
+<td align="center">39</td>
+<td align="center">89</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:grafico-acs"></span>
+<img src="bookdown-iam_files/figure-html/grafico-acs-1.png" alt="Gráfico Biplot del ACS" width="85%" />
+<p class="caption">
+Figura 10.1: Gráfico Biplot del ACS
+</p>
+</div>
+<p>El perfil del sitio arqueológico para los diferentes tipos de cerámica (o columnas) es se muestra en un gráfico de barras en la figura xxxx. Los perfiles del sitio se construyen utilizando los totales de las columnas. Las barras de la gráfica parecen ser bastante diferentes entre sí. Esto sugiere que los diferentes tipos de cerámica no están distribuidos sobre los sitios arqueológicos de la misma manera.</p>
+<p>La gráfica bidimensional a partir del Análisis de Correspondencia de los datos de tipo y sitio de cerámicas se muestran en la figura <a href="análisis-de-correspondencia.html#fig:grafico-acs">10.1</a>.</p>
+<p>El gráfico Biplot del ACS dado en <a href="análisis-de-correspondencia.html#fig:grafico-acs">10.1</a> indica, que por ejemplo, los sitios arqueológicos <span class="math inline">\(P1\)</span> y <span class="math inline">\(P2\)</span> tienen perfiles de tipos de cerámicas similares (los dos puntos están muy cerca uno del otro), los sitios <span class="math inline">\(P0\)</span> y <span class="math inline">\(P6\)</span> por el contrario, tienen perfiles de tipos de cerámicas muy diferentes (los dos puntos están alejados uno del otro). Los puntos individuales que representan a los tipos de cerámicas están dispersos, lo que indica que sus perfiles de sitios arqueológicos son totalmente diferentes. Estos hallasgos son consistentes con los perfiles graficados en la figura xxxx (grafico de barras).</p>
+<p>Observe que los puntos <span class="math inline">\(P0\)</span> y <span class="math inline">\(D\)</span> están bastante cercanos y separados del resto de puntos. Esto indica que la cerámica de tipo <span class="math inline">\(D\)</span> tiende a asociarse, casi exclusivamente, con sitio arquelógico <span class="math inline">\(P0\)</span>. De manera similar, la cerámica tipo <span class="math inline">\(A\)</span> tiende a asociarse con el sitio arqueológico <span class="math inline">\(P1\)</span>, y en menor grado, con los sitios arqueológicos <span class="math inline">\(P2\)</span> y <span class="math inline">\(P3\)</span>. La cerámica tipo <span class="math inline">\(B\)</span> está asociada con los sitios arquelógicos <span class="math inline">\(P4\)</span> y <span class="math inline">\(P5\)</span>, y la cerámica tipo <span class="math inline">\(C\)</span> tiende a asociarse, nuevamente, casi exclusivamente, con el sitio arquelógico <span class="math inline">\(P6\)</span>. Dado que los sitios arqueológicos representan diferentes períodos, estas asociaciones son de considerable interés para los arqueólogos.</p>
+<p>El número <span class="math inline">\(\lambda_1^2=0.28\)</span> al final del primer eje de coordenadas del gráfico bidimensional es la cantidad de <em>inercia</em> asociada con la primera dimensión, lo cual representa el <span class="math inline">\(55\%\)</span> del total de la inercia. La <em>inercia</em> asociada con la segunda dirección es <span class="math inline">\(\lambda_2^2=0.17\)</span> y representa el <span class="math inline">\(33\%\)</span> de la inercia total. Juntas, las dos dimensiones recogen el <span class="math inline">\(55\%+33\%=88\%\)</span> de la inercia total. Debido a que en este caso, los datos podrían se representados de manera exacta en 3-dimensiones (número de categorías menor-1, ie. 4-1=3), es relativamente poca la información (o variación) que se pierde al representar los datos en un gráfico bidimensional como el de la figura <a href="análisis-de-correspondencia.html#fig:grafico-acs">10.1</a>. Equivalentemente, este gráfico se puede considerar como la mejor representación bidimensional de la dispersión multidimensional de los puntos filas y de la dispersión multidimensional de los puntos columnas. La inercia combinada del <span class="math inline">\(88\%\)</span>-sugiere que la representación ajusta bien a los datos.</p>
+<p>En este ejemplo, el resultado gráfico del Análisis de Correspondencia muestra la naturaleza de las asociaciones en la tabla de contingencia con bastante claridad.</p>
+<div id="desarrollo-algebraíco-del-análsisi-de-correspondencia" class="section level3 hasAnchor" number="10.10.1">
+<h3><span class="header-section-number">10.10.1</span> Desarrollo Algebraíco del Análsisi de Correspondencia<a href="análisis-de-correspondencia.html#desarrollo-algebraíco-del-análsisi-de-correspondencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="tabla-de-fracuencias-absolutas-o-tabla-de-contingencia" class="section level4 hasAnchor" number="10.10.1.1">
+<h4><span class="header-section-number">10.10.1.1</span> Tabla de Fracuencias Absolutas o Tabla de Contingencia<a href="análisis-de-correspondencia.html#tabla-de-fracuencias-absolutas-o-tabla-de-contingencia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para empezar, sea <span class="math inline">\(\mathbf{X}\)</span>, con elementos <span class="math inline">\(x_{ij}\)</span>, una tabla de de frecuencias no escalada de doble entrada o tabla de contingencia o de conteo de tamaño <span class="math inline">\(I \times J\)</span>.
+<span class="math display" id="eq:tabla-de-contingencia-o-frecuencias-absolutas">\[
+\begin{equation}
+\underset{I\times J}{\mathbf{X}}=\begin{bmatrix} x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1j} &amp; \cdots &amp; x_{1J} \\
+x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2j} &amp; \cdots &amp; x_{2J} \\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\cdots&amp;\vdots \\
+x_{i1} &amp; x_{i2} &amp; \cdots &amp; x_{ij} &amp; \cdots &amp; x_{iJ} \\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\cdots&amp;\vdots \\
+x_{I1} &amp; x_{I2} &amp; \cdots &amp; x_{Ij} &amp; \cdots &amp; x_{IJ}\end{bmatrix}
+\end{equation}_{I\times J}
+\tag{10.9}
+\]</span></p>
+<p>o en su forma extendida con los totales por filas y columnas de las frecuencias absolutas (o totales marginales por filas y por columnas de las frecuencias absolutas) dada por:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Cat-1</th>
+<th align="center">Cat-2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-j</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-J</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cat-1</td>
+<td align="center"><span class="math inline">\(x_{11}\)</span></td>
+<td align="center"><span class="math inline">\(x_{12}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{1j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{1J}\)</span></td>
+<td align="center"><span class="math inline">\(x_{1.}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-2</td>
+<td align="center"><span class="math inline">\(x_{21}\)</span></td>
+<td align="center"><span class="math inline">\(x_{22}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{2j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{2J}\)</span></td>
+<td align="center"><span class="math inline">\(x_{2.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-i</td>
+<td align="center"><span class="math inline">\(x_{i1}\)</span></td>
+<td align="center"><span class="math inline">\(x_{i2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{ij}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{iJ}\)</span></td>
+<td align="center"><span class="math inline">\(x_{i.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-I</td>
+<td align="center"><span class="math inline">\(x_{I1}\)</span></td>
+<td align="center"><span class="math inline">\(x_{I2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{Ij}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{IJ}\)</span></td>
+<td align="center"><span class="math inline">\(x_{I.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center"><span class="math inline">\(x_{.1}\)</span></td>
+<td align="center"><span class="math inline">\(x_{.2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{.j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{.J}\)</span></td>
+<td align="center"><span class="math inline">\(x_{..}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>con
+<span class="math display">\[
+x_{i.}=\sum_{j=1}^J x_{ij} \ \ \ , \ \ \  \ x_{.j}=\sum_{i=1}^Ix _{ij} \ \ \ \ \ , \ \ \ \ \ x_{..}=\sum_{i=1}^I x_{i.}=\sum_{j=1}^J x_{.j}=\sum_{i=1}^I\sum_{j=1}^J x_{ij}=n
+\]</span></p>
+<p>En la discusión se toma <span class="math inline">\(I &gt; J\)</span> y se asume que <span class="math inline">\(\mathbf{X}\)</span> es de rango columna completo, es decir <span class="math inline">\(\mathbf{X}\)</span> de rango <span class="math inline">\(J\)</span>, <span class="math inline">\(Rango(\mathbf{X})=J\)</span>. Las filas y columnas de la tabla de contingencia <span class="math inline">\(\mathbf{X}\)</span>, corresponden a las diferentes categorías de dos variables o características diferentes. Como por ejemplo, la matriz de frecuencias de los diferentes tipos de cerámica en los diferentes sitios arqueológicos que se trató en la sección anterior, es una tabla de contingencia con <span class="math inline">\(I=7\)</span> sitios arqueológicos (filas o categorías de la variable-1) y <span class="math inline">\(J=4\)</span> tipos de cerámica (columnas o categorías de la variable-2).</p>
+</div>
+<div id="matriz-de-correspondencia-o-tabla-de-frecuencias-relativas" class="section level4 hasAnchor" number="10.10.1.2">
+<h4><span class="header-section-number">10.10.1.2</span> Matriz de Correspondencia o Tabla de Frecuencias Relativas<a href="análisis-de-correspondencia.html#matriz-de-correspondencia-o-tabla-de-frecuencias-relativas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Si <span class="math inline">\(n\)</span>-es el total de las frecuencias en la matriz de datos <span class="math inline">\(\mathbf{X}\)</span>, primero se construye una matriz de proporciones <span class="math inline">\(\mathbf{P}=[p_{ij}]\)</span>, dividiendo cada elemento de <span class="math inline">\(\mathbf{X}\)</span> por <span class="math inline">\(n\)</span> es decir,
+<span class="math display" id="eq:matriz-de-correspondencia">\[
+\begin{equation}
+\underset{I\times J}{\mathbf{P}}= \frac{1}{n} \underset{I\times J}{\mathbf{X}}=\begin{bmatrix} p_{11} &amp; p_{12} &amp; \cdots &amp; p_{1j} &amp; \cdots &amp; p_{1J} \\
+p_{21} &amp; p_{22} &amp; \cdots &amp; p_{2j} &amp; \cdots &amp; p_{2J} \\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\cdots&amp;\vdots \\
+p_{i1} &amp; p_{i2} &amp; \cdots &amp; p_{ij} &amp; \cdots &amp; p_{iJ} \\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\cdots&amp;\vdots \\
+p_{I1} &amp; p_{I2} &amp; \cdots &amp; p_{Ij} &amp; \cdots &amp; p_{IJ}\end{bmatrix}
+\end{equation}_{I\times J}
+\tag{10.10}
+\]</span>
+donde:
+<span class="math display">\[
+p_{ij}=\frac{x_{ij}}{n} \ , \ \ \text{para}: \ i=1,2,\ldots,I \ ; \ j=1,2,\ldots,J
+\]</span></p>
+<p>dicha matriz <span class="math inline">\(\mathbf{P}\)</span>-se le llama: <strong>Matriz de Correspondencia</strong> o <strong>Tabla de Frecuencias Relativas</strong>.</p>
+</div>
+<div id="vectores-de-marginales-por-fila-y-por-columna-o-vectores-de-masas-para-puntos-filas-y-columnas" class="section level4 hasAnchor" number="10.10.1.3">
+<h4><span class="header-section-number">10.10.1.3</span> Vectores de Marginales por Fila y por Columna (o Vectores de Masas para puntos filas y columnas)<a href="análisis-de-correspondencia.html#vectores-de-marginales-por-fila-y-por-columna-o-vectores-de-masas-para-puntos-filas-y-columnas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A continuación se definen los vectores de sumas de las frecuencias relativas por filas y columnas <span class="math inline">\(\underline{\mathbf{r}}\)</span> y <span class="math inline">\(\underline{\mathbf{c}}\)</span> respectivamente, y las matrices diagonales <span class="math inline">\(\mathbf{D}_{\ r}\)</span>, y <span class="math inline">\(\mathbf{D}_{\ c}\)</span> con los elementos de <span class="math inline">\(\underline{\mathbf{r}}\)</span> y <span class="math inline">\(\underline{\mathbf{c}}\)</span> en las diagonales. De este modo se tiene:
+<span class="math display" id="eq:vector-fila">\[
+\begin{equation}
+\underset{I\times 1}{\underline{\mathbf{r}}}=\begin{bmatrix} r_{1.}\\ r_{2.} \\ \vdots \\ r_{i.} \\  \vdots \\r_{I.} \end{bmatrix}=\begin{bmatrix} \sum_{j=1}^J\ p_{1j}  \\ \sum_{j=1}^J\ p_{2j} \\ \vdots  \\ \sum_{j=1}^J\ p_{ij}  \\  \vdots  \\ \sum_{j=1}^J\ p_{Ij} \end{bmatrix}=\begin{bmatrix} \sum_{j=1}^J\ \frac{x_{1j}}{x_{..}}  \\ \sum_{j=1}^J\ \frac{x_{2j}}{x_{..}} \\ \vdots \\ \sum_{j=1}^J\ \frac{x_{ij}}{x_{..}} \\ \vdots  \\ \sum_{j=1}^J\ \frac{x_{Ij}}{x_{..}} \end{bmatrix}=\begin{bmatrix}  \frac{x_{1.}}{x_{..}}  \\ \frac{x_{2.}}{x_{..}} \\ \vdots \\ \frac{x_{i.}}{x_{..}} \\ \vdots  \\ \frac{x_{I.}}{x_{..}} \end{bmatrix}=\underset{I\times J}{\mathbf{P}}\ \underset{J\times 1}{\mathbf{1}_J}
+\end{equation}
+\tag{10.11}
+\]</span></p>
+<p>Se cumple que:
+<span class="math display">\[
+\sum_{i=1}^I\ r_{i.}=1
+\]</span></p>
+<p><span class="math display" id="eq:vector-columna">\[
+\begin{equation}
+\underset{J\times 1}{\underline{\mathbf{c}}}=\begin{bmatrix} c_{.1}\\ c_{.2} \\ \vdots \\ c_{.j}  \\ \vdots \\  c_{.J} \end{bmatrix}=\begin{bmatrix} \sum_{i=1}^I\ p_{i1}  \\ \sum_{i=1}^I\ p_{i2} \\  \vdots \\ \sum_{i=1}^I\ p_{ij}\\ \vdots \\ \sum_{i=1}^I\ p_{iJ} \end{bmatrix}=\begin{bmatrix} \sum_{i=1}^I\ \frac{x_{i1}}{x_{..}}  \\ \sum_{i=1}^I\ \frac{x_{i2}}{x_{..}} \\ \vdots \\ \sum_{i=1}^I\ \frac{x_{ij}}{x_{..}} \\ \vdots \\ \sum_{i=1}^I\ \frac{x_{iJ}}{x_{..}} \end{bmatrix}=\begin{bmatrix}  \frac{x_{.1}}{x_{..}}  \\ \frac{x_{.2}}{x_{..}} \\ \vdots \\ \frac{x_{.i}}{x_{..}} \\ \vdots  \\ \frac{x_{.J}}{x_{..}} \end{bmatrix}=\underset{J\times I}{\mathbf{P}}^T\ \underset{I\times 1}{\mathbf{1}_I}
+\end{equation}
+\tag{10.12}
+\]</span></p>
+<p>Se cumple que:
+<span class="math display">\[
+\sum_{j=1}^J\ c_{.j}=1
+\]</span></p>
+<p>Además,
+<span class="math display">\[
+1=\sum_{i=1}^I\ r_{i.}=\sum_{j=1}^J\ c_{.j}=\sum_{i=1}^I\sum_{j=1}^J\ p_{ij}
+\]</span></p>
+<p>Con las notaciones anteriores se tiene la siguiente tabla de frecuencias relativas o matriz de correspondencia ampliada:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Cat-1</th>
+<th align="center">Cat-2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-j</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-J</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cat-1</td>
+<td align="center"><span class="math inline">\(p_{11}\)</span></td>
+<td align="center"><span class="math inline">\(p_{12}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{1j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{1J}\)</span></td>
+<td align="center"><span class="math inline">\(r_{1.}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-2</td>
+<td align="center"><span class="math inline">\(p_{21}\)</span></td>
+<td align="center"><span class="math inline">\(p_{22}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{2j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{2J}\)</span></td>
+<td align="center"><span class="math inline">\(r_{2.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-i</td>
+<td align="center"><span class="math inline">\(p_{i1}\)</span></td>
+<td align="center"><span class="math inline">\(p_{i2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{ij}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{iJ}\)</span></td>
+<td align="center"><span class="math inline">\(r_{i.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-I</td>
+<td align="center"><span class="math inline">\(p_{I1}\)</span></td>
+<td align="center"><span class="math inline">\(p_{I2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{Ij}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(p_{IJ}\)</span></td>
+<td align="center"><span class="math inline">\(r_{I.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center"><span class="math inline">\(c_{.1}\)</span></td>
+<td align="center"><span class="math inline">\(c_{.2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(c_{.j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(c_{.J}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>De estas definiciones se tiene que: <span class="math inline">\(n\ p_{ij}=x_{ij}\)</span>, <span class="math inline">\(n\ r_{i.}=\)</span>-suma de los elementos de la fila <span class="math inline">\(i\)</span>-ésima de <span class="math inline">\(\mathbf{X}\)</span> y <span class="math inline">\(n\ c_{.j}=\)</span>-suma de los elementos de la columna <span class="math inline">\(j\)</span>-ésima de <span class="math inline">\(\mathbf{X}\)</span>. Recuerde que
+<span class="math inline">\(p_{ij}=\frac{x_{ij}}{x_{..}}\)</span>.</p>
+<p>Al interior de la tabla de correspondencia se tiene la distribución conjunta de las dos-variables consideradas. La última columna es la distribución marginal de la variable-1 o variable en fila y la última fila es la distribución marginal de la variable-2 o variable en columna.</p>
+<p><strong>NOTA:</strong></p>
+<p>Las dos variables consideradas en las tabla de frecuencias absolutas o tabla de contingencia se dice que son independientes si se cumple que:
+<span class="math display">\[
+x_{ij}=\frac{r_{i.}\times r_{.j}}{x_{..}}
+\]</span></p>
+<p>con <span class="math inline">\(x_{..}=n\)</span>.</p>
+<p>El grado de asociación entre las dos varaibles se puede medir por medio de la <strong>Distancia Chi-Cuadrado</strong> dada por:
+<span class="math display">\[
+\chi^2(X,Y)= \sum_{i=1}^I\sum_{j=1}^J\  \frac{\left(x_{ij}-\widehat{x_{ij}}\right)^2}{\widehat{x_{ij}}}
+\]</span></p>
+<p>con,
+<span class="math display">\[
+\widehat{x_{ij}}=E[x_{ij}]=n\ x_{i.}\ x_{.j}
+\]</span></p>
+<p>entre mayor sea la distancia chi-cuadrado, más asociación hay entre las variables, es decir, menos independencia existe entre ellas.</p>
+<p>Posteriormente se verá que:
+<span class="math display">\[
+\chi^2(X,Y)=n\ (\text{Inercia Total})
+\]</span></p>
+</div>
+<div id="matrices-diagonales-de-masas-de-puntos-filas-y-de-puntos-columnas" class="section level4 hasAnchor" number="10.10.1.4">
+<h4><span class="header-section-number">10.10.1.4</span> Matrices Diagonales de Masas de Puntos Filas y de Puntos Columnas<a href="análisis-de-correspondencia.html#matrices-diagonales-de-masas-de-puntos-filas-y-de-puntos-columnas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Las matrices diagonales de las marginales por fila y por columna son:
+<span class="math display" id="eq:matrices-diagonal-de-filas-y-columnas">\[
+\begin{equation}
+\mathbf{D}_{\ \underline{r}}= \begin{bmatrix} r_{1.} &amp; &amp;  &amp; \\
+&amp; r_{2.} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; r_{I.} \end{bmatrix}_{I\times I} \ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{c}}= \begin{bmatrix} c_{.1} &amp; &amp;  &amp; \\
+&amp; c_{.2} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; c_{.J} \end{bmatrix}
+\end{equation}_{J\times J}
+\tag{10.13}
+\]</span></p>
+<p>Para <strong>procesos de escalamiento</strong>, se definen las matrices <strong>Raíz Cuadrada e inversas</strong> de las marginales por filas y columnas por:</p>
+<p><span class="math display" id="eq:matrices-diagonal-raiz-cuadrada-y-su-inversa-de-filas">\[
+\begin{equation}
+\mathbf{D}_{\ \underline{r}}^{1/2}= \begin{bmatrix} \sqrt{r_{1.}} &amp; &amp;  &amp; \\
+&amp; \sqrt{r_{2.}} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; \sqrt{r_{I.}} \end{bmatrix}_{I\times I}
+\ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{r}}^{-1/2}= \begin{bmatrix} \frac{1}{\sqrt{r_{1.}}} &amp; &amp;  &amp; \\
+&amp; \frac{1}{\sqrt{r_{2.}}} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; \frac{1}{\sqrt{r_{I.}}} \end{bmatrix}
+\end{equation}_{I\times I}
+\tag{10.14}
+\]</span></p>
+<p><span class="math display" id="eq:matrices-diagonal-raiz-cuadrada-y-su-inversa-de-columnas">\[
+\begin{equation}
+\mathbf{D}_{\ \underline{c}}^{1/2}= \begin{bmatrix} \sqrt{c_{.1}} &amp; &amp;  &amp; \\
+&amp; \sqrt{c_{.2}} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; \sqrt{c_{.J}} \end{bmatrix}_{J\times J}
+\ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{c}}^{-1/2}= \begin{bmatrix} \frac{1}{\sqrt{c_{.1}}} &amp; &amp;  &amp; \\
+&amp; \frac{1}{\sqrt{c_{.2}}} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; \frac{1}{\sqrt{c_{.J}}} \end{bmatrix}
+\end{equation}_{J\times J}
+\tag{10.15}
+\]</span></p>
+</div>
+</div>
+<div id="análisis-de-correspondencia-como-un-problema-de-mínimos-cuadrados-ponderado" class="section level3 hasAnchor" number="10.10.2">
+<h3><span class="header-section-number">10.10.2</span> Análisis de Correspondencia como un Problema de Mínimos Cuadrados Ponderado<a href="análisis-de-correspondencia.html#análisis-de-correspondencia-como-un-problema-de-mínimos-cuadrados-ponderado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El Análisis de Correspondencia se puede formular como un problema de <strong>Mínimos Cuadrados Ponderado</strong> para seleccionar a una matriz de rango reducido específica <span class="math inline">\(\widehat{\mathbf{P}}=[\widehat{p\ }_{ij}]\)</span> que minimice a:
+<span class="math display" id="eq:criterio-de-minimizacion-en-ac">\[
+\begin{equation}
+\hspace{-1.5cm}SS(\widehat{\mathbf{P}})=\sum_{i=1}^I\sum_{j=1}^J\frac{(p_{ij}-\widehat{p\ }_{ij})^2}{r_{i.}c_{.j}}=tr\biggl[\biggl(\mathbf{D}_{r}^{-1/2}(\mathbf{P}-\widehat{\mathbf{P}})\mathbf{D}_{c}^{-1/2}\biggr)\biggl(\mathbf{D}_{r}^{-1/2}(\mathbf{P}-\widehat{\mathbf{P}})\mathbf{D}_{c}^{-1/2}\biggr)^T\biggr]=tr[\mathbf{A}\mathbf{A}^T]
+\end{equation}
+\tag{10.16}
+\]</span></p>
+<p>ya que <span class="math inline">\(\frac{(p_{ij}-\hat{p}_{ij})}{r_{i.}c_{.j}}\)</span>-es el elemento de la posisición <span class="math inline">\((i,j)\)</span> de la matriz:
+<span class="math display">\[
+\mathbf{A}=\mathbf{D}_{r}^{-1/2}(\mathbf{P}-\widehat{\mathbf{P}})\mathbf{D}_{c}^{-1/2}
+\]</span></p>
+<p>A la matriz <span class="math inline">\(\mathbf{A}\)</span>-se le llama <strong>Matriz de Residuos Estandarizados</strong>.</p>
+<p>El problema se trata en la aproximación de una matriz <span class="math inline">\(\mathbf{A}\)</span> de dimensión <span class="math inline">\(I\times J\)</span> dada y rango específico, por ejemplo <span class="math inline">\(Rango(\mathbf{A})=k\)</span>, por otra matriz <span class="math inline">\(\mathbf{B}\)</span> de la misma dimensión <span class="math inline">\(I\times J\)</span> pero de rango menor, por ejemplo <span class="math inline">\(Rango(\mathbf{B})=s&lt;k\)</span>.</p>
+<p>El resultado que sigue demuestra que el término <span class="math inline">\(\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\)</span> es común a la aproximación <span class="math inline">\(\widehat{\mathbf{P}}\)</span> para cualquiera que sea la matriz de correspondencia de dimensión <span class="math inline">\((I\times J)\)</span> dada <span class="math inline">\(\mathbf{P}\)</span>. Se puede demostrar que la matriz <span class="math inline">\(\widehat{\mathbf{P}}=\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\)</span>
+es la mejor aproximación a <span class="math inline">\(\mathbf{P}\)</span> de rango 1.</p>
+<p>Es decir que en el caso de la aproximación a <span class="math inline">\(\mathbf{P}\)</span> por una matriz de rango-1, se tiene que la <strong>Matriz de Residuos Estandarizados</strong> sería:
+<span class="math display">\[
+\underset{I\times J}{\mathbf{A}}=\mathbf{D}_{r}^{-1/2}(\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\mathbf{D}_{c}^{-1/2}
+\]</span></p>
+<div class="theorem">
+<p><span id="thm:teorema-analisis-de-correspondencia" class="theorem"><strong>Teorema 10.1  (Solución al Análisis de Correspondencia) </strong></span>El término <span class="math inline">\(\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\)</span> es común a la aproximación <span class="math inline">\(\widehat{\mathbf{P}}\)</span> para cualquiera que sea la matriz de correspondencia de dimensión <span class="math inline">\((I\times J)\)</span> dada <span class="math inline">\(\mathbf{P}\)</span>.</p>
+<p>La aproximación a <span class="math inline">\(\mathbf{P}\)</span> de rango reducido <span class="math inline">\(s\)</span> que minimiza la suma de cuadrados dada en la ecuación <a href="análisis-de-correspondencia.html#eq:criterio-de-minimizacion-en-ac">(10.16)</a>, está dada por:</p>
+</div>
+<p><span class="math display">\[
+\mathbf{P}\approx \sum_{k=1}^{s} \ \widetilde{\lambda_k}\ (\mathbf{D}_r^{1/2}\ \widetilde{\underline{\mathbf{u}}_k})\ (\mathbf{D}_c^{1/2}\ \widetilde{\underline{\mathbf{v}}_k})^T=\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T+\sum_{k=2}^{s} \ \widetilde{\lambda_k}\ (\mathbf{D}_r^{1/2}\ \widetilde{\underline{\mathbf{u}}_k})\ (\mathbf{D}_c^{1/2}\ \widetilde{\underline{\mathbf{v}}_k})^T
+\]</span></p>
+<p>donde, <span class="math inline">\(\widetilde{\lambda_k}\)</span>-son los valores singulares, <span class="math inline">\(\widetilde{\underline{\mathbf{u}}_k}\)</span> los vectores singulares a izquierda de dimensión <span class="math inline">\((I\times 1)\)</span>, <span class="math inline">\(\widetilde{\underline{\mathbf{v}}_k}\)</span> los vectores singulares a derecha de dimensión <span class="math inline">\((J\times 1)\)</span> de la Descomposición de Valores y Vectores Singulares (SVD) de la matriz de orden <span class="math inline">\(I\times J\)</span> dada por <span class="math inline">\(\mathbf{A}=\mathbf{D}_{r}^{-1/2}\ \mathbf{P}\ \mathbf{D}_{c}^{-1/2}\)</span>, es decir que:
+<span class="math display">\[
+\mathbf{A}=\mathbf{D}_{r}^{-1/2}\ \mathbf{P}\ \mathbf{D}_{c}^{-1/2}=\underset{I\times K}{\mathbf{U}}\ \underset{K\times K}{\mathbf{\Lambda_{\alpha}}}\ \underset{K\times J}{\mathbf{V}^T}=\sum_{k=1}^K\ \lambda_k \ \underline{\mathbf{u}}_k\ \underline{\mathbf{v}}_k^T \ , \ \ \ \text{con:} \ \ \mathbf{U}^T\mathbf{U}=\mathbf{V}^T\mathbf{V}=\mathbf{I}
+\]</span>
+con <span class="math inline">\(K=Rango(\mathbf{A})\)</span>, <span class="math inline">\(\Lambda_{\alpha}\)</span>-matriz diagonal de valores singulares positivos en orden decreciente <span class="math inline">\(\alpha_1\geq \alpha_2\geq \cdots,\)</span>, <span class="math inline">\(\mathbf{U}\)</span>-Matriz de vectores singulares <span class="math inline">\(I\times 1\)</span> a izquierda y <span class="math inline">\(\mathbf{V}\)</span>-matriz de vectores singulares <span class="math inline">\(J\times 1\)</span> a derecha en la SVD de <span class="math inline">\(\mathbf{A}\)</span>. (Para la ilustración se supone matriz de rango completo por columnas, es decir <span class="math inline">\(K=J\)</span>).</p>
+<p><span class="math display">\[
+\Lambda_{\alpha}=\begin{bmatrix} \alpha_1 &amp; &amp;  &amp; \\
+&amp; \alpha_2 &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; \alpha_K \end{bmatrix}_{K\times K} \ \ \ ; \ \ \ \ \text{con:} \ \ \ \ \lambda_k=\alpha_k^2
+\]</span></p>
+<p>El valor mínimo de la <span class="math inline">\(SS(\widehat{\mathbf{P}})\)</span> dada por la ecuación <a href="análisis-de-correspondencia.html#eq:criterio-de-minimizacion-en-ac">(10.16)</a> está dado por:
+<span class="math display">\[
+\sum_{k=s+1}^J\ \widetilde{\lambda\ }_k^{\ 2}.
+\]</span>
+<strong>Aproximación de Rango Reducido para la Matriz:</strong> <span class="math inline">\((\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\)</span></p>
+<p>Además, la aproximación de rango reducido <span class="math inline">\(K&gt;1\)</span> a la matriz <span class="math inline">\((\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\)</span>-está dada por:
+<span class="math display" id="eq:mejor-aproximacion-a-p-rc-de-rango-k-mayor-que-1">\[
+\begin{equation}
+\hspace{-2.0cm}\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T \approx \sum_{k=1}^{K} \ \lambda_k\ \underset{I\times 1}{\underbrace{ (\mathbf{D}_r^{1/2}\ \underline{\mathbf{u}}_k)}}\ \underset{1\times J}{(\underbrace{\mathbf{D}_c^{1/2}\ \underline{\mathbf{v}}_k)^T}}=\lambda_1\ (\mathbf{D}_r^{1/2}\ \underline{\mathbf{u}}_1)\ (\mathbf{D}_c^{1/2}\ \underline{\mathbf{v}}_1)^T+\lambda_2\ (\mathbf{D}_r^{1/2}\ \underline{\mathbf{u}}_2)\ (\mathbf{D}_c^{1/2}\ \underline{\mathbf{v}}_2)^T+\cdots+\lambda_K\ (\mathbf{D}_r^{1/2}\ \underline{\mathbf{u}}_K)\ (\mathbf{D}_c^{1/2}\ \underline{\mathbf{v}}_K)^T
+\end{equation}
+\tag{10.17}
+\]</span></p>
+<p>donde <span class="math inline">\(\lambda_k\)</span>-son los valores singulares, <span class="math inline">\(\underline{\mathbf{u}}_k\)</span> los vectores singulares a izquierda de dimensión <span class="math inline">\((I\times 1)\)</span>, <span class="math inline">\(\underline{\mathbf{v}}_k\)</span> los vectores singulares a derecha de dimensión <span class="math inline">\((J\times 1)\)</span> de la SVD de la matriz de residuos estandarizados de orden <span class="math inline">\(I\times J\)</span> dada por
+<span class="math display">\[
+\mathbf{A}=\mathbf{D}_{r}^{-1/2}(\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\mathbf{D}_{c}^{-1/2}
+\]</span>
+(o matriz versión escalada o ponderada de <span class="math inline">\(\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\)</span>).</p>
+<p><strong>Aquí se tiene que</strong>:
+<span class="math display">\[
+\lambda_k=\widetilde{\lambda\ }_{k+1} \ \ , \ \ \underline{\mathbf{u}}_k=\widetilde{\underline{\mathbf{u}}\ }_{k+1}  \ \ , \ \ \underline{\mathbf{v}}_k=\widetilde{\underline{\mathbf{v}}\ }_{k+1} \ \ \ \ \ \text{para:} \ \ \ \ k=1,2,\ldots,J-1
+\]</span></p>
+<p>es decir,
+<span class="math display">\[
+\lambda_1=\widetilde{\lambda\ }_{2} \ \ , \ \ \lambda_2=\widetilde{\lambda\ }_{3}\ , \ \ \cdots\ \ , \ \  \lambda_{J-1}=\widetilde{\lambda\ }_{J}\\
+\underline{\mathbf{u}}_1=\widetilde{\underline{\mathbf{u}}\ }_{2}  \ \ , \ \ \underline{\mathbf{u}}_2=\widetilde{\underline{\mathbf{u}}\ }_{3}  \ , \ \ \cdots \ \ ,  \ \ \underline{\mathbf{u}}_{J-1}=\widetilde{\underline{\mathbf{u}}\ }_{J}\\
+\underline{\mathbf{v}}_1=\widetilde{\underline{\mathbf{v}}\ }_{2}  \ \ , \ \ \underline{\mathbf{v}}_2=\widetilde{\underline{\mathbf{v}}\ }_{3}  \ , \ \ \cdots \ \ ,  \ \ \underline{\mathbf{v}}_{J-1}=\widetilde{\underline{\mathbf{v}}\ }_{J}
+\]</span></p>
+<div id="observaciones" class="section level4 hasAnchor" number="10.10.2.1">
+<h4><span class="header-section-number">10.10.2.1</span> Observaciones<a href="análisis-de-correspondencia.html#observaciones" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Los vectores <span class="math inline">\(\mathbf{D}_r^{1/2}\ \underline{\mathbf{u}}_{\ k}\)</span> y <span class="math inline">\(\mathbf{D}_c^{1/2}\ \underline{\mathbf{v}}_{\ k}\)</span> en la expansión de <span class="math inline">\(\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\)</span> dada por <a href="análisis-de-correspondencia.html#eq:mejor-aproximacion-a-p-rc-de-rango-k-mayor-que-1">(10.17)</a> no necesitan tener longitud igual a 1, pero si satisfacen el escalamiento dado por:
+<span class="math display">\[
+(\mathbf{D}_r^{1/2}\ \underline{\mathbf{u}}_{\ k})^T \ \mathbf{D}_r^{-1} \ (\mathbf{D}_r^{1/2}\ \underline{\mathbf{u}}_{\ k})=\underline{\mathbf{u}}_{\ k}^T\  \underline{\mathbf{u}}_{\ k}=1\\
+(\mathbf{D}_c^{1/2}\ \underline{\mathbf{v}}_{\ k})^T \ \mathbf{D}_c^{-1} \ (\mathbf{D}_c^{1/2}\ \underline{\mathbf{v}}_{\ k})=\underline{\mathbf{v}}_{\ k}^T\  \underline{\mathbf{v}}_{\ k}=1
+\]</span></p>
+<p>Debido a este escalamiento, la Expansión del resultado del teorema <a href="análisis-de-correspondencia.html#thm:teorema-analisis-de-correspondencia">10.1</a> ha sido llamada <strong>Descomposición en Valores-Singulares Generalizada</strong>.</p>
+<p>Sean
+<span class="math display">\[
+\underset{I\times J}{\mathbf{\Lambda}}, \ \ \ \underset{I\times I}{\mathbf{U}}=\begin{bmatrix}\underline{\mathbf{u}}_{\ 1} &amp; \underline{\mathbf{u}}_{\ 2} &amp; \cdots &amp; \underline{\mathbf{u}}_{\ I} \end{bmatrix} \ \ \ \text{y} \ \ \ \ \underset{J\times J}{\mathbf{V}}=\begin{bmatrix}\underline{\mathbf{v}}_{\ 1} &amp; \underline{\mathbf{v}}_{\ 2} &amp; \cdots &amp; \underline{\mathbf{v}}_{\ J} \end{bmatrix}
+\]</span></p>
+<p>con,
+<span class="math display">\[
+\underset{I\times J}{\mathbf{A}}=\underset{I\times J}{\mathbf{U}}\ \underset{J\times J}{\mathbf{\Lambda_{\lambda}}}\ \underset{J\times J}{\mathbf{V}^T}
+\]</span></p>
+<p>la matriz diagonal de valores-singulares y las matrices de vectores-singulares a izquierda y de vectores-singulares a derecha respectivamente, obtenidos de la SVD de la matriz escalada o pnderada:
+<span class="math display">\[
+\mathbf{A}=\mathbf{D}_r^{-1/2}\ (\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\ \mathbf{D}_c^{-1/2}
+\]</span></p>
+<p>Se tiene que las <strong>Coordenadas Estándares de Filas y Columnas</strong> están dadas por:
+<span class="math display">\[
+\boldsymbol{\Phi}=\mathbf{D}_{\ \underline{r}}^{-1/2}\ \mathbf{U} \ , \ \ \text{para las filas},
+\]</span>
+<span class="math display">\[
+\boldsymbol{\Gamma}=\mathbf{D}_{\ \underline{c}}^{-1/2}\ \mathbf{V} \ , \ \ \text{para las columnas},
+\]</span></p>
+<p><strong>Coordenadas Principales de Filas y Columnas</strong></p>
+<p>Es usual en Análisis de Correspondencia graficar las primeras <span class="math inline">\(\alpha\)</span> igual dos o tres columnas de:
+<span class="math display">\[
+\underset{I\times \alpha}{\mathbf{F}}=\mathbf{D}_r^{-1}\ (\mathbf{D}_r^{1/2}\ \mathbf{U})\ \mathbf{\Lambda}=\underset{I\times I \ \ I \times \alpha}{(\mathbf{D}_{\ \underline{r}}^{-1/2}\ \mathbf{U})}\ \Lambda_{\alpha}=\underset{I\times \alpha\ \  \alpha\times \alpha}{\boldsymbol{\Phi} \Lambda_{\alpha}}
+\]</span>
+las cuales se llaman: <strong>Coordenadas Principales de las Filas</strong>
+y graficar las primeras <span class="math inline">\(\alpha\)</span> igual dos o tres columnas de:
+<span class="math display">\[
+\underset{J\times \alpha}{\mathbf{G}}=\mathbf{D}_c^{-1}\ (\mathbf{D}_c^{1/2}\ \mathbf{V})\ \mathbf{\Lambda}=\underset{J\times J \ \ J \times \alpha}{(\mathbf{D}_{\ \underline{c}}^{-1/2}\ \mathbf{V})}\ \Lambda_{\alpha}=\underset{J\times \alpha\ \  \alpha\times \alpha}{\boldsymbol{\Gamma} \Lambda_{\alpha} }
+\]</span>
+las cuales se llaman: <strong>Coordenadas Principales de las Columnas</strong>.
+o equivalentemente de:
+<span class="math display">\[
+\lambda_k\ \mathbf{D}_r^{-1/2}\ \underline{\mathbf{u}}_{\ k} \ , \ \ \text{para las filas} \ \ \ k=1,2, \ \ \text{y tal vez para}\ \  k=3
+\]</span>
+y
+<span class="math display">\[
+\lambda_k\ \mathbf{D}_c^{-1/2}\ \underline{\mathbf{v}}_{\ k}\ , \ \ \text{para las columnas}\ \ \ \ \ \ k=1,2, \ \  \text{y tal vez para}\ \  k=3.
+\]</span></p>
+<p>Las <strong>Inercias Principales</strong> asociadas a cada eje están dadas por:
+<span class="math display">\[
+\lambda_k^2\ : \ \ k=1,2,\ldots,K=\min(I-1,J-1)
+\]</span></p>
+<p><strong>Mapa Simétrico</strong></p>
+<p>El gráfico conjunto de <strong>Coordenadas Principales</strong> de <span class="math inline">\(\mathbf{F}\)</span> y <span class="math inline">\(\mathbf{G}\)</span> se llama un <strong>Mapa Simétrico</strong>, ver. <span class="citation">(<a href="#ref-greenacre2000">Greenacre 2000</a>)</span>, ya que los puntos representan a las filas y columnas que tienen la misma normalización o escalamiento a lo largo de las dimensiones de la solución, es decir la geometría de los puntos fila es idéntica a la geometría de los puntos columna.</p>
+<div class="example">
+<p><span id="exm:ejemplo2-analisis-correspondencia-por-minimos-cuadrados-ponderados" class="example"><strong>Ejemplo 10.24  (Ejemplo-2 de Análisis de Correspondencia) </strong></span>Suponga que se tiene la siguiente tabla de frecuencias absolutas o tabla de contingencia <span class="math inline">\(\mathbf{X}_{3\times 2}\)</span>, es decir <span class="math inline">\(I=3\)</span>-categorías de la variable-1 (fila) y <span class="math inline">\(J=2\)</span>-categorías de la variable-2 (columna).</p>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">B1</th>
+<th align="center">B2</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A1</td>
+<td align="center">24</td>
+<td align="center">12</td>
+<td align="center">36</td>
+</tr>
+<tr class="even">
+<td align="center">A2</td>
+<td align="center">16</td>
+<td align="center">48</td>
+<td align="center">64</td>
+</tr>
+<tr class="odd">
+<td align="center">A3</td>
+<td align="center">60</td>
+<td align="center">40</td>
+<td align="center">100</td>
+</tr>
+<tr class="even">
+<td align="center">Total</td>
+<td align="center">100</td>
+<td align="center">100</td>
+<td align="center">200</td>
+</tr>
+</tbody>
+</table>
+<p>En este caso la respectiva <em>Matriz de Correspondencia o Tabla de Frecuencias Relativas:</em> <span class="math inline">\(\mathbf{P}_{3\times 2}\)</span> es:</p>
+<p><span class="math display">\[
+\mathbf{P}=\begin{bmatrix}0.12 &amp; 0.06 \\
+0.08 &amp; 0.24 \\
+0.30 &amp; 0.20
+\end{bmatrix}_{3\times 2}
+\]</span></p>
+<p>El vector de marginales por fila (o vector de masa para las filas) es:
+<span class="math display">\[
+\underset{3\times 1}{\underline{\mathbf{r}}}=\begin{bmatrix} r_{1.}\\ r_{2.} \\ r_{3.} \end{bmatrix}=\begin{bmatrix} \sum_{j=1}^2\ p_{1j}  \\ \sum_{j=1}^2\ p_{2j} \\ \sum_{j=1}^2\ p_{3j} \end{bmatrix}=\begin{bmatrix} p_{11}+p_{12}  \\ p_{21}+p_{22} \\  p_{31}+p_{32} \end{bmatrix}=\begin{bmatrix} 0.12+0.06  \\ 0.08+0.24 \\  0.30+0.20 \end{bmatrix}=\begin{bmatrix} 0.18  \\ 0.32 \\  0.50 \end{bmatrix}=\underset{3\times 2}{\mathbf{P}}\ \underset{2\times 1}{\mathbf{1}_J}
+\]</span>
+donde <span class="math inline">\(\mathbf{1}_J\)</span>-es una vector <span class="math inline">\(2\times 1\)</span> de unos.</p>
+<p>El vector de marginales por columna (o vector de masa para las columnas) es:
+<span class="math display">\[
+\underset{2\times 1}{\underline{\mathbf{c}}}=\begin{bmatrix} c_{.1}\\ c_{.2} \end{bmatrix}=\begin{bmatrix} \sum_{i=1}^3\ p_{i1}  \\ \sum_{i=1}^3\ p_{i2} \end{bmatrix}=\begin{bmatrix} p_{11}+p_{21}+p_{31}  \\  p_{12}+p_{22}+p_{32} \end{bmatrix}=\begin{bmatrix} 0.12+0.08+0.30  \\  0.06+0.24+0.20 \end{bmatrix}=\begin{bmatrix} 0.50  \\  0.50 \end{bmatrix}=\underset{J\times I}{\mathbf{P}}^T\ \underset{I\times 1}{\mathbf{1}_I}
+\]</span>
+y similarmente, <span class="math inline">\(\mathbf{1}_I\)</span>-es una vector <span class="math inline">\(3\times 1\)</span> de unos.</p>
+<p><strong>Matriz de Correspondencia y sus vectores de pesos por filas y columnas</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">B1</th>
+<th align="center">B2</th>
+<th align="center"><span class="math inline">\(\underset{3\times 1}{\underline{\mathbf{r}}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A1</td>
+<td align="center">0.12</td>
+<td align="center">0.06</td>
+<td align="center">0.18</td>
+</tr>
+<tr class="even">
+<td align="center">A2</td>
+<td align="center">0.08</td>
+<td align="center">0.24</td>
+<td align="center">0.32</td>
+</tr>
+<tr class="odd">
+<td align="center">A3</td>
+<td align="center">0.30</td>
+<td align="center">0.20</td>
+<td align="center">0.50</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\underset{2\times 1}{\underline{\mathbf{c}}}\)</span></td>
+<td align="center">0.50</td>
+<td align="center">0.50</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Las matrices <strong>Diagonales de pesos filas, pesos columnas y sus inversas son</strong>:
+<span class="math display">\[
+\mathbf{D}_{\ \underline{r}}= \begin{bmatrix} 0.18 &amp; &amp;  \\
+&amp; 0.32 &amp;  \\
+&amp;&amp; 0.50 \end{bmatrix}_{3\times 3} \ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{c}}= \begin{bmatrix} 0.50 &amp;  \\
+&amp; 0.50
+\end{bmatrix}_{2\times 2}
+\]</span>
+<span class="math display">\[
+\mathbf{D}_{\ \underline{r}}^{-1}= \begin{bmatrix} \frac{1}{0.18} &amp; &amp;  \\
+&amp; \frac{1}{0.32} &amp;  \\
+&amp;&amp; 2 \end{bmatrix}_{3\times 3} \ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{c}}^{-1}= \begin{bmatrix} 2 &amp;  \\
+&amp; 2
+\end{bmatrix}_{2\times 2}
+\]</span></p>
+<p>Las matrices <strong>Raíz Cuadrada</strong> y <strong>sus inversas</strong> son:</p>
+<p><span class="math display">\[
+\mathbf{D}_{\ \ \underline{r}}^{1/2}= \begin{bmatrix} \frac{0.6}{\sqrt{2}} &amp; &amp;  \\
+&amp; \frac{0.8}{\sqrt{2}} &amp;  \\
+&amp;&amp; \frac{1}{\sqrt{2}} \end{bmatrix}_{3\times 3}
+\ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{r}}^{-1/2}= \begin{bmatrix} \frac{\sqrt{2}}{0.6} &amp; &amp;  \\
+&amp; \frac{\sqrt{2}}{0.8} &amp;  \\
+&amp;&amp; \sqrt{2} \end{bmatrix}_{3\times 3}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{D}_{\ \underline{c}}^{1/2}= \begin{bmatrix} \frac{1}{\sqrt{2}} &amp;  \\
+&amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}_{2\times 2}
+\ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{c}}^{-1/2}= \begin{bmatrix} \sqrt{2} &amp; \\ &amp; \sqrt{2} \end{bmatrix}_{2\times 2}
+\]</span></p>
+<p>luego se tiene que la <strong>La Matriz Residual</strong>:
+<span class="math display">\[
+\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T= \begin{bmatrix}0.12 &amp; 0.06 \\
+0.08 &amp; 0.24 \\
+0.30 &amp; 0.20
+\end{bmatrix}-\begin{bmatrix} 0.18  \\ 0.32 \\  0.50 \end{bmatrix}\begin{bmatrix} 0.50  &amp;  0.50 \end{bmatrix}\\
+=\begin{bmatrix}0.12 &amp; 0.06 \\
+0.08 &amp; 0.24 \\
+0.30 &amp; 0.20
+\end{bmatrix}-\begin{bmatrix} 0.09 &amp; 0.09 \\
+0.16 &amp; 0.16 \\
+0.25 &amp; 0.25
+\end{bmatrix}\\
+\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T= \begin{bmatrix} 0.03 &amp; -0.03 \\
+-0.08 &amp; 0.08 \\
+0.05 &amp; -0.05
+\end{bmatrix}
+\]</span></p>
+<p>y la versión escalada o ponderada de esta matriz es, es decir, <strong>La Matriz Residual Estandarizada</strong> es:
+<span class="math display">\[
+\mathbf{A}=\mathbf{D}_{\underline{r}}^{-1/2}\ (\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\ \mathbf{D}_{\underline{c}}^{-1/2}= \begin{bmatrix} \frac{1}{\sqrt{0.18}} &amp; &amp;  \\
+&amp; \frac{1}{\sqrt{0.32}} &amp;  \\
+&amp;&amp; \frac{1}{\sqrt{0.50}} \end{bmatrix}\begin{bmatrix} 0.03 &amp; -0.03 \\
+-0.08 &amp; 0.08 \\
+0.05 &amp; -0.05
+\end{bmatrix}\begin{bmatrix} \sqrt{2} &amp; \\ &amp; \sqrt{2} \end{bmatrix}\\
+\mathbf{A}=\begin{bmatrix} 0.1 &amp; -0.1 \\
+-0.2 &amp; 0.2 \\
+0.1 &amp; -0.1
+\end{bmatrix}_{3\times 2}
+\]</span></p>
+<p>Como <span class="math inline">\(I=3 &gt; 2=J\)</span>-los valores singulares al cuadrado (o valores propios) y los <strong>vectores singulares a derecha</strong> <span class="math inline">\(\underline{\mathbf{v}}_{\ i}\)</span> se determinan a partir de la <em>eigen-descomposición</em> de <span class="math inline">\(\mathbf{A}^T\mathbf{A}\)</span>:
+<span class="math display">\[
+\mathbf{A}^T\mathbf{A}=\biggl[ \mathbf{D}_{\underline{r}}^{-1/2}\ (\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\ \mathbf{D}_{\underline{c}}^{-1/2} \biggr]^T\biggl[ \mathbf{D}_{\underline{r}}^{-1/2}\ (\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\ \mathbf{D}_{\underline{c}}^{-1/2} \biggr]\\
+=\begin{bmatrix} 0.1 &amp; -0.2 &amp; 0.1 \\
+-0.1 &amp; 0.2 &amp; -0.1
+\end{bmatrix}\begin{bmatrix} 0.1 &amp; -0.1 \\
+-0.2 &amp; 0.2 \\
+0.1 &amp; -0.1
+\end{bmatrix}\\
+\mathbf{A}^T\mathbf{A}=\begin{bmatrix} 0.06 &amp; -0.06 \\
+-0.06 &amp; 0.06
+\end{bmatrix}
+\]</span></p>
+<p>Se puede verificar que: <span class="math inline">\(\lambda_1^2=0.12\)</span> (primer valor propio de <span class="math inline">\(\mathbf{A}^T\mathbf{A}\)</span>) y que <span class="math inline">\(\lambda_2^2=0\)</span>, debido a que <span class="math inline">\(J-1=1\)</span>, es decir solo existe un eje principal, <span class="math inline">\(\min(3-1,2-1)=\min(2,1)=1\)</span>.</p>
+<p>Además se puede verificar que el respectivo vector-singular a derecha (de <span class="math inline">\(\mathbf{A}\)</span>) o vector-propio (de <span class="math inline">\(\mathbf{A}^T\mathbf{A}\)</span>) es:
+<span class="math display">\[
+\underline{\mathbf{v}}_{\ 1}=\begin{bmatrix} \frac{1}{\sqrt{2}} \\ - \frac{1}{\sqrt{2}} \end{bmatrix}_{2\times 1}
+\]</span></p>
+<p>Además se tiene que:
+<span class="math display">\[
+\mathbf{A}\mathbf{A}^T=\biggl[ \mathbf{D}_{\underline{r}}^{-1/2}\ (\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\ \mathbf{D}_{\underline{c}}^{-1/2} \biggr]\biggl[ \mathbf{D}_{\underline{r}}^{-1/2}\ (\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\ \mathbf{D}_{\underline{c}}^{-1/2} \biggr]^T\\
+=\begin{bmatrix} 0.1 &amp; -0.1 \\
+-0.2 &amp; 0.2 \\
+0.1 &amp; -0.1
+\end{bmatrix}\begin{bmatrix} 0.1 &amp; -0.2 &amp; 0.1 \\
+-0.1 &amp; 0.2 &amp; -0.1
+\end{bmatrix}\\
+\mathbf{A}\mathbf{A}^T=\begin{bmatrix} 0.02 &amp; -0.04 &amp; 0.02 \\
+-0.04 &amp; 0.08 &amp; -0.04 \\
+0.02 &amp; -0.04 &amp; 0.02
+\end{bmatrix}
+\]</span></p>
+<p>y se puede verificar que el único eigen-valor diferente de cero es: <span class="math inline">\(\lambda_1^2=0.12\)</span> (o valor propio de <span class="math inline">\(\mathbf{A}\mathbf{A}^T\)</span>), tal valor singular tiene valor absoluto <span class="math inline">\(\lambda_1=0.2\sqrt{3}\)</span>, y se puede verificar fácilmente que el <strong>vector singular a izquierda</strong> (obtenido a partir de la <em>eigen-descomposición</em> de <span class="math inline">\(\mathbf{A}\mathbf{A}^T\)</span>) es:
+<span class="math display">\[
+\underline{\mathbf{u}}_{\ 1}=\begin{bmatrix} \frac{1}{\sqrt{6}} \\ - \frac{2}{\sqrt{6}} \\ \frac{1}{\sqrt{6}} \end{bmatrix}_{3\times 1}
+\]</span></p>
+<p>y <strong>La expansión de la matriz residual</strong>:
+<span class="math display">\[
+\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T= \begin{bmatrix} 0.03 &amp; -0.03 \\
+-0.08 &amp; 0.08 \\
+0.05 &amp; -0.05
+\end{bmatrix}
+\]</span></p>
+<p>en un solo término es:
+<span class="math display">\[
+\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T=\lambda_1\ (\mathbf{D}_{\ \underline{r}}^{1/2}\ \underline{\mathbf{u}}_{\ 1})\ (\mathbf{D}_{\ \underline{c}}^{1/2}\ \underline{\mathbf{v}}_{\ 1})^T=
+\sqrt{0.12}\ \left(  \begin{bmatrix} \frac{0.6}{\sqrt{2}} &amp; &amp;  \\
+&amp; \frac{0.8}{\sqrt{2}} &amp;  \\
+&amp;&amp; \frac{1}{\sqrt{2}} \end{bmatrix}\begin{bmatrix} \frac{1}{\sqrt{6}} \\ - \frac{2}{\sqrt{6}} \\ \frac{1}{\sqrt{6}} \end{bmatrix}  \right) \left( \begin{bmatrix} \frac{1}{\sqrt{2}} &amp; - \frac{1}{\sqrt{2}} \end{bmatrix} \begin{bmatrix} \frac{1}{\sqrt{2}} &amp;  \\
+&amp; \frac{1}{\sqrt{2}}
+\end{bmatrix} \right)\\
+= \sqrt{0.12}\  \begin{bmatrix} \frac{0.3}{\sqrt{3}} \\ - \frac{0.8}{\sqrt{3}} \\ \frac{0.5}{\sqrt{3}} \end{bmatrix} \begin{bmatrix} \frac{1}{2} &amp; \frac{1}{2} \end{bmatrix}= \begin{bmatrix} 0.03 &amp; -0.03 \\
+-0.08 &amp; 0.08 \\
+0.05 &amp; -0.05 \end{bmatrix} = \mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T
+\]</span></p>
+<p>Existen solo un par de vectores de coordenadas principales para graficar (un vector para las filas y otro vector para las columnas), es decir un solo eje <span class="math inline">\(\alpha=1=\min(I-1,J-1)=\min(3-1,2-1)=\min(2,1)=1\)</span>, dados por:
+<span class="math display">\[
+\mathbf{F}=\lambda_1\ \mathbf{D}_{\ \underline{r}}^{1/2}\ \underline{\mathbf{u}}_{\ 1}=
+\sqrt{0.12}\ \begin{bmatrix} \frac{0.6}{\sqrt{2}} &amp; &amp;  \\
+&amp; \frac{0.8}{\sqrt{2}} &amp;  \\
+&amp;&amp; \frac{1}{\sqrt{2}} \end{bmatrix}
+\begin{bmatrix} \frac{1}{\sqrt{6}} \\ - \frac{2}{\sqrt{6}} \\ \frac{1}{\sqrt{6}} \end{bmatrix}  = \sqrt{0.12}\  \begin{bmatrix} \frac{0.3}{\sqrt{3}} \\ - \frac{0.8}{\sqrt{3}} \\ \frac{0.5}{\sqrt{3}} \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{G}=\lambda_1\ \mathbf{D}_{\ \underline{c}}^{1/2}\ \underline{\mathbf{v}}_{\ 1} =
+\sqrt{0.12}\ \begin{bmatrix} \frac{1}{\sqrt{2}} &amp;  \\
+&amp; \frac{1}{\sqrt{2}}
+\end{bmatrix} \begin{bmatrix} \frac{1}{\sqrt{2}} \\ - \frac{1}{\sqrt{2}} \end{bmatrix}  = \sqrt{0.12}\  \begin{bmatrix} \frac{1}{2} \\ -\frac{1}{2} \end{bmatrix}
+\]</span></p>
+<p>o equivalentemente:
+<span class="math display">\[
+\underset{3\times 1}{\mathbf{F}}=\lambda_1\ \mathbf{D}_{\ \underline{r}}^{-1}\ (\mathbf{D}_{\ \underline{r}}^{1/2}\ \underline{\mathbf{u}}_{\ 1})=\lambda_1\ \mathbf{D}_{\ \underline{r}}^{-1/2}\ \underline{\mathbf{u}}_{\ 1}=\sqrt{0.12}
+\begin{bmatrix} \frac{1}{0.18} &amp; &amp;  \\
+&amp; \frac{1}{0.32} &amp;  \\
+&amp;&amp; \frac{1}{0.5} \end{bmatrix}
+\begin{bmatrix} \frac{0.3}{\sqrt{3}} \\ - \frac{0.8}{\sqrt{3}} \\ \frac{0.5}{\sqrt{3}} \end{bmatrix}=\begin{bmatrix} 0.3333  \\ - 0.5 \\ 0.2 \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\underset{2\times 1}{\mathbf{G}}=\lambda_1\ \mathbf{D}_{\ \underline{c}}^{-1}\  (\mathbf{D}_{\ \underline{c}}^{1/2}\ \underline{\mathbf{v}}_{\ 1}) =\lambda_1\ \mathbf{D}_{\ \underline{c}}^{-1/2}\   \underline{\mathbf{v}}_{\ 1}= \sqrt{0.12}
+\begin{bmatrix} \frac{1}{0.5} &amp;  \\
+&amp; \frac{1}{0.5}
+\end{bmatrix}\ \begin{bmatrix} \frac{1}{2} \\ -\frac{1}{2} \end{bmatrix} =\begin{bmatrix} 0.3464 \\ -0.3464 \end{bmatrix}
+\]</span></p>
+<p><strong>Solución usando R:</strong></p>
+<pre><code>##       eigenvalue percentage of variance
+## dim 1       0.12                    100
+##       cumulative percentage of variance
+## dim 1                               100</code></pre>
+<pre><code>##       [,1]
+## B1 -0.3464
+## B2  0.3464</code></pre>
+<pre><code>##      A1      A2     A32 
+## -0.3333  0.5000 -0.2000</code></pre>
+</div>
+</div>
+<div id="análisis-de-correspondencia-medinate-el-método-de-aproximación-de-perfiles" class="section level3 hasAnchor" number="10.10.3">
+<h3><span class="header-section-number">10.10.3</span> Análisis de Correspondencia Medinate el Método de Aproximación de Perfiles<a href="análisis-de-correspondencia.html#análisis-de-correspondencia-medinate-el-método-de-aproximación-de-perfiles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Existe una segunda forma de definir el análisis de una Tabla de Contingencia o tabla de frecuencias absolutas. Siguiendo a Greenacre <span class="citation">(<a href="#ref-greenacre2000">2000</a>)</span>,
+al enfoque anterior se le llama <strong>Método de Aproximación Matricial</strong> y al enfoque que sigue se le llama <strong>Método de Aproximación de Perfiles</strong>. Se ilustra el método de la aproximación de perfiles utilizando los<strong>Perfiles Fila</strong>; sin embargo, se obtiene una solución análoga si tuviéramos que
+empezar con los <strong>Perfiles Columnas</strong>.</p>
+<p>Un <strong>perfil</strong> es un conjunto de frecuencias relativas con características especiales debido a cada <strong>la suma de sus elementos es uno (es decir, el 100<span class="math inline">\(\%\)</span>)</strong>. A partir de una tabla de frecuencia absolutas o tabla de contingencia, se originan dos tablas de frecuencias relativa, una con las frecuencias relativas de filas (ie. frecuencias divididas por el total de cada fila) y otra con las frecuencias relativas de columnas (ie. frecuencias divididas por el total de cada columna), a dichas tablas se le llaman <strong>Tabla de Perfiles Fila</strong> y <strong>Tabla de Perfiles Columna</strong>, respectivamente.</p>
+<p>El concepto de <em>Perfiles</em> es fundamental en el AC. Se habla del Perfil de la <span class="math inline">\(i\)</span>-ésima fila con respecto a las categorías de la variable-2 o categorías de la variable en columna (o distribución condicional de la fila <span class="math inline">\(i\)</span>-ésima) y se habla de Perfil de la <span class="math inline">\(j\)</span>-ésima columna con respecto a las categorías de la variable-1 o categorías de la variable en fila (o distribución condicional de la columna <span class="math inline">\(j\)</span>-ésima).</p>
+<p>En la tabla de perfiles o en un gráfico de barras se pueden comparar fácilmente los perfiles filas igualmente los perfiles columnas, como se verá en un ejemplo próximo.</p>
+<p>Algebraicamente, los perfiles filas son las filas de la matriz dada por:
+<span class="math display">\[
+\mathbf{D}_{\ \underline{r}}^{-1}\mathbf{P}=\begin{bmatrix} \frac{1}{r_{1.}} &amp; \cdots &amp; 0 &amp; \cdots  &amp; 0 \\
+\vdots &amp; \ddots &amp; \vdots &amp; \cdots &amp; \vdots \\
+0 &amp; \cdots &amp; \frac{1}{r_{i.}} &amp; \cdots &amp; 0 \\
+\vdots  &amp;  \cdots &amp; \vdots  &amp; \ddots &amp;  \vdots \\
+0 &amp; \cdots &amp; 0 &amp;\cdots  &amp;\frac{1}{r_{I.}} \end{bmatrix}
+\begin{bmatrix} p_{11} &amp; \cdots &amp; p_{1j} &amp; \cdots &amp; p_{1J} \\
+\vdots&amp;\ddots&amp;\vdots&amp;\cdots&amp;\vdots \\
+p_{i1} &amp; \cdots &amp; p_{ij} &amp; \cdots &amp; p_{iJ} \\
+\vdots&amp;\ddots&amp;\vdots&amp;\cdots&amp;\vdots \\
+p_{I1} &amp; \cdots &amp; p_{Ij} &amp; \cdots &amp; p_{IJ}\end{bmatrix}
+\]</span>
+<strong>Tabla de Perfiles Fila</strong></p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Cat-1</th>
+<th align="center">Cat-2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-j</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-J</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cat-1</td>
+<td align="center"><span class="math inline">\(\frac{p_{11}}{r_{1.}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{12}}{r_{1.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{1j}}{r_{1.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{1J}}{r_{1.}}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-2</td>
+<td align="center"><span class="math inline">\(\frac{p_{12}}{r_{2.}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{22}}{r_{2.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{2j}}{r_{2.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{2J}}{r_{2.}}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-i</td>
+<td align="center"><span class="math inline">\(\frac{p_{i1}}{r_{i.}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{i2}}{r_{i.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{ij}}{r_{i.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{iJ}}{r_{i.}}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-I</td>
+<td align="center"><span class="math inline">\(\frac{p_{I1}}{r_{I.}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{I2}}{r_{I.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{Ij}}{r_{I.}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{IJ}}{r_{I.}}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>El <span class="math inline">\(i\)</span>-ésimo perfil fila, o perfil de la categoría <span class="math inline">\(i\)</span>-ésima de la variable-1 o variable en las filas, es la <strong>distribución condicional empírica</strong> <em>de los individuos de la muestra que tienen o poseen esa categoría a través de todas las modalidades o categorías de la variable-2 o variable en las columnas</em>.</p>
+<p><strong>Tabla de Perfiles Columna</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Cat-1</th>
+<th align="center">Cat-2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-j</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-J</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cat-1</td>
+<td align="center"><span class="math inline">\(\frac{p_{11}}{r_{.1}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{12}}{r_{.2}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{1j}}{r_{.j}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{1J}}{r_{.J}}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-2</td>
+<td align="center"><span class="math inline">\(\frac{p_{21}}{r_{.1}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{22}}{r_{.2}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{2j}}{r_{.j}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{2J}}{r_{2.}}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-i</td>
+<td align="center"><span class="math inline">\(\frac{p_{i1}}{r_{.1}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{i2}}{r_{.2}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{ij}}{r_{.j}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{iJ}}{r_{.J}}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-I</td>
+<td align="center"><span class="math inline">\(\frac{p_{I1}}{r_{.1}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{I2}}{r_{.2}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{Ij}}{r_{.j}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{p_{IJ}}{r_{.J}}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>El <span class="math inline">\(j\)</span>-ésimo perfil columna, o perfil de la categoría <span class="math inline">\(j\)</span>-ésima de la variable-2 o la variable en las columnas, es la <strong>distribución condicional empírica</strong> <em>de los individuos de la muestra que tienen o poseen esa categoría a través de todas las modalidades o categorías de la variable-1 o variable en las filas</em>.</p>
+<div id="perfiles-fila-y-columna-promedio" class="section level4 hasAnchor" number="10.10.3.1">
+<h4><span class="header-section-number">10.10.3.1</span> Perfiles Fila y Columna Promedio<a href="análisis-de-correspondencia.html#perfiles-fila-y-columna-promedio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para la tabla de frecuencias absolutas o tabla de contingencia dada por:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Cat-1</th>
+<th align="center">Cat-2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-j</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-J</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cat-1</td>
+<td align="center"><span class="math inline">\(x_{11}\)</span></td>
+<td align="center"><span class="math inline">\(x_{12}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{1j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{1J}\)</span></td>
+<td align="center"><span class="math inline">\(x_{1.}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-2</td>
+<td align="center"><span class="math inline">\(x_{21}\)</span></td>
+<td align="center"><span class="math inline">\(x_{22}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{2j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{2J}\)</span></td>
+<td align="center"><span class="math inline">\(x_{2.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-i</td>
+<td align="center"><span class="math inline">\(x_{i1}\)</span></td>
+<td align="center"><span class="math inline">\(x_{i2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{ij}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{iJ}\)</span></td>
+<td align="center"><span class="math inline">\(x_{i.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Cat-I</td>
+<td align="center"><span class="math inline">\(x_{I1}\)</span></td>
+<td align="center"><span class="math inline">\(x_{I2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{Ij}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{IJ}\)</span></td>
+<td align="center"><span class="math inline">\(x_{I.}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center"><span class="math inline">\(x_{.1}\)</span></td>
+<td align="center"><span class="math inline">\(x_{.2}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{.j}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(x_{.J}\)</span></td>
+<td align="center"><span class="math inline">\(x_{..}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>El Perfil Fila Promedio</strong> es el perfil correspondiente a la última fila de dicha tabla, es decir el perfil dado por:</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Cat-1</th>
+<th align="center">Cat-2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-j</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-J</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center"><span class="math inline">\(\frac{x_{.1}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{x_{.2}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{x_{.j}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{x_{.J}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Similarmente <strong>El Perfil Columna Promedio</strong> es el perfil correspondiente a la última columna de dicha tabla, es decir el perfil dado por el transpuesto de:</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Cat-1</th>
+<th align="center">Cat-2</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-i</th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center">Cat-I</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center"><span class="math inline">\(\frac{x_{1.}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{x_{2.}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{x_{i.}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{x_{I.}}{x_{..}}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Los perfiles fila se pueden comparar entre ellos y con el perfil fila promedio, similarmente, los perfiles columna se pueden comparar entre ellos y con el perfil columna promedio.</p>
+<p><strong>NOTA:</strong></p>
+<p>A cada variable considerada en el AC le corresponde una tabla o matriz de perfiles asociada a sus respectivas modalidades o categorías. En el caso de ACS a las dos tablas se llaman <em>Tabla de Perfiles Fila</em> y <em>Tabla de Perfiles Columna</em>. En ACM, simplemente se habla de tabla de perfiles.</p>
+<p>El Análisis de una Tabla Contingencia o Tabla de Frecuencias Absolutas <span class="math inline">\(\mathbf{X}\)</span>, se puede definir como la aproximación de los <em>Perfiles Fila</em> (o de <em>Perfiles Columna</em> respectivamente) por <em>puntos en un espacio de baja dimensión</em>. Se considera aproximar los perfiles fila mediante la matriz <span class="math inline">\(\mathbf{P}^{\star}\)</span>.</p>
+<p>Usando las matrices raíz cuadrada <span class="math inline">\(\mathbf{D}_{\ \underline{r}}^{1/2}\)</span> y <span class="math inline">\(\mathbf{D}_{\ \underline{c}}^{1/2}\)</span> definidas en las ecuaciones <a href="análisis-de-correspondencia.html#eq:matrices-diagonal-raiz-cuadrada-y-su-inversa-de-filas">(10.14)</a> y en <a href="análisis-de-correspondencia.html#eq:matrices-diagonal-raiz-cuadrada-y-su-inversa-de-columnas">(10.15)</a>
+<span class="math display">\[
+\mathbf{D}_{\ \underline{r}}^{1/2}= \begin{bmatrix} \sqrt{r_{1.}} &amp; &amp;  &amp; \\
+&amp; \sqrt{r_{2.}} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; \sqrt{r_{I.}} \end{bmatrix}_{I\times I} \ \ \ \ ; \ \ \ \ \
+\mathbf{D}_{\ \underline{c}}^{1/2}= \begin{bmatrix} \sqrt{c_{.1}} &amp; &amp;  &amp; \\
+&amp; \sqrt{c_{.2}} &amp; &amp; \\
+&amp; &amp;  \ddots &amp;  \\
+&amp;&amp;&amp; \sqrt{c_{.J}} \end{bmatrix}_{J\times J}
+\]</span></p>
+<p>se puede escribir:
+<span class="math display">\[
+(\mathbf{D}_{\ \underline{r}}^{-1}\mathbf{P}-\mathbf{P}^{\star})\ \mathbf{D}_{\ \underline{c}}^{-1/2}=\mathbf{D}_{\ \underline{r}}^{-1/2}(\mathbf{D}_{\ \underline{r}}^{-1/2}\mathbf{P}-\mathbf{D}_{\ \underline{r}}^{1/2}\mathbf{P}^{\star})\ \mathbf{D}_{\ \underline{c}}^{-1/2}
+\]</span></p>
+<p>y el criterio de Mínimos Cuadrados dado en <a href="análisis-de-correspondencia.html#eq:criterio-de-minimizacion-en-ac">(10.16)</a> con
+<span class="math display">\[
+p_{\ ij}^{\star}=\frac{\widehat{p\ }_{ij}}{r_{i.}} \ \ \ , \ \ \  (\text{es decir que} \ \ , \ \ \  \widehat{p\ }_{ij}=r_{\ i.}\ p_{\ ij}^{\star})
+\]</span>
+se puede escribir como sigue:
+<span class="math display" id="eq:criterio-de-minimizacion-en-ac-mediante-perfiles">\[
+\begin{align*}
+SS(\widehat{\mathbf{P}})=\sum_{i=1}^I\sum_{j=1}^J\frac{(p_{ij}-\widehat{p\ }_{ij})^2}{r_{i.}c_{.j}}&amp;=\sum_{i=1}^I \ r_{i.}\  \sum_{j=1}^J\frac{( \frac{ p_{ij}}{r_{i.}}- \frac{\widehat{p\ }_{ij}}{r_{i.}} )^2}{\frac{ r_{i.}c_{.j}}{r_{i.}}}\\
+&amp;=\sum_{i=1}^I \ r_{i.} \ \sum_{j=1}^J\frac{(\frac{p_{ij}}{r_{i.}}-\ p_{\ ij}^{\star})^2}{c_{.j}}\\
+&amp;\hspace{-3.0cm}=tr\biggl[\mathbf{D}_{r}^{1/2}\mathbf{D}_{r}^{1/2}(\mathbf{D}_{r}^{-1}\mathbf{P}-\mathbf{P}^{\star})\mathbf{D}_{c}^{-1/2}\mathbf{D}_{c}^{-1/2}(\mathbf{D}_{r}^{-1}\mathbf{P}-\mathbf{P}^{\star})^T\biggr]\\
+&amp;\hspace{-6.0cm}=tr\biggl[\mathbf{D}_{r}^{1/2}(\mathbf{D}_{r}^{-1/2}\mathbf{P}-\mathbf{D}_{r}^{1/2}\mathbf{P}^{\star}) \mathbf{D}_{c}^{-1/2}\mathbf{D}_{c}^{-1/2} (\mathbf{D}_{r}^{-1/2}\mathbf{P}-\mathbf{D}_{r}^{1/2}\mathbf{P}^{\star})^T\ \mathbf{D}_{r}^{-1/2}\biggr]\\
+&amp;\hspace{-8.0cm}SS(\widehat{\mathbf{P}})=tr\biggl[\biggl(\left(\mathbf{D}_{r}^{-1/2}\mathbf{P}-\mathbf{D}_{r}^{1/2}\mathbf{P}^{\star}\right) \mathbf{D}_{c}^{-1/2}\biggr)\biggl(\left(\mathbf{D}_{r}^{-1/2}\mathbf{P}-\mathbf{D}_{r}^{1/2}\mathbf{P}^{\star}\right) \mathbf{D}_{c}^{-1/2} \biggr)^T \biggr]
+\end{align*}
+\tag{10.18}
+\]</span></p>
+<p>Minimizar esta última expresión para la traza de <a href="análisis-de-correspondencia.html#eq:criterio-de-minimizacion-en-ac-mediante-perfiles">(10.18)</a>, es precisamente el primer problema de minimización tratado en la demostración del teorema <a href="análisis-de-correspondencia.html#thm:teorema-analisis-de-correspondencia">10.1</a>.</p>
+<p>La matriz <span class="math inline">\(\mathbf{D}_{\ \underline{r}}^{-1/2}\mathbf{P}\mathbf{D}_{\ \underline{c}}^{-1/2}\)</span>-tiene descomposición en valores y vectores singulares (SVD) dada por:
+<span class="math display" id="eq:expansion-svd">\[
+\begin{equation}
+\mathbf{D}_{\ \underline{r}}^{-1/2}\mathbf{P}\mathbf{D}_{\ \underline{c}}^{-1/2}=\sum_{k=1}^J \widetilde{\ \lambda_k}\ \widetilde{\ \underline{\mathbf{u}}_{\ k}}\ \widetilde{\ \underline{\mathbf{v}}_{\ k}}^T
+\end{equation}
+\tag{10.19}
+\]</span></p>
+<p><strong>La mejor aproximación de rango</strong> <span class="math inline">\(K\)</span>-es obtenida usando los primeros <span class="math inline">\(K\)</span>-términos de la expanción anterior <a href="análisis-de-correspondencia.html#eq:expansion-svd">(10.19)</a>.</p>
+<p>Ya que de <a href="análisis-de-correspondencia.html#eq:criterio-de-minimizacion-en-ac-mediante-perfiles">(10.18)</a>, se ha aproximado a <span class="math inline">\(\mathbf{D}_{\ \underline{r}}^{-1/2}\mathbf{P}\mathbf{D}_{\ \underline{c}}^{-1/2}\)</span> por <span class="math inline">\(\mathbf{D}_{\ \underline{r}}^{1/2}\mathbf{P}^{\star}\mathbf{D}_{\ \underline{c}}^{1/2}\)</span>, multiplicando por <span class="math inline">\(\mathbf{D}_{\ \underline{r}}^{-1/2}\)</span>-a la izquierda y multiplicando por <span class="math inline">\(\mathbf{D}_{\ \underline{c}}^{1/2}\)</span>-a la derecha, se obtiene la SVD-Generalizada dada por:
+<span class="math display" id="eq:svd-generalziada-de-Dp-1-P">\[
+\begin{equation}
+\mathbf{D}_{\ \underline{r}}^{-1}\ \mathbf{P}=\sum_{k=1}^J \widetilde{\ \lambda_k}\ (\mathbf{D}_{\ \underline{r}}^{-1/2} \widetilde{\ \underline{\mathbf{u}}_{\ k}})\ (\mathbf{D}_{\ \underline{c}}^{1/2}\ \widetilde{\ \underline{\mathbf{v}}_{\ k}})^T
+\end{equation}
+\tag{10.20}
+\]</span></p>
+<p>donde,
+<span class="math display">\[
+(\widetilde{\ \underline{\mathbf{u}}_{\ 1}},\widetilde{\ \underline{\mathbf{v}}_{\ 1}})=(\mathbf{D}_{\ \underline{r}}^{1/2}\ \mathbf{1}_{I}\ , \  \mathbf{D}_{\ \underline{c}}^{1/2}\ \mathbf{1}_{J})
+\]</span>
+son vectores singulares asociados con el valor singular <span class="math inline">\(\lambda_1=1\)</span>.</p>
+<p>Debido a que:
+<span class="math display">\[
+\mathbf{D}_{\ \underline{r}}^{1/2}\ (\mathbf{D}_{\ \underline{r}}^{-1/2}\ \mathbf{1}_{I})=\mathbf{1}_I\\
+(\mathbf{D}_{\ \underline{c}}^{1/2}\ \mathbf{1}_{J})^T\ \mathbf{D}_{\ \underline{c}}^{1/2}\ = \underline{\mathbf{c}}^T
+\]</span>
+entonces el término principal en la descomposición <a href="análisis-de-correspondencia.html#eq:svd-generalziada-de-Dp-1-P">(10.20)</a> es: <span class="math inline">\(\mathbf{1}_I\ \underline{\mathbf{c}}^T\)</span>.</p>
+<p>Por lo tanto, en términos de la SVD de:
+<span class="math display">\[
+\mathbf{D}_{\ \underline{r}}^{-1/2}\mathbf{P}\mathbf{D}_{\ \underline{c}}^{-1/2}
+\]</span></p>
+<p>La Aproximación de Rango <span class="math inline">\(K&lt;J\)</span> a los perfiles fila <span class="math inline">\(\mathbf{D}_{\ \underline{r}}^{-1}\ \mathbf{P}\)</span> esta dada por:</p>
+<p><span class="math display">\[
+\mathbf{P}^{\star} \approx \mathbf{1}_I\ \underline{\mathbf{c}}^T + \sum_{k=2}^K \widetilde{\ \lambda_k}\ (\mathbf{D}_{\ \underline{r}}^{-1/2} \widetilde{\ \underline{\mathbf{u}}_{\ k}})\ (\mathbf{D}_{\ \underline{c}}^{1/2}\ \widetilde{\ \underline{\mathbf{v}}_{\ k}})^T
+\]</span></p>
+<p>Ahora, en términos de la SVD de:
+<span class="math display">\[
+\mathbf{D}_{\ \underline{r}}^{-1/2}\ ( \mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T)\ \mathbf{D}_{\ \underline{c}}^{-1/2}
+\]</span></p>
+<p>se puede escribir:
+<span class="math display">\[
+\mathbf{P}^{\star}-\mathbf{1}_I\ \underline{\mathbf{c}}^T \approx   \sum_{k=1}^{K-1} \widetilde{\ \lambda_k}\ (\mathbf{D}_{\ \underline{r}}^{-1/2} \widetilde{\ \underline{\mathbf{u}}_{\ k}})\ (\mathbf{D}_{\ \underline{c}}^{1/2}\ \widetilde{\ \underline{\mathbf{v}}_{\ k}})^T
+\]</span></p>
+</div>
+<div id="inercia" class="section level4 hasAnchor" number="10.10.3.2">
+<h4><span class="header-section-number">10.10.3.2</span> Inercia<a href="análisis-de-correspondencia.html#inercia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>La Inercia Total</strong> es una medida de la variación en la cantidad de datos y se define como la siguiente <em>Suma de Cuadrados Ponderada</em>:
+<span class="math display" id="eq:inercia-total-en-ac">\[
+\begin{equation}
+\hspace{-1.0cm}tr\biggl[\mathbf{D}_{r}^{-1/2}\left(\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\right) \mathbf{D}_{c}^{-1/2} \left(\mathbf{D}_{r}^{-1/2}\left(\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\right) \mathbf{D}_{c}^{-1/2} \right)^T \biggr]=\sum_{I}\sum_{J}\ \frac{(p_{ij}-r_{i.}c_{.j})^2}{r_{i.}c_{.j}}=\sum_{k=1}^{J-1} \ \lambda_k^2
+\end{equation}
+\tag{10.21}
+\]</span></p>
+<p>donde, <span class="math inline">\(\lambda_k\)</span>-son los valores-singulares obtenidos de la SVD de
+<span class="math inline">\(\mathbf{D}_{r}^{-1/2}\left(\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T\right) \mathbf{D}_{c}^{-1/2}\)</span>.</p>
+<p>La Inercia Asociada con <strong>La Mejor Aproximación de Rango-Reducido</strong> <span class="math inline">\(K&lt;J\)</span> a la matriz centrada <span class="math inline">\(\mathbf{P}-\underline{\mathbf{r}}\  \underline{\mathbf{c}}^T\)</span> (es decir, la solución <span class="math inline">\(K\)</span>-dimensional) es:
+<span class="math display">\[
+\sum_{k=1}^K \ \lambda_k^2
+\]</span></p>
+<p><strong>La Inercia Residual</strong> (o variación-residual) no tenida en cuenta por la solución de rango <span class="math inline">\(K\)</span>, es la suma de cuadrados del resto de los valores-singulares, es decir:
+<span class="math display">\[
+\text{Inercia-Residual}=\sum_{k=K+1}^{J-1} \ \lambda_k^2 = \lambda_{K+1}^2+\lambda_{K+2}^2+\cdots+\lambda_{J-1}^2
+\]</span></p>
+</div>
+<div id="interpretación-en-dos-dimensiones" class="section level4 hasAnchor" number="10.10.3.3">
+<h4><span class="header-section-number">10.10.3.3</span> Interpretación en dos Dimensiones<a href="análisis-de-correspondencia.html#interpretación-en-dos-dimensiones" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Debido a que la Inercia es una medida de la variación total de la tabla de datos, ¿Cómo se puede interpretar un valor grande de la proporción dada por?:
+<span class="math display">\[
+\frac{\lambda_1^2+\lambda_2^2}{\sum_{k=1}^{J-1} \ \lambda_k^2 }
+\]</span></p>
+<p>Geométricamente, se dice que las asociaciones en los datos centrados están bien representadas por los puntos en un plano, y el mejor plano de aproximación que tiene en cuenta casi toda la variación que se encuentra detrás de los datos esta dado por la solución de rango uno (modelo de independencia). Algebraicamente se dice, que la aproximación:
+<span class="math display">\[
+\mathbf{P}-\underline{\mathbf{r}}\ \underline{\mathbf{c}}^T \approx \lambda_1\ \underline{\mathbf{u}}_{\ 1}\ \underline{\mathbf{v}}_{\ 1}^T + \lambda_2\ \underline{\mathbf{u}}_{\ 2}\ \underline{\mathbf{v}}_{\ 2}^T
+\]</span></p>
+<p>es muy buena, o equivalentemente:
+<span class="math display">\[
+\mathbf{P} \approx  \underline{\mathbf{r}}\ \underline{\mathbf{c}}^T + \lambda_1\ \underline{\mathbf{u}}_{\ 1}\ \underline{\mathbf{v}}_{\ 1}^T + \lambda_2\ \underline{\mathbf{u}}_{\ 2}\ \underline{\mathbf{v}}_{\ 2}^T
+\]</span></p>
+</div>
+<div id="comentarios-finales" class="section level4 hasAnchor" number="10.10.3.4">
+<h4><span class="header-section-number">10.10.3.4</span> Comentarios Finales<a href="análisis-de-correspondencia.html#comentarios-finales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El AC es principalmente una técnica gráfica diseñada para representar asociaciones en espacios de baja-dimensión. Se puede considerar como un método de escalamiento y se puede ver como un complemento a otros métodos, tales como escalamiento multidimensional y Métodos Biplots. También tiene enlaces con el ACP y el Análisis de Correlación Canónica (ACC). Se recomienda como referencia complementaria a <span class="citation">(<a href="#ref-greenacre2000">Greenacre 2000</a>)</span>.</p>
+</div>
+</div>
+</div>
+<h3>Bibliografía<a href="bibliografía.html#bibliografía" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-greenacre2000" class="csl-entry">
+Greenacre, Michael. 2000. <span>“Correspondence Analysis of Square Asymmetric Matrices.”</span> <em>Journal of the Royal Statistical Society Series C: Applied Statistics</em> 49 (3): 297–310.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="escalamiento-multidimensional.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

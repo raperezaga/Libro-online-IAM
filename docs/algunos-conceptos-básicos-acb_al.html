@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.1 Algunos conceptos básicos {##acb_al} | Chapter 1</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.1 Algunos conceptos básicos {##acb_al} | Chapter 1" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.1 Algunos conceptos básicos {##acb_al} | Chapter 1" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="rep_al.html"/>
+<link rel="next" href="diferenc_vectores.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="descripción.html"><a href="descripción.html"><i class="fa fa-check"></i>Descripción</a></li>
+<li class="chapter" data-level="" data-path="acerca-del-autor.html"><a href="acerca-del-autor.html"><i class="fa fa-check"></i>Acerca del Autor</a></li>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+<li class="chapter" data-level="0.1" data-path="automatically-installing-needed-packages-not-yet-installed.html"><a href="automatically-installing-needed-packages-not-yet-installed.html"><i class="fa fa-check"></i><b>0.1</b> Automatically installing needed packages not yet installed</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep_al.html"><a href="rep_al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="algunos-conceptos-básicos-acb_al.html"><a href="algunos-conceptos-básicos-acb_al.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos {##acb_al}</a></li>
+<li class="chapter" data-level="1.2" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.2</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinex"><i class="fa fa-check"></i><b>1.2.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{x})\)</span>:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>1.3</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="org_pres_dat.html"><a href="org_pres_dat.html#resumenes-descriptivos"><i class="fa fa-check"></i><b>1.3.1</b> Resumenes Descriptivos</a></li>
+<li class="chapter" data-level="1.3.2" data-path="org_pres_dat.html"><a href="org_pres_dat.html#representación-gráfica-de-observaciones-multivariadas"><i class="fa fa-check"></i><b>1.3.2</b> Representación Gráfica de Observaciones multivariadas</a></li>
+<li class="chapter" data-level="1.3.3" data-path="org_pres_dat.html"><a href="org_pres_dat.html#vectores-y-matrices-aleatorias"><i class="fa fa-check"></i><b>1.3.3</b> Vectores y Matrices Aleatorias</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>1.4</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>1.4.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="1.4.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>1.4.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>1.5</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="1.6" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>1.6</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>1.6.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="1.6.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>1.6.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>1.7</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="1.8" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>1.8</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="1.9" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>1.9</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>1.9.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="1.9.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>1.9.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="1.9.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>1.9.3</b> Varianza Generalizada Determinada por la matriz de correlación muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="1.9.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>1.9.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+<li class="chapter" data-level="1.9.5" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-total-muestral"><i class="fa fa-check"></i><b>1.9.5</b> Varianza Total Muestral</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>1.10</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="1.11" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>1.11</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="distancias.html"><a href="distancias.html#introducción"><i class="fa fa-check"></i><b>1.11.1</b> Introducción</a></li>
+<li class="chapter" data-level="1.11.2" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>1.11.2</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>2</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>2.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="2.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>2.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="2.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>2.3</b> Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="normal-multivariada.html"><a href="normal-multivariada.html#algunos-aspectos-geométricos-de-la-nm"><i class="fa fa-check"></i><b>2.3.1</b> Algunos Aspectos Geométricos de la NM</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="propiedades-de-la-distribución-normal-multivariada.html"><a href="propiedades-de-la-distribución-normal-multivariada.html"><i class="fa fa-check"></i><b>2.4</b> Propiedades de la distribución Normal Multivariada</a></li>
+<li class="chapter" data-level="2.5" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>2.5</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>2.5.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>2.5.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>2.6</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="2.7" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>2.7</b> Transformaciones para acercar a la normalidad multivariada</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>2.7.1</b> Familia de transformaciones de potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>2.7.2</b> Transformaciones para el caso multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>2.8</b> Muestra aleatoria normal <span class="math inline">\(p\)</span>-variada</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>2.8.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="2.8.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>2.8.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="2.8.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>2.8.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para tamaños muestrales grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>3</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>3.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><i class="fa fa-check"></i><b>3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>3.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>3.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>3.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><i class="fa fa-check"></i><b>3.4</b> PH para Igualdad de vectores de medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1=\underline{\boldsymbol{\mu}}_2\)</span></a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida"><i class="fa fa-check"></i><b>3.4.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="3.4.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida"><i class="fa fa-check"></i><b>3.4.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="3.4.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1neq-mathbfsigma_2-desconocida"><i class="fa fa-check"></i><b>3.4.3</b> <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><i class="fa fa-check"></i><b>3.5</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida-1"><i class="fa fa-check"></i><b>3.5.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="3.5.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>3.5.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="3.5.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1-neq-mathbfsigma_2-desconocidas"><i class="fa fa-check"></i><b>3.5.3</b> <span class="math inline">\(\mathbf{\Sigma}_1 \neq \mathbf{\Sigma}_2\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><i class="fa fa-check"></i><b>3.6</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,      Observaciones Pareadas</a></li>
+<li class="chapter" data-level="3.7" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>3.7</b> PH Acerca de Contrastes para el vector de medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-desconocida"><i class="fa fa-check"></i><b>3.7.1</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocida</a></li>
+<li class="chapter" data-level="3.7.2" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-es-conocida"><i class="fa fa-check"></i><b>3.7.2</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-es conocida</a></li>
+<li class="chapter" data-level="3.7.3" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-desconocida-y-n-grande"><i class="fa fa-check"></i><b>3.7.3</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-Desconocida y n-Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html"><i class="fa fa-check"></i><b>3.8</b> Inferencia para la Matriz de Covarianza</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#pruba-de-razón-de-verosimilitud"><i class="fa fa-check"></i><b>3.8.1</b> Pruba de Razón de Verosimilitud</a></li>
+<li class="chapter" data-level="3.8.2" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#prueba-de-bartlet"><i class="fa fa-check"></i><b>3.8.2</b> Prueba de Bartlet</a></li>
+<li class="chapter" data-level="3.8.3" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#dos-o-más-matrices-de-covarianzas"><i class="fa fa-check"></i><b>3.8.3</b> Dos o más Matrices de Covarianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><i class="fa fa-check"></i><b>3.9</b> Regiones de Confianza y comparaciones simultáneas entre las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#construcción-de-una-región-de-confianza-para-underlinemu-cuando-la-población-tiene-distribución-n_punderlinemumathbfsigma-con-underlinemu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>3.9.1</b> Construcción de una región de confianza para <span class="math inline">\(\underline{\mu}\)</span> cuando la población tiene distribución <span class="math inline">\(N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="3.9.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#región-de-confianza-para-el-caso-de-p2-elipse-de-confianza"><i class="fa fa-check"></i><b>3.9.2</b> Región de Confianza para el caso de <span class="math inline">\(p=2\)</span> (Elipse de Confianza)</a></li>
+<li class="chapter" data-level="3.9.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlinemu"><i class="fa fa-check"></i><b>3.9.3</b> Intervalos de confianza simultáneos para las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a></li>
+<li class="chapter" data-level="3.9.4" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-t2-simultáneos-para-diferencias-de-medias"><i class="fa fa-check"></i><b>3.9.4</b> IC <span class="math inline">\(T^2\)</span> Simultáneos para Diferencias de Medias</a></li>
+<li class="chapter" data-level="3.9.5" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#método-de-bonferroni-para-comparaciones-múltiples"><i class="fa fa-check"></i><b>3.9.5</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+<li class="chapter" data-level="3.9.6" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-chi2-caso-n-grande"><i class="fa fa-check"></i><b>3.9.6</b> Intervalos de Confianza Simultáneos <span class="math inline">\(\chi^2\)</span> (caso n-Grande)</a></li>
+<li class="chapter" data-level="3.9.7" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-simultáneos-para-n-grande-usando-la-normal-estándar-z_alpha"><i class="fa fa-check"></i><b>3.9.7</b> IC simultáneos para n-Grande Usando la Normal Estándar <span class="math inline">\(Z_\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>4</b> Análisis de Componentes Principales (AC)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="interpretación-del-acp.html"><a href="interpretación-del-acp.html"><i class="fa fa-check"></i><b>4.2</b> Interpretación del ACP</a></li>
+<li class="chapter" data-level="4.3" data-path="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple.html"><a href="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple.html"><i class="fa fa-check"></i><b>4.3</b> Interpretación Geométrica del ACP Mediante un Ejemplo Simple</a></li>
+<li class="chapter" data-level="4.4" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html"><i class="fa fa-check"></i><b>4.4</b> Mas de dos Ejes</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#min-cuadrados"><i class="fa fa-check"></i><b>4.4.1</b> Ajuste de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="4.4.2" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#relación-entre-los-sub-espacios-de-mathbbrp-y-de-mathbbrn"><i class="fa fa-check"></i><b>4.4.2</b> Relación entre los Sub-espacios de <span class="math inline">\(\mathbb{R}^p\)</span> y de <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="componentes-principales-en-análisis-de-regresión.html"><a href="componentes-principales-en-análisis-de-regresión.html"><i class="fa fa-check"></i><b>4.5</b> Componentes Principales en Análisis de Regresión</a></li>
+<li class="chapter" data-level="4.6" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>4.6</b> Componentes Principales Poblacionales</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#determinación-de-las-cps"><i class="fa fa-check"></i><b>4.6.1</b> Determinación de las CPs</a></li>
+<li class="chapter" data-level="4.6.2" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>4.6.2</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="4.6.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>4.6.3</b> Componentes principales usando variables estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><i class="fa fa-check"></i><b>4.7</b> Componentes Principales para Matrices de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span> con Estructuras Especiales</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-no-correlacionadas"><i class="fa fa-check"></i><b>4.7.1</b> Variables No-Correlacionadas</a></li>
+<li class="chapter" data-level="4.7.2" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-altamente-correlacionadas"><i class="fa fa-check"></i><b>4.7.2</b> Variables Altamente Correlacionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.8</b> Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="4.9" data-path="algunos-ejemplos.html"><a href="algunos-ejemplos.html"><i class="fa fa-check"></i><b>4.9</b> Algunos Ejemplos</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="algunos-ejemplos.html"><a href="algunos-ejemplos.html#ejemplo-2"><i class="fa fa-check"></i><b>4.9.1</b> Ejemplo-2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>4.10</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="4.11" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.11</b> Interpretación de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="4.12" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.12</b> Estandarización de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="4.13" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>4.13</b> Gráficos en una Análisis de componentes principales</a>
+<ul>
+<li class="chapter" data-level="4.13.1" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>4.13.1</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.14" data-path="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>4.14</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{e}}_i\)</span> en muestras grandes</a></li>
+<li class="chapter" data-level="4.15" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html"><i class="fa fa-check"></i><b>4.15</b> Ejemplos Finales</a>
+<ul>
+<li class="chapter" data-level="4.15.1" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-1"><i class="fa fa-check"></i><b>4.15.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="4.15.2" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-2-1"><i class="fa fa-check"></i><b>4.15.2</b> Ejemplo-2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="algunos-conceptos-básicos-acb_al" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Algunos conceptos básicos {##acb_al}<a href="algunos-conceptos-básicos-acb_al.html#algunos-conceptos-básicos-acb_al" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:vector" class="definition"><strong>Definición 1.1  (Vector) </strong></span>Arreglo de <span class="math inline">\(n\)</span>-números reales ver la subsección @ref(acb_al)</p>
+</div>
+<div class="definition">
+<p><span id="def:vector-unos" class="definition"><strong>Definición 1.2  (Vector de Unos) </strong></span>Vector cuyas entradas son todos uno</p>
+</div>
+<div class="definition">
+<p><span id="def:suma-vect" class="definition"><strong>Definición 1.3  (Suma de Vectores) </strong></span>Se realiza la suma componente a componente</p>
+</div>
+<div class="definition">
+<p><span id="def:prod-inter" class="definition"><strong>Definición 1.4  (Producto interno entre vectores) </strong></span>Multiplicación elemento a elemento, ie.
+<span class="math display">\[
+\langle \underline{a} \ , \ \underline{b} \rangle =a_1b_1+a_2b_2+\cdots+a_n b_n= \sum_i a_i b_i
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:norma-vect" class="definition"><strong>Definición 1.5  (Norma de un Vector) </strong></span>Es la raíz cuadrada del producto interno del vector por si mismo, ie.
+<span class="math display">\[
+\|\underline{a} \|=\sqrt{\langle \underline{a}\ , \ \underline{a} \rangle}=\sqrt{\underline{a}^t\underline{a}}=\sqrt{a_1^2+a_2^2+\cdots+a_n^2},
+\]</span>
+con <span class="math inline">\(\underline{a}^t=(a_1,a_2,\ldots,a_n)\)</span></p>
+</div>
+<p><strong>Propiedades de la Norma:</strong></p>
+<p><span class="math inline">\(\|c \underline{a} \|=|c|\|\underline{a}\|\)</span>, si <span class="math inline">\(|c|&gt;1\)</span> entonces <span class="math inline">\(\underline{a}\)</span>-se extiende y si <span class="math inline">\(|c|&lt;1\)</span> entonces <span class="math inline">\(\underline{a}\)</span>-se contrae.</p>
+<div class="definition">
+<p><span id="def:dist-vect" class="definition"><strong>Definición 1.6  (Distancia entre dos vectores) </strong></span><span class="math inline">\(d(\underline{a}\ , \ \underline{b})=\|\underline{a} - \underline{b} \|\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:angulo-vect" class="definition"><strong>Definición 1.7  (Ángulo entre 2-vectores) </strong></span>El ángulo <span class="math inline">\(\theta\)</span> entre dos vectores <span class="math inline">\(\underline{a}\)</span> y <span class="math inline">\(\underline{b}\)</span> está dado por:
+<span class="math display">\[
+\cos \theta=\frac{\langle  \underline{a}\ , \ \underline{b} \rangle}{\|\underline{a}\|\|\underline{b}\|}=\frac{\underline{a}^t \underline{b}}{\|\underline{a}\|\|\underline{b}\|}
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:vect-ortog" class="definition"><strong>Definición 1.8  (Vectores ortogonales) </strong></span><span class="math inline">\(\underline{a}\)</span> y <span class="math inline">\(\underline{b}\)</span> son ortogonales si <span class="math inline">\(\langle \underline{a}\ , \ \underline{b} \rangle=0\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:proyec-ortog" class="definition"><strong>Definición 1.9  (Proyección Ortogonal) </strong></span>La proyección ortogonal de un vector <span class="math inline">\(\underline{u}\)</span> sobre un vector <span class="math inline">\(\underline{v}\)</span> es el vector <span class="math inline">\(\underline{u}_p=proy_{\underline{v}}\underline{u}\)</span>, definido por:
+<span class="math display">\[
+\underline{u}_p=proy_{\underline{v}}\underline{u}=\frac{\langle  \underline{u}\ , \ \underline{v} \rangle}{\|\underline{v}\|^2}\underline{v}=k.\underline{v},
+\]</span>
+con <span class="math inline">\(k=\frac{\langle \underline{u}\ , \ \underline{v} \rangle}{\|\underline{v}\|^2}\)</span> y <span class="math inline">\(\|\underline{v}\|^2=\langle \underline{v}\ , \ \underline{v} \rangle\)</span></p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-proy-ortog"></span>
+<img src="imagenes/proyeccion.JPG" alt="Proyección Ortogonal" width="50%" />
+<p class="caption">
+Figura 1.1: Proyección Ortogonal
+</p>
+</div>
+<div class="definition">
+<p><span id="def:matriz" class="definition"><strong>Definición 1.10  (Matriz) </strong></span>Una matriz es un arreglo rectangular de números en filas y columnas. Usualmente se denotan por <span class="math inline">\(A_{n \times p}\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-cuad" class="definition"><strong>Definición 1.11  (Matriz Cuadrada) </strong></span><span class="math inline">\(A_{n \times p}\)</span> es cuadrada si <span class="math inline">\(n=p\)</span>, ie. número de filas igual al número de columnas, se denota por: <span class="math inline">\(A_n\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-diag" class="definition"><strong>Definición 1.12  (Matriz Diagonal) </strong></span>Es una matriz cuadrada con ceros fuera de la diagonal, se denota por <span class="math inline">\(D_n\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-ident" class="definition"><strong>Definición 1.13  (Matriz Identidad) </strong></span>Es una matriz diagonal con unos en la diagonal, se denota por <span class="math inline">\(I_n\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-unos" class="definition"><strong>Definición 1.14  (Matriz Cuadrada de unos) </strong></span>Es una matriz cuadrada llena de unos, se denota por: <span class="math inline">\(J_n\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-trinagular" class="definition"><strong>Definición 1.15  (Matriz triangular inferior y triangular superior) </strong></span>Matrices con parte superior llena de ceros y parte inferior llena de ceros, respectivamente.</p>
+</div>
+<div class="definition">
+<p><span id="def:suma-matrices" class="definition"><strong>Definición 1.16  (Suma de Matrices) </strong></span>La suma de matrices de igual dimensión se realiza componente a componente.</p>
+</div>
+<div class="definition">
+<p><span id="def:multip-matrices" class="definition"><strong>Definición 1.17  (Multiplicación de Matrices) </strong></span>La multiplicación de matrices de dimensiones apropiadas se realiza siguiendo el procedimiento de filas por columnas.</p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-traspuesta" class="definition"><strong>Definición 1.18  (Matriz Traspuesta) </strong></span>La transpuesta de una matriz <span class="math inline">\(A_{n \times p}\)</span> es la matriz que se obtiene invirtiendo las filas por columnas, la cual se denota por: <span class="math inline">\(A_{p \times n}^t\)</span>.   Se cumple que: <span class="math inline">\((AB)^t=B^tA^t\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-simetrica" class="definition"><strong>Definición 1.19  (Matriz Simétrica) </strong></span>Una matriz simétrica es una matriz cuadrada <span class="math inline">\(A_n\)</span> tal que su transpuesta es igual a la matriz original, ie. si <span class="math inline">\(A^t=A\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:determ-matriz" class="definition"><strong>Definición 1.20  (Determinante de una Matriz) </strong></span>Sea <span class="math inline">\(A\)</span> una matriz cuadrada de orden <span class="math inline">\(n\)</span>. El determinante de <span class="math inline">\(A\)</span>, denotado por <span class="math inline">\(|A|\)</span>, se obtiene como:
+<span class="math display">\[
+|A|=\sum_{j=1}^n a_{ij}|A_{ij}|(-1)^{i+j},
+\]</span>
+en donde, <span class="math inline">\(A_{ij}\)</span>-es la matriz cuadrada de orden <span class="math inline">\((n-1)\)</span> que se obtiene al eliminar la fila <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(A\)</span> (ie. menor <span class="math inline">\(A_{ij}\)</span>).</p>
+</div>
+<p><strong>Alguna propiedades del determinante de una matriz:</strong></p>
+<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> matrices cuadradas de orden <span class="math inline">\(n\)</span> y <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(|A|=|A^t|\)</span></p></li>
+<li><p><span class="math inline">\(|AB|=|A||B|\)</span></p></li>
+<li><p><span class="math inline">\(|c A|=c^n|A|\)</span></p></li>
+<li><p>La matriz <span class="math inline">\(A\)</span> es invertible si el <span class="math inline">\(|A|\neq 0\)</span>, esto equivale a decir que todos los valores propios de <span class="math inline">\(A\)</span> son diferentes de cero.</p></li>
+<li><p>Si la inversa de <span class="math inline">\(A\)</span>, <span class="math inline">\(A^{-1}\)</span>-existe, entonces: <span class="math inline">\(|A| =\frac{1}{|A^{-1}|}\)</span></p></li>
+<li><p>Si <span class="math inline">\(A\)</span> es una matriz cuadrada de orden <span class="math inline">\(2\)</span>-invertible, entonces:</p></li>
+</ol>
+<p><span class="math display">\[
+A^{-1}=\frac{1}{|A|}\begin{bmatrix}
+                a_{22} &amp; -a_{12}\\
+                -a_{21} &amp; a_{11}
+                \end{bmatrix}\ , \ \ \ \text{con}\ \ \ A=\begin{bmatrix}
+                a_{11} &amp; a_{12}\\
+                a_{21} &amp; a_{22}
+                \end{bmatrix}
+\]</span></p>
+<div class="definition">
+<p><span id="def:matriz-inversa" class="definition"><strong>Definición 1.21  (Matriz Inversa) </strong></span>Sea <span class="math inline">\(A_n\)</span> una matriz cuadrada de orden <span class="math inline">\(n\)</span>. Si existe una matriz cuadrada <span class="math inline">\(B_n\)</span> tal que <span class="math inline">\(A_n B_n=B_nA_n=I_n\)</span>, entonces se dice que <span class="math inline">\(B\)</span> es la inversa de <span class="math inline">\(A\)</span> y se denota por: <span class="math inline">\(B=A^{-1}\)</span>, ie.
+<span class="math display">\[
+AA^{-1}=A^{-1}A=I_n
+\]</span></p>
+</div>
+<p><strong>Propiedades de la Inversa:</strong></p>
+<p>La inversa de <span class="math inline">\(A\)</span>, ei. <span class="math inline">\(A^{-1}\)</span> cumple que:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\((A^t)^{-1}=(A^{-1})^t\)</span>.</p></li>
+<li><p><span class="math inline">\((AB)^{-1}=B^{-1}A^{-1}\)</span>.</p></li>
+<li><p><span class="math inline">\((A^{-1})^{-1}=A\)</span>.</p></li>
+</ol>
+<div class="definition">
+<p><span id="def:matriz-ortog" class="definition"><strong>Definición 1.22  (Matriz Ortogonal) </strong></span>Una matriz cuadrada <span class="math inline">\(A_n\)</span> de orden <span class="math inline">\(n\)</span>, se dice que es ortogonal si sus columnas como vectores son perpendiculares, ie:
+<span class="math display">\[
+A^tA=AA^t=I_n,
+\]</span>
+es decir, si <span class="math inline">\(A^t=A^{-1}\)</span>. (Ortonormal si además son unitarios ).</p>
+</div>
+<p><strong>Propiedades de una matriz Ortogonal:</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(|A|=\pm 1\)</span>.</p></li>
+<li><p>El producto de un número finito de matrices ortogonales es ortogonal.</p></li>
+<li><p>La Inversa y por tanto la transpuesta de una matriz ortogonal es ortogonal.</p></li>
+<li><p>Dada una matriz <span class="math inline">\(A\)</span> y una matriz <span class="math inline">\(P\)</span>, entonces:
+<span class="math display">\[
+|A|=|P^tAP|
+\]</span></p></li>
+</ol>
+<div class="definition">
+<p><span id="def:vectores-li" class="definition"><strong>Definición 1.23  (Vectores Linealmente-Independientes (LI)) </strong></span>Un conjunto de <span class="math inline">\(k\)</span>-vectores, <span class="math inline">\(\underline{\mathbf{x}}_1,\underline{\mathbf{x}}_2,\ldots,\underline{\mathbf{x}}_k\)</span>, se dice que son LI si la ecuación:
+<span class="math display">\[
+c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+\ldots+c_k\underline{\mathbf{x}}_k=0,
+\]</span>
+tiene como única solución la dada por: <span class="math inline">\(c_1=c_2=\ldots=c_k=0\)</span>, para <span class="math inline">\(c_i \in \mathbb{R}\)</span>, <span class="math inline">\(i=1,2,\ldots,k\)</span></p>
+</div>
+<div class="definition">
+<p><span id="def:val-vect-propios" class="definition"><strong>Definición 1.24  (Valores y Vectores propios de una Matriz) </strong></span>Sea <span class="math inline">\(A\)</span> una matriz cuadrada de orden <span class="math inline">\(n\)</span>. Se dice que <span class="math inline">\(\lambda\)</span> es un valor propio de <span class="math inline">\(A\)</span>, asociado al vector propio <span class="math inline">\(\underline{\mathbf{x}}\)</span>, si se cumple que: <span class="math inline">\(A\underline{\mathbf{x}}=\lambda \underline{\mathbf{x}}\)</span></p>
+<p>Para hallar los valores propios de una matriz <span class="math inline">\(A\)</span> se resuelve la siguiente ecuación característica: <span class="math inline">\(|A-\lambda I|=0\)</span>.</p>
+<p>Al dividir el vector propio <span class="math inline">\(\underline{\mathbf{x}}\)</span> por su norma <span class="math inline">\(\|\underline{\mathbf{x}}\|\)</span>, se obtiene un vector unitario, el cual se denotará por: <span class="math inline">\(\underline{e}=\frac{\underline{\mathbf{x}}}{\|\underline{\mathbf{x}}\|}=\frac{\underline{\mathbf{x}}}{\sqrt{\langle \underline{\mathbf{x}}\ , \ \underline{\mathbf{x}} \rangle}}\)</span></p>
+</div>
+<p><strong>Alguna propiedades sobre los valores propios de una matriz:</strong></p>
+<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> matrices cuadradas de orden <span class="math inline">\(n\)</span> y <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Una matriz <span class="math inline">\(A\)</span> tiene al menos un valor-propio igual a cero sii <span class="math inline">\(A\)</span> es singular (no tiene inversa), ie. sii el <span class="math inline">\(|A|=0\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A\)</span> es una matriz simétrica con valores propios reales, entonces los vectores propios asociados a valores propios diferentes son ortogonales.</p></li>
+<li><p><strong>Teorema de Descomposición Espectral:</strong></p></li>
+</ol>
+<p>Cualquier matriz simétrica <span class="math inline">\(A\)</span>, se puede escribir como:
+<span class="math display">\[
+A=P\mathbf{\Lambda} P^t=P^t\mathbf{\Lambda} P
+\]</span>
+en donde: <span class="math inline">\(\mathbf{\Lambda}\)</span>-es una matriz diagonal formada por los valores propios de <span class="math inline">\(A\)</span>, y <span class="math inline">\(P\)</span>-es una matriz ortogonal cuyas columnas son los vectores propios unitarios asociados a los elementos de la diagonal de <span class="math inline">\(\mathbf{\Lambda}\)</span>, ie.
+<span class="math display">\[
+PP^t=P^tP=I_n.
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-desc-espectral" class="example"><strong>Ejemplo 1.1  (Descomposición Espectral) </strong></span>Sea, <span class="math inline">\(\mathbf{A}=\begin{bmatrix}2.2 &amp; 0.4 \\ 0.4 &amp; 2.8 \end{bmatrix}, \ \text{luego}\)</span>
+<span class="math display">\[
+|\mathbf{A}-\lambda \mathbf{I}|=\begin{vmatrix}
+2.2-\lambda &amp; 0.4 \\ 0.4 &amp; 2.8-\lambda
+\end{vmatrix} |= \lambda^2-5\lambda+6.16-0.16=(\lambda-3)(\lambda-2)
+\]</span>
+luego los valores propios de <span class="math inline">\(\mathbf{A}\)</span> son <span class="math inline">\(\lambda_1=2\)</span> y <span class="math inline">\(\lambda_2=2\)</span>.</p>
+<p>Ahora los vectores propios se hallan resolviendo el sistema de ecuaciones:
+<span class="math display">\[
+\mathbf{A}\underline{\mathbf{x}}_1 =\lambda_1 \underline{\mathbf{x}}_1 \ \ \ \text{y} \ \ \ \ \mathbf{A}\underline{\mathbf{x}}_2 =\lambda_2 \underline{\mathbf{x}}_2
+\]</span>
+cuya solución es:
+<span class="math display">\[
+\underline{\mathbf{x}}_1=\begin{bmatrix}
+1 \\ 2
+\end{bmatrix} \ \ \ \ \ \text{y} \ \ \ \ \underline{\mathbf{x}}_2=\begin{bmatrix}
+2 \\ -1
+\end{bmatrix}
+\]</span>
+y dichos vectores propios normalizados son:
+<span class="math display">\[
+\underline{\mathbf{e}}_1=\begin{bmatrix}
+1/\sqrt{5} \\ 2/\sqrt{5}
+\end{bmatrix} \ \ \ \ \ \text{y} \ \ \ \ \underline{\mathbf{e}}_2=\begin{bmatrix}
+2/\sqrt{5} \\ -1/\sqrt{5}
+\end{bmatrix}
+\]</span>
+<span class="math display">\[
+\text{Luego se tiene que:}\ \ \ \mathbf{\Lambda}=\begin{bmatrix}
+3 &amp; 0 \\ 0 &amp; 2
+\end{bmatrix} \ \ \ \ \text{y} \ \ \ \ \ \mathbf{P}=\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}
+\]</span>
+<span class="math display">\[
+\text{Claramente}, \ \ \mathbf{P}\mathbf{P}^t=\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}=\begin{bmatrix}
+1 &amp; 0 \\ 0 &amp;1
+\end{bmatrix}
+\]</span>
+Luego del Teorema de la Descomposición espectral se tiene que:
+<span class="math display">\[\begin{align*}
+\mathbf{A}&amp; =\mathbf{P}\mathbf{\Lambda} \mathbf{P}^t\\
+&amp;=\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+3 &amp; 0 \\ 0 &amp; 2
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+3/\sqrt{5} &amp; 4/\sqrt{5} \\ 6/\sqrt{5} &amp; -2/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\
+&amp;=\begin{bmatrix}
+11/5 &amp; 2/5 \\ 2/5 &amp; 14/5
+\end{bmatrix}=\begin{bmatrix}
+2.2 &amp; 0.4 \\ 0.4 &amp; 2.8
+\end{bmatrix}=\mathbf{A}
+\end{align*}\]</span></p>
+</div>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Si <span class="math inline">\(A\)</span> es una matriz simétrica, entonces el rango de <span class="math inline">\(A\)</span>, <span class="math inline">\(r(A)\)</span>, es igual al número de sus valores propios no nulos.</li>
+</ol>
+<p><span class="math display">\[
+r(\mathbf{A})=2 \ , \ (\lambda_1,\lambda_2 \neq 0).
+\]</span></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Si <span class="math inline">\(\lambda_1,\lambda_2,\ldots, \lambda_n\)</span>, son los valores propios de <span class="math inline">\(A\)</span>, entonces:
+<span class="math display">\[
+               tr(A)=\sum_{i=1}^n \lambda_i\ , \ \ \ \text{y} \ \ \
+             |A|=\prod_{i=1}^n \lambda_i
+\]</span></li>
+</ol>
+<p>Del ejemplo se tiene que:
+<span class="math display">\[
+tr(\mathbf{A})=2.2+2.8=5=3+2= \lambda_1+\lambda_2 \ , \ \ \text{y} \ \ \
+\]</span>
+<span class="math display">\[
+|\mathbf{A}|=(2.2)(2.8)-(0.4)(0.4) = 6.16-0.16 = 6 = 3 \times 2 = \lambda_1 \times \lambda_2
+\]</span></p>
+<ol start="6" style="list-style-type: lower-alpha">
+<li><p>Si <span class="math inline">\(\lambda\)</span> es una valor propio de <span class="math inline">\(A\)</span>, entonces <span class="math inline">\(\lambda^k\)</span> es un valor propio de <span class="math inline">\(A^k\)</span>.</p></li>
+<li><p>Las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(A^t\)</span> tienen el mismo conjunto de valores propios, pero un vector propio de <span class="math inline">\(A\)</span> no-necesariamente es un vector propio de <span class="math inline">\(A^t\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A\)</span> es idempotente, entonces sus valores propios son cero o uno.</p></li>
+</ol>
+<div class="definition">
+<p><span id="def:traza-matriz" class="definition"><strong>Definición 1.25  (Traza de una Matriz) </strong></span>La traza de una matriz cuadrada <span class="math inline">\(A\)</span> de orden <span class="math inline">\(n\)</span>, se define como la suma de los elementos de su diagonal, ie.
+<span class="math display">\[
+tr(A)=\sum_{i=1}^n a_{ii}.
+\]</span></p>
+</div>
+<p><strong>Alguna propiedades de la traza de una matriz:</strong></p>
+<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> matrices cuadradas de orden <span class="math inline">\(n\)</span> y <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(tr(c A)=c\ tr(A)\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(A \pm B)=tr(A)\pm tr(B)\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(AB)=tr(BA)\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(A^t)= tr(A)\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(B^{-1}\)</span>-existe, entonces: <span class="math inline">\(tr(B^{-1}AB)=tr(A)\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(ABC)=tr(CAB)=tr(BCA)\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(AA^t)=\sum_{i=1}^n\sum_{j=1}^n a_{ij}^2\)</span>.</p></li>
+</ol>
+<div class="definition">
+<p><span id="def:descomp-espectral" class="definition"><strong>Definición 1.26  (Descomposición Espectral de una Matriz) </strong></span>Sea <span class="math inline">\(A\)</span> una matriz simétrica de orden <span class="math inline">\(n\)</span>, entonces:
+<span class="math display">\[
+                  A=\lambda_1\underline{e}_1\underline{e}_1^t+
+                  \lambda_2\underline{e}_2\underline{e}_2^t+\ldots+
+                  \lambda_n\underline{e}_n\underline{e}_n^t=\sum_{i=1}^n \lambda_i\underline{e}_i\underline{e}_i^t
+\]</span>
+en donde, los <span class="math inline">\(\underline{e}_i\)</span>-son los vectores propios normalizados de <span class="math inline">\(A\)</span>-asociados a los valores propios <span class="math inline">\(\lambda_i\)</span>, <span class="math inline">\(i=1,2,\ldots,n\)</span>.</p>
+<p>A la descomposición anterior de <span class="math inline">\(A\)</span>-se le llama descomposición espectral de <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:ejemplo-descomp-espectral2" class="example"><strong>Ejemplo 1.2  (Descomposición Espectral) </strong></span>Como continuación del ejemplo anterior se tiene que:
+<span class="math display">\[\begin{align*}
+\mathbf{A}&amp;=\sum_{i=1}^2 \lambda_i\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t=\lambda_1\underline{\mathbf{e}}_1\underline{\mathbf{e}}_1^t+
+\lambda_2\underline{\mathbf{e}}_2\underline{\mathbf{e}}_2^t\\ \\
+&amp;=3\begin{bmatrix}
+1/\sqrt{5} \\ 2/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5}
+\end{bmatrix}+2\begin{bmatrix}
+2/\sqrt{5} \\ -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=3\begin{bmatrix}
+1/5 &amp; 2/5\\
+2/5 &amp; 4/5
+\end{bmatrix}+2\begin{bmatrix}
+4/5 &amp; -2/5\\ \\
+-2/5 &amp; 1/5
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+0.6 &amp; 1.2 \\ 1.2 &amp; 2.4
+\end{bmatrix}+\begin{bmatrix}
+1.6 &amp; -0.8 \\ -0.8 &amp; 0.4
+\end{bmatrix}=\begin{bmatrix}
+2.2 &amp; 0.4 \\ 0.4 &amp; 2.8
+\end{bmatrix}=\mathbf{A}
+\end{align*}\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-def-pos" class="definition"><strong>Definición 1.27  (Matriz Definida y Semi-Definida Positiva) </strong></span>Sea <span class="math inline">\(\mathbf{A}\)</span> una matriz simétrica de orden <span class="math inline">\(n\)</span>. Se deice que <span class="math inline">\(\mathbf{A}\)</span> es semi-definida positiva si para todo vector <span class="math inline">\(\underline{\mathbf{x}}\in \mathbf{R}^n\)</span> distinto del vector nulo se cumple que:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{x}}^t \mathbf{A} \underline{\mathbf{x}} \geq 0
+\]</span>
+Se dice que <span class="math inline">\(\mathbf{A}\)</span> es Definida positiva si para todo vector <span class="math inline">\(\underline{\mathbf{x}}\in \mathbb{R}^n\)</span> distinto del vector nulo se cumple que: <span class="math inline">\(\underline{\mathbf{x}}^t \mathbf{A}\underline{\mathbf{x}} &gt; 0\)</span></p>
+<p><strong>Propiedades de una Matriz Definida Positiva:</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz DP, entonces todos sus valores propios son positivos, lo que equivale a decir que su determinante es distinto de cero y por lo tanto dicha matriz tiene inversa. (El recíproco tambien es cierto).</p></li>
+<li><p>Sea <span class="math inline">\(\mathbf{A}\)</span> una matriz DP. Como <span class="math inline">\(\mathbf{A}\)</span>-es invertible y se tiene que por la descomposición espectral:
+<span class="math display">\[
+\mathbf{A}=\mathbf{P}\mathbf{\Lambda}\mathbf{P}^t=\sum_{i=1}^{n}\lambda_i\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t,\ \ \ \text{entonces:}
+\]</span>
+<span class="math display">\[
+\mathbf{A}^{-1}=\sum_{i=1}^{n}\frac{1}{\lambda_i}\underline{e}_i\underline{e}_i^t=\mathbf{P} \mathbf{\Lambda}^{-1}\mathbf{P}^t
+\]</span></p></li>
+</ol>
+<div class="example">
+<p><span id="exm:ejemplo-mdp1" class="example"><strong>Ejemplo 1.3  (Matriz Definida Positiva) </strong></span><span class="math display">\[\begin{align*}
+\mathbf{A}^{-1}&amp;=\mathbf{P}\mathbf{\Lambda}^{-1} \mathbf{P}^t\\
+&amp;=\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/3 &amp; 0 \\ 0 &amp; 1/2
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+1/3\sqrt{5} &amp; 1/\sqrt{5} \\ 2/3\sqrt{5} &amp; -1/2\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\frac{1}{15}+\frac{2}{5} &amp; \frac{2}{15}-\frac{1}{5}\\
+\frac{2}{15}-\frac{1}{5}  &amp; \frac{4}{15}+\frac{1}{10}
+\end{bmatrix} \\ \\
+&amp;=\begin{bmatrix}
+\frac{35}{75} &amp; -\frac{5}{75} \\ -\frac{5}{75} &amp; \frac{55}{150}
+\end{bmatrix}=\frac{1}{6}\begin{bmatrix}
+2.8 &amp; -0.4 \\ -0.4 &amp; 2.2
+\end{bmatrix}=\mathbf{A}^{-1}
+\end{align*}\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:matriz-raiz-cuadrada" class="definition"><strong>Definición 1.28  (Matriz Raíz-Cuadrada) </strong></span>La descomposición espectral nos permite expresar la inversa de una matriz cuadrada en términos de sus valores y vectores propios, y esto conduce a una matriz raíz cuadrada útil en análisis multivariado.</p>
+</div>
+<p>Sea <span class="math inline">\(\mathbf{A}_{k\times k}\)</span>-una matriz definida positiva con descomposición espectral dada por
+<span class="math display">\[
+\mathbf{A}=\mathbf{P} \mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}\mathbf{P}^t=\sum_{i=1}^{n}\lambda_i\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t
+\]</span>
+con
+<span class="math display">\[
+\mathbf{P}=\bigl[\ \ \underline{\mathbf{e}}_1 \ \ |\ \ \underline{\mathbf{e}}_2 \ \ \cdots \ \ | \ \ \underline{\mathbf{e}}_k \ \ \bigr]_{k\times k} \ \ , \ \ \text{con:}\ \ \ \mathbf{P}^t\mathbf{P}=\mathbf{P}\mathbf{P}=\mathbf{I}_k
+\]</span>
+Matriz de Vectores Columnas Normalizados, y
+<span class="math display">\[
+\mathbf{\Lambda}_{k\times k}=\begin{bmatrix} \lambda_1 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; \lambda_2 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0&amp; 0  &amp; \cdots &amp; \lambda_k\end{bmatrix}
+\]</span></p>
+<p>Matriz Diagonal de Valores Propios, con <span class="math inline">\(\lambda_i&gt;0\)</span>.</p>
+<p>Por lo tanto,
+<span class="math display">\[
+\mathbf{A}^{-1}=\mathbf{P} \mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}^{-1}\mathbf{P}^t=\sum_{i=1}^{n}\frac{1}{\lambda_i}\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t
+\]</span>
+ya que
+<span class="math display">\[
+\mathbf{A}^{-1}\mathbf{A}=\bigl(\mathbf{P} \mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}^{-1}\mathbf{P}^t\bigr)\bigl(\mathbf{P} \mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}\mathbf{P}^t\bigr)=\bigl(\mathbf{P} \mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}\mathbf{P}^t\bigr)\bigl(\mathbf{P} \mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}^{-1}\mathbf{P}^t\bigr)=\mathbf{A}\mathbf{A}^{-1}=\mathbf{P}\mathbf{P}^{&#39;}=\mathbf{I}_k.
+\]</span></p>
+<p>La matriz raíz-cuadrada de <span class="math inline">\(A\)</span> se define como sigue:
+<span class="math display">\[
+\mathbf{A}^{1/2}=\sum_{i=1}^{n}\sqrt{\lambda_i}\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t=\mathbf{P} \mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}^{1/2}\mathbf{P}^t
+\]</span></p>
+<p><strong>Propiedades de la Matriz Raíz-Cuadrada:</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[
+(\mathbf{A}^{1/2})^{&#39;}=\mathbf{A}^{1/2}, \ \ \ \ \text{es decir:} \ \ \mathbf{A}^{1/2}-\text{es simétrica.}
+\]</span></p></li>
+<li><p><span class="math display">\[
+\mathbf{A}^{1/2}\mathbf{A}^{1/2}=\mathbf{A}.
+\]</span></p></li>
+<li><p><span class="math display">\[
+(\mathbf{A}^{1/2})^{-1}=\sum_{i=1}^{n}\frac{1}{\sqrt{\lambda_i}}\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t=\mathbf{P}\mathbf{\mathbf{\mathbf{\mathbf{\mathbf{\Lambda}}}}}^{-1/2}\mathbf{P}^t
+\]</span></p></li>
+<li><p><span class="math display">\[
+\mathbf{A}^{1/2}\mathbf{A}^{-1/2}=\mathbf{A}^{-1/2}\mathbf{A}^{1/2}=\mathbf{I}_k,\ \ \ \text{y} \ \ \ \mathbf{A}^{-1/2}\mathbf{A}^{-1/2}=\mathbf{A}^{-1},
+\]</span></p></li>
+</ol>
+<p>donde <span class="math inline">\(\mathbf{A}^{-1/2}=(\mathbf{A}^{1/2})^{-1}\)</span></p>
+<p><strong>donde:</strong></p>
+<p><span class="math display">\[
+\mathbf{\Lambda}^{-1/2}-\text{Matriz diagonal con:}\ \ \  1/\sqrt{\lambda_i} \ \ \ \text{en la diagonal}.
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{\Lambda}^{1/2}-\text{Matriz diagonal con:}\ \ \  \sqrt{\lambda_i}\ \ \ \text{en la diagonal}.
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{\Lambda}^{-1}-\text{Matriz diagonal con:}\ \ \  1/\mathbf{\lambda_i}\ \ \ \text{en la diagonal}.
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-mat-raiz-cuadrada" class="example"><strong>Ejemplo 1.4  (Matriz Raíz Cuadrada) </strong></span><span class="math display">\[\begin{align*}
+\mathbf{A}^{1/2}&amp;=\mathbf{P}\mathbf{\Lambda}^{1/2} \mathbf{P}^t\\
+&amp;=\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+\sqrt{3} &amp; 0 \\ 0 &amp; \sqrt{2}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\sqrt{3}/\sqrt{5} &amp; 2\sqrt{2}/\sqrt{5} \\ 2\sqrt{3}/\sqrt{5} &amp; -\sqrt{2}/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\frac{\sqrt{3}}{5}+\frac{4\sqrt{2}}{5} &amp; 2\frac{\sqrt{3}}{5}-2\frac{\sqrt{2}}{5}\\
+2\frac{\sqrt{3}}{5}-2\frac{\sqrt{2}}{5}  &amp; 4\frac{\sqrt{3}}{5}+\frac{\sqrt{2}}{5}
+\end{bmatrix} \\ \\
+&amp;\hspace{-1.0cm} =\begin{bmatrix}
+\frac{(\sqrt{3}+4\sqrt{2})}{5} &amp; \frac{(2\sqrt{3}-2\sqrt{2})}{5}\\ \frac{(2\sqrt{3}-2\sqrt{2})}{5} &amp; \frac{(4\sqrt{3}+\sqrt{2})}{5}
+\end{bmatrix}=\frac{1}{5}\begin{bmatrix}
+\sqrt{3}+4\sqrt{2} &amp; 2\sqrt{3}-2\sqrt{2} \\ 2\sqrt{3}-2\sqrt{2} &amp; 4\sqrt{3}+\sqrt{2}
+\end{bmatrix}\\  \\
+&amp;\hspace{-1.0cm}=\mathbf{A}^{1/2}
+\end{align*}\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:forma-cuadratica" class="definition"><strong>Definición 1.29  (Forma Cuadrática) </strong></span>Sea <span class="math inline">\(A_p\)</span> una matriz simétrica de orden <span class="math inline">\(p\)</span> y <span class="math inline">\(\underline{\mathbf{x}}\)</span> un vector <span class="math inline">\(p\times 1\)</span>, entonces a las función:
+<span class="math display">\[
+Q(\underline{\mathbf{x}})=\underline{\mathbf{x}}^t A \underline{\mathbf{x}}
+\]</span>
+se le llama forma cuadrática de <span class="math inline">\(\underline{\mathbf{x}}\)</span>.</p>
+<p><span class="math inline">\(Q(\underline{\mathbf{x}})\)</span>-es un escalar y puede expresarse alternativamente por la ecuación:
+<span class="math display">\[
+Q(\underline{\mathbf{x}})=\sum_{i=1}^p \sum_{j=1}^p a_{ij}x_i x_j,
+\]</span>
+con <span class="math inline">\(a_{ij}\)</span>-elementos de la matriz <span class="math inline">\(A\)</span> y <span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_j\)</span> elementos del vector <span class="math inline">\(\underline{\mathbf{x}}\)</span>.</p>
+<p>Si <span class="math inline">\(Q(\underline{\mathbf{x}})\geq 0\)</span>, <span class="math inline">\(\forall \underline{\mathbf{x}} \neq \underline{\mathbf{0}}\)</span>, entonces <span class="math inline">\(A\)</span>-se llama semi-definida positiva y se escribe <span class="math inline">\(A\geq 0\)</span> y si <span class="math inline">\(Q(\underline{\mathbf{x}})&gt; 0\)</span>, <span class="math inline">\(\forall \underline{\mathbf{x}} \neq \underline{\mathbf{0}}\)</span>, entonces <span class="math inline">\(A\)</span>-se llama definida positiva y se escribe <span class="math inline">\(A&gt; 0\)</span>.</p>
+</div>
+<p><strong>Algunas Propiedades de Formas-Cuadráticas:</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Si <span class="math inline">\(A&gt;0\)</span> entonces, todos sus valores propios son positivos (El recíproco tambien es cierto).</p></li>
+<li><p>Si <span class="math inline">\(A \geq 0\)</span> entonces, <span class="math inline">\(\lambda_i \geq 0\)</span> para <span class="math inline">\(i=1,2,\ldots,p\)</span> y <span class="math inline">\(\lambda_i=0\)</span> para algún <span class="math inline">\(i\)</span>, (El recíproco tambien es cierto).</p></li>
+<li><p>Si <span class="math inline">\(A &gt; 0\)</span> entonces, <span class="math inline">\(A\)</span>-es no-singular y en consecuencia <span class="math inline">\(|A|&gt;0\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A&gt;0\)</span> entonces, <span class="math inline">\(A^{-1}&gt;0\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A&gt;0\)</span> y <span class="math inline">\(C_p\)</span>-es una matriz no-singular entonces, <span class="math inline">\(C^tAC&gt;0\)</span>.</p></li>
+<li><p>Sea <span class="math inline">\(A\)</span> es una matriz simétrica de orden <span class="math inline">\(p\)</span> y sea <span class="math inline">\(\underline{\mathbf{x}}\)</span>-un vector, entonces:
+<span class="math display">\[
+\underline{\mathbf{x}}^t A \underline{\mathbf{x}}=t(\underline{\mathbf{x}}^t A \underline{\mathbf{x}})=t( A \underline{\mathbf{x}}\underline{\mathbf{x}}^t)
+\]</span></p></li>
+</ol>
+<div class="theorem">
+<p><span id="thm:teorema-maximizacion-formas-cuad" class="theorem"><strong>Teorema 1.1  (Maximización de Formas Cuadráticas Sobre la Esfera) </strong></span>Sea <span class="math inline">\(\underset{p\times p}{\mathbf{B} }\)</span> una matriz definida positiva con valores propios <span class="math inline">\(\lambda_1\geq \lambda_2 \geq \cdots \lambda_p \geq 0\)</span> y vectores propios normalizados <span class="math inline">\(\mathbf{e}_1,\mathbf{e}_2,\cdots,\mathbf{e}_p\)</span>, entonces,</p>
+</div>
+<p><span class="math display">\[
+\underset{ \underline{\mathbf{x}}\ \neq \ \underline{\mathbf{0}}  }{\max } \ \  \frac{\underline{\mathbf{x}}^t \mathbf{B} \underline{\mathbf{x}}}{\underline{\mathbf{x}}^t\underline{\mathbf{x}}}  = \lambda_1 \ , \ \ \ \ \ (  \text{es alcanzado cuando} , \ \   \underline{\mathbf{x}}=\underline{\mathbf{e}}_1  )
+\]</span></p>
+<p><span class="math display">\[
+\underset{ \underline{\mathbf{x}}\ \neq \ \underline{\mathbf{0}}  }{\min } \ \  \frac{\underline{\mathbf{x}}^t \mathbf{B} \underline{\mathbf{x}}}{\underline{\mathbf{x}}^t\underline{\mathbf{x}}}  = \lambda_p \ , \ \ \ \ \ (  \text{es alcanzado cuando} , \ \   \underline{\mathbf{x}}=\underline{\mathbf{e}}_p  )
+\]</span></p>
+<p>Además,
+<span class="math display">\[
+\underset{ \underline{\mathbf{x}}\ \perp \ \underline{\mathbf{e}}_1,\underline{\mathbf{e}}_2,\cdots,\underline{\mathbf{e}}_k  }{\max } \ \  \frac{\underline{\mathbf{x}}^t \mathbf{B} \underline{\mathbf{x}}}{\underline{\mathbf{x}}^t\underline{\mathbf{x}}}  = \lambda_{k+1} \ , \ \ \ \ \ (  \text{es alcanzado cuando} , \ \   \underline{\mathbf{x}}=\underline{\mathbf{e}}_{k+1}\ , \ k=1,2,\cdots,p-1  )
+\]</span>
+donde, <span class="math inline">\(\perp\)</span>-significa “que es perprendicular a”.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rep_al.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diferenc_vectores.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

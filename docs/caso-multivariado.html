@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.3 Caso Multivariado | Chapter 3</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.3 Caso Multivariado | Chapter 3" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.3 Caso Multivariado | Chapter 3" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="inferencia-estadística-para-la-media-mu-caso-univariado.html"/>
+<link rel="next" href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="descripción.html"><a href="descripción.html"><i class="fa fa-check"></i>Descripción</a></li>
+<li class="chapter" data-level="" data-path="acerca-del-autor.html"><a href="acerca-del-autor.html"><i class="fa fa-check"></i>Acerca del Autor</a></li>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+<li class="chapter" data-level="0.1" data-path="automatically-installing-needed-packages-not-yet-installed.html"><a href="automatically-installing-needed-packages-not-yet-installed.html"><i class="fa fa-check"></i><b>0.1</b> Automatically installing needed packages not yet installed</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep_al.html"><a href="rep_al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="algunos-conceptos-básicos.html"><a href="algunos-conceptos-básicos.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos</a></li>
+<li class="chapter" data-level="1.2" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.2</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinex"><i class="fa fa-check"></i><b>1.2.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{x})\)</span>:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>1.3</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="org_pres_dat.html"><a href="org_pres_dat.html#resumenes-descriptivos"><i class="fa fa-check"></i><b>1.3.1</b> Resumenes Descriptivos</a></li>
+<li class="chapter" data-level="1.3.2" data-path="org_pres_dat.html"><a href="org_pres_dat.html#representación-gráfica-de-observaciones-multivariadas"><i class="fa fa-check"></i><b>1.3.2</b> Representación Gráfica de Observaciones multivariadas</a></li>
+<li class="chapter" data-level="1.3.3" data-path="org_pres_dat.html"><a href="org_pres_dat.html#vectores-y-matrices-aleatorias"><i class="fa fa-check"></i><b>1.3.3</b> Vectores y Matrices Aleatorias</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>1.4</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>1.4.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="1.4.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>1.4.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>1.5</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="1.6" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>1.6</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>1.6.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="1.6.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>1.6.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>1.7</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="1.8" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>1.8</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="1.9" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>1.9</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>1.9.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="1.9.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>1.9.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="1.9.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>1.9.3</b> Varianza Generalizada Determinada por la matriz de correlación muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="1.9.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>1.9.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+<li class="chapter" data-level="1.9.5" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-total-muestral"><i class="fa fa-check"></i><b>1.9.5</b> Varianza Total Muestral</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>1.10</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="1.11" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>1.11</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="distancias.html"><a href="distancias.html#introducción"><i class="fa fa-check"></i><b>1.11.1</b> Introducción</a></li>
+<li class="chapter" data-level="1.11.2" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>1.11.2</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>2</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>2.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="2.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>2.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="2.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>2.3</b> Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="normal-multivariada.html"><a href="normal-multivariada.html#algunos-aspectos-geométricos-de-la-nm"><i class="fa fa-check"></i><b>2.3.1</b> Algunos Aspectos Geométricos de la NM</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="propiedades-de-la-distribución-normal-multivariada.html"><a href="propiedades-de-la-distribución-normal-multivariada.html"><i class="fa fa-check"></i><b>2.4</b> Propiedades de la distribución Normal Multivariada</a></li>
+<li class="chapter" data-level="2.5" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>2.5</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>2.5.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>2.5.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>2.6</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="2.7" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>2.7</b> Transformaciones para acercar a la normalidad multivariada</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>2.7.1</b> Familia de transformaciones de potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>2.7.2</b> Transformaciones para el caso multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>2.8</b> Muestra aleatoria normal <span class="math inline">\(p\)</span>-variada</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>2.8.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="2.8.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>2.8.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="2.8.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>2.8.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para tamaños muestrales grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>3</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>3.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="3.3" data-path="caso-multivariado.html"><a href="caso-multivariado.html"><i class="fa fa-check"></i><b>3.3</b> Caso Multivariado</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="caso-multivariado.html"><a href="caso-multivariado.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>3.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="caso-multivariado.html"><a href="caso-multivariado.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>3.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="caso-multivariado.html"><a href="caso-multivariado.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>3.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><i class="fa fa-check"></i><b>3.4</b> PH para Igualdad de vectores de medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1=\underline{\boldsymbol{\mu}}_2\)</span></a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida"><i class="fa fa-check"></i><b>3.4.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="3.4.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida"><i class="fa fa-check"></i><b>3.4.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="3.4.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1neq-mathbfsigma_2-desconocida"><i class="fa fa-check"></i><b>3.4.3</b> <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><i class="fa fa-check"></i><b>3.5</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida-1"><i class="fa fa-check"></i><b>3.5.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="3.5.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>3.5.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="3.5.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1-neq-mathbfsigma_2-desconocidas"><i class="fa fa-check"></i><b>3.5.3</b> <span class="math inline">\(\mathbf{\Sigma}_1 \neq \mathbf{\Sigma}_2\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>3.6</b> PH Acerca de Contrastes para el vector de medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-desconocida"><i class="fa fa-check"></i><b>3.6.1</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocida</a></li>
+<li class="chapter" data-level="3.6.2" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-es-conocida"><i class="fa fa-check"></i><b>3.6.2</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-es conocida</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><i class="fa fa-check"></i><b>3.7</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,      Observaciones Pareadas</a></li>
+<li class="chapter" data-level="3.8" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><i class="fa fa-check"></i><b>3.8</b> Regiones de Confianza y comparaciones simultáneas entre las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#construcción-de-una-región-de-confianza-para-underlinemu-cuando-la-población-tiene-distribución-n_punderlinemumathbfsigma-con-underlinemu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>3.8.1</b> Construcción de una región de confianza para <span class="math inline">\(\underline{\mu}\)</span> cuando la población tiene distribución <span class="math inline">\(N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="3.8.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlinemu"><i class="fa fa-check"></i><b>3.8.2</b> Intervalos de confianza simultáneos para las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a></li>
+<li class="chapter" data-level="3.8.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#método-de-bonferroni-para-comparaciones-múltiples"><i class="fa fa-check"></i><b>3.8.3</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html"><i class="fa fa-check"></i><b>3.9</b> Inferencia para la Matriz de Covarianza</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#prueba-de-homocedasticidad-e-independencia"><i class="fa fa-check"></i><b>3.9.1</b> Prueba de homocedasticidad e independencia</a></li>
+<li class="chapter" data-level="3.9.2" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#dos-o-más-matrices-de-covarianzas"><i class="fa fa-check"></i><b>3.9.2</b> Dos o más Matrices de Covarianzas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>4</b> Análisis de Componentes Principales (AC)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="interpretación-del-acp.html"><a href="interpretación-del-acp.html"><i class="fa fa-check"></i><b>4.2</b> Interpretación del ACP</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="interpretación-del-acp.html"><a href="interpretación-del-acp.html#interpretación-geométrica-del-acp-mediante-un-ejemplo-simple"><i class="fa fa-check"></i><b>4.2.1</b> Interpretación geométrica del ACP mediante un Ejemplo Simple</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>4.3</b> Componentes Principales Poblacionales</a></li>
+<li class="chapter" data-level="4.4" data-path="determinación-de-las-cps.html"><a href="determinación-de-las-cps.html"><i class="fa fa-check"></i><b>4.4</b> Determinación de las CPs</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="determinación-de-las-cps.html"><a href="determinación-de-las-cps.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>4.4.1</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="4.4.2" data-path="determinación-de-las-cps.html"><a href="determinación-de-las-cps.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>4.4.2</b> Componentes principales usando variables estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.5</b> Componentes principales muestrales</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html#determinación-de-las-cps-muestrales"><i class="fa fa-check"></i><b>4.5.1</b> Determinación de las CPs Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="ejemplos.html"><a href="ejemplos.html"><i class="fa fa-check"></i><b>4.6</b> Ejemplos</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="ejemplos.html"><a href="ejemplos.html#ejemplo-1"><i class="fa fa-check"></i><b>4.6.1</b> Ejemplo 1</a></li>
+<li class="chapter" data-level="4.6.2" data-path="ejemplos.html"><a href="ejemplos.html#ejemplo-2"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplo-2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>4.7</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="4.8" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.8</b> Interpretación de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="4.9" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>4.9</b> Estandarización de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="4.10" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>4.10</b> Gráficos en una Análisis de componentes principales</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>4.10.1</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>4.11</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{e}}_i\)</span> en muestras grandes</a></li>
+<li class="chapter" data-level="4.12" data-path="ejemplso-finales.html"><a href="ejemplso-finales.html"><i class="fa fa-check"></i><b>4.12</b> Ejemplso Finales</a>
+<ul>
+<li class="chapter" data-level="4.12.1" data-path="ejemplso-finales.html"><a href="ejemplso-finales.html#ejemplo-1-1"><i class="fa fa-check"></i><b>4.12.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="4.12.2" data-path="ejemplso-finales.html"><a href="ejemplso-finales.html#ejemplo-2-1"><i class="fa fa-check"></i><b>4.12.2</b> Ejemplo-2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 3</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="caso-multivariado" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Caso Multivariado<a href="caso-multivariado.html#caso-multivariado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)<a href="caso-multivariado.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ahora se considerará el problema de determinar si un vector dado <span class="math inline">\(\underline{\mu}_0\)</span> es un valor-viable para el vector de medias <span class="math inline">\(\underline{\mu}\)</span> de una población Normal-Multivariada (con <span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocida)</p>
+<p>Se procederá de manera análoga al caso univariado.</p>
+<p>Ahora se tendrá la distancia al cuadrado dada por:</p>
+<p><span class="math display">\[\begin{align*}
+T^2&amp;= \left(\overline{\underline{\mathbf{x}}}-\underline{\mu}_0 \right)^t \left(  \frac{1}{n}\mathbf{S} \right)^{-1}  \left( \overline{\underline{\mathbf{x}}}-\underline{\mu}_0 \right) \\
+&amp;= n(\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)^t \mathbf{S}^{-1}  (\overline{\underline{\mathbf{x}}}-\underline{\mu}_0),
+\end{align*}\]</span></p>
+<p><span class="math display">\[
+\overline{\underline{\mathbf{x}}}=\frac{1}{n}\sum_{i=1}^n \underline{\mathbf{x}}_i \ \ ,  \ \mathbf{S}=\frac{1}{n-1} \sum_{i=1}^n (\underline{\mathbf{x}}_i-\overline{\underline{\mathbf{x}}} )
+(\underline{\mathbf{x}}_i-\overline{\underline{\mathbf{x}}} )^t \ \ \text{y} \ \ \ \underline{\mu}_0=\begin{bmatrix}
+\mu_{10} \\ \mu_{20}  \\ \vdots \\ \mu_{p0}\end{bmatrix}
+\]</span>
+La estadística <span class="math inline">\(T^2\)</span>-se llama la Estadística <span class="math inline">\(T^2\)</span>-de Hotelling, en honor a Harold-Hotelling, un pionero en Análisis-Multivariado, quien fue el primero en obtener su distribución muestral.</p>
+<p>Aquí, <span class="math inline">\(\frac{\mathbf{S}}{n}\)</span>- es la matriz de varianzas-covarianzas estimada de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span>, pues</p>
+<p><span class="math display">\[
+Var[\overline{\underline{\mathbf{x}}}]=\frac{\mathbf{\Sigma}}{n} \ \ \ ie. \ \ \widehat{ Var[\overline{\underline{\mathbf{x}}}] }=\frac{\hat{ \mathbf{\Sigma}}}{n}=\frac{\mathbf{S}}{n}
+\]</span>
+Si la distancia estadística observada <span class="math inline">\(T^2\)</span> es mu grande, ie. <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span>-está demasiado lejos de <span class="math inline">\(\underline{\mu}_0\)</span>, y la hipótesis <span class="math inline">\(H_0 \ : \ \underline{\mu}=\underline{\mu}_0\)</span> es rechazada.</p>
+<p>Pero en este caso las tablas de puntos porcentuales de la distribución de la <span class="math inline">\(T^2\)</span>-de Hotelling, no son necesarias para las pruebas formales de hipótesis.</p>
+<p><strong>Se utilizará el siguiente resultado:</strong>
+<span class="math display">\[
+T^2 \ \sim \ \frac{(n-1)p}{(n-p)}F_{p ,n-p},
+\]</span>
+o equivalentemente:   <span class="math inline">\(\frac{(n-p)}{(n-1)p} T^2 \ \sim \ F_{p ,n-p}\)</span> donde, <span class="math inline">\(F_{p,n-p}\)</span>-denota una v.a con distribución <span class="math inline">\(F\)</span> con <span class="math inline">\(p\)</span> y <span class="math inline">\(n-p\)</span> grados de libertad respectivamente.</p>
+<p><strong>En Resumen</strong>:</p>
+<p>Sea <span class="math inline">\(\underline{\mathbf{x}}_1,\underline{\mathbf{x}}_2,\ldots,\underline{\mathbf{x}}_n\)</span> una m.a de una distribución <span class="math inline">\(N_p(\underline{\mu} \ , \ \mathbf{\Sigma})\)</span>, (<span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocido), entonces:
+<span class="math display">\[\begin{align*}
+P\left[ T^2 &gt;  \frac{(n-1)p}{(n-p)}F_{\alpha; p ,n-p} \right]
+&amp;= P[n(\overline{\underline{\mathbf{x}}}-\underline{\mu})^t \mathbf{S}^{-1}  (\overline{\underline{\mathbf{x}}}-\underline{\mu}) &gt; \frac{(n-1)p}{(n-p)}F_{\alpha; p ,n-p} ]\\
+&amp;= \alpha
+\end{align*}\]</span>
+cualesquiera sean los valores de <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span></p>
+<p>Al nivel de significancia del <span class="math inline">\(\alpha\%\)</span>, rechazamos <span class="math inline">\(H_0 \ : \ \underline{\mu}=\underline{\mu}_0\)</span>, en favor de: <span class="math inline">\(H_a \ : \ \underline{\mu}\neq \underline{\mu}_0\)</span>, si el valor de:
+<span class="math display">\[
+T^2=n(\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)^t \mathbf{S}^{-1}  (\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)&gt;  \frac{(n-1)p}{(n-p)}F_{\alpha; p ,n-p} ,
+\]</span>
+o equivalentemente, rechazamos <span class="math inline">\(H_0\)</span> si:
+<span class="math display">\[
+\frac{(n-p)}{(n-1)p}T^2=\frac{(n-p)}{(n-1)p} n(\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)^t \mathbf{S}^{-1}  (\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)&gt;  F_{\alpha; p ,n-p} ,
+\]</span>
+en caso contrario no-rechazamos <span class="math inline">\(H_0\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo1-ph-mu-multiv" class="example"><strong>Ejemplo 3.2  (Ejemplo-1 PH Multivariada) </strong></span>Considere la siguiente matriz de datos asociada a una muestra aleatoria de tamaño <span class="math inline">\(n=3\)</span> de una población normal bi-variada con vector de medias <span class="math inline">\(\underline{\mu}\)</span> y matriz de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocida, ie. <span class="math inline">\(\underline{\mathbf{x}_i} \sim N_2( \underline{\mu}, \mathbf{\Sigma})\)</span>, para <span class="math inline">\(i=1,2,3\)</span>:</p>
+</div>
+<p><span class="math display">\[
+\mathbf{X}=\begin{bmatrix}
+6 &amp; 9 \\ 10 &amp; 6 \\ 8 &amp; 3
+\end{bmatrix}
+\]</span>
+Realizar la siguiente prueba de hipótesis:
+<span class="math display">\[
+\begin{cases}
+H_0\ : \ \underline{\mu} = \underline{\mu_0} \\
+H_a\ : \ \underline{\mu} \neq \underline{\mu_0} \\
+\end{cases} \ \ \Longleftrightarrow
+\begin{cases}
+H_0\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2
+\end{bmatrix} = \begin{bmatrix}
+\mu_{10} \\ \mu_{20}
+\end{bmatrix} \\ \\
+H_a\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2
+\end{bmatrix} \neq  \begin{bmatrix}
+\mu_{10} \\ \mu_{20}
+\end{bmatrix}
+\end{cases}  \Longleftrightarrow
+\begin{cases}
+H_0\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2
+\end{bmatrix} = \begin{bmatrix}
+9 \\ 5
+\end{bmatrix} \\ \\
+H_a\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2
+\end{bmatrix} \neq  \begin{bmatrix}
+9 \\ 5
+\end{bmatrix}
+\end{cases}
+\]</span></p>
+<p>De la matriz de datos se encuentra que:
+<span class="math display">\[
+\overline{\underline{\mathbf{x}}}=\frac{1}{n}\sum_{i=1}^n \underline{\mathbf{x}}_i = \frac{1}{3} \left[ \begin{pmatrix}
+6 \\ 9
+\end{pmatrix} + \begin{pmatrix}
+10 \\ 6
+\end{pmatrix} + \begin{pmatrix}
+8 \\ 3
+\end{pmatrix} \right]=\frac{1}{3} \left[ \begin{matrix}
+6+10+8 \\ 9+6+3
+\end{matrix} \right] = \frac{1}{3} \begin{bmatrix}
+24 \\ 18
+\end{bmatrix} = \begin{bmatrix}
+8 \\ 6
+\end{bmatrix}=\begin{bmatrix}
+\overline{x}_1 \\ \overline{x}_2
+\end{bmatrix}
+\]</span>
+Similarmente se tiene que:
+<span class="math display">\[
+s_{11}=\frac{(6-8)^2+(10-8)^2+(8-8)^2}{2}=4
+\]</span>
+<span class="math display">\[
+s_{22}=\frac{(9-6)^2+(6-6)^2+(3-6)^2}{2}=9
+\]</span>
+<span class="math display">\[
+s_{12}=\frac{(6-8)(9-6)+(10-8)(6-6)+(8-8)(3-6)}{2}=-3
+\]</span>
+es decir que:
+<span class="math display">\[
+\mathbf{S}=\begin{bmatrix}
+4 &amp; -3 \\ -3 &amp; 9
+\end{bmatrix}, \ \ \text{luego}: \ \ \mathbf{S}^{-1}=\frac{1}{27}\begin{bmatrix}
+9 &amp; 3 \\ 3 &amp; 4
+\end{bmatrix}=\begin{bmatrix}
+\frac{1}{3} &amp; \frac{1}{9} \\ &amp; \\ \frac{1}{9} &amp;\frac{4}{27}
+\end{bmatrix}
+\]</span>
+Ahora la estadística de prueba calculada es:
+<span class="math display">\[\begin{align*}
+T_0^2&amp;= n(\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)^t \mathbf{S}^{-1}  (\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)
+\\ \\
+&amp;=3 \left[ \begin{pmatrix}
+8 \\ 6
+\end{pmatrix} - \begin{pmatrix}
+9 \\ 5
+\end{pmatrix}\right]^t \begin{bmatrix}
+\frac{1}{3} &amp; \frac{1}{9} \\ &amp; \\ \frac{1}{9} &amp;\frac{4}{27}
+\end{bmatrix}\left[ \begin{pmatrix}
+8 \\ 6
+\end{pmatrix} - \begin{pmatrix}
+9 \\ 5
+\end{pmatrix}\right]\\ \\
+&amp;=3\begin{bmatrix}
+-1 &amp; 1
+\end{bmatrix}\begin{bmatrix}
+\frac{1}{3} &amp; \frac{1}{9} \\ &amp; \\ \frac{1}{9} &amp;\frac{4}{27}
+\end{bmatrix}\begin{bmatrix}
+-1 \\ 1
+\end{bmatrix}=\frac{7}{9}
+\end{align*}\]</span>
+Antes de que la muestra es seleccionada, la estadística <span class="math inline">\(T^2\)</span> tiene la siguiente distribución:
+<span class="math display">\[
+T^2 \ \sim \ \frac{(n-1)p}{(n-p)}F_{p ,n-p}=\frac{(3-1)2}{(3-2)}F_{2\ , \ 3-1}=4F_{2 \ ,\ 1}
+\]</span>
+Con un nivel de significancia de <span class="math inline">\(\alpha=0.05\)</span> se tiene que <span class="math inline">\(F_{\alpha \ ; \ 2, 1}=F_{0.05 \ ; \ 2 , 1 } = 200\)</span>, de donde <span class="math inline">\(4F_{\alpha \ ; \ 2, 1}=4F_{0.05 \ ; \ 2 , 1 }=4\times 200=800\)</span>, y por lo tanto como: <span class="math inline">\(T_0^2=\frac{7}{9} &lt; 800=kF_{cal}\)</span>, luego no se rechaza <span class="math inline">\(H_0\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo2-ph-mu-multiv" class="example"><strong>Ejemplo 3.3  (Ejemplo-2 PH Multivariada) </strong></span>Continuando con los datos del ejemplo <a href="inferencia-estadística-para-la-media-mu-caso-univariado.html#exm:ejemplo1-ph-uni">3.1</a>, donde se tienen los siguientes datos que corresponden a una muestra de tamaño <span class="math inline">\(n=100\)</span> y que se dividen en tres grupos o clases denotados por los números 1,2 y 3 de la variable <em>Clases</em>.</p>
+</div>
+<table>
+<caption><span id="tab:datos-todos-ejemplo2-ph-mu-multiv">Tabla 3.2: </span>Encabezado de Datos Ejemplo-1</caption>
+<thead>
+<tr class="header">
+<th align="center">X1</th>
+<th align="center">X2</th>
+<th align="center">X3</th>
+<th align="center">Clases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">-0.0758</td>
+<td align="center">-2.2825</td>
+<td align="center">-0.4553</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-0.1436</td>
+<td align="center">-0.5651</td>
+<td align="center">-0.5009</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-1.8002</td>
+<td align="center">-1.0732</td>
+<td align="center">-0.4070</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-0.8298</td>
+<td align="center">3.1684</td>
+<td align="center">-2.8147</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">0.7292</td>
+<td align="center">1.3984</td>
+<td align="center">-1.2794</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-3.2951</td>
+<td align="center">-6.1390</td>
+<td align="center">-2.7887</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Utilizando los datos del grupo o clase 1, los cuales se muestran a continuación:</p>
+<table>
+<caption><span id="tab:datos-ejemplo2-ph-mu-multiv">Tabla 3.3: </span>Conjunto de Datos del Grupo-1</caption>
+<thead>
+<tr class="header">
+<th align="center">X1</th>
+<th align="center">X2</th>
+<th align="center">X3</th>
+<th align="center">Clases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">-0.0758</td>
+<td align="center">-2.2825</td>
+<td align="center">-0.4553</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-0.1436</td>
+<td align="center">-0.5651</td>
+<td align="center">-0.5009</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-1.8002</td>
+<td align="center">-1.0732</td>
+<td align="center">-0.4070</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-0.8298</td>
+<td align="center">3.1684</td>
+<td align="center">-2.8147</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">0.7292</td>
+<td align="center">1.3984</td>
+<td align="center">-1.2794</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-3.2951</td>
+<td align="center">-6.1390</td>
+<td align="center">-2.7887</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-0.7750</td>
+<td align="center">-0.9474</td>
+<td align="center">-1.0096</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-2.3510</td>
+<td align="center">-6.2981</td>
+<td align="center">-1.8887</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">2.5663</td>
+<td align="center">3.3524</td>
+<td align="center">2.4310</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">0.7846</td>
+<td align="center">-1.1345</td>
+<td align="center">2.9311</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">3.4284</td>
+<td align="center">4.1276</td>
+<td align="center">3.0106</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-0.4068</td>
+<td align="center">-2.7013</td>
+<td align="center">1.4833</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-0.9584</td>
+<td align="center">-0.8435</td>
+<td align="center">-1.8349</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">1.7565</td>
+<td align="center">0.2127</td>
+<td align="center">1.9505</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">1.1739</td>
+<td align="center">-0.5236</td>
+<td align="center">3.5101</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-3.1300</td>
+<td align="center">-4.0435</td>
+<td align="center">-5.7702</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-4.3340</td>
+<td align="center">-2.5645</td>
+<td align="center">-4.0750</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">1.4387</td>
+<td align="center">7.5680</td>
+<td align="center">2.7207</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">0.1953</td>
+<td align="center">-1.0436</td>
+<td align="center">1.2450</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">1.5238</td>
+<td align="center">1.9352</td>
+<td align="center">3.5075</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">1.8821</td>
+<td align="center">10.0108</td>
+<td align="center">0.6906</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">4.7736</td>
+<td align="center">3.8900</td>
+<td align="center">2.5113</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-3.4006</td>
+<td align="center">-2.3783</td>
+<td align="center">-2.2445</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-2.0115</td>
+<td align="center">-0.6774</td>
+<td align="center">-2.6510</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-0.3790</td>
+<td align="center">1.1435</td>
+<td align="center">-3.0474</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-2.8350</td>
+<td align="center">-0.4460</td>
+<td align="center">-5.8570</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-1.7490</td>
+<td align="center">-3.0040</td>
+<td align="center">-3.5176</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Ahora, se desea realizar la siguiente PH:
+<span class="math display">\[
+\begin{cases}
+H_0\ : \ \underline{\mu} = \underline{\mu_0} \\
+H_a\ : \ \underline{\mu} \neq \underline{\mu_0} \\
+\end{cases} \ \ \Longleftrightarrow
+\begin{cases}
+H_0\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \mu_3
+\end{bmatrix} = \begin{bmatrix}
+\mu_{10} \\ \mu_{20} \\ \mu_{30}
+\end{bmatrix} \\ \\
+H_a\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \mu_3
+\end{bmatrix} \neq  \begin{bmatrix}
+\mu_{10} \\ \mu_{20} \\ \mu_{30}
+\end{bmatrix}
+\end{cases}  \Longleftrightarrow
+\begin{cases}
+H_0\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ mu_3
+\end{bmatrix} = \begin{bmatrix}
+1 \\ 2 \\ 3
+\end{bmatrix} \\ \\
+H_a\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \mu_3
+\end{bmatrix} \neq  \begin{bmatrix}
+1 \\ 2 \\ 3
+\end{bmatrix}
+\end{cases}
+\]</span>
+Los resultados de dicha PH son:</p>
+<pre><code>## 
+##  One-sample Hotelling&#39;s T-squared Test
+## 
+## data:  as.matrix(datosg1[, 1:3])
+## statistic = 68.473, p-value = 6.57e-07
+## alternative hypothesis: true mean is different from mu0.</code></pre>
+<p>Es decir que el Estadístico <span class="math inline">\(T^2\)</span> esta dado por:
+<span class="math display">\[
+T^2=n(\overline{\underline{\mathbf{x}}}-\underline{\mu}_0)^t \mathbf{S}^{-1} (\overline{\underline{\mathbf{x}}}-\underline{\mu}_0) = 68.4727924
+\]</span></p>
+<p>y el valor-p de la prueba es: 0.0000006570095 de donde se conluye que como el valor-p=0.0000006570095 &lt; 0.05 , entonces se rechaza la hipótesis nula H0.</p>
+<p>Similarmente el valor crítico de la tabla F-snedecor es:
+<span class="math display">\[
+F_{tabla}=F_{1-\alpha ; p, n-1}=F_{1-0.05 ; 3,  100-3}=F_{0.95 ; 3, 97}=2.6983975
+\]</span>
+de donde como el valor del <span class="math inline">\(F_0\)</span>-calculado,
+<span class="math display">\[
+F_0=\frac{1}{k}T_0^2=\frac{(n-p)}{(n-1)p}T_0^2=\frac{(100-3)}{(100-1)3}(68.4727924)=22.3631679&gt; 2.6983975
+\]</span>
+entonces se rechaza la hipótesis nula H0.</p>
+</div>
+<div id="pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)<a href="caso-multivariado.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sea <span class="math inline">\(\underline{\mathbf{x}_1},\underline{\mathbf{x}_2},\cdots,\underline{\mathbf{x}_n}\)</span> una m.a de una distribución normal <span class="math inline">\(p\)</span>-variada con <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>-desconocida y <span class="math inline">\(\mathbf{\Sigma}\)</span>-conocida, ie. <span class="math inline">\(\underline{\mathbf{x}_i} \sim N_p (\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></p>
+<p>Se desea contrastar las hipótesis:
+<span class="math display">\[
+\begin{cases}
+H_0 \ : \  \underline{\boldsymbol{\mu}}=\underline{\boldsymbol{\mu}}_0\\
+H_a \ : \  \underline{\boldsymbol{\mu}}\neq \underline{\boldsymbol{\mu}}_0\\
+\end{cases}
+\]</span>
+El estadístico de prueba utilizado en esta situación es:
+<span class="math display">\[
+\chi_0^2=n(\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0)^t \mathbf{\Sigma}^{-1} (\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0)  \underset{\text{Bajo} \ H_0}{\sim} \chi_{(p)}^2
+\]</span>
+La regla de decisión es: Rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(\chi_0^2 &gt; \chi_{\alpha;p}^2\)</span>, con <span class="math inline">\(\chi_{\alpha;p}^2\)</span>-cuantil <span class="math inline">\(\alpha\)</span>-superior de la distribución chi-cuadrado con <span class="math inline">\(p\)</span>-grados de libertad.</p>
+<p><strong>Región de Confianza</strong></p>
+<p>En esta situación se tiene que el conjunto de todos los <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> para los cuales se cumple la desigualdad:
+<span class="math display">\[
+n(\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}})^t \mathbf{\Sigma}^{-1} (\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}})  \leq \chi_{\alpha;p}^2,
+\]</span>
+se denomina una Región de Confianza} del <span class="math inline">\((1-\alpha)100\%\)</span> para el vector de medias poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>.</p>
+<p>La expresión anterior representa el interior y la superficie de un elipsoide con centro en <span class="math inline">\(\underline{\boldsymbol{\mu}}=\overline{\underline{\mathbf{x}}}\)</span> y cuya forma, tamaño e inclinación, dependen de <span class="math inline">\(\mathbf{\Sigma}\)</span> y de <span class="math inline">\(\chi_{\alpha;p}^2\)</span>, particularmente de los valores y vectores propios de <span class="math inline">\(\mathbf{\Sigma}\)</span>.</p>
+<p>Por ejemplo, si <span class="math inline">\(\mathbf{\Sigma=I_p}\)</span> entonces la región de confianza es una esfera.</p>
+<p>Los valores de <span class="math inline">\(\underline{\boldsymbol{\mu}}_0\)</span> dentro de la región de confianza apoyan la hipótesis nula <span class="math inline">\(H_0 \ : \ \underline{\boldsymbol{\mu}}=\underline{\boldsymbol{\mu}}_0\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo1-ph-mu-multiv-ngrande" class="example"><strong>Ejemplo 3.4  (Ejemplo-1 PH Multivariada n-Grande) </strong></span>Se seleccionan aleatoriamente 20 estudiantes de cierta institución de educación media y se registra en cada uno de ellos la Estatura (<span class="math inline">\(X_1\)</span>) en pulgadas y el Peso <span class="math inline">\((X_2)\)</span> en libras. Los resultados se muestran en la siguiente tabla:</p>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Estatura</th>
+<th align="center">Peso</th>
+<th align="center">Estatura</th>
+<th align="center">Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">69</td>
+<td align="center">153</td>
+<td align="center">72</td>
+<td align="center">140</td>
+</tr>
+<tr class="even">
+<td align="center">74</td>
+<td align="center">175</td>
+<td align="center">79</td>
+<td align="center">265</td>
+</tr>
+<tr class="odd">
+<td align="center">68</td>
+<td align="center">155</td>
+<td align="center">74</td>
+<td align="center">185</td>
+</tr>
+<tr class="even">
+<td align="center">70</td>
+<td align="center">135</td>
+<td align="center">67</td>
+<td align="center">112</td>
+</tr>
+<tr class="odd">
+<td align="center">72</td>
+<td align="center">172</td>
+<td align="center">66</td>
+<td align="center">140</td>
+</tr>
+<tr class="even">
+<td align="center">67</td>
+<td align="center">150</td>
+<td align="center">71</td>
+<td align="center">150</td>
+</tr>
+<tr class="odd">
+<td align="center">66</td>
+<td align="center">115</td>
+<td align="center">74</td>
+<td align="center">165</td>
+</tr>
+<tr class="even">
+<td align="center">70</td>
+<td align="center">137</td>
+<td align="center">75</td>
+<td align="center">185</td>
+</tr>
+<tr class="odd">
+<td align="center">76</td>
+<td align="center">200</td>
+<td align="center">75</td>
+<td align="center">210</td>
+</tr>
+<tr class="even">
+<td align="center">68</td>
+<td align="center">130</td>
+<td align="center">76</td>
+<td align="center">220</td>
+</tr>
+</tbody>
+</table>
+<p>Suponga que estos datos provienen de una población <span class="math inline">\(N_2(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma})\)</span>, donde <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> es desconocida y <span class="math inline">\(\mathbf{\Sigma}=\begin{bmatrix}20 &amp; 100 \\ 100 &amp; 1000\end{bmatrix}\)</span>.</p>
+<p>Se desea verificar la hipótesis dada por:
+<span class="math display">\[
+\begin{cases}
+H_0 \ : \  \underline{\boldsymbol{\mu}}
+=\begin{bmatrix}
+70 \\ 170
+\end{bmatrix}\\
+H_a \ : \  \underline{\boldsymbol{\mu}}\neq  \begin{bmatrix}
+70 \\ 170
+\end{bmatrix} \ , \ \ \  \ \text{es decir}: \ \  \underline{\boldsymbol{\mu}}_0=\begin{bmatrix}
+70 \\ 170
+\end{bmatrix}
+\end{cases}
+\]</span>
+Como un resumen descriptivo de los datos se tiene que:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Variable</th>
+<th align="center">N</th>
+<th align="center">Media=<span class="math inline">\(\overline{X}_i\)</span></th>
+<th align="center">Desv- Estándar</th>
+<th align="center">Min.</th>
+<th align="center">Máx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Estatura</td>
+<td align="center">20</td>
+<td align="center">71.45</td>
+<td align="center">3.82</td>
+<td align="center">66</td>
+<td align="center">79</td>
+</tr>
+<tr class="even">
+<td align="center">Peso</td>
+<td align="center">20</td>
+<td align="center">164.7</td>
+<td align="center">37.96</td>
+<td align="center">112</td>
+<td align="center">265</td>
+</tr>
+</tbody>
+</table>
+<p>Luego, se tiene que <span class="math inline">\(\overline{\underline{\mathbf{x}}}=\begin{bmatrix}71.45 \\ 164.7\end{bmatrix}\)</span>.</p>
+<p>El estadístico de prueba es:
+<span class="math display">\[\begin{align*}
+\chi_0^2&amp;=n(\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0)^t \mathbf{\Sigma}^{-1} (\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0) \\ \\
+&amp;= 20 [71.45-70 \ \ 164.7-170]\begin{bmatrix}
+20 &amp; 100 \\ 100 &amp; 1000
+\end{bmatrix}^{-1}\begin{bmatrix}
+71.45 - 70 \\ 164.7-170
+\end{bmatrix}\\ \\
+&amp;= 20 [1.45 \ \ \ -5.3]\begin{bmatrix}
+0.1 &amp; -0.01 \\ -0.01 &amp; 0.002
+\end{bmatrix}\begin{bmatrix}
+1.45 \\ -5.3
+\end{bmatrix}\\ \\
+\chi_0^2&amp;=8.4026
+\end{align*}\]</span></p>
+<p>Para <span class="math inline">\(\alpha=0.05\)</span> se tiene que: <span class="math inline">\(\chi_{\alpha;p}^2=\chi_{0.05;2}^2=5.99\)</span>, de donde como <span class="math inline">\(\chi_0^2 &gt;\chi_{\alpha;p}^2\)</span>, entonces se rechaza <span class="math inline">\(H_0\)</span> y se concluye que la evidencia muestral permite afirmar que <span class="math inline">\(\underline{\boldsymbol{\mu}}\neq \begin{bmatrix}70 \\ 170\end{bmatrix}\)</span> a un nivel de significancia del <span class="math inline">\(5\%\)</span> .</p>
+<div class="example">
+<p><span id="exm:ejemplo2-ph-mu-multiv-ngrande" class="example"><strong>Ejemplo 3.5  (Ejemplo-2 PH Multivariada n-Grande) </strong></span>Continuando con los datos del ejemplo <a href="inferencia-estadística-para-la-media-mu-caso-univariado.html#exm:ejemplo1-ph-uni">3.1</a>, donde se tienen los siguientes datos que corresponden a una muestra de tamaño <span class="math inline">\(n=100\)</span> y que se dividen en tres grupos o clases denotados por los números 1,2 y 3 de la variable <em>Clases</em>.</p>
+</div>
+<table>
+<caption><span id="tab:datos-ejemplo2-ph-mu-multiv-ngrande">Tabla 3.4: </span>Encabezado de Datos del Ejemplo</caption>
+<thead>
+<tr class="header">
+<th align="center">X1</th>
+<th align="center">X2</th>
+<th align="center">X3</th>
+<th align="center">Clases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">-0.0758</td>
+<td align="center">-2.2825</td>
+<td align="center">-0.4553</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-0.1436</td>
+<td align="center">-0.5651</td>
+<td align="center">-0.5009</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">-1.8002</td>
+<td align="center">-1.0732</td>
+<td align="center">-0.4070</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-0.8298</td>
+<td align="center">3.1684</td>
+<td align="center">-2.8147</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">0.7292</td>
+<td align="center">1.3984</td>
+<td align="center">-1.2794</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">-3.2951</td>
+<td align="center">-6.1390</td>
+<td align="center">-2.7887</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Ahora, se desea realizar la siguiente PH:
+<span class="math display">\[
+\begin{cases}
+H_0\ : \ \underline{\mu} = \underline{\mu_0} \\
+H_a\ : \ \underline{\mu} \neq \underline{\mu_0} \\
+\end{cases} \ \ \Longleftrightarrow
+\begin{cases}
+H_0\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \mu_3
+\end{bmatrix} = \begin{bmatrix}
+\mu_{10} \\ \mu_{20} \\ \mu_{30}
+\end{bmatrix} \\ \\
+H_a\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \mu_3
+\end{bmatrix} \neq  \begin{bmatrix}
+\mu_{10} \\ \mu_{20} \\ \mu_{30}
+\end{bmatrix}
+\end{cases}  \Longleftrightarrow
+\begin{cases}
+H_0\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ mu_3
+\end{bmatrix} = \begin{bmatrix}
+1 \\ 2 \\ 3
+\end{bmatrix} \\ \\
+H_a\ : \ \begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \mu_3
+\end{bmatrix} \neq  \begin{bmatrix}
+1 \\ 2 \\ 3
+\end{bmatrix}
+\end{cases}
+\]</span>
+Los resultados de dicha PH son:</p>
+<pre><code>## 
+##  Hotelling&#39;s one sample T2-test
+## 
+## data:  datosg1[, 1:3]
+## T.2 = 68.473, df = 3, p-value = 9.104e-15
+## alternative hypothesis: true location is not equal to c(1,2,3)</code></pre>
+<p>Es decir que el Estadístico <span class="math inline">\(T^2\)</span> esta dado por:
+<span class="math display">\[
+\chi_0^2=n(\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0)^t \mathbf{\Sigma}^{-1} (\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0) = 68.4727924
+\]</span></p>
+<p>y el valor-p de la prueba es: 0.000000000000009103829 de donde se conluye que como el valor-p=0.000000000000009103829 &lt; 0.05 , entonces se rechaza la hipótesis nula H0.</p>
+<p>Similarmente el valor crítico de la tabla <span class="math inline">\(\chi^2\)</span> es:
+<span class="math display">\[
+\chi_{Tabla}^2=\chi_{1-\alpha\ ;\ p}^2=\chi_{1-0.05\ ;\ 3}^2=\chi_{0.95 ; 3}^2=7.8147279
+\]</span>
+de donde como el valor del <span class="math inline">\(\chi_0^2\)</span>-calculado,
+<span class="math display">\[
+\chi_0^2=T_0^2=68.4727924=&gt; 7.8147279
+\]</span>
+entonces se rechaza la hipótesis nula H0.</p>
+<div id="pruebas-de-hipóstesis-individuales-o-marginales" class="section level4 hasAnchor" number="3.3.2.1">
+<h4><span class="header-section-number">3.3.2.1</span> Pruebas de hipóstesis Individuales o Marginales<a href="caso-multivariado.html#pruebas-de-hipóstesis-individuales-o-marginales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Ahora realicemos las pruebas individuales para las dos componentes del vector de medias poblacionales, ie. se realizaran las siguientes dos PH:
+<span class="math display">\[
+\begin{cases}
+H_0 \ : \  \mu_1=70\\
+H_a \ : \  \mu_1\neq 70\\
+\end{cases} \ , \ \ \ \ \begin{cases}
+H_0 \ : \  \mu_2=170\\
+H_a \ : \  \mu_2\neq 170\\
+\end{cases}
+\]</span>
+En la prueba de hipótesis conjunta del vector de medias que se realizó, rechazamos <span class="math inline">\(H_0\)</span>, lo que quiere decir que ambas componentes del vector de medias son diferentes o al menos una de ellas, de los valores propuestos.</p>
+<p>Esto quiere decir que individualmente esperaríamos rechazar ambas hipótesis o al menos una de ellas. Veamos que sucede.</p>
+<p>Los estadísticos de prueba para las PH individuales son respectivamente:
+<span class="math display">\[
+Z_1=\frac{\overline{X}_1-70}{\frac{\sqrt{\sigma}_{11}}{\sqrt{n}}}=\frac{71.45-70}{\frac{\sqrt{20}}{\sqrt{20}}}=1.45
+\]</span>
+<span class="math display">\[
+Z_2=\frac{\overline{X}_2-170}{\frac{\sqrt{\sigma}_{22}}{\sqrt{n}}}=\frac{164.7-170}{\frac{\sqrt{1000}}{\sqrt{20}}}=-0.75
+\]</span>
+Para <span class="math inline">\(\alpha=0.05\)</span>, se tiene que <span class="math inline">\(Z_{\alpha/2}=Z_{0.025}=1.96\)</span>, de donde se rechaza <span class="math inline">\(H_0\)</span> si el <span class="math inline">\(| Z_{Cal.} |&gt;Z_{\text{Tabla}}=1.96\)</span>.</p>
+<p>Por lo tanto no rechazamos ninguna de las dos hipótesis <span class="math inline">\(H_0\)</span> a un nivel de significancia del <span class="math inline">\(5\%\)</span>, por lo que se asume que <span class="math inline">\(\mu_1=70\)</span> y <span class="math inline">\(\mu_2=170\)</span> a un nivel del <span class="math inline">\(5\%\)</span>, es decir que también sería cierto que:
+<span class="math display">\[
+\underline{\boldsymbol{\mu}}=\begin{bmatrix}
+\mu_1 \\ \mu_2
+\end{bmatrix}= \begin{bmatrix}
+70 \\ 170
+\end{bmatrix},
+\]</span> lo cual es una contradicción con la PH multivariada o conjunta, en la cual esto fue rechazado.</p>
+<p>Una explicación de lo anterior, es que al realizar PH por separado o individuales, no se tienen en cuenta los efectos que sobre la componente particular pueden tener las demás variables (ie. no se tienen en cuenta las covarianzas entre las variables). En el siguiente gráfico se ilustra lo que sucede en el caso bivariado para PH univariadas por separado y PH multivariadas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-region-conf-ph-indiv"></span>
+<img src="imagenes/graf29.png" alt="Gráfico de una Región de Confianza con PH Individuales" width="80%" />
+<p class="caption">
+Figura 3.1: Gráfico de una Región de Confianza con PH Individuales
+</p>
+</div>
+</div>
+</div>
+<div id="pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande<a href="caso-multivariado.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sea <span class="math inline">\(\underline{\mathbf{x}_1},\underline{\mathbf{x}_2},\cdots,\underline{\mathbf{x}_n}\)</span> una m.a de una población <span class="math inline">\(p\)</span>-variada con vector de medias <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>-desconocida y matriz de varianzas-covarianzas <span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocida.</p>
+<p>Se desea contrastar las hipótesis:
+<span class="math display">\[
+\begin{cases}
+H_0 \ : \  \underline{\boldsymbol{\mu}}=\underline{\boldsymbol{\mu}}_0\\
+H_a \ : \  \underline{\boldsymbol{\mu}}\neq \underline{\boldsymbol{\mu}}_0\\
+\end{cases}
+\]</span>
+El estadístico de prueba utilizado en esta situación es:
+<span class="math display">\[
+\chi_0^2=n(\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0)^t \mathbf{S}^{-1} (\overline{\underline{\mathbf{x}}}- \underline{\boldsymbol{\mu}}_0)  \underset{\text{Bajo} \ H_0}{\sim} \chi_{(p)}^2
+\]</span>
+La regla de decisión es: Rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(\chi_0^2 &gt; \chi_{\alpha;p}^2\)</span>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="inferencia-estadística-para-la-media-mu-caso-univariado.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.1 Algunos conceptos básicos | Chapter 5</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.1 Algunos conceptos básicos | Chapter 5" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.1 Algunos conceptos básicos | Chapter 5" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="rep_al.html"/>
+<link rel="next" href="algunas-propiedades-estadísticas-de-la-eigen-descomposición-de-una-matriz.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/kePrint/kePrint.js"></script>
+<link href="libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="descripción.html"><a href="descripción.html"><i class="fa fa-check"></i>Descripción</a></li>
+<li class="chapter" data-level="" data-path="acerca-del-autor.html"><a href="acerca-del-autor.html"><i class="fa fa-check"></i>Acerca del Autor</a></li>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep_al.html"><a href="rep_al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="acb_al.html"><a href="acb_al.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="acb_al.html"><a href="acb_al.html#matrices"><i class="fa fa-check"></i><b>1.1.1</b> Matrices</a></li>
+<li class="chapter" data-level="1.1.2" data-path="acb_al.html"><a href="acb_al.html#vectores"><i class="fa fa-check"></i><b>1.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="1.1.3" data-path="acb_al.html"><a href="acb_al.html#operaciones-matrices"><i class="fa fa-check"></i><b>1.1.3</b> Operaciones Matriciales</a></li>
+<li class="chapter" data-level="1.1.4" data-path="acb_al.html"><a href="acb_al.html#matrices-especiales"><i class="fa fa-check"></i><b>1.1.4</b> Matrices Especiales</a></li>
+<li class="chapter" data-level="1.1.5" data-path="acb_al.html"><a href="acb_al.html#descomp-espectral"><i class="fa fa-check"></i><b>1.1.5</b> Descomposición Espectral de una Matriz (eigen-descomposición)</a></li>
+<li class="chapter" data-level="1.1.6" data-path="acb_al.html"><a href="acb_al.html#eigen-descom-msdp"><i class="fa fa-check"></i><b>1.1.6</b> Descomposición Espectral de Matrices Simétricas Definidas (o Semidefinidas) Positivas</a></li>
+<li class="chapter" data-level="1.1.7" data-path="acb_al.html"><a href="acb_al.html#traza-determinante-y-rango-de-una-matriz"><i class="fa fa-check"></i><b>1.1.7</b> Traza, Determinante y Rango de una Matriz</a></li>
+<li class="chapter" data-level="1.1.8" data-path="acb_al.html"><a href="acb_al.html#formas-cuadraticas"><i class="fa fa-check"></i><b>1.1.8</b> Formas Cuadráticas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="algunas-propiedades-estadísticas-de-la-eigen-descomposición-de-una-matriz.html"><a href="algunas-propiedades-estadísticas-de-la-eigen-descomposición-de-una-matriz.html"><i class="fa fa-check"></i><b>1.2</b> Algunas Propiedades Estadísticas de la Eigen-Descomposición de una Matriz</a></li>
+<li class="chapter" data-level="1.3" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.3</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinex"><i class="fa fa-check"></i><b>1.3.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{x})\)</span>:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>2</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html"><i class="fa fa-check"></i><b>2.1</b> Resumenes Descriptivos</a></li>
+<li class="chapter" data-level="2.2" data-path="representación-gráfica-de-observaciones-multivariadas.html"><a href="representación-gráfica-de-observaciones-multivariadas.html"><i class="fa fa-check"></i><b>2.2</b> Representación Gráfica de Observaciones multivariadas</a></li>
+<li class="chapter" data-level="2.3" data-path="vectores-y-matrices-aleatorias.html"><a href="vectores-y-matrices-aleatorias.html"><i class="fa fa-check"></i><b>2.3</b> Vectores y Matrices Aleatorias</a></li>
+<li class="chapter" data-level="2.4" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>2.4</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>2.4.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="2.4.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>2.4.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.5</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.6" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>2.6</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>2.6.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="2.6.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>2.6.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>2.7</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="2.8" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.8</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.9" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>2.9</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.9.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.9.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.9.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.9.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>2.9.3</b> Varianza Generalizada Determinada por la Matriz de Correlación Muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="2.9.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>2.9.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="varianza-total-muestral.html"><a href="varianza-total-muestral.html"><i class="fa fa-check"></i><b>2.10</b> Varianza Total Muestral</a></li>
+<li class="chapter" data-level="2.11" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>2.11</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="2.12" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>2.12</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="distancias.html"><a href="distancias.html#definición-de-algunas-distancias"><i class="fa fa-check"></i><b>2.12.1</b> Definición de Algunas Distancias</a></li>
+<li class="chapter" data-level="2.12.2" data-path="distancias.html"><a href="distancias.html#relación-de-la-distancia-de-mahalanobis-con-la-distribución-chi-cuadrado"><i class="fa fa-check"></i><b>2.12.2</b> Relación de la Distancia de Mahalanobis con la Distribución chi-Cuadrado</a></li>
+<li class="chapter" data-level="2.12.3" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>2.12.3</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>3</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>3.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="3.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>3.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="3.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>3.3</b> Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="normal-multivariada.html"><a href="normal-multivariada.html#algunos-aspectos-geométricos-de-la-nm"><i class="fa fa-check"></i><b>3.3.1</b> Algunos Aspectos Geométricos de la NM</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="prop-nm.html"><a href="prop-nm.html"><i class="fa fa-check"></i><b>3.4</b> Propiedades de la distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="prop-nm.html"><a href="prop-nm.html#prop1"><i class="fa fa-check"></i><b>3.4.1</b> <strong>Propiedad-1:</strong></a></li>
+<li class="chapter" data-level="3.4.2" data-path="prop-nm.html"><a href="prop-nm.html#prop2"><i class="fa fa-check"></i><b>3.4.2</b> <strong>Propiedad-2:</strong></a></li>
+<li class="chapter" data-level="3.4.3" data-path="prop-nm.html"><a href="prop-nm.html#prop3"><i class="fa fa-check"></i><b>3.4.3</b> <strong>Propiedad-3:</strong></a></li>
+<li class="chapter" data-level="3.4.4" data-path="prop-nm.html"><a href="prop-nm.html#prop4"><i class="fa fa-check"></i><b>3.4.4</b> <strong>Propiedad-4:</strong></a></li>
+<li class="chapter" data-level="3.4.5" data-path="prop-nm.html"><a href="prop-nm.html#prop5"><i class="fa fa-check"></i><b>3.4.5</b> <strong>Propiedad-5:</strong></a></li>
+<li class="chapter" data-level="3.4.6" data-path="prop-nm.html"><a href="prop-nm.html#prop6"><i class="fa fa-check"></i><b>3.4.6</b> <strong>Propiedad-6:</strong></a></li>
+<li class="chapter" data-level="3.4.7" data-path="prop-nm.html"><a href="prop-nm.html#prop7"><i class="fa fa-check"></i><b>3.4.7</b> <strong>Propiedad-7:</strong></a></li>
+<li class="chapter" data-level="3.4.8" data-path="prop-nm.html"><a href="prop-nm.html#prop8"><i class="fa fa-check"></i><b>3.4.8</b> <strong>Propiedad-8:</strong></a></li>
+<li class="chapter" data-level="3.4.9" data-path="prop-nm.html"><a href="prop-nm.html#prop9"><i class="fa fa-check"></i><b>3.4.9</b> <strong>Propiedad-9:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.5</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>3.5.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="3.5.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>3.5.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>3.6</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="3.7" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.7</b> Transformaciones para Acercar a la Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>3.7.1</b> Familia de Transformaciones de Potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="3.7.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>3.7.2</b> Transformaciones para el Caso Multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>3.8</b> Muestra Aleatoria Normal <span class="math inline">\(p\)</span>-Variada</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>3.8.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="3.8.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>3.8.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="3.8.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>3.8.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para Tamaños Muestrales Grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>4.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="4.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><i class="fa fa-check"></i><b>4.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>4.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>4.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>4.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><i class="fa fa-check"></i><b>4.4</b> PH para Igualdad de Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1=\underline{\boldsymbol{\mu}}_2\)</span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#caso-1.-mathbfsigma_1mathbfsigma_2mathbfsigma-conocida"><i class="fa fa-check"></i><b>4.4.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#caso-2.-mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida"><i class="fa fa-check"></i><b>4.4.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.4.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#caso-3.-mathbfsigma_1neq-mathbfsigma_2-desconocida"><i class="fa fa-check"></i><b>4.4.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><i class="fa fa-check"></i><b>4.5</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#caso-1.-mathbfsigma_1mathbfsigma_2mathbfsigma-conocida-1"><i class="fa fa-check"></i><b>4.5.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.5.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#caso-2.-mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>4.5.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.5.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#caso-3.-mathbfsigma_1-neq-mathbfsigma_2-desconocidas"><i class="fa fa-check"></i><b>4.5.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_1 \neq \mathbf{\Sigma}_2\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><i class="fa fa-check"></i><b>4.6</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,      Observaciones Pareadas</a></li>
+<li class="chapter" data-level="4.7" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>4.7</b> PH Acerca de Contrastes del Vector de Medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html"><i class="fa fa-check"></i><b>4.8</b> Inferencia para la Matriz de Varianzas Covarianza</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#pruba-de-razón-de-verosimilitud"><i class="fa fa-check"></i><b>4.8.1</b> Pruba de Razón de Verosimilitud</a></li>
+<li class="chapter" data-level="4.8.2" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#prueba-de-bartlet"><i class="fa fa-check"></i><b>4.8.2</b> Prueba de Bartlet</a></li>
+<li class="chapter" data-level="4.8.3" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#dos-o-más-matrices-de-varianzas-covarianzas"><i class="fa fa-check"></i><b>4.8.3</b> Dos o más Matrices de Varianzas Covarianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><i class="fa fa-check"></i><b>4.9</b> Regiones de Confianza y Comparaciones Simultáneas entre las Componentes del Vector de Medias <span class="math inline">\(\underline{\mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#construcción-de-una-región-de-confianza-para-underlinemu-cuando-la-población-tiene-distribución-n_punderlinemumathbfsigma-con-underlinemu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>4.9.1</b> Construcción de una Región de Confianza para <span class="math inline">\(\underline{\mu}\)</span> Cuando la Población tiene Distribución <span class="math inline">\(N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="4.9.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#región-de-confianza-para-el-caso-de-p2-elipse-de-confianza"><i class="fa fa-check"></i><b>4.9.2</b> Región de Confianza para el Caso de <span class="math inline">\(p=2\)</span> (Elipse de Confianza)</a></li>
+<li class="chapter" data-level="4.9.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlinemu"><i class="fa fa-check"></i><b>4.9.3</b> Intervalos de Confianza Simultáneos para las Componentes del Vector de Medias <span class="math inline">\(\underline{\mu}\)</span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-t2-simultáneos-para-diferencias-de-medias"><i class="fa fa-check"></i><b>4.9.4</b> IC <span class="math inline">\(T^2\)</span> Simultáneos para Diferencias de Medias</a></li>
+<li class="chapter" data-level="4.9.5" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#IC-Bonferroni"><i class="fa fa-check"></i><b>4.9.5</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+<li class="chapter" data-level="4.9.6" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-chi2-caso-n-grande"><i class="fa fa-check"></i><b>4.9.6</b> Intervalos de Confianza Simultáneos <span class="math inline">\(\chi^2\)</span> (caso n-Grande)</a></li>
+<li class="chapter" data-level="4.9.7" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-simultáneos-para-n-grande-usando-la-normal-estándar-z_alpha"><i class="fa fa-check"></i><b>4.9.7</b> IC Simultáneos para n-Grande Usando la Normal Estándar <span class="math inline">\(Z_\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>5</b> Análisis de Componentes Principales (ACP)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="interpretaciones-geométricas-y-algebraícas-del-acp.html"><a href="interpretaciones-geométricas-y-algebraícas-del-acp.html"><i class="fa fa-check"></i><b>5.2</b> Interpretaciones Geométricas y Algebraícas del ACP</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="interpretaciones-geométricas-y-algebraícas-del-acp.html"><a href="interpretaciones-geométricas-y-algebraícas-del-acp.html#interpretación-geométrica-del-acp-mediante-un-ejemplo-simple"><i class="fa fa-check"></i><b>5.2.1</b> Interpretación Geométrica del ACP Mediante un Ejemplo Simple</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html"><i class="fa fa-check"></i><b>5.3</b> Mas de dos Ejes</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#min-cuadrados"><i class="fa fa-check"></i><b>5.3.1</b> Ajuste de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="5.3.2" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#relación-entre-los-sub-espacios-de-mathbbrp-y-de-mathbbrn"><i class="fa fa-check"></i><b>5.3.2</b> Relación entre los Sub-espacios de <span class="math inline">\(\mathbb{R}^p\)</span> y de <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="componentes-principales-en-análisis-de-regresión.html"><a href="componentes-principales-en-análisis-de-regresión.html"><i class="fa fa-check"></i><b>5.4</b> Componentes Principales en Análisis de Regresión</a></li>
+<li class="chapter" data-level="5.5" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>5.5</b> Componentes Principales Poblacionales</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#determinación-de-las-cps"><i class="fa fa-check"></i><b>5.5.1</b> Determinación de las CPs</a></li>
+<li class="chapter" data-level="5.5.2" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>5.5.2</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="5.5.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>5.5.3</b> Componentes principales usando variables estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><i class="fa fa-check"></i><b>5.6</b> Componentes Principales para Matrices de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span> con Estructuras Especiales</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-no-correlacionadas"><i class="fa fa-check"></i><b>5.6.1</b> Variables No-Correlacionadas</a></li>
+<li class="chapter" data-level="5.6.2" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-altamente-correlacionadas"><i class="fa fa-check"></i><b>5.6.2</b> Variables Altamente Correlacionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>5.7</b> Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="5.8" data-path="algunos-ejemplos.html"><a href="algunos-ejemplos.html"><i class="fa fa-check"></i><b>5.8</b> Algunos Ejemplos</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="algunos-ejemplos.html"><a href="algunos-ejemplos.html#ejemplo-2"><i class="fa fa-check"></i><b>5.8.1</b> Ejemplo-2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>5.9</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="5.10" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>5.10</b> Interpretación de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="5.11" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>5.11</b> Estandarización de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="5.12" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>5.12</b> Gráficos en una Análisis de componentes principales</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>5.12.1</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>5.13</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{e}}_i\)</span> en muestras grandes</a></li>
+<li class="chapter" data-level="5.14" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html"><i class="fa fa-check"></i><b>5.14</b> Ejemplos Finales</a>
+<ul>
+<li class="chapter" data-level="5.14.1" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-1"><i class="fa fa-check"></i><b>5.14.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="5.14.2" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-2-1"><i class="fa fa-check"></i><b>5.14.2</b> Ejemplo-2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 5</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="acb_al" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Algunos conceptos básicos<a href="acb_al.html#acb_al" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="matrices" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Matrices<a href="acb_al.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:matriz" class="definition"><strong>Definición 1.1  (Matriz) </strong></span>Una matriz es un arreglo rectangular de números en filas y columnas. Usualmente se denotan por <span class="math inline">\(A_{n \times m}\)</span>.</p>
+</div>
+<p>En análisis multivariado las tablas de datos que representan mediciones de <span class="math inline">\(p\)</span>-variables sobre <span class="math inline">\(n\)</span>-individuos generalmente se representan mediante una matriz de datos, donde las filas representan las observaciones y las columnas representan las variables.</p>
+<p>De manera general, los elementos de una matriz son representados por <span class="math inline">\(a_{ij}\)</span> lo que representa el elemento en la fila <span class="math inline">\(i\)</span>-ésima con la columna <span class="math inline">\(j\)</span>-ésima. Se utiliza el término <em>dimensión</em> para hacer referencia al número de filas y columnas de una matriz, por ejemplo una matriz de dimensión <span class="math inline">\(n\times m\)</span> es la matriz formada por <span class="math inline">\(n\)</span>-filas y <span class="math inline">\(m\)</span>-columnas.</p>
+<p>Las matrices también se pueden representar de manera corta por sus elementos genéricos escritos entre corchetes, como sigue:</p>
+<p><span class="math display">\[
+\mathbf{A}_{n\times m}=\bigl[\ a_{ij}\  \bigr]\ \ , \ \ i=1,2,\cdots n \ \ ; \ \ j=1,2,\cdots m
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{A}=\bigl[\ a_{ij}\  \bigr]=\begin{bmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1j} &amp; \cdots &amp; a_{1m} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2j} &amp; \cdots &amp; a_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ij} &amp; \cdots &amp; a_{im} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nj} &amp; \cdots &amp; a_{nm} \\
+\end{bmatrix}_{n\times m}
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejmeplo-matriz" class="example"><strong>Ejemplo 1.1  (Matriz de dimensión 3 imes 2) </strong></span>Sea</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}2 &amp; 1 \\ 3 &amp;2  \\ 5  &amp;3 \end{bmatrix}_{3\times 2}
+\]</span></p>
+<p>En este ejemplo se tiene una matriz de dimensión <span class="math inline">\(3\times 2\)</span>, es decir, una matriz con 3-fila y 2-columnas. Algunos elementos de esta matriz son: <span class="math inline">\(a_{21}=2\)</span>, <span class="math inline">\(a_{33}=5\)</span>.</p>
+</div>
+<div id="vectores" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Vectores<a href="acb_al.html#vectores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una matriz con una sola columna se le llama un <strong>vector columna</strong> o simplemente <strong>un vector</strong>. Los vectores serán denotados con letras negrillas y subrayado debajo.</p>
+<div class="example">
+<p><span id="exm:ejmeplo-vector" class="example"><strong>Ejemplo 1.2  (Vector 3-dimensional) </strong></span>En en ejemplo de la matriz anterior <span class="math inline">\(\mathbf{A}\)</span>, la primera columna da origen al vector:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}_{3\times 1}
+\]</span></p>
+<div id="vector-unos" class="section level4 hasAnchor" number="1.1.2.1">
+<h4><span class="header-section-number">1.1.2.1</span> vector de unos<a href="acb_al.html#vector-unos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Un Vector de unos es aquel cuyas entradas son todas el número uno. Se denotan por <span class="math inline">\(\mathbf{1}_n\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejmeplo-vector-unos" class="example"><strong>Ejemplo 1.3  (Vector de unos 3-dimensional) </strong></span>Sea</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{1}}=\begin{bmatrix}1 \\ 1 \\ 1  \end{bmatrix}_{3\times 1}
+\]</span></p>
+</div>
+<div id="suma-vectores" class="section level4 hasAnchor" number="1.1.2.2">
+<h4><span class="header-section-number">1.1.2.2</span> Suma de Vectores<a href="acb_al.html#suma-vectores" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La suma de vectores se realiza componente a componente.</p>
+<div class="example">
+<p><span id="exm:ejmeplo-suma-vectores" class="example"><strong>Ejemplo 1.4  (Suma de Vectores 3-dimensionales) </strong></span>Sean</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}_{3\times 1} \ \ \ \ \text{y} \ \ \ \ \ \ \underline{\mathbf{b}}=\begin{bmatrix}1 \\ 2 \\ 3  \end{bmatrix}_{3\times 1}
+\]</span></p>
+<p>entonces se tiene que</p>
+<p><span class="math display">\[
+\underline{\mathbf{a}}+\underline{\mathbf{b}}=\begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}  + \begin{bmatrix}1 \\ 2 \\ 3  \end{bmatrix}= \begin{bmatrix}2+1 \\ 3+2 \\ 5+3  \end{bmatrix} =\begin{bmatrix}3 \\ 5 \\ 8  \end{bmatrix}.
+\]</span></p>
+</div>
+<div id="producto-interno" class="section level4 hasAnchor" number="1.1.2.3">
+<h4><span class="header-section-number">1.1.2.3</span> Producto Interno entre Vectores<a href="acb_al.html#producto-interno" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El producto interno entre vectores es multiplicación elemento a elemento de dichos vectores, y se denota por <span class="math inline">\(\langle \underline{a} \ , \ \underline{b} \rangle=\underline{a}^t\underline{b}\)</span> es decir .</p>
+<p><span class="math display">\[
+\langle \underline{a} \ , \ \underline{b} \rangle =\rangle=\underline{a}^t\underline{b}=a_1b_1+a_2b_2+\cdots+a_n b_n= \sum_i a_i b_i
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-producto-interno" class="example"><strong>Ejemplo 1.5  (Producto Interno de Vectores 3-dimensionales) </strong></span>Sean</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}_{3\times 1} \ \ \ \ \text{y} \ \ \ \ \ \ \underline{\mathbf{b}}=\begin{bmatrix}1 \\ 2 \\ 3  \end{bmatrix}_{3\times 1}
+\]</span></p>
+<p>entonces se tiene que</p>
+<p><span class="math display">\[
+\langle   \underline{\mathbf{a}} \ , \ \underline{\mathbf{b}} \rangle=\underline{\mathbf{a}}^t \ \underline{\mathbf{b}} =  \begin{bmatrix}2 &amp; 3 &amp; 5  \end{bmatrix} \begin{bmatrix}1 \\ 2 \\ 3  \end{bmatrix}  = \sum_{i=1}^3 a_ib_i = 2\times1+3\times2+5\times3 =  2+6+15=18.
+\]</span></p>
+</div>
+<div id="norma-vector" class="section level4 hasAnchor" number="1.1.2.4">
+<h4><span class="header-section-number">1.1.2.4</span> Norma de un Vector<a href="acb_al.html#norma-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La norma de un vector es la raíz cuadrada del producto interno del vector por si mismo, es decir,</p>
+<p><span class="math display">\[
+\|\underline{a} \|=\sqrt{\langle \underline{a}\ , \ \underline{a} \rangle}=\sqrt{\underline{a}^t\underline{a}}=\sqrt{a_1^2+a_2^2+\cdots+a_n^2},
+\]</span></p>
+<p>con <span class="math inline">\(\underline{a}^t=(a_1,a_2,\ldots,a_n)\)</span></p>
+<div class="example">
+<p><span id="exm:ejmeplo-norma-vector" class="example"><strong>Ejemplo 1.6  (Normal de un Vector 3-dimensional) </strong></span>Sea</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}_{3\times 1}
+\]</span></p>
+<p>entonces,
+<span class="math display">\[
+\|\underline{\mathbf{a}}\|^2=\langle \underline{\mathbf{a}} \ , \ \underline{\mathbf{a}} \rangle = \underline{\mathbf{a}}^t\underline{\mathbf{a}}=\begin{bmatrix}2 &amp; 3 &amp; 5  \end{bmatrix} \begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}=\sum_{i=1}^3 a_i^2 = 2^2+3^3+5^2=38
+\]</span></p>
+<p><span class="math display">\[
+\text{luego,} \ \ \ \ \|\underline{\mathbf{a}} \|=\sqrt{38}=6.1644.
+\]</span></p>
+<p><strong>Propiedades de la Norma:</strong></p>
+<p><span class="math inline">\(\|c \underline{a} \|=|c|\|\underline{a}\|\)</span>, si <span class="math inline">\(|c|&gt;1\)</span> entonces <span class="math inline">\(\underline{a}\)</span>-se extiende y si <span class="math inline">\(|c|&lt;1\)</span> entonces <span class="math inline">\(\underline{a}\)</span>-se contrae.</p>
+<p><strong>Continuando con el ejemplo</strong></p>
+<p><span class="math display">\[
+\|2\times\underline{\mathbf{a}} \|=|2| \|\underline{\mathbf{a}} \|=2\times \sqrt{38}=12.3288
+\]</span></p>
+<p><span class="math display">\[
+\|(1/2)\times\underline{\mathbf{a}} \|=|1/2| \|\underline{\mathbf{a}} \|= (1/2) \times \sqrt{38}=3.0822
+\]</span></p>
+<p>En estadística, la norma de un vector está directamente relacionada con la varianza o dispersión de dicho vector (o desviación estnadar respectivamente).</p>
+</div>
+<div id="normalización-de-un-vector" class="section level4 hasAnchor" number="1.1.2.5">
+<h4><span class="header-section-number">1.1.2.5</span> Normalización de un Vector<a href="acb_al.html#normalización-de-un-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Un vector se dice que esta <em>normalizado</em> si su norma es igual a uno. Para normalizar un vector, se divide cada elemento del vector por su respectiva norma.</p>
+<div class="example">
+<p><span id="exm:ejemplo-normalizacion-vector" class="example"><strong>Ejemplo 1.7  (Normalización de un Vector 3-dimensional) </strong></span>Sea</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}_{3\times 1}
+\]</span></p>
+<p>la norma de dicho vector es.
+<span class="math display">\[
+\|\underline{\mathbf{a}}\|^2=\langle \underline{\mathbf{a}} \ , \ \underline{\mathbf{a}} \rangle = \underline{\mathbf{a}}^t\underline{\mathbf{a}}=\begin{bmatrix}2 &amp; 3 &amp; 5  \end{bmatrix} \begin{bmatrix}2 \\ 3 \\ 5  \end{bmatrix}=\sum_{i=1}^3 a_i^2 = 2^2+3^3+5^2=38
+\]</span></p>
+<p><span class="math display">\[
+\text{de donde,} \ \ \ \ \|\underline{\mathbf{a}} \|=\sqrt{38}=6.1644.
+\]</span></p>
+<p>Luego el vector <span class="math inline">\(\underline{\mathbf{a}}\)</span>-normalizado es:
+<span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix} \frac{2}{\sqrt{38}} \\ \frac{3}{\sqrt{38}} \\ \frac{5}{\sqrt{38}}  \end{bmatrix}
+\]</span></p>
+<p>cuya norma es:</p>
+<p><span class="math display">\[
+\|\underline{\mathbf{a}}\|^2=\langle \underline{\mathbf{a}} \ , \ \underline{\mathbf{a}} \rangle = \sum_{i=1}^3 a_i^2 = \left( \frac{2}{\sqrt{38}}\right)^2+\left( \frac{3}{\sqrt{38}}\right)^2+\left( \frac{5}{\sqrt{38}}\right)^2= \frac{4}{38}+\frac{9}{38}+
+  \frac{25}{38}=\frac{38}{38}=1
+\]</span></p>
+</div>
+<div id="distancia-vectores" class="section level4 hasAnchor" number="1.1.2.6">
+<h4><span class="header-section-number">1.1.2.6</span> Distancia entre Vectores<a href="acb_al.html#distancia-vectores" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La distancia entre dos vectores es la norma del vector diferencia, ie.</p>
+<p><span class="math display">\[
+d(\underline{a}\ , \ \underline{b})=\|\underline{a} - \underline{b} \|
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejmeplo-distancia-vectores" class="example"><strong>Ejemplo 1.8  (Distancia entre Vectores 2-dimensionales) </strong></span>Sean los vecotores</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}5 \\ 2   \end{bmatrix}_{2\times 1} \ \ \ \ \text{y} \ \ \ \ \ \ \underline{\mathbf{b}}=\begin{bmatrix} 2 \\ 5  \end{bmatrix}_{2\times 1}
+\]</span></p>
+<p>entonces se tiene que</p>
+<p><span class="math display">\[
+d(\underline{a}\ , \ \underline{b})^2=\|\underline{a} - \underline{b} \|^2=\left\|\ \    \begin{bmatrix}5 \\ 2   \end{bmatrix}  - \begin{bmatrix} 2 \\ 5  \end{bmatrix} \ \ \right\|^2=\left\|\   \begin{bmatrix}5-2 \\ 2-5   \end{bmatrix} \right\|^2 = \left\|\ \begin{bmatrix} 3 \\ -3  \end{bmatrix} \right\|^2 =3^3+(-3)^2=18
+\]</span></p>
+<p><span class="math display">\[
+\text{luego,} \ \ \ d(\underline{a}\ , \ \underline{b})=\sqrt{18}=4.2426
+\]</span></p>
+gráficamente:
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-distancia-vect"></span>
+<img src="imagenes/distan_vect.png" alt="Distancia Entre Vectores" width="300px" />
+<p class="caption">
+Figura 1.1: Distancia Entre Vectores
+</p>
+</div>
+</div>
+<div id="angulo-vectores" class="section level4 hasAnchor" number="1.1.2.7">
+<h4><span class="header-section-number">1.1.2.7</span> Ángulo entre dos Vectores<a href="acb_al.html#angulo-vectores" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El ángulo <span class="math inline">\(\theta\)</span> entre dos vectores <span class="math inline">\(\underline{a}\)</span> y <span class="math inline">\(\underline{b}\)</span> está dado por:</p>
+<p><span class="math display">\[
+\cos \theta=\frac{\langle  \underline{a}\ , \ \underline{b} \rangle}{\|\underline{a}\|\|\underline{b}\|}=\frac{\underline{a}^t \underline{b}}{\|\underline{a}\|\|\underline{b}\|}
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-angulo-vectores" class="example"><strong>Ejemplo 1.9  (Ángulo entre 2 Vectores 2-dimensionales) </strong></span>Sean los vecotores</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}5 \\ 2   \end{bmatrix}_{2\times 1} \ \ \ \ \text{y} \ \ \ \ \ \ \underline{\mathbf{b}}=\begin{bmatrix} 2 \\ 5  \end{bmatrix}_{2\times 1}
+\]</span></p>
+<p>entonces se tiene que
+<span class="math display">\[
+\cos \theta=\frac{\langle  \underline{a}\ , \ \underline{b} \rangle}{\|\underline{a}\|\|\underline{b}\|}=\frac{\underline{a}^t \underline{b}}{\|\underline{a}\|\|\underline{b}\|}=\frac{10+10}{\sqrt{29}\sqrt{29}}=\frac{20}{29}=0.6897
+\]</span></p>
+<p>luego,
+<span class="math display">\[
+\theta=\cos^{-1} \theta=\cos^{-1}(0.6897)=0.8098=46.3972 \approx 47^\circ
+\]</span></p>
+</div>
+<div id="vectores-ortogonales" class="section level4 hasAnchor" number="1.1.2.8">
+<h4><span class="header-section-number">1.1.2.8</span> Vectores Ortogonales<a href="acb_al.html#vectores-ortogonales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dos vectores <span class="math inline">\(\underline{a}\)</span> y <span class="math inline">\(\underline{b}\)</span> son ortogonales o perpendiculares si <span class="math inline">\(\langle \underline{a}\ , \ \underline{b} \rangle=0\)</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-vectores-ortogonales" class="example"><strong>Ejemplo 1.10  (Vectores Ortogonales 2-dimensionales) </strong></span>Sean los vecotores</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{a}}=\begin{bmatrix}5 \\ 0   \end{bmatrix}_{2\times 1} \ \ \ \ \text{y} \ \ \ \ \ \ \underline{\mathbf{b}}=\begin{bmatrix} 0 \\ 3  \end{bmatrix}_{2\times 1}
+\]</span>
+entonces como</p>
+<p><span class="math display">\[
+\langle \underline{\mathbf{a}}\  ,\ \underline{\mathbf{b}}  \rangle= \underline{\mathbf{a}}^t\underline{\mathbf{b}}=5\times 0 + 0\times 3 =0
+\]</span></p>
+<p>luego <span class="math inline">\(\underline{\mathbf{a}}\)</span> y <span class="math inline">\(\underline{\mathbf{b}}\)</span> son ortogonales o perpendiculares.</p>
+gráficamente:
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-vectore-perp"></span>
+<img src="imagenes/vect_perp.png" alt="Vectores Ortogonales o Perpendiculares" width="300px" />
+<p class="caption">
+Figura 1.2: Vectores Ortogonales o Perpendiculares
+</p>
+</div>
+</div>
+<div id="proyección-ortogonal-de-un-vector" class="section level4 hasAnchor" number="1.1.2.9">
+<h4><span class="header-section-number">1.1.2.9</span> Proyección Ortogonal de un Vector<a href="acb_al.html#proyección-ortogonal-de-un-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La proyección ortogonal de un vector <span class="math inline">\(\underline{\mathbf{a}}\)</span> sobre un vector <span class="math inline">\(\underline{\mathbf{b}}\)</span> es el vector <span class="math inline">\(\underline{\mathbf{a}}_p=Proy_{\ \underline{\mathbf{b}}}\ \underline{\mathbf{a}}\)</span>, definido por:</p>
+<p><span class="math display">\[
+\underline{\mathbf{a}}_p=Proy_{\ \underline{\mathbf{b}}}\ \underline{\mathbf{a}}=\frac{\langle  \underline{\mathbf{a}}\ , \ \underline{\mathbf{b}} \rangle}{\|\underline{\mathbf{b}}\|^2}\underline{\mathbf{b}}=k.\underline{\mathbf{b}},
+\]</span></p>
+<p>con <span class="math inline">\(k=\frac{\langle \underline{\mathbf{a}}\ , \ \underline{\mathbf{b}} \rangle}{\|\underline{\mathbf{b}}\|^2}\)</span> y <span class="math inline">\(\|\underline{\mathbf{b}}\|^2=\langle \underline{\mathbf{b}}\ , \ \underline{\mathbf{b}} \rangle\)</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-proyec-ab"></span>
+<img src="imagenes/proy_ab.png" alt="Proyección Ortogonal" width="300px" />
+<p class="caption">
+Figura 1.3: Proyección Ortogonal
+</p>
+</div>
+</div>
+</div>
+<div id="operaciones-matrices" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Operaciones Matriciales<a href="acb_al.html#operaciones-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="matriz-transpuesta" class="section level4 hasAnchor" number="1.1.3.1">
+<h4><span class="header-section-number">1.1.3.1</span> Transpuesta de una Matriz<a href="acb_al.html#matriz-transpuesta" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La transpuesta de una matriz <span class="math inline">\(\mathbf{A}_{n \times m}\)</span> es la matriz que se obtiene invirtiendo las filas por columnas, la cual se denota por: <span class="math inline">\(\underset{m\times n}{\mathbf{A}^t}\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-transpuesta" class="example"><strong>Ejemplo 1.11  (Matriz Transpuesta) </strong></span>Para la matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>la matriz transpuesta es:</p>
+<p><span class="math display">\[
+\mathbf{A}^t=\begin{bmatrix} 1 &amp; 4  &amp; 7 \\ 2 &amp; 5 &amp; 8 \\
+3 &amp; 6 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+</div>
+<div id="suma-matrices" class="section level4 hasAnchor" number="1.1.3.2">
+<h4><span class="header-section-number">1.1.3.2</span> Suma de Matrices<a href="acb_al.html#suma-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La suma de matrices de igual dimensión se realiza componente a componente.</p>
+<div class="example">
+<p><span id="exm:ejemplo-suma-matriz" class="example"><strong>Ejemplo 1.12  (Suma de Matrices) </strong></span>Sean las matrices</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9\end{bmatrix}_{3\times 3} \ \ \ \ \ \text{y} \ \ \ \ \ \ \mathbf{B}=\begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>entonces se tiene que:</p>
+<p><span class="math display">\[
+\mathbf{A}+\mathbf{B}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9\end{bmatrix} \  + \ \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}=\begin{bmatrix} 1+1 &amp; 2+2  &amp; 3+0 \\ 4+0 &amp; 5+1 &amp; 6+2 \\
+7+2 &amp; 8+3 &amp; 9+1\end{bmatrix}=\begin{bmatrix} 2 &amp; 4  &amp; 3 \\ 4 &amp; 6 &amp; 8 \\
+9 &amp; 11 &amp; 10\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>La suma de matrices tiene algunas propiedades similares a las propiedades de la suma habitual de número, por ejemplo, es <em>Asociativa</em> y <em>Conmutativa</em>, es decir,</p>
+<p><span class="math display">\[
+\mathbf{A}+\mathbf{B}=\mathbf{B}+\mathbf{A} \\
+\mathbf{A}+(\mathbf{B}+\mathbf{C})=(\mathbf{A}+\mathbf{B})+\mathbf{C}
+\]</span></p>
+</div>
+<div id="multiplicacion-escalar" class="section level4 hasAnchor" number="1.1.3.3">
+<h4><span class="header-section-number">1.1.3.3</span> Multiplicación de una Matriz por un Escalar<a href="acb_al.html#multiplicacion-escalar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para diferenciar las matrices de los números usuales, a los números se les llaman <strong>escalares</strong>. La multiplicación de una matriz por un escalar, se realiza multiplicando cada elemento de la matriz por el escalar.</p>
+<div class="example">
+<p><span id="exm:ejemplo-multiplicacion-escalar-matriz" class="example"><strong>Ejemplo 1.13  (Multiplicación por un Escalar) </strong></span>Sea la matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>La multiplicación de 3 por <span class="math inline">\(\mathbf{A}\)</span> es:
+<span class="math display">\[
+3\times \mathbf{A}=3\times \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}=\begin{bmatrix} 3\times 1 &amp; 3\times2  &amp; 3\times0 \\ 3\times0 &amp; 3\times1 &amp; 3\times2 \\
+3\times2 &amp; 3\times3 &amp; 3\times1\end{bmatrix}=\begin{bmatrix} 3 &amp; 6  &amp; 0 \\ 0 &amp; 3 &amp; 6 \\
+6 &amp; 9 &amp; 3\end{bmatrix}_{3\times 3}
+\]</span></p>
+</div>
+<div id="producto-hadamard" class="section level4 hasAnchor" number="1.1.3.4">
+<h4><span class="header-section-number">1.1.3.4</span> Producto de Hadamard de Matrices<a href="acb_al.html#producto-hadamard" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El producto <em>Hadamard</em> entre dos matrices de igual dimensión se define como la matriz obtenida mediante la multiplicación elemento a elemento de los elementos de cada amtriz, se denota por: <span class="math inline">\(\mathbf{A} \odot \mathbf{B}\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-producto-hadamard" class="example"><strong>Ejemplo 1.14  (Producto Hadamard de Matrices) </strong></span>Sean las matrices</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9\end{bmatrix}_{3\times 3} \ \ \ \ \ \text{y} \ \ \ \ \ \ \mathbf{B}=\begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>entonces se tiene que:</p>
+<p><span class="math display">\[
+\mathbf{A}\odot\mathbf{B}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9\end{bmatrix} \  \odot \ \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}=\begin{bmatrix} 1\times 1 &amp; 2\times2  &amp; 3\times0 \\ 4\times0 &amp; 5\times1 &amp; 6\times2 \\
+7\times2 &amp; 8\times3 &amp; 9\times1\end{bmatrix}=\begin{bmatrix} 1 &amp; 4  &amp; 0 \\ 0 &amp; 5 &amp; 12 \\
+14 &amp; 24 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+</div>
+<div id="producto-matrices" class="section level4 hasAnchor" number="1.1.3.5">
+<h4><span class="header-section-number">1.1.3.5</span> Producto de Cayley o Producto Estandar de Matrices<a href="acb_al.html#producto-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El producto de Hadamard es sencillo y directo, pero, desafortunadamente, no es el producto de matrices más utilizado en la práctica. El producto que más se utilizad en la práctica se le llama producto estándar o de Cayley, o simplemente producto de matrices (es decir, cuando no se especifica el nombre del producto usado, se refiere al producto estándar), se denota por <span class="math inline">\(\mathbf{A}\times \mathbf{B}\)</span>. El producto estándar se define solo cuando el número de columnas de la primera matriz <span class="math inline">\(\mathbf{A}\)</span> es igual al número de filas de la segunda matriz <span class="math inline">\(\mathbf{B}\)</span>. A dos matrices que pueden multiplicarse se llaman conformes. La matriz producto <span class="math inline">\(\mathbf{A}\times \mathbf{B}\)</span> que resulta tiene como número de filas el número de filas de la primera matriz <span class="math inline">\(\mathbf{A}\)</span> y tiene como número de de columnas el número de columnas de la segunda matriz <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<p>Por ejemplo, si <span class="math inline">\(\mathbf{A}\)</span> tiene <span class="math inline">\(n\)</span>-filas y <span class="math inline">\(k\)</span>-columnas y <span class="math inline">\(\mathbf{B}\)</span> tiene <span class="math inline">\(k\)</span>-filas y <span class="math inline">\(m\)</span>-columnas, entonces se puede realizar el producto <span class="math inline">\(\mathbf{A}\times \mathbf{B}\)</span> el cual daría como resultado una matriz <span class="math inline">\(\mathbf{C}\)</span> con <span class="math inline">\(n\)</span>-fila y <span class="math inline">\(m\)</span>-columnas, es decir, <span class="math inline">\(\mathbf{C}=\mathbf{A}\times \mathbf{B}\)</span> sería de dimensión <span class="math inline">\(n\times m\)</span>.</p>
+<p>Una forma conveniente de conocer si dos matrices son conformes es escribir las dimensiones de las matrices como sub-índices. Por ejemplo:</p>
+<p><span class="math display">\[
+\underset{n\times k}{\mathbf{A}} \times \underset{k\times m}{\mathbf{B}}= \underset{n\times m}{\mathbf{C}}.
+\]</span></p>
+<p>El elemento <span class="math inline">\(c_{ij}\)</span> de la matriz producto <span class="math inline">\(\mathbf{C}\)</span> se calcula como sigue:</p>
+<p><span class="math display">\[
+c_{ij}=\sum_{k=1}^n a_{ik}\times b_{kj}=\langle \underline{\mathbf{a}}_i \ , \ \underline{\mathbf{b}}_j \rangle=\underline{\mathbf{a}}_i^t\underline{\mathbf{b}}_j=a_{i1}\times b_{1j}+a_{i2}\times b_{2j}+\cdots + a_{in}\times b_{nj}
+\]</span></p>
+<p>producto punto entre la fila <span class="math inline">\(i\)</span>-ésima de <span class="math inline">\(\mathbf{A}\)</span> y la columna <span class="math inline">\(j\)</span>-ésima de <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-producto-matrices" class="example"><strong>Ejemplo 1.15  (Producto de Matrices) </strong></span>Sean las matrices</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9\end{bmatrix}_{3\times 3} \ \ \ \ \ \text{y} \ \ \ \ \ \ \mathbf{B}=\begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>entonces se tiene que:</p>
+<p><span class="math display">\[
+\mathbf{C}=\mathbf{A}\times\mathbf{B}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9\end{bmatrix} \  \times \ \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 1\end{bmatrix}\\  =\begin{bmatrix} 1\times 1 + 2\times 0 + 3\times 2 &amp; 1\times2+2\times1+3\times3  &amp; 1\times0+2\times2+3\times1 \\
+4\times 1 + 5\times 0 + 6\times 2 &amp; 4\times2+5\times1+6\times3 &amp; 4\times0+5\times2+6\times1 \\ 7\times 1 + 8\times 0 + 9\times 2 &amp; 7\times2+8\times1+9\times3 &amp; 7\times0+8\times2+9\times1 \end{bmatrix}\\
+=\begin{bmatrix} 1+0+6 &amp; 2+2+9  &amp; 0+4+3 \\
+4+0+12 &amp; 8+5+18 &amp; 0+10+6 \\
+7+0+18 &amp; 14+8+27 &amp; 0+16+9\end{bmatrix}=\begin{bmatrix} 7 &amp; 13  &amp; 7 \\ 16 &amp; 31 &amp; 16 \\
+25 &amp; 49 &amp; 25\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p><strong>Propiedades del Producto de Matrices</strong></p>
+<p>Al igual que el producto entre escalares o números, el producto entre matrices es asociativo y distributivo con respecto a la suma. Es decir, para cualquier conjunto de matrices conformes <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(\mathbf{B}\)</span> y <span class="math inline">\(\mathbf{C}\)</span> se cumple que:</p>
+<p>a.)</p>
+<p><span class="math display">\[
+(\mathbf{A}\mathbf{B})\mathbf{C}=\mathbf{A}(\mathbf{B}\mathbf{C}) \ \ , \ \text{Propiedad Asociatiava}
+\]</span></p>
+<p>b.)</p>
+<p><span class="math display">\[
+\mathbf{A}(\mathbf{B}+\mathbf{C})=\mathbf{A}\mathbf{B}+\mathbf{A}\mathbf{C} \ \ , \ \text{Propiedad Distributiva}
+\]</span></p>
+<p>c.) EL producto de matrices no es conmutativo, es decir:</p>
+<p><span class="math display">\[
+\mathbf{A}\mathbf{B}\neq \mathbf{B}\mathbf{A} \ \ , \ \text{No Cumple la Propiedad Conmutativa}
+\]</span></p>
+<p>d.) La transpuesta del producto de matrices cumple que:</p>
+<p><span class="math display">\[
+(\mathbf{A}\mathbf{B})^t = \mathbf{B}^t\mathbf{A}^t
+\]</span></p>
+</div>
+<div id="producto-kronecker" class="section level4 hasAnchor" number="1.1.3.6">
+<h4><span class="header-section-number">1.1.3.6</span> Producto de Kronecker<a href="acb_al.html#producto-kronecker" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El producto Kronecker (o producto directo o producto tensor o producto de Zehfuss) entre dos matrices cualesquiera <span class="math inline">\(\mathbf{A}\)</span> y <span class="math inline">\(\mathbf{B}\)</span> se denota por <span class="math inline">\(\mathbf{A} \otimes \mathbf{B}\)</span> y se define como sigue.</p>
+<p>Para <span class="math inline">\(\mathbf{A}_{n\times m}\)</span> y <span class="math inline">\(\mathbf{B}_{k\times s}\)</span>, entonces</p>
+<p><span class="math display">\[
+\underset{n\times m}{ \mathbf{A}} \otimes \underset{k\times s}{ \mathbf{B} } = \underset{nk \times ms}{\mathbf{C}}=\begin{bmatrix} a_{11}\mathbf{B} &amp; a_{12}\mathbf{B} &amp; \cdots &amp; a_{1j}\mathbf{B} &amp; \cdots &amp; a_{1m}\mathbf{B} \\ a_{21}\mathbf{B} &amp; a_{22}\mathbf{B} &amp; \cdots &amp; a_{2j}\mathbf{B} &amp; \cdots &amp; a_{2m}\mathbf{B} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{i1}\mathbf{B} &amp; a_{i2}\mathbf{B} &amp; \cdots &amp; a_{ij}\mathbf{B} &amp; \cdots &amp; a_{im}\mathbf{B} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{n1}\mathbf{B} &amp; a_{n2}\mathbf{B} &amp; \cdots &amp; a_{nj}\mathbf{B} &amp; \cdots &amp; a_{nm}\mathbf{B} \end{bmatrix}_{nk\times ms}
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-producto-kronecker" class="example"><strong>Ejemplo 1.16  (Producto Kronecker de Matrices) </strong></span>Sean las matrices</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2    \\ 3 &amp; 0 \end{bmatrix}_{2\times 2} \ \ \ \ \ \text{y} \ \ \ \ \ \ \mathbf{B}=\begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+2 &amp; 0 &amp; 1\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>luego se tiene que:</p>
+<p><span class="math display">\[
+\underset{2\times 2}{ \mathbf{A}} \otimes \underset{3\times 3}{ \mathbf{B} } = \underset{2(3) \times 2(3)}{\mathbf{C}}=\underset{6 \times 6}{\mathbf{C}}=\begin{bmatrix} 1 &amp; 2    \\ 3 &amp; 0 \end{bmatrix} \otimes \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+  2 &amp; 0 &amp; 1\end{bmatrix}\\
+  = \begin{bmatrix}\ \  1\times \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+  2 &amp; 0 &amp; 1\end{bmatrix} &amp; 2\times \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+  2 &amp; 0 &amp; 1\end{bmatrix} \\
+  3\times \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+  2 &amp; 0 &amp; 1\end{bmatrix}&amp; 0 \times \begin{bmatrix} 1 &amp; 2  &amp; 0 \\ 0 &amp; 1 &amp; 2 \\
+  2 &amp; 0 &amp; 1\end{bmatrix}\ \ \end{bmatrix}= \begin{bmatrix}  1 &amp; 2  &amp; 0 &amp; 2 &amp; 4 &amp; 0 \\
+  0 &amp; 1 &amp; 2 &amp; 0 &amp; 2 &amp; 4 \\
+  2 &amp; 0 &amp; 1 &amp; 4 &amp; 0 &amp; 2 \\
+  3 &amp; 6 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+  0 &amp; 3 &amp; 6 &amp; 0 &amp; 0 &amp; 0 \\
+  6 &amp; 0 &amp; 3 &amp; 0 &amp; 0 &amp; 0
+  \end{bmatrix}_{6\times 6}
+\]</span></p>
+<p>El producto de Kronecker se utiliza para escribir matrices de diseño. Es una herramienta esencial para la derivación de los valores esperados y el muestreo de distribuciones.</p>
+</div>
+</div>
+<div id="matrices-especiales" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Matrices Especiales<a href="acb_al.html#matrices-especiales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="matriz-cuadrada" class="section level4 hasAnchor" number="1.1.4.1">
+<h4><span class="header-section-number">1.1.4.1</span> Matriz Cuadrada<a href="acb_al.html#matriz-cuadrada" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz <span class="math inline">\(\mathbf{A}_{n \times m}\)</span> es cuadrada si <span class="math inline">\(n=m\)</span>, es decir, una matriz es cuadrada si el número de filas igual al número de columnas, se denota por: <span class="math inline">\(\mathbf{A}_n\)</span>. Por otro lado, una matriz con diferente número de filas y columna se llama una <em>Matriz Rectangular</em>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-cuadrada" class="example"><strong>Ejemplo 1.17  (Matriz Cuadrada) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+  7 &amp; 8 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz cuadrada de dimensión 3.</p>
+<p>Sin embargo, la matriz
+<span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{bmatrix}_{2\times 3}
+\]</span></p>
+<p>es una matriz rectangular de dimensión <span class="math inline">\(2\times 3\)</span>.</p>
+</div>
+<div id="matriz-simétrica" class="section level4 hasAnchor" number="1.1.4.2">
+<h4><span class="header-section-number">1.1.4.2</span> Matriz Simétrica<a href="acb_al.html#matriz-simétrica" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz simétrica es una matriz cuadrada <span class="math inline">\(A_n\)</span> tal que su transpuesta es igual a la matriz original, es decir. si <span class="math inline">\(A^t=A\)</span>, otra forma es <span class="math inline">\(a_{ij}=a_{ji}\)</span> para <span class="math inline">\(i\neq j\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-simétrica" class="example"><strong>Ejemplo 1.18  (Matriz Simétrica) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 2 &amp; 5 &amp; 6 \\
+  3 &amp; 6 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz simétrica de dimensión 3.</p>
+<p><span class="math display">\[
+\mathbf{A}^T=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 2 &amp; 5 &amp; 6 \\
+3 &amp; 6 &amp; 9\end{bmatrix}^T=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 2 &amp; 5 &amp; 6 \\
+  3 &amp; 6 &amp; 9\end{bmatrix}=\mathbf{A}.
+\]</span></p>
+<p><strong>Propiedad de Matrices Simétricas</strong></p>
+<p>Si <span class="math inline">\(\mathbf{A}\)</span> y <span class="math inline">\(\mathbf{B}\)</span> son dos matrices simétrica, entonces se cumple que.</p>
+<p><span class="math display">\[
+\mathbf{A}\times \mathbf{B}=(\mathbf{B}\times \mathbf{A})^T
+\]</span></p>
+</div>
+<div id="matriz-diagonal" class="section level4 hasAnchor" number="1.1.4.3">
+<h4><span class="header-section-number">1.1.4.3</span> Matriz Diagonal<a href="acb_al.html#matriz-diagonal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz cuadrada es diagonal si sus elementos por fuera de la diagonal son todos ceros, es decir, <span class="math inline">\(a_{ij}=0\)</span>-para <span class="math inline">\(i\neq j\)</span>. Se denota por <span class="math inline">\(\mathbf{D}_n\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-diagonal" class="example"><strong>Ejemplo 1.19  (Matriz Diagonal) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 0  &amp; 0 \\ 0 &amp; 5 &amp; 0 \\
+  0 &amp; 0 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz diagonal de dimensión 3.</p>
+<p><strong>Pre-multiplicación por una Matriz Diagonal:</strong></p>
+<p>Cuando pre-multiplicamos una matriz <span class="math inline">\(\mathbf{B}\)</span> por una matriz diagonal <span class="math inline">\(\mathbf{A}\)</span>, los elementos de las <em>filas</em> de <span class="math inline">\(\mathbf{B}\)</span> son multiplicados por cada uno de los elementos de la diagonal de <span class="math inline">\(\mathbf{A}\)</span>.</p>
+<p>Por ejemplo,
+<span class="math display">\[
+\begin{bmatrix} 1 &amp; 0  &amp; 0 \\ 0 &amp; 5 &amp; 0 \\
+  0 &amp; 0 &amp; 9\end{bmatrix} \times \begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+  7 &amp; 8 &amp; 9\end{bmatrix}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 20 &amp; 25 &amp; 30 \\
+  63 &amp; 72 &amp; 81\end{bmatrix}
+\]</span></p>
+<p><strong>Pos-multiplicación por una Matriz Diagonal:</strong></p>
+<p>Cuando pos-multiplicamos una matriz <span class="math inline">\(\mathbf{B}\)</span> por una matriz diagonal <span class="math inline">\(\mathbf{A}\)</span>, los elementos de las <em>columnas</em> de <span class="math inline">\(\mathbf{B}\)</span> son multiplicados por cada uno de los elementos de la diagonal de <span class="math inline">\(\mathbf{A}\)</span>.</p>
+<p>Por ejemplo,
+<span class="math display">\[
+\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 4 &amp; 5 &amp; 6 \\
+  7 &amp; 8 &amp; 9\end{bmatrix} \times \begin{bmatrix} 1 &amp; 0  &amp; 0 \\ 0 &amp; 5 &amp; 0 \\
+  0 &amp; 0 &amp; 9\end{bmatrix} =\begin{bmatrix} 1 &amp; 10  &amp; 27 \\ 4 &amp; 25 &amp; 54 \\
+  7 &amp; 40 &amp; 81\end{bmatrix}
+\]</span></p>
+</div>
+<div id="matriz-identidad" class="section level4 hasAnchor" number="1.1.4.4">
+<h4><span class="header-section-number">1.1.4.4</span> Matriz Identidad<a href="acb_al.html#matriz-identidad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz identidad es una matriz diagonal cuyos elementos en la diagonal son todos iguales a unos, se denota por <span class="math inline">\(\mathbf{I}_n\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-identidad" class="example"><strong>Ejemplo 1.20  (Matriz Identidad) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{I}_3=\begin{bmatrix} 1 &amp; 0  &amp; 0 \\ 0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz identidad de dimensión 3.</p>
+<p>La matriz identidad es el <em>elemento neutro</em> para el producto de matrices, es decir que:</p>
+<p><span class="math display">\[
+\mathbf{A}\times \mathbf{I} = \mathbf{I}\times \mathbf{A} =\mathbf{A}
+\]</span></p>
+<p>para cualquier matriz <span class="math inline">\(\mathbf{A}\)</span>-confortable con <span class="math inline">\(\mathbf{I}\)</span>.</p>
+</div>
+<div id="matriz-unos" class="section level4 hasAnchor" number="1.1.4.5">
+<h4><span class="header-section-number">1.1.4.5</span> Matriz de Unos<a href="acb_al.html#matriz-unos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz de unos es una matriz cuyos elementos son todos iguales a unos, se denota por: <span class="math inline">\(\mathbf{J}_{n\times m}\)</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-unos" class="example"><strong>Ejemplo 1.21  (Matriz de unos de dimensión 3) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{J}_3=\begin{bmatrix} 1 &amp; 1  &amp; 1 \\ 1 &amp; 1 &amp; 1 \\
+  1 &amp; 1 &amp; 1\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz de unos de dimensión 3.</p>
+<p>La matriz de unos <span class="math inline">\(\mathbf{J}_{n\times m}\)</span> es el <em>elemento neutro</em> del producto de Hadamard entre matrices, es decir que:</p>
+<p><span class="math display">\[
+\underset{n\times m}{\mathbf{A} } \odot \underset{n\times m}{ \mathbf{J} }= \underset{n\times m}{\mathbf{A} }
+\]</span></p>
+<p>para cualquier matriz <span class="math inline">\(\mathbf{A}_{n\times m}\)</span>.</p>
+</div>
+<div id="matriz-nula" class="section level4 hasAnchor" number="1.1.4.6">
+<h4><span class="header-section-number">1.1.4.6</span> Matriz Nula (o de Ceros)<a href="acb_al.html#matriz-nula" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz nula es una matriz cuyos elementos son todos iguales a cero, se denota por: <span class="math inline">\(\mathbf{O}_{n\times m}\)</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-nula" class="example"><strong>Ejemplo 1.22  (Matriz Nula de dimensión 3) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{O}_3=\begin{bmatrix} 0 &amp; 0  &amp; 0 \\ 0 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; 0\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz nula de dimensión 3.</p>
+<p>La matriz nula <span class="math inline">\(\mathbf{O}_{n\times m}\)</span> es el <em>elemento neutro</em> para la <em>suma</em>, <em>producto de Hadamard</em> y para el <em>producto estándar</em> de matrices, es decir que:</p>
+<p><span class="math display">\[
+\underset{n\times m}{\mathbf{A} } + \underset{n\times m}{ \mathbf{O}}= \underset{n\times m}{\mathbf{A} } \\ \\
+  \underset{n\times m}{\mathbf{A} } \odot \underset{n\times m}{ \mathbf{O}}= \underset{n\times m}{\mathbf{O} } \\ \\
+  \underset{n\times m}{\mathbf{A} } \times \underset{m\times k}{ \mathbf{O}}= \underset{n\times k}{\mathbf{O} }
+\]</span></p>
+<p>para cualquier matriz <span class="math inline">\(\mathbf{A}\)</span> de dimensión adecuada.</p>
+</div>
+<div id="triangular-inferior" class="section level4 hasAnchor" number="1.1.4.7">
+<h4><span class="header-section-number">1.1.4.7</span> Matriz Triangular Inferior<a href="acb_al.html#triangular-inferior" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz triangular inferior es una matriz cuyos elementos en parte superior de la diagonal son todos iguales a ceros, es decir, <span class="math inline">\(a_{ij}=0\)</span> para todo <span class="math inline">\(i&lt;j\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-triangular-inferior" class="example"><strong>Ejemplo 1.23  (Matriz Triangular Inferior) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 0  &amp; 0 \\ 4 &amp; 5 &amp; 0 \\
+  7 &amp; 8 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz triangular inferior de dimensión 3.</p>
+</div>
+<div id="triangular-superior" class="section level4 hasAnchor" number="1.1.4.8">
+<h4><span class="header-section-number">1.1.4.8</span> Matriz Triangular Superior<a href="acb_al.html#triangular-superior" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz triangular superior es una matriz cuyos elementos en parte inferior de la diagonal son todos iguales a ceros, es decir, <span class="math inline">\(a_{ij}=0\)</span> para todo <span class="math inline">\(i&gt;j\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-triangular-superior" class="example"><strong>Ejemplo 1.24  (Matriz Triangular Superior) </strong></span>La matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 0 &amp; 5 &amp; 6 \\
+  0 &amp; 0 &amp; 9\end{bmatrix}_{3\times 3}
+\]</span></p>
+<p>es una matriz triangular superior de dimensión 3.</p>
+</div>
+<div id="matriz-productos-cruzados" class="section level4 hasAnchor" number="1.1.4.9">
+<h4><span class="header-section-number">1.1.4.9</span> Matriz de Productos Cruzados<a href="acb_al.html#matriz-productos-cruzados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una matriz de productos cruzados es una matriz obtenida mediante la multiplicación de una matriz por su respectiva transpuesta.</p>
+<p><strong>Las matrices de productos cruzados son simétricas</strong>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-productos-cruzados" class="example"><strong>Ejemplo 1.25  (Matriz de Productos Cruzados) </strong></span>Sea la matriz</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 0 &amp; 5 &amp; 6 \end{bmatrix}_{2\times 3}
+\]</span></p>
+<p>entonces se tiene la matriz de productos cruzados dada por:</p>
+<p><span class="math display">\[
+\mathbf{A}^T\mathbf{A}=\begin{bmatrix} 1 &amp; 0  \\ 2 &amp; 5 \\ 3 &amp; 6 \end{bmatrix}_{3\times 2}\begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 0 &amp; 5 &amp; 6 \end{bmatrix}_{2\times 3}= \begin{bmatrix} 1 &amp; 2  &amp; 3 \\ 2 &amp; 29 &amp; 36 \\ 3 &amp; 36 &amp; 45 \end{bmatrix}_{3\times 3}
+\]</span></p>
+<p><strong>Matriz de Varianzas-Covarianzas como una Matriz de Productos Cruzados</strong></p>
+<p>Un caso particular de las matrices de productos cruzados son las matrices de varianzas-Covarianzas o de Correlación. Una matriz de varianzas-Covarianzas se obtiene a partir de una matriz de datos (o base de datos) en tres pasos:</p>
+<p>1.) <strong>Centrado de datos</strong>, es decir, restando la media de cada columna a cada elemento de dicha columna.</p>
+<p>2.) <strong>Matriz de Productos cruzados de la Matriz Centrada</strong>, se calcula la matriz de productos cruzados de la matriz centrada obtenida en (1) y</p>
+<p>3.) Se divide cada elemento de la matriz de productos cruzados obtenida en (2) por el número de filas de la matriz de datos.</p>
+<div class="example">
+<p><span id="exm:ejemplo-matriz-var-cov" class="example"><strong>Ejemplo 1.26  (Matriz de Var-Cov a partir de Matriz de Productos Cruzados) </strong></span>Sea la matriz de datos dada por</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 2 &amp; 1   \\  5 &amp; 10 \\ 8 &amp; 10 \end{bmatrix}_{3\times 2}
+\]</span></p>
+<p>es decir, se tiene una matriz con 3-observaciones (o filas) y dos variables (o columnas).</p>
+<p><em>Primero se obtienen las medias de cada variable</em>:
+<span class="math display">\[
+\overline{\mathbf{a} }=\frac{1}{n}\mathbf{A}^T \mathbf{1}_n=\frac{1}{3}\begin{bmatrix} 2 &amp; 5 &amp; 8   \\  1 &amp; 10 &amp; 10 \end{bmatrix}\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}=\frac{1}{3}\begin{bmatrix} 15 \\ 21 \end{bmatrix}=\begin{bmatrix} 5 \\ 7 \end{bmatrix}
+\]</span></p>
+<p><em>Ahora centramos los datos</em></p>
+<p><span class="math display">\[
+\mathbf{D}=\mathbf{A}-\mathbf{1}_n\overline{\mathbf{a}}^T=\begin{bmatrix} 2 &amp; 1   \\  5 &amp; 10 \\ 8 &amp; 10 \end{bmatrix}-\begin{bmatrix} 1  \\  1 \\ 1 \end{bmatrix}\begin{bmatrix} 5 &amp; 7 \end{bmatrix}=\begin{bmatrix} 2 &amp; 1   \\  5 &amp; 10 \\ 8 &amp; 10 \end{bmatrix}-\begin{bmatrix} 5 &amp; 7   \\  5 &amp; 7 \\ 5 &amp; 7 \end{bmatrix}=\begin{bmatrix} -3 &amp; -6   \\  0 &amp; 3 \\ 3 &amp; 3 \end{bmatrix}
+\]</span></p>
+<p><em>Por último, se calcula la matriz de productos cruzados de <span class="math inline">\(\mathbf{D}\)</span> y se divide por 3</em></p>
+<p><span class="math display">\[
+Var[\mathbf{A}]=\mathbf{S}_n=\frac{1}{n}\mathbf{D}^T\mathbf{D}=\frac{1}{3}\begin{bmatrix} -3 &amp; 0 &amp; 3   \\ -6 &amp; 3 &amp; 3 \end{bmatrix}\begin{bmatrix} -3 &amp; -6   \\  0 &amp; 3 \\ 3 &amp; 3 \end{bmatrix}=\frac{1}{3}\begin{bmatrix}  18 &amp; 27   \\  27 &amp; 54  \end{bmatrix}=\begin{bmatrix}  6 &amp; 3   \\  3 &amp; 18  \end{bmatrix}
+\]</span></p>
+<p>Las varianzas se encuentran en la diagonal y las covarianzas por fuera d ela diagonal.</p>
+</div>
+<div id="inversa-de-una-matriz-cuadrada" class="section level4 hasAnchor" number="1.1.4.10">
+<h4><span class="header-section-number">1.1.4.10</span> Inversa de una Matriz Cuadrada<a href="acb_al.html#inversa-de-una-matriz-cuadrada" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sea <span class="math inline">\(\mathbf{A}_n\)</span> una matriz cuadrada de orden <span class="math inline">\(n\)</span>. Si existe una matriz cuadrada <span class="math inline">\(\mathbf{B}_n\)</span> tal que</p>
+<p><span class="math display">\[
+\mathbf{A}_n \mathbf{B}_n=\mathbf{B}_n\mathbf{A}_n=\mathbf{I}_n
+\]</span></p>
+<p>entonces se dice que <span class="math inline">\(\mathbf{B}\)</span> es la inversa de <span class="math inline">\(\mathbf{A}\)</span> y se denota por: <span class="math inline">\(\mathbf{B}=\mathbf{A}^{-1}\)</span>, es decir que:</p>
+<p><span class="math display">\[
+\mathbf{A}\mathbf{A}^{-1}=\mathbf{A}^{-1}\mathbf{A}=\mathbf{I}_n
+\]</span></p>
+<p>No toda matriz cuadrada tiene inversa. Si una matriz no tiene inversa se dice que es <strong>singular</strong> y si tiene inversa es <strong>no-singualr</strong>. Si la inversa de una matriz existe es única.</p>
+<div class="example">
+<p><span id="exm:ejemplo-inversa-matriz" class="example"><strong>Ejemplo 1.27  (Inversa de una Matriz) </strong></span>Sea la matriz dada por,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 1 &amp; 2 &amp; 1   \\  0 &amp; 1 &amp;  0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>luego la inversa de <span class="math inline">\(\mathbf{A}\)</span> es:
+<span class="math display">\[
+\mathbf{A}^{-1}=\begin{bmatrix} 1 &amp; -2 &amp; -1   \\  0 &amp; 1 &amp;  0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>claramente se verifica que:
+<span class="math display">\[
+\mathbf{A}\mathbf{A}^{-1}=\begin{bmatrix} 1 &amp; 2 &amp; 1   \\  0 &amp; 1 &amp;  0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 1 &amp; -2 &amp; -1   \\  0 &amp; 1 &amp;  0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}=\begin{bmatrix} 1 &amp; 0 &amp; 0   \\  0 &amp; 1 &amp;  0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}=\mathbf{I}_3
+\]</span></p>
+<p><strong>Propiedades de la Inversa de una matriz:</strong></p>
+<p>La inversa de <span class="math inline">\(\mathbf{A}\)</span>, es decir, <span class="math inline">\(\mathbf{A}^{-1}\)</span> cumple que:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\((\mathbf{A}^t)^{-1}=(\mathbf{A}^{-1})^t\)</span>.</p></li>
+<li><p><span class="math inline">\((\mathbf{A}\mathbf{B})^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}\)</span>.</p></li>
+<li><p><span class="math inline">\((\mathbf{A}^{-1})^{-1}=\mathbf{A}\)</span>.</p></li>
+</ol>
+<p><strong>Inversa de una Matriz Diagonal</strong></p>
+<p>La inversa de una matriz diagonal es simplemente la matriz diagonal obtenida con los inversos de los elementos de la matriz inicial.</p>
+<div class="example">
+<p><span id="exm:ejemplo-inversa-matriz-diagonal" class="example"><strong>Ejemplo 1.28  (Inversa de una Matriz Diagonal) </strong></span>Sea la matriz diagonal dada por,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 2 &amp; 0 &amp; 0   \\  0 &amp; 3 &amp;  0 \\ 0 &amp; 0 &amp; 4 \end{bmatrix}
+\]</span></p>
+<p>luego la inversa de <span class="math inline">\(\mathbf{A}\)</span> es:
+<span class="math display">\[
+\mathbf{A}^{-1}=\begin{bmatrix} \frac{1}{2} &amp; 0 &amp; 0   \\  0 &amp; \frac{1}{3} &amp;  0 \\ 0 &amp; 0 &amp; \frac{1}{4} \end{bmatrix}
+\]</span></p>
+</div>
+</div>
+<div id="descomp-espectral" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Descomposición Espectral de una Matriz (eigen-descomposición)<a href="acb_al.html#descomp-espectral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Todas las operaciones entre matrices vistas anteriormente son similares a las operaciones entre número. El siguiente concepto es específico para matrices.Se trata de la idea de descomponer una matriz en matrices más simples. Una gran parte del poder de las matrices en el análisis estadístico de datos se sigue a partir de este concepto.</p>
+<p>La primera descomposición a tratar, se llama la <strong>eigen-descomposición</strong> o descomposición en valores y vectores propios de una <strong>matriz cuadrada</strong>, la generalización de la descomposición en valores y vectores propios de una matriz cuadrada a <strong>matrices rectangulares</strong> se denomina <strong>descomposición en valores y vectores singulares</strong>.</p>
+<p>Los valores y vectores propios (o eigen-valores y eigen-vectores) son números y vectores asociados a una matriz cuadrada, juntos constituyen lo que se llama la Descomposición en valores y vectores propios de una matriz o simplemente la eigen-descomposición.</p>
+<p>Aunque la eigen-descomposición no existe para todas matrices cuadradas, <em>tiene una expresión particularmente simple para una clase de matrices que se utilizan a menudo en el análisis multivariado de datos que son las matrices de correlación, las matrices de varianzas-covarianzas o matrices de productos cruzados</em>. La eigen-descomposición de este tipo de matrices es importante en estadística multivariada porque se utiliza para encontrar el máximo (o mínimo) de funciones que involucran a dichas matrices matrices. Por ejemplo, el análisis de componentes principales (AC) se obtiene de la eigen-descomposición de una matriz de varianzas-covarianzas o de una matriz de correlación y origina la estimación por mínimos cuadrados de la matriz de datos original.</p>
+<div id="notaciones-y-definiciones" class="section level4 hasAnchor" number="1.1.5.1">
+<h4><span class="header-section-number">1.1.5.1</span> Notaciones y Definiciones<a href="acb_al.html#notaciones-y-definiciones" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Un eigen-vector (o vector propio) de una matriz <span class="math inline">\(\mathbf{A}\)</span> es un vector <span class="math inline">\(\mathbf{u}\)</span> que cumple la siguiente ecuación:</p>
+<p><span class="math display" id="eq:eigen-descomp1">\[\begin{equation}
+\mathbf{A}\mathbf{u}=\lambda \mathbf{u}
+\tag{1.1}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(\lambda\)</span>-es un escalar llamado eigen-valor (o valor propio) asociado con el eigen-vector <span class="math inline">\(\mathbf{u}\)</span>.</p>
+<p>La ecuación <a href="acb_al.html#eq:eigen-descomp1">(1.1)</a> puede reescribirse como:</p>
+<p><span class="math display" id="eq:eigen-descomp2">\[\begin{equation}
+(\mathbf{A}-\lambda\mathbf{I}) \mathbf{u}= \mathbf{O}.
+\tag{1.2}
+\end{equation}\]</span></p>
+<p>De lo anterior, el vector <span class="math inline">\(\mathbf{u}\)</span>-es un vector propio de <span class="math inline">\(\mathbf{A}\)</span> si la múltiplicación de <span class="math inline">\(\mathbf{u}\)</span> por <span class="math inline">\(\mathbf{A}\)</span> ( es decir, <span class="math inline">\(\mathbf{A}\mathbf{u}\)</span>) cambia la longitud de <span class="math inline">\(\mathbf{u}\)</span>, pero no su orientación.</p>
+<p>Para hallar los valores propios de una matriz <span class="math inline">\(\mathbf{A}\)</span> se resuelve la siguiente ecuación característica:</p>
+<p><span class="math display">\[
+|\mathbf{A}-\lambda \mathbf{I}|=0
+\]</span></p>
+<p>Al dividir el vector propio <span class="math inline">\(\underline{\mathbf{u}}\)</span> por su norma <span class="math inline">\(\|\underline{\mathbf{u}}\|\)</span>, se obtiene un <strong>vector unitario</strong>, el cual se denotará por <span class="math inline">\(\underline{\mathbf{e}}\)</span>, es decir,</p>
+<p><span class="math display">\[
+\underline{\mathbf{e}}=\frac{\underline{\mathbf{u}}}{\|\underline{\mathbf{u}}\|}=\frac{\underline{\mathbf{u}}}{\sqrt{\langle \underline{\mathbf{u}}\ , \ \underline{\mathbf{u}} \rangle}}
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-eigen-descomposion" class="example"><strong>Ejemplo 1.29  (Eigen-Descomposición de una Matriz) </strong></span>Sea la matriz cuadrada dada por</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>esta matriz tiene las siguientes parejas de vectore y valores propios:</p>
+<p><span class="math display">\[
+\mathbf{u}_1=\begin{bmatrix}  3 \\ 2  \end{bmatrix} \ \ , \ \ \ \text{con valor propio:} \ \ \ \lambda_1=4 \\
+\mathbf{u}_2=\begin{bmatrix}  -1 \\ 1  \end{bmatrix} \ \ , \ \ \ \text{con valor propio:} \ \ \ \lambda_2=-1
+\]</span></p>
+<p>cuando los vectores <span class="math inline">\(\mathbf{u}_1\)</span> y <span class="math inline">\(\mathbf{u}_2\)</span> son multiplicados por la matriz <span class="math inline">\(\mathbf{A}\)</span>, solamente camián sus longitudes, pero no su orientación, pues:</p>
+<p><span class="math display">\[
+\mathbf{A}\mathbf{u}_1=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix} \begin{bmatrix}  3 \\ 2  \end{bmatrix}=\begin{bmatrix}  12 \\ 8  \end{bmatrix}   = 4 \times \begin{bmatrix}  3 \\ 2  \end{bmatrix} = \lambda_1 \mathbf{u}_1 \\
+    \mathbf{A}\mathbf{u}_2=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix} \begin{bmatrix}  -1 \\ 1  \end{bmatrix}=\begin{bmatrix}  1 \\ -1  \end{bmatrix}   = -1 \times \begin{bmatrix}  -1 \\ 1  \end{bmatrix} = \lambda_2 \mathbf{u}_2
+\]</span></p>
+gráficamente se tiene:
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-eigen-vect"></span>
+<img src="imagenes/graf_eigen_vectores.png" alt="Gráfica de Eigen-Vectores" width="500px" />
+<p class="caption">
+Figura 1.4: Gráfica de Eigen-Vectores
+</p>
+</div>
+<p><strong>Por conveniencia</strong> los eigen-vectores <span class="math inline">\(\mathbf{u}_i\)</span>-son generalmente normalizados a tener norma de uno y en este caso se denotan por <span class="math inline">\(\mathbf{e}_i\)</span>, es decir que los <span class="math inline">\(\mathbf{e}_i\)</span> cumplen que, <span class="math inline">\(\mathbf{e}_i^T\mathbf{e}_i=1\)</span>. En el ejemplo se tiene que,</p>
+<p><span class="math display">\[
+\mathbf{e}_1= \frac{1}{\|\mathbf{u}_1\|}\mathbf{u}_1=\frac{1}{\sqrt{5}}  \begin{bmatrix}  3 \\ 2  \end{bmatrix}=\begin{bmatrix} 0.8321  \\ 0.5547  \end{bmatrix} \ \ , \ \ \ \text{con valor propio:} \ \ \ \lambda_1=4 \\
+    \mathbf{e}_2= \frac{1}{\|\mathbf{u}_2\|}\mathbf{u}_2=\frac{1}{\sqrt{2}}  \begin{bmatrix}  -1 \\ 1  \end{bmatrix}=\begin{bmatrix} -0.7071  \\ 0.7071  \end{bmatrix} \ \ , \ \ \ \text{con valor propio:} \ \ \ \lambda_2=-1 \\
+\]</span></p>
+<p>en este caso se tiene que:</p>
+<p><span class="math display">\[
+\mathbf{A}\mathbf{e}_1=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix} \begin{bmatrix} 0.8321  \\ 0.5547  \end{bmatrix}=\begin{bmatrix}  3.3282 \\ 2.2188  \end{bmatrix}   = 4 \times \begin{bmatrix} 0.8321  \\ 0.5547  \end{bmatrix} = \lambda_1 \mathbf{e}_1 \\
+    \mathbf{A}\mathbf{e}_2=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix} \begin{bmatrix} -0.7071  \\ 0.7071  \end{bmatrix}=\begin{bmatrix}  0.7071 \\ -0.7071  \end{bmatrix}   = -1 \times \begin{bmatrix} -0.7071  \\ 0.7071  \end{bmatrix} = \lambda_2 \mathbf{e}_2
+\]</span></p>
+</div>
+<div id="matrices-de-eigen-valores-y-eigen-vectores" class="section level4 hasAnchor" number="1.1.5.2">
+<h4><span class="header-section-number">1.1.5.2</span> Matrices de Eigen-Valores y Eigen-Vectores<a href="acb_al.html#matrices-de-eigen-valores-y-eigen-vectores" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Generalmente, los eigen-vectores de una matriz <span class="math inline">\(\mathbf{A}\)</span> son almacenados como columnas en una matriz denotada por <span class="math inline">\(\mathbf{U}\)</span> y los eigen-valores en una matriz diagonal denotada por <span class="math inline">\(\Lambda\)</span>. Con esta notación se tiene que la ecuación <a href="acb_al.html#eq:eigen-descomp1">(1.1)</a> se convierte en:</p>
+<p><span class="math display" id="eq:eigen-descomp3">\[\begin{equation}
+\mathbf{A}\mathbf{U}= \mathbf{U} \Lambda
+\tag{1.3}
+\end{equation}\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo2-eigen-descomposion" class="example"><strong>Ejemplo 1.30  (Matrices de la Eigen-Descomposición) </strong></span>Continuando con el ejemplo anterior,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>esta matriz tiene las siguientes parejas de vectore y valores propios:</p>
+<p><span class="math display">\[
+\mathbf{u}_1=\begin{bmatrix}  3 \\ 2  \end{bmatrix} \ \ , \ \ \ \text{con valor propio:} \ \ \ \lambda_1=4 \\
+      \mathbf{u}_2=\begin{bmatrix}  -1 \\ 1  \end{bmatrix} \ \ , \ \ \ \text{con valor propio:} \ \ \ \lambda_2=-1
+\]</span></p>
+<p>es decir que:
+<span class="math display">\[
+\mathbf{U} = \begin{bmatrix} \vdots &amp; \vdots \\ \mathbf{u}_1 &amp; \mathbf{u}_2 \\ \vdots &amp; \vdots  \end{bmatrix}=\begin{bmatrix} 3 &amp; -1 \\ 2 &amp; 1 \end{bmatrix}  \ \ \ \ y \ \ \ \ \ \Lambda=\begin{bmatrix} \lambda_1 &amp; 0 \\ 0 &amp; \lambda_2 \end{bmatrix}=\begin{bmatrix} 4 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}
+\]</span></p>
+<p>luego,
+<span class="math display">\[
+\mathbf{A}\mathbf{U}= \mathbf{U} \Lambda \\
+\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}
+\begin{bmatrix} \vdots &amp; \vdots \\ \mathbf{u}_1 &amp; \mathbf{u}_2 \\ \vdots &amp; \vdots  \end{bmatrix} = \begin{bmatrix} \vdots &amp; \vdots \\ \mathbf{u}_1 &amp; \mathbf{u}_2 \\ \vdots &amp; \vdots  \end{bmatrix}\begin{bmatrix} \lambda_1 &amp; 0 \\ 0 &amp; \lambda_2 \end{bmatrix}   \\
+      \begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix}\begin{bmatrix} 3 &amp; -1 \\ 2 &amp; 1 \end{bmatrix} = \begin{bmatrix} 3 &amp; -1 \\ 2 &amp; 1 \end{bmatrix} \begin{bmatrix} 4 &amp; 0 \\ 0 &amp; -1 \end{bmatrix} \\
+      \begin{bmatrix} 12 &amp; 1 \\ 8 &amp; -1 \end{bmatrix}=\begin{bmatrix} 12 &amp; 1 \\ 8 &amp; -1 \end{bmatrix}
+\]</span></p>
+</div>
+<div id="reconstrucción-de-la-matriz-mathbfa" class="section level4 hasAnchor" number="1.1.5.3">
+<h4><span class="header-section-number">1.1.5.3</span> Reconstrucción de la Matriz <span class="math inline">\(\mathbf{A}\)</span><a href="acb_al.html#reconstrucción-de-la-matriz-mathbfa" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La eigen-descomposición de una matriz <span class="math inline">\(\mathbf{A}\)</span> también se puede usar para reconstruir la matriz <span class="math inline">\(\mathbf{A}\)</span> a partir de sus vectores y valores propios. Esto se muestra reescribiendo la ecuación <a href="acb_al.html#eq:eigen-descomp3">(1.3)</a> como sigue:</p>
+<p><span class="math display" id="eq:eigen-descomp4">\[\begin{equation}
+\mathbf{A}= \mathbf{U} \Lambda \mathbf{U}^{-1}
+\tag{1.4}
+\end{equation}\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo3-eigen-descomposion" class="example"><strong>Ejemplo 1.31  (Reconstrucción de una Matriz) </strong></span>Continuando con el ejemplo anterior,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>con
+<span class="math display">\[
+\mathbf{U} = \begin{bmatrix} 3 &amp; -1 \\ 2 &amp; 1 \end{bmatrix}  \ \ \ \ y \ \ \ \ \ \Lambda=\begin{bmatrix} 4 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}
+\]</span></p>
+<p>en este caso, se puede verificar que:
+<span class="math display">\[
+\mathbf{U}^{-1} = \begin{bmatrix} \frac{1}{5} &amp; \frac{1}{5} \\ -\frac{2}{5} &amp; \frac{3}{5} \end{bmatrix} = \begin{bmatrix} 0.2 &amp; 0.2 \\ -0.4 &amp; 0.6 \end{bmatrix}
+\]</span></p>
+<p>luego,</p>
+<p><span class="math display">\[
+\mathbf{A}= \mathbf{U} \Lambda \mathbf{U}^{-1}=\begin{bmatrix} 3 &amp; -1 \\ 2 &amp; 1 \end{bmatrix}\begin{bmatrix} 4 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}\begin{bmatrix} \frac{1}{5} &amp; \frac{1}{5} \\ -\frac{2}{5} &amp; \frac{3}{5} \end{bmatrix}=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix}
+\]</span></p>
+</div>
+<div id="existencia-de-infinitos-eigen-vectores-para-un-eigen-valor" class="section level4 hasAnchor" number="1.1.5.4">
+<h4><span class="header-section-number">1.1.5.4</span> Existencia de Infinitos Eigen-Vectores para un Eigen-Valor<a href="acb_al.html#existencia-de-infinitos-eigen-vectores-para-un-eigen-valor" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Se hace un ligero abuso del lenguaje cuando se habla del eigen-vector asociado a un eigen-valor. Esto debido a que, cualquier múltiplo escalar de un eigen-vector es a su vez un eigen-vector, por lo que, para cada eigen-valor existe un número infinito de eigen-vectores, los cuales son todos proporcionales entre sí.</p>
+<p>Por ejemplo, como
+<span class="math display">\[
+\mathbf{u}_1=\begin{bmatrix} 3 \\ 2 \end{bmatrix}
+\]</span></p>
+<p>es un vector propio de
+<span class="math display">\[
+\mathbf{A}=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix} \ \ \ , \ \ \  \text{asociado al valor propio} \ \ \lambda_1=4
+\]</span></p>
+<p>luego,
+<span class="math display">\[
+k\times\mathbf{u}_1=k\times \begin{bmatrix} 3 \\ 2 \end{bmatrix}
+\]</span></p>
+<p>también es un vector propio de <span class="math inline">\(\mathbf{A}\)</span>-asociado al mismo valor propio <span class="math inline">\(\lambda_1=4\)</span>.</p>
+<p>En este caso, por ejemplo
+<span class="math display">\[
+3\times\mathbf{u}_1=3\times \begin{bmatrix} 3 \\ 2 \end{bmatrix} =\begin{bmatrix} 9 \\ 6 \end{bmatrix}
+\]</span></p>
+<p>también es un vector propio de <span class="math inline">\(\mathbf{A}\)</span>-asociado al mismo valor propio <span class="math inline">\(\lambda_1=4\)</span>.</p>
+<p>Ahora,
+<span class="math display">\[
+\mathbf{A}\mathbf{u}=\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix} \begin{bmatrix} 9 \\ 6 \end{bmatrix} = \begin{bmatrix} 36 \\ 24 \end{bmatrix} = 4\times \begin{bmatrix} 9 \\ 6 \end{bmatrix} = \lambda_1 \mathbf{u}
+\]</span></p>
+</div>
+</div>
+<div id="eigen-descom-msdp" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Descomposición Espectral de Matrices Simétricas Definidas (o Semidefinidas) Positivas<a href="acb_al.html#eigen-descom-msdp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La eigen-descomposición de una matriz cuadrada no siempre existe. Afortunadamente, las matrices que se utilizan a menudo en el Análisis Estadístico Multivariado pertenecen a una categoría de matrices llamadas Matrices Definidas (o Semi-definidas) Positivas. La descomposición espectral de este tipo de matrices siempre existe y tiene una forma particularmente conveniente.</p>
+<p>Una matriz es <strong>Semi-definida Positiva (SDP)</strong> cuando puede obtenerse como el producto de una matriz por su traspuesta. Es decir, es una matriz de productos cruzados, lo cual implica que, una matriz semi-definida positiva siempre es simétrica, ver sub-sección <a href="acb_al.html#matriz-productos-cruzados">1.1.4.9</a>.</p>
+<p>Formalmente una matriz <span class="math inline">\(\mathbf{A}\)</span> es Semi-Definida Positiva si puede obtenerse como
+<span class="math display">\[
+\mathbf{A}=\mathbf{B}\mathbf{B}^T
+\]</span></p>
+<p>para cierta matriz <span class="math inline">\(\mathbf{B}\)</span>.</p>
+<p>Como ejemplos de algunas Matrices Semi-Definidas positivas están las Matrices de Varianzas-Covarianzas, las Matrices de Correlación, las Matrices de Productos Cruzados.</p>
+<p><strong>Propiedad Importante de una Matriz SDP</strong></p>
+<p>Los valores propios de una matriz SDP <em>son siempre positivo o nulos</em>. Sus vectores propios están compuestos de valores reales y <em>son ortogonales por pares</em> cuando sus valores propios son diferentes. Esto implica que, para una matriz SDP <span class="math inline">\(\mathbf{A}\)</span> se cumple que:</p>
+<p><span class="math display">\[
+\mathbf{U}^{-1}=\mathbf{U}^T
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{U}\)</span>-es la matriz de vectores propios de <span class="math inline">\(\mathbf{A}\)</span>.</p>
+<p>Por lo tanto la reconstrucción de una matriz <span class="math inline">\(\mathbf{A}\)</span>-SDP se puede expresar como:</p>
+<p><span class="math display" id="eq:eigen-descomp-msdp">\[\begin{equation}
+\mathbf{A}= \mathbf{U} \Lambda \mathbf{U}^T=\sum_{i=1}^{n}\lambda_i\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t
+\tag{1.5}
+\end{equation}\]</span></p>
+<p>donde, <span class="math inline">\(\mathbf{U}\)</span>-es la matriz de vectores normalizados y cumple que:</p>
+<p><span class="math display">\[
+\mathbf{U}^T\mathbf{U}=\mathbf{U}\mathbf{U}^T=\mathbf{I}.
+\]</span></p>
+<div id="diagonalizacion" class="section level4 hasAnchor" number="1.1.6.1">
+<h4><span class="header-section-number">1.1.6.1</span> Diagonalización de una Matriz Simétrica Definida Positiva<a href="acb_al.html#diagonalizacion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Cuando una matriz es SDP, la ecuación <a href="acb_al.html#eq:eigen-descomp-msdp">(1.5)</a> puede reescribirse como sigue:</p>
+<p><span class="math display" id="eq:eigen-descomp-msdp2">\[\begin{equation}
+\mathbf{A}= \mathbf{U} \Lambda \mathbf{U}^T \ \ \Longleftrightarrow \ \  \Lambda= \mathbf{U}^T \mathbf{U}
+\tag{1.6}
+\end{equation}\]</span></p>
+<p>La ecuación anterior nos dice que la matriz <span class="math inline">\(\mathbf{A}\)</span> se puede transformar en una matriz diagonal. Por lo tanto la eigen-descomposición de una matriz SDP se le llama frecuentemente la <strong>Diagonalización</strong> de <span class="math inline">\(\mathbf{A}\)</span>.</p>
+<p><strong>Otra Definición de una Matriz SDP</strong></p>
+<div class="definition">
+<p><span id="def:matriz-def-pos" class="definition"><strong>Definición 1.2  (Matriz Definida y Semi-Definida Positiva) </strong></span>Una matriz <span class="math inline">\(\mathbf{A}\)</span> es Semi-Definida Positiva (SDP) si para todo vector <span class="math inline">\(\underline{\mathbf{x}}\neq \mathbf{0}\)</span> se cumple que:</p>
+</div>
+<p><span class="math display" id="eq:matriz-sdp">\[\begin{equation}
+\underline{\mathbf{x}}^T \mathbf{A} \underline{\mathbf{x}} \geq 0
+\tag{1.7}
+\end{equation}\]</span></p>
+<p>Si todos los valores propios de una matriz <span class="math inline">\(\mathbf{A}\)</span>-son positivos la matriz es Definida Positiva (DP), y en este caso la ecuación <a href="acb_al.html#eq:matriz-sdp">(1.7)</a> se convierte en</p>
+<p><span class="math display" id="eq:matriz-dp">\[\begin{equation}
+\underline{\mathbf{x}}^T \mathbf{A} \underline{\mathbf{x}} &gt; 0
+\tag{1.8}
+\end{equation}\]</span></p>
+<p>Igualmente, se dice que <span class="math inline">\(\mathbf{A}\)</span> es Definida Positiva (DP) si para todo vector <span class="math inline">\(\underline{\mathbf{x}}\neq \mathbb{0}\)</span> se cumple que:</p>
+<p><span class="math display">\[
+\underline{\mathbf{x}}^t \mathbf{A}\underline{\mathbf{x}} &gt; 0
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-diagonalizacion-msdp" class="example"><strong>Ejemplo 1.32  (Diagonalización de una Matriz SDP) </strong></span>Sea,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+\frac{11}{5} &amp; \frac{2}{5} \\ \frac{2}{5} &amp; \frac{14}{5}
+\end{bmatrix}=\begin{bmatrix}2.2 &amp; 0.4 \\ 0.4 &amp; 2.8 \end{bmatrix}, \ \text{luego}
+\]</span></p>
+<p><span class="math display">\[
+|\mathbf{A}-\lambda \mathbf{I}|=\begin{vmatrix}
+2.2-\lambda &amp; 0.4 \\ 0.4 &amp; 2.8-\lambda
+\end{vmatrix} = \lambda^2-5\lambda+6.16-0.16=(\lambda-3)(\lambda-2)=0
+\]</span></p>
+<p>luego los valores propios de <span class="math inline">\(\mathbf{A}\)</span> son <span class="math inline">\(\lambda_1=3\)</span> y <span class="math inline">\(\lambda_2=2\)</span>.</p>
+<p>Ahora los vectores propios se hallan resolviendo el sistema de ecuaciones:</p>
+<p><span class="math display">\[
+\mathbf{A}\underline{\mathbf{u}}_1 =\lambda_1 \underline{\mathbf{u}}_1 \ \ \ \text{y} \ \ \ \ \mathbf{A}\underline{\mathbf{u}}_2 =\lambda_2 \underline{\mathbf{u}}_2
+\]</span></p>
+<p>cuya solución es:
+<span class="math display">\[
+\underline{\mathbf{u}}_1=\begin{bmatrix}
+  1 \\ 2
+  \end{bmatrix} \ \ \ \ \ \text{y} \ \ \ \ \underline{\mathbf{u}}_2=\begin{bmatrix}
+  2 \\ -1
+  \end{bmatrix}
+\]</span></p>
+<p>y dichos vectores propios normalizados son:</p>
+<p><span class="math display">\[
+\underline{\mathbf{e}}_1=\begin{bmatrix}
+  1/\sqrt{5} \\ 2/\sqrt{5}
+  \end{bmatrix} \ \ \ \ \ \text{y} \ \ \ \ \underline{\mathbf{e}}_2=\begin{bmatrix}
+  2/\sqrt{5} \\ -1/\sqrt{5}
+  \end{bmatrix}
+\]</span>
+<span class="math display">\[
+\text{Luego se tiene que:}\ \ \ \mathbf{\Lambda}=\begin{bmatrix}
+  3 &amp; 0 \\ 0 &amp; 2
+  \end{bmatrix} \ \ \ \ \text{y} \ \ \ \ \ \mathbf{U}=\begin{bmatrix}
+  1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+  \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\text{Claramente}, \ \ \mathbf{U}\mathbf{U}^T=\begin{bmatrix}
+  1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+  \end{bmatrix}\begin{bmatrix}
+  1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+  \end{bmatrix}=\begin{bmatrix}
+  1 &amp; 0 \\ 0 &amp;1
+  \end{bmatrix}=\mathbf{U}^T\mathbf{U}=\mathbf{I}
+\]</span></p>
+<p>luego a partir de la descomposición espectral de <span class="math inline">\(\mathbf{A}\)</span> <a href="acb_al.html#eq:eigen-descomp-msdp">(1.5)</a> se tiene que:</p>
+<p><span class="math display">\[\begin{align*}
+  \mathbf{A}&amp; =\mathbf{U}\mathbf{\Lambda} \mathbf{U}^t\\
+  &amp;=\begin{bmatrix}
+  1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+  \end{bmatrix}\begin{bmatrix}
+  3 &amp; 0 \\ 0 &amp; 2
+  \end{bmatrix}\begin{bmatrix}
+  1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+  \end{bmatrix}\\ \\
+  &amp;=\begin{bmatrix}
+  3/\sqrt{5} &amp; 4/\sqrt{5} \\ 6/\sqrt{5} &amp; -2/\sqrt{5}
+  \end{bmatrix}\begin{bmatrix}
+  1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+  \end{bmatrix}\\ \\
+  &amp;=\begin{bmatrix}
+  11/5 &amp; 2/5 \\ 2/5 &amp; 14/5
+  \end{bmatrix}=\begin{bmatrix}
+  2.2 &amp; 0.4 \\ 0.4 &amp; 2.8
+  \end{bmatrix}=\mathbf{A}
+\end{align*}\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{A}&amp;=\sum_{i=1}^2 \lambda_i\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t=\lambda_1\underline{\mathbf{e}}_1\underline{\mathbf{e}}_1^t+
+    \lambda_2\underline{\mathbf{e}}_2\underline{\mathbf{e}}_2^t\\ \\
+  &amp;=3\begin{bmatrix}
+  1/\sqrt{5} \\ 2/\sqrt{5}
+  \end{bmatrix}\begin{bmatrix}
+  1/\sqrt{5} &amp; 2/\sqrt{5}
+  \end{bmatrix}+2\begin{bmatrix}
+  2/\sqrt{5} \\ -1/\sqrt{5}
+  \end{bmatrix}\begin{bmatrix}
+  2/\sqrt{5} &amp; -1/\sqrt{5}
+  \end{bmatrix}\\ \\
+  &amp;=3\begin{bmatrix}
+  1/5 &amp; 2/5\\
+  2/5 &amp; 4/5
+  \end{bmatrix}+2\begin{bmatrix}
+  4/5 &amp; -2/5\\ \\
+  -2/5 &amp; 1/5
+  \end{bmatrix}\\ \\
+  &amp;=\begin{bmatrix}
+  3/5 &amp; 6/5\\
+  6/5 &amp; 12/5
+  \end{bmatrix}+\begin{bmatrix}
+  8/5 &amp; -4/5\\ \\
+  -4/5 &amp; 2/5
+  \end{bmatrix}\\ \\
+  &amp;=\begin{bmatrix}
+  11/5 &amp; 2/5\\
+  2/5 &amp; 14/5
+  \end{bmatrix} =\begin{bmatrix}
+  2.2 &amp; 0.4 \\ 0.4 &amp; 2.8
+  \end{bmatrix}=\mathbf{A}
+\end{align*}\]</span></p>
+</div>
+<div id="diagonalizacion-inversa" class="section level4 hasAnchor" number="1.1.6.2">
+<h4><span class="header-section-number">1.1.6.2</span> Diagonalización de la Inversa de una Matriz<a href="acb_al.html#diagonalizacion-inversa" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sea <span class="math inline">\(\mathbf{A}\)</span> una matriz DP. Por la descomposición espectral de <span class="math inline">\(\mathbf{A}\)</span> se tiene que:</p>
+<p><span class="math display">\[
+\mathbf{A}=\mathbf{U}\mathbf{\Lambda}\mathbf{U}^t=\sum_{i=1}^{n}\lambda_i\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t,
+\]</span></p>
+<p>y Como <span class="math inline">\(\mathbf{A}\)</span>-es invertible entonces, la descomposición espectral de <span class="math inline">\(\mathbf{A}^{-1}\)</span> esta dada por:</p>
+<p><span class="math display">\[
+\mathbf{A}^{-1}=\mathbf{U} \mathbf{\Lambda}^{-1}\mathbf{U}^t=\sum_{i=1}^{n}\frac{1}{\lambda_i}\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-descomp-espectral-inversa" class="example"><strong>Ejemplo 1.33  (Descomposición Espectral de la Inversa de una Matriz) </strong></span>Sea</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+\frac{11}{5} &amp; \frac{2}{5} \\ \frac{2}{5} &amp; \frac{14}{5}
+\end{bmatrix}=\begin{bmatrix}2.2 &amp; 0.4 \\ 0.4 &amp; 2.8 \end{bmatrix}, \ \text{luego}
+\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{A}^{-1}&amp;=\mathbf{U}\mathbf{\Lambda}^{-1} \mathbf{U}^t\\
+&amp;=\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/3 &amp; 0 \\ 0 &amp; 1/2
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+1/3\sqrt{5} &amp; 1/\sqrt{5} \\ 2/3\sqrt{5} &amp; -1/2\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\frac{1}{15}+\frac{2}{5} &amp; \frac{2}{15}-\frac{1}{5}\\
+\frac{2}{15}-\frac{1}{5}  &amp; \frac{4}{15}+\frac{1}{10}
+\end{bmatrix} \\ \\
+&amp;=\begin{bmatrix}
+\frac{35}{75} &amp; -\frac{5}{75} \\ -\frac{5}{75} &amp; \frac{55}{150}
+\end{bmatrix}\\ \\
+&amp;= \frac{5}{15}\begin{bmatrix}
+\frac{7}{5} &amp; -\frac{1}{5} \\ -\frac{1}{5} &amp; \frac{11}{10}
+\end{bmatrix}= \frac{5}{30}\begin{bmatrix}
+\frac{14}{5} &amp; -\frac{2}{5} \\ -\frac{2}{5} &amp; \frac{11}{5}
+\end{bmatrix}\\ \\
+&amp; =\frac{1}{6} \begin{bmatrix}
+\frac{14}{5} &amp; -\frac{2}{5} \\ -\frac{2}{5} &amp; \frac{11}{5}
+\end{bmatrix}=\frac{1}{6}\begin{bmatrix}
+2.8 &amp; -0.4 \\ -0.4 &amp; 2.2
+\end{bmatrix}=\mathbf{A}^{-1}
+\end{align*}\]</span></p>
+<p>Además,
+<span class="math display">\[\begin{align*}
+\mathbf{A}^{-1}&amp;=\sum_{i=1}^2 \frac{1}{\lambda_i}\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t=\frac{1}{\lambda_1}\underline{\mathbf{e}}_1\underline{\mathbf{e}}_1^t+
+  \frac{1}{\lambda_2}\underline{\mathbf{e}}_2\underline{\mathbf{e}}_2^t\\ \\
+&amp;=\frac{1}{3}\begin{bmatrix}
+1/\sqrt{5} \\ 2/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5}
+\end{bmatrix}+\frac{1}{2}\begin{bmatrix}
+2/\sqrt{5} \\ -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\frac{1}{3}\begin{bmatrix}
+1/5 &amp; 2/5\\
+2/5 &amp; 4/5
+\end{bmatrix}+\frac{1}{2}\begin{bmatrix}
+4/5 &amp; -2/5\\ \\
+-2/5 &amp; 1/5
+\end{bmatrix}\\ \\
+&amp;=\frac{1}{6}\begin{bmatrix}
+2/5 &amp; 4/5\\
+4/5 &amp; 8/5
+\end{bmatrix}+\frac{1}{6}\begin{bmatrix}
+12/5 &amp; -6/5\\ \\
+-6/5 &amp; 3/5
+\end{bmatrix}\\ \\
+&amp;=\frac{1}{6} \begin{bmatrix}
+14/5 &amp; -2/5\\ \\
+-2/5 &amp; 11/5
+\end{bmatrix}=\frac{1}{6}\begin{bmatrix}
+2.8 &amp; -0.4 \\ -0.4 &amp; 2.2
+\end{bmatrix}=\mathbf{A}^{-1}
+\end{align*}\]</span></p>
+</div>
+<div id="diagonalización-de-la-matriz-raíz-cuadrada" class="section level4 hasAnchor" number="1.1.6.3">
+<h4><span class="header-section-number">1.1.6.3</span> Diagonalización de la Matriz Raíz Cuadrada<a href="acb_al.html#diagonalización-de-la-matriz-raíz-cuadrada" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La descomposición espectral nos permite expresar la inversa de una matriz cuadrada en términos de sus valores y vectores propios, y esto conduce a una matriz raíz cuadrada útil en análisis multivariado.</p>
+<p>Sea <span class="math inline">\(\mathbf{A}_n\)</span>-una matriz definida positiva con descomposición espectral dada por
+<span class="math display">\[
+\mathbf{A}=\mathbf{U} \mathbf{\Lambda}\mathbf{U}^t=\sum_{i=1}^{n}\lambda_i\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t
+\]</span></p>
+<p><span class="math display">\[
+\text{con:}\ \ \ \ \mathbf{U}=\bigl[\ \ \underline{\mathbf{e}}_1 \ \ |\ \ \underline{\mathbf{e}}_2 \ \ \cdots \ \ | \ \ \underline{\mathbf{e}}_k \ \ \bigr]_{n\times n} \ \ , \ \ \text{con:}\ \ \ \mathbf{U}^t\mathbf{U}=\mathbf{U}\mathbf{U}=\mathbf{I}_n
+\]</span>
+Matriz de Vectores Columnas Normalizados, y</p>
+<p><span class="math display">\[
+\mathbf{\Lambda}_n=\begin{bmatrix} \lambda_1 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; \lambda_2 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0&amp; 0  &amp; \cdots &amp; \lambda_n\end{bmatrix}
+\]</span></p>
+<p>Matriz Diagonal de Valores Propios, con <span class="math inline">\(\lambda_i&gt;0\)</span>.</p>
+<p>La descomposición espectral de la matriz <strong>raíz-cuadrada</strong> de <span class="math inline">\(\mathbf{A}^{1/2}\)</span> esta dada por:</p>
+<p><span class="math display">\[
+\mathbf{A}^{1/2}=\mathbf{U} \mathbf{\Lambda}^{1/2}\mathbf{U}^t=\sum_{i=1}^{n}\sqrt{\lambda_i}\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t
+\]</span></p>
+<p><strong>Propiedades de la Matriz Raíz-Cuadrada:</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\((\mathbf{A}^{1/2})^{&#39;}=\mathbf{A}^{1/2}, \ \ \ \ \text{es decir:} \ \ \mathbf{A}^{1/2}-\text{es simétrica.}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{A}^{1/2}\mathbf{A}^{1/2}=\mathbf{A}\)</span>.</p></li>
+<li><p><span class="math inline">\((\mathbf{A}^{1/2})^{-1}=\sum_{i=1}^{n}\frac{1}{\sqrt{\lambda_i}}\underline{\mathbf{e}}_i\underline{\mathbf{e}}_i^t=\mathbf{U}\mathbf{\Lambda}^{-1/2}\mathbf{U}^t\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{A}^{1/2}\mathbf{A}^{-1/2}=\mathbf{A}^{-1/2}\mathbf{A}^{1/2}=\mathbf{I}_n,\ \ \ \text{y} \ \ \ \mathbf{A}^{-1/2}\mathbf{A}^{-1/2}=\mathbf{A}^{-1}\)</span>, donde <span class="math inline">\(\mathbf{A}^{-1/2}=(\mathbf{A}^{1/2})^{-1}\)</span>.</p></li>
+</ol>
+<p><strong>Además:</strong></p>
+<p><span class="math display">\[
+\mathbf{\Lambda}^{-1/2}-\text{Matriz diagonal con:}\ \ \  1/\sqrt{\lambda_i} \ \ \ \text{en la diagonal}.
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{\Lambda}^{1/2}-\text{Matriz diagonal con:}\ \ \  \sqrt{\lambda_i}\ \ \ \text{en la diagonal}.
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{\Lambda}^{-1}-\text{Matriz diagonal con:}\ \ \  1/\mathbf{\lambda_i}\ \ \ \text{en la diagonal}.
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-mat-raiz-cuadrada" class="example"><strong>Ejemplo 1.34  (Matriz Raíz Cuadrada) </strong></span>Sea</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+\frac{11}{5} &amp; \frac{2}{5} \\ \frac{2}{5} &amp; \frac{14}{5}
+\end{bmatrix}=\begin{bmatrix}2.2 &amp; 0.4 \\ 0.4 &amp; 2.8 \end{bmatrix}, \ \text{luego}
+\]</span></p>
+<p>luego,
+<span class="math display">\[\begin{align*}
+\mathbf{A}^{1/2}&amp;=\mathbf{U}\mathbf{\Lambda}^{1/2} \mathbf{U}^t\\
+&amp;=\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+\sqrt{3} &amp; 0 \\ 0 &amp; \sqrt{2}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\sqrt{3}/\sqrt{5} &amp; 2\sqrt{2}/\sqrt{5} \\ 2\sqrt{3}/\sqrt{5} &amp; -\sqrt{2}/\sqrt{5}
+\end{bmatrix}\begin{bmatrix}
+1/\sqrt{5} &amp; 2/\sqrt{5} \\ 2/\sqrt{5} &amp; -1/\sqrt{5}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\frac{\sqrt{3}}{5}+\frac{4\sqrt{2}}{5} &amp; 2\frac{\sqrt{3}}{5}-2\frac{\sqrt{2}}{5}\\
+2\frac{\sqrt{3}}{5}-2\frac{\sqrt{2}}{5}  &amp; 4\frac{\sqrt{3}}{5}+\frac{\sqrt{2}}{5}
+\end{bmatrix} \\ \\
+&amp;\hspace{-1.0cm} =\begin{bmatrix}
+\frac{(\sqrt{3}+4\sqrt{2})}{5} &amp; \frac{(2\sqrt{3}-2\sqrt{2})}{5}\\ \frac{(2\sqrt{3}-2\sqrt{2})}{5} &amp; \frac{(4\sqrt{3}+\sqrt{2})}{5}
+\end{bmatrix}=\frac{1}{5}\begin{bmatrix}
+\sqrt{3}+4\sqrt{2} &amp; 2\sqrt{3}-2\sqrt{2} \\ 2\sqrt{3}-2\sqrt{2} &amp; 4\sqrt{3}+\sqrt{2}
+\end{bmatrix}=\mathbf{A}^{1/2}
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="traza-determinante-y-rango-de-una-matriz" class="section level3 hasAnchor" number="1.1.7">
+<h3><span class="header-section-number">1.1.7</span> Traza, Determinante y Rango de una Matriz<a href="acb_al.html#traza-determinante-y-rango-de-una-matriz" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los valores propios de una matriz están estrechamente relacionados a tres números importantes asociados a una matriz cuadrada <span class="math inline">\(\mathbf{A}\)</span>: la traza, el determinante y el rango de dicha matriz.</p>
+<div id="traza" class="section level4 hasAnchor" number="1.1.7.1">
+<h4><span class="header-section-number">1.1.7.1</span> Traza de una Matriz<a href="acb_al.html#traza" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="definition">
+<p><span id="def:traza-matriz" class="definition"><strong>Definición 1.3  (Traza de una Matriz) </strong></span>La traza de una matriz cuadrada <span class="math inline">\(\mathbf{A}_n\)</span> denotada por <span class="math inline">\(tr(\mathbf{A})\)</span>, se define como la suma de los elementos de su diagonal, es decir,</p>
+</div>
+<p><span class="math display">\[
+tr(\mathbf{A})=\sum_{i=1}^n a_{ii}
+\]</span>
+La traza de una matriz <span class="math inline">\(\mathbf{A}\)</span> también es igual a la <strong>suma de sus valores propios</strong> es decir:</p>
+<p><span class="math display" id="eq:traza-matriz-suma-vp">\[\begin{equation}
+tr(\mathbf{A})=\sum_{i=1}^n \lambda_i = \lambda_1+\lambda_2+\cdots+\lambda_n = tr(\Lambda)
+\tag{1.9}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(\Lambda\)</span>-matriz diagonal de vaolres propios.</p>
+<div class="example">
+<p><span id="exm:ejemplo-traza-de-matriz" class="example"><strong>Ejemplo 1.35  (Traza de una Matriz) </strong></span>Sea,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+\frac{11}{5} &amp; \frac{2}{5} \\ \frac{2}{5} &amp; \frac{14}{5}
+\end{bmatrix}=\begin{bmatrix}2.2 &amp; 0.4 \\ 0.4 &amp; 2.8 \end{bmatrix}, \ \text{luego}
+\]</span></p>
+<p>luego se tiene que:
+<span class="math display">\[
+tr(\mathbf{A})=a_{11}+a_{22}=\frac{11}{5}+\frac{14}{5}=\frac{25}{5}=5
+\]</span></p>
+<p>Además, como para <span class="math inline">\(\mathbf{A}\)</span> se tiene que:
+<span class="math display">\[
+|\mathbf{A}-\lambda \mathbf{I}|=\begin{vmatrix}
+2.2-\lambda &amp; 0.4 \\ 0.4 &amp; 2.8-\lambda
+\end{vmatrix} = \lambda^2-5\lambda+6.16-0.16=(\lambda-3)(\lambda-2)=0
+\]</span></p>
+<p>es decir que, los valores propios de <span class="math inline">\(\mathbf{A}\)</span> son <span class="math inline">\(\lambda_1=3\)</span> y <span class="math inline">\(\lambda_2=2\)</span>.</p>
+<p>luego,
+<span class="math display">\[
+tr(\mathbf{A})=\lambda_1+\lambda_2=3+2=5.
+\]</span></p>
+<p><strong>Alguna propiedades de la traza de una matriz:</strong></p>
+<p>Sean <span class="math inline">\(\mathbf{A}\)</span> y <span class="math inline">\(\mathbf{B}\)</span> matrices cuadradas y <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(tr(c \mathbf{A})=c\ tr(\mathbf{A})\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(\mathbf{A} \pm \mathbf{B})=tr(\mathbf{A})\pm tr(\mathbf{B})\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(\mathbf{A}\mathbf{B})=tr(\mathbf{B}\mathbf{A})\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(\mathbf{A}^t)= tr(\mathbf{A})\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(\mathbf{B}^{-1}\)</span>-existe, entonces: <span class="math inline">\(tr(\mathbf{B}^{-1}\mathbf{A}\mathbf{B})=tr(\mathbf{A})\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(\mathbf{ABC})=tr(\mathbf{CAB})=tr(\mathbf{BCA})\)</span>.</p></li>
+<li><p><span class="math inline">\(tr(\mathbf{A}\mathbf{A}^t)=\sum_{i=1}^n\sum_{j=1}^n a_{ij}^2\)</span>.</p></li>
+</ol>
+</div>
+<div id="determinante" class="section level4 hasAnchor" number="1.1.7.2">
+<h4><span class="header-section-number">1.1.7.2</span> Determinante de una Matriz<a href="acb_al.html#determinante" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>EL <em>Determinante</em> de una matriz cuadrada es una cantidad importante para hallar la solución de un sistema de ecuaciones lineales, ese decir, el determinante determina la existencia de la solución de dicho sistema. Una definición aproximada del determinante de una matriz es la que sigue.</p>
+<div class="definition">
+<p><span id="def:determ-matriz" class="definition"><strong>Definición 1.4  (Determinante de una Matriz) </strong></span>Sea <span class="math inline">\(\mathbf{A}\)</span> una matriz cuadrada de orden <span class="math inline">\(n\)</span>. El determinante de <span class="math inline">\(\mathbf{A}\)</span>, denotado por <span class="math inline">\(|\mathbf{A}|\)</span>, se obtiene como sigue:</p>
+</div>
+<p><span class="math display">\[
+|\mathbf{A}|=\sum_{j=1}^n a_{ij}|A_{ij}|(-1)^{i+j},
+\]</span>
+en donde, <span class="math inline">\(A_{ij}\)</span>-es la matriz cuadrada de orden <span class="math inline">\((n-1)\)</span> que se obtiene al eliminar la fila <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span> de <span class="math inline">\(A\)</span> (es decir, <span class="math inline">\(A_{ij}\)</span> es el menor <span class="math inline">\(A_{ij}\)</span>).</p>
+<p>El <em>Determinante</em> de una matriz <span class="math inline">\(\mathbf{A}\)</span> es el <strong>producto de sus valores propios</strong>, es decir:</p>
+<p><span class="math display" id="eq:determ-matriz-producto-vp">\[\begin{equation}
+|\mathbf{A}|=\prod_{i=1}^n \lambda_i = \lambda_1\times \lambda_2\times \cdots \times \lambda_n
+\tag{1.10}
+\end{equation}\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-determ-de-matriz" class="example"><strong>Ejemplo 1.36  (Determinante de una Matriz) </strong></span>Sea,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+\frac{11}{5} &amp; \frac{2}{5} \\ \frac{2}{5} &amp; \frac{14}{5}
+\end{bmatrix}=\begin{bmatrix}2.2 &amp; 0.4 \\ 0.4 &amp; 2.8 \end{bmatrix}, \ \text{luego}
+\]</span></p>
+<p>para la cual se tiene que:</p>
+<p><span class="math display">\[
+|\mathbf{A}-\lambda \mathbf{I}|=\begin{vmatrix}
+2.2-\lambda &amp; 0.4 \\ 0.4 &amp; 2.8-\lambda
+\end{vmatrix} = \lambda^2-5\lambda+6.16-0.16=(\lambda-3)(\lambda-2)=0
+\]</span></p>
+<p>es decir que, los valores propios de <span class="math inline">\(\mathbf{A}\)</span> son <span class="math inline">\(\lambda_1=3\)</span> y <span class="math inline">\(\lambda_2=2\)</span>.</p>
+<p>luego,
+<span class="math display">\[
+|\mathbf{A}|=\prod_{i=1}^2 \lambda_i =\lambda_1\times\lambda_2=3\times2=6.
+\]</span></p>
+<p><strong>Determinante de una matriz cuadrada de orden-2</strong></p>
+<p>Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz cuadrada de orden <span class="math inline">\(2\)</span> entonces su determinante esta dado por:</p>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \ \ \ \ \Longrightarrow \ \ \ \  |\mathbf{A}|= a_{11}\times a_{22}\  -\ a_{12}\times a_{21}.
+\]</span></p>
+<p><strong>Alguna propiedades del determinante de una matriz:</strong></p>
+<p>Sean <span class="math inline">\(\mathbf{A}\)</span> y <span class="math inline">\(\mathbf{B}\)</span> matrices cuadradas de orden <span class="math inline">\(n\)</span> y <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(|\mathbf{A}|=|\mathbf{A}^t|\)</span></p></li>
+<li><p><span class="math inline">\(|\mathbf{A}\mathbf{B}|=|\mathbf{A}||\mathbf{B}|\)</span></p></li>
+<li><p><span class="math inline">\(|c \mathbf{A}|=c^n|\mathbf{A}|\)</span></p></li>
+<li><p>La matriz <span class="math inline">\(\mathbf{A}\)</span> es invertible si el <span class="math inline">\(|\mathbf{A}|\neq 0\)</span>, esto equivale a decir que todos los valores propios de <span class="math inline">\(\mathbf{A}\)</span> son diferentes de cero.</p></li>
+<li><p>Si la inversa de <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(\mathbf{A}^{-1}\)</span>-existe, entonces: <span class="math inline">\(|\mathbf{A}| =\frac{1}{|\mathbf{A}^{-1}|}\)</span></p></li>
+<li><p>Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz cuadrada de orden <span class="math inline">\(2\)</span>-invertible, entonces:</p></li>
+</ol>
+<p><span class="math display">\[
+\mathbf{A}^{-1}=\frac{1}{|A|}\begin{bmatrix}
+a_{22} &amp; -a_{12}\\
+-a_{21} &amp; a_{11}
+\end{bmatrix}\ , \ \ \ \text{con}\ \ \ A=\begin{bmatrix}
+a_{11} &amp; a_{12}\\
+a_{21} &amp; a_{22}
+\end{bmatrix}
+\]</span></p>
+</div>
+<div id="rango" class="section level4 hasAnchor" number="1.1.7.3">
+<h4><span class="header-section-number">1.1.7.3</span> Rango de una Matriz<a href="acb_al.html#rango" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El rango de una matriz cuadrada es <strong>el número de valores propios distintos de cero</strong>. Se denota por <span class="math inline">\(ran(\mathbf{A})\)</span>.</p>
+<p>El rango de una matriz nos da la dimensionalidad del Espacio Euclídeo que puede ser usado para representar dicha matriz. Las matrices cuyo rango es igual a la dimensión de dicha matriz se dice que son de <em>Rango Completo</em> y éstas son invertibles, es decir <strong>no-singulares</strong>. Cuando el rango de una matriz es menor que su dimensión, dicha matriz no es invertible, es decir, <strong>es singular</strong> (o también se le dice matriz de rango deficiente, o matriz multicolineal).</p>
+<div class="example">
+<p><span id="exm:ejemplo1-rango-de-matriz" class="example"><strong>Ejemplo 1.37  (Rango de una Matriz) </strong></span>Sea,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+\frac{11}{5} &amp; \frac{2}{5} \\ \frac{2}{5} &amp; \frac{14}{5}
+\end{bmatrix}=\begin{bmatrix}2.2 &amp; 0.4 \\ 0.4 &amp; 2.8 \end{bmatrix}, \ \text{luego}
+\]</span></p>
+<p>para la cual se tiene que:
+<span class="math display">\[
+|\mathbf{A}-\lambda \mathbf{I}|=\begin{vmatrix}
+2.2-\lambda &amp; 0.4 \\ 0.4 &amp; 2.8-\lambda
+\end{vmatrix} = \lambda^2-5\lambda+6.16-0.16=(\lambda-3)(\lambda-2)=0
+\]</span></p>
+<p>es decir que, los valores propios de <span class="math inline">\(\mathbf{A}\)</span> son <span class="math inline">\(\lambda_1=3\)</span> y <span class="math inline">\(\lambda_2=2\)</span>.</p>
+<p>Luego el rango de dicha matriz es <span class="math inline">\(ran(\mathbf{A})=2\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo2-rango-de-matriz" class="example"><strong>Ejemplo 1.38  (Rango de una Matriz) </strong></span>Sea,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+1 &amp;2&amp;3 \\ 4&amp;5&amp;6 \\
+7 &amp; 8 &amp; 9
+\end{bmatrix}
+\]</span></p>
+<p>para esta matriz, se puede verificar que los valores propios de <span class="math inline">\(\mathbf{A}\)</span> son <span class="math inline">\(\lambda_1=16.1168\)</span>, <span class="math inline">\(\lambda_2=-1.1168\)</span> y <span class="math inline">\(\lambda_3=0\)</span>.</p>
+<p>Luego el rango de dicha matriz es <span class="math inline">\(ran(\mathbf{A})=2\)</span>. Esta matriz es de rango deficiente y por lo tanto es no-singular, es decir, no tiene inversa.</p>
+</div>
+<div id="vectores-li" class="section level4 hasAnchor" number="1.1.7.4">
+<h4><span class="header-section-number">1.1.7.4</span> Vectores LI y LD<a href="acb_al.html#vectores-li" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Un conjunto de <span class="math inline">\(k\)</span>-vectores, <span class="math inline">\(\underline{\mathbf{x}}_1,\underline{\mathbf{x}}_2,\ldots,\underline{\mathbf{x}}_k\)</span>, se dice que son LI si la ecuación:
+<span class="math display">\[
+c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+\ldots+c_k\underline{\mathbf{x}}_k=0,
+\]</span></p>
+<p>tiene como única solución la dada por: <span class="math inline">\(c_1=c_2=\ldots=c_k=0\)</span>, para <span class="math inline">\(c_i \in \mathbb{R}\)</span>, <span class="math inline">\(i=1,2,\ldots,k\)</span></p>
+</div>
+<div id="matriz-ortogonal" class="section level4 hasAnchor" number="1.1.7.5">
+<h4><span class="header-section-number">1.1.7.5</span> Matriz Ortogonal<a href="acb_al.html#matriz-ortogonal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="definition">
+<p><span id="def:matriz-ortog" class="definition"><strong>Definición 1.5  (Matriz Ortogonal) </strong></span>Una matriz cuadrada <span class="math inline">\(\mathbf{A}_n\)</span>, se dice que es ortogonal si sus columnas como vectores son perpendiculares, es decir si,</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}^t\mathbf{A}=\mathbf{A}\mathbf{A}^t=\mathbf{I}_n
+\]</span></p>
+<p>es decir, si <span class="math inline">\(\mathbf{A}^t=\mathbf{A}^{-1}\)</span>.</p>
+<p><strong>Propiedades de una matriz Ortogonal:</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(|\mathbf{A}|=\pm 1\)</span>.</p></li>
+<li><p>El producto de un número finito de matrices ortogonales es ortogonal.</p></li>
+<li><p>La Inversa y por tanto la transpuesta de una matriz ortogonal es ortogonal.</p></li>
+<li><p>Dada una matriz <span class="math inline">\(\mathbf{A}\)</span> y una matriz <span class="math inline">\(\mathbf{U}\)</span>, entonces:
+<span class="math display">\[
+|\mathbf{A}|=|\mathbf{U}^t\mathbf{A}\mathbf{U}|
+\]</span></p></li>
+</ol>
+<p><strong>Alguna propiedades sobre los valores propios de una matriz:</strong></p>
+<p>Sean <span class="math inline">\(\mathbf{A}\)</span> una matriz cuadrada de orden <span class="math inline">\(n\)</span> y <span class="math inline">\(c\in \mathbb{R}\)</span>, entonces:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Una matriz <span class="math inline">\(\mathbf{A}\)</span> tiene al menos un valor-propio igual a cero sii <span class="math inline">\(\mathbf{A}\)</span> es singular (no tiene inversa), ie. sii el <span class="math inline">\(|\mathbf{A}|=0\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(\mathbf{A}\)</span> es una matriz simétrica con valores propios reales, entonces los vectores propios asociados a valores propios diferentes son ortogonales.</p></li>
+<li><p>Si <span class="math inline">\(\lambda\)</span> es una valor propio de <span class="math inline">\(\mathbf{A}\)</span>, entonces <span class="math inline">\(\lambda^k\)</span> es un valor propio de <span class="math inline">\(\mathbf{A}^k\)</span>.</p></li>
+<li><p>Las matrices <span class="math inline">\(\mathbf{A}\)</span> y <span class="math inline">\(\mathbf{A}^t\)</span> tienen el mismo conjunto de valores propios, pero un vector propio de <span class="math inline">\(\mathbf{A}\)</span> no-necesariamente es un vector propio de <span class="math inline">\(\mathbf{A}^t\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(\mathbf{A}\)</span> es idempotente, entonces sus valores propios son cero o uno.</p></li>
+</ol>
+</div>
+</div>
+<div id="formas-cuadraticas" class="section level3 hasAnchor" number="1.1.8">
+<h3><span class="header-section-number">1.1.8</span> Formas Cuadráticas<a href="acb_al.html#formas-cuadraticas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:forma-cuadratica" class="definition"><strong>Definición 1.6  (Forma Cuadrática) </strong></span>Sea <span class="math inline">\(\mathbf{A}_n\)</span> una matriz simétrica y <span class="math inline">\(\underline{\mathbf{x}}\)</span> un vector <span class="math inline">\(n\times 1\)</span>, entonces a las función:</p>
+</div>
+<p><span class="math display" id="eq:forma-cuadratica">\[\begin{equation}
+Q(\underline{\mathbf{x}})=\underline{\mathbf{x}}^t \mathbf{A} \underline{\mathbf{x}}
+\tag{1.11}
+\end{equation}\]</span></p>
+<p>se le llama forma cuadrática de <span class="math inline">\(\underline{\mathbf{x}}\)</span>.</p>
+<p><span class="math inline">\(Q(\underline{\mathbf{x}})\)</span>-es un escalar y puede expresarse alternativamente por la ecuación:</p>
+<p><span class="math display">\[
+Q(\underline{\mathbf{x}})=\sum_{i=1}^n \sum_{j=1}^n a_{ij}x_i x_j,
+\]</span></p>
+<p>con <span class="math inline">\(a_{ij}\)</span>-elementos de la matriz <span class="math inline">\(\mathbf{A}\)</span> y <span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_j\)</span> elementos del vector <span class="math inline">\(\underline{\mathbf{x}}\)</span>.</p>
+<p>Si <span class="math inline">\(Q(\underline{\mathbf{x}})\geq 0\)</span>, <span class="math inline">\(\forall \underline{\mathbf{x}} \neq \underline{\mathbf{0}}\)</span>, entonces <span class="math inline">\(\mathbf{A}\)</span>-se llama matriz semi-definida positiva y se escribe <span class="math inline">\(\mathbf{A}\geq 0\)</span> y si <span class="math inline">\(Q(\underline{\mathbf{x}})&gt; 0\)</span>, <span class="math inline">\(\forall \underline{\mathbf{x}} \neq \underline{\mathbf{0}}\)</span>, entonces <span class="math inline">\(\mathbf{A}\)</span>-se llama matriz definida positiva y se escribe <span class="math inline">\(\mathbf{A}&gt; 0\)</span>, ver las definiciones dadas en <a href="acb_al.html#eq:matriz-sdp">(1.7)</a> y <a href="acb_al.html#eq:matriz-dp">(1.8)</a>.</p>
+<p><strong>Algunas Propiedades de Formas-Cuadráticas:</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Si <span class="math inline">\(\mathbf{A}&gt;0\)</span> entonces, todos sus valores propios son positivos (El recíproco tambien es cierto).</p></li>
+<li><p>Si <span class="math inline">\(\mathbf{A} \geq 0\)</span> entonces, <span class="math inline">\(\lambda_i \geq 0\)</span> para <span class="math inline">\(i=1,2,\ldots,p\)</span> y <span class="math inline">\(\lambda_i=0\)</span> para algún <span class="math inline">\(i\)</span>, (El recíproco tambien es cierto).</p></li>
+<li><p>Si <span class="math inline">\(\mathbf{A} &gt; 0\)</span> entonces, <span class="math inline">\(\mathbf{A}\)</span>-es no-singular y en consecuencia <span class="math inline">\(|\mathbf{A}|&gt;0\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(\mathbf{A}&gt;0\)</span> entonces, <span class="math inline">\(\mathbf{A}^{-1}&gt;0\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(\mathbf{A}&gt;0\)</span> y <span class="math inline">\(\mathbf{C}_n\)</span>-es una matriz no-singular entonces, <span class="math inline">\(\mathbf{C}^t\mathbf{A}\mathbf{C}&gt;0\)</span>.</p></li>
+<li><p>Sea <span class="math inline">\(\mathbf{A}_n\)</span> es una matriz simétrica y sea <span class="math inline">\(\underline{\mathbf{x}}\)</span>-un vector, entonces:</p></li>
+</ol>
+<p><span class="math display">\[
+\underline{\mathbf{x}}^t \mathbf{A} \underline{\mathbf{x}}=t(\underline{\mathbf{x}}^t \mathbf{A} \underline{\mathbf{x}})=t( \mathbf{A} \underline{\mathbf{x}}\underline{\mathbf{x}}^t)
+\]</span></p>
+<div class="theorem">
+<p><span id="thm:thm:maximizacion-fc" class="theorem"><strong>(#thm:thm:maximizacion-fc) (Maximización de Formas Cuadráticas Sobre la Esfera) </strong></span>Sea <span class="math inline">\(\underset{p\times p}{\mathbf{B} }\)</span> una matriz definida positiva con valores propios <span class="math inline">\(\lambda_1\geq \lambda_2 \geq \cdots \lambda_p \geq 0\)</span> y vectores propios normalizados <span class="math inline">\(\mathbf{e}_1,\mathbf{e}_2,\cdots,\mathbf{e}_p\)</span>, entonces,</p>
+</div>
+<p><span class="math display">\[
+\underset{ \underline{\mathbf{x}}\ \neq \ \underline{\mathbf{0}}  }{\max } \ \  \frac{\underline{\mathbf{x}}^t \mathbf{B} \underline{\mathbf{x}}}{\underline{\mathbf{x}}^t\underline{\mathbf{x}}}  = \lambda_1 \ , \ \ \ \ \ (  \text{es alcanzado cuando} , \ \   \underline{\mathbf{x}}=\underline{\mathbf{e}}_1  )
+\]</span></p>
+<p><span class="math display">\[
+\underset{ \underline{\mathbf{x}}\ \neq \ \underline{\mathbf{0}}  }{\min } \ \  \frac{\underline{\mathbf{x}}^t \mathbf{B} \underline{\mathbf{x}}}{\underline{\mathbf{x}}^t\underline{\mathbf{x}}}  = \lambda_p \ , \ \ \ \ \ (  \text{es alcanzado cuando} , \ \   \underline{\mathbf{x}}=\underline{\mathbf{e}}_p  )
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+\underset{ \underline{\mathbf{x}}\ \perp \ \underline{\mathbf{e}}_1,\underline{\mathbf{e}}_2,\cdots,\underline{\mathbf{e}}_k  }{\max } \ \  \frac{\underline{\mathbf{x}}^t \mathbf{B} \underline{\mathbf{x}}}{\underline{\mathbf{x}}^t\underline{\mathbf{x}}}  = \lambda_{k+1} \ , \ \ \ \ \ (  \text{es alcanzado cuando} , \ \   \underline{\mathbf{x}}=\underline{\mathbf{e}}_{k+1}\ , \ k=1,2,\cdots,p-1  )
+\]</span></p>
+<p>donde, <span class="math inline">\(\perp\)</span>-significa “que es perprendicular a”.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rep_al.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="algunas-propiedades-estadísticas-de-la-eigen-descomposición-de-una-matriz.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
