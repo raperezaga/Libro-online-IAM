@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.4 Propiedades de la distribución Normal Multivariada | Chapter 3</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.4 Propiedades de la distribución Normal Multivariada | Chapter 3" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.4 Propiedades de la distribución Normal Multivariada | Chapter 3" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="normal-multivariada.html"/>
+<link rel="next" href="evaluación-del-supuesto-de-normalidad-multivariada.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep_al.html"><a href="rep_al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="acb_al.html"><a href="acb_al.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="acb_al.html"><a href="acb_al.html#matrices"><i class="fa fa-check"></i><b>1.1.1</b> Matrices</a></li>
+<li class="chapter" data-level="1.1.2" data-path="acb_al.html"><a href="acb_al.html#vectores"><i class="fa fa-check"></i><b>1.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="1.1.3" data-path="acb_al.html"><a href="acb_al.html#operaciones-matrices"><i class="fa fa-check"></i><b>1.1.3</b> Operaciones Matriciales</a></li>
+<li class="chapter" data-level="1.1.4" data-path="acb_al.html"><a href="acb_al.html#matrices-especiales"><i class="fa fa-check"></i><b>1.1.4</b> Matrices Especiales</a></li>
+<li class="chapter" data-level="1.1.5" data-path="acb_al.html"><a href="acb_al.html#descomp-espectral"><i class="fa fa-check"></i><b>1.1.5</b> Descomposición Espectral de una Matriz (eigen-descomposición)</a></li>
+<li class="chapter" data-level="1.1.6" data-path="acb_al.html"><a href="acb_al.html#eigen-descom-msdp"><i class="fa fa-check"></i><b>1.1.6</b> Descomposición Espectral de Matrices Simétricas Definidas (o Semidefinidas) Positivas</a></li>
+<li class="chapter" data-level="1.1.7" data-path="acb_al.html"><a href="acb_al.html#traza-determinante-y-rango-de-una-matriz"><i class="fa fa-check"></i><b>1.1.7</b> Traza, Determinante y Rango de una Matriz</a></li>
+<li class="chapter" data-level="1.1.8" data-path="acb_al.html"><a href="acb_al.html#formas-cuadraticas"><i class="fa fa-check"></i><b>1.1.8</b> Formas Cuadráticas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="algunas-propiedades-estadísticas-de-la-eigen-descomposición-de-una-matriz.html"><a href="algunas-propiedades-estadísticas-de-la-eigen-descomposición-de-una-matriz.html"><i class="fa fa-check"></i><b>1.2</b> Algunas Propiedades Estadísticas de la Eigen-Descomposición de una Matriz</a></li>
+<li class="chapter" data-level="1.3" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.3</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinex"><i class="fa fa-check"></i><b>1.3.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{x})\)</span>:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>2</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html"><i class="fa fa-check"></i><b>2.1</b> Resumenes Descriptivos</a></li>
+<li class="chapter" data-level="2.2" data-path="representación-gráfica-de-observaciones-multivariadas.html"><a href="representación-gráfica-de-observaciones-multivariadas.html"><i class="fa fa-check"></i><b>2.2</b> Representación Gráfica de Observaciones multivariadas</a></li>
+<li class="chapter" data-level="2.3" data-path="vectores-y-matrices-aleatorias.html"><a href="vectores-y-matrices-aleatorias.html"><i class="fa fa-check"></i><b>2.3</b> Vectores y Matrices Aleatorias</a></li>
+<li class="chapter" data-level="2.4" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>2.4</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>2.4.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="2.4.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>2.4.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.5</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.6" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>2.6</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>2.6.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="2.6.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>2.6.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>2.7</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="2.8" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.8</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.9" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>2.9</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.9.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.9.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.9.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.9.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>2.9.3</b> Varianza Generalizada Determinada por la Matriz de Correlación Muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="2.9.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>2.9.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="varianza-total-muestral.html"><a href="varianza-total-muestral.html"><i class="fa fa-check"></i><b>2.10</b> Varianza Total Muestral</a></li>
+<li class="chapter" data-level="2.11" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>2.11</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="2.12" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>2.12</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="distancias.html"><a href="distancias.html#definición-de-algunas-distancias"><i class="fa fa-check"></i><b>2.12.1</b> Definición de Algunas Distancias</a></li>
+<li class="chapter" data-level="2.12.2" data-path="distancias.html"><a href="distancias.html#relación-de-la-distancia-de-mahalanobis-con-la-distribución-chi-cuadrado"><i class="fa fa-check"></i><b>2.12.2</b> Relación de la Distancia de Mahalanobis con la Distribución chi-Cuadrado</a></li>
+<li class="chapter" data-level="2.12.3" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>2.12.3</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>3</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>3.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="3.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>3.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="3.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>3.3</b> Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="normal-multivariada.html"><a href="normal-multivariada.html#algunos-aspectos-geométricos-de-la-nm"><i class="fa fa-check"></i><b>3.3.1</b> Algunos Aspectos Geométricos de la NM</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="propiedades-de-la-distribución-normal-multivariada.html"><a href="propiedades-de-la-distribución-normal-multivariada.html"><i class="fa fa-check"></i><b>3.4</b> Propiedades de la distribución Normal Multivariada</a></li>
+<li class="chapter" data-level="3.5" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.5</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>3.5.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="3.5.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>3.5.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>3.6</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="3.7" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.7</b> Transformaciones para acercar a la normalidad multivariada</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>3.7.1</b> Familia de transformaciones de potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="3.7.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>3.7.2</b> Transformaciones para el caso multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>3.8</b> Muestra aleatoria normal <span class="math inline">\(p\)</span>-variada</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>3.8.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="3.8.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>3.8.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="3.8.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>3.8.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para tamaños muestrales grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>4.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="4.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><i class="fa fa-check"></i><b>4.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>4.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>4.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>4.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><i class="fa fa-check"></i><b>4.4</b> PH para Igualdad de vectores de medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1=\underline{\boldsymbol{\mu}}_2\)</span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida"><i class="fa fa-check"></i><b>4.4.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida"><i class="fa fa-check"></i><b>4.4.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.4.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_1underlineboldsymbolmu_2.html#mathbfsigma_1neq-mathbfsigma_2-desconocida"><i class="fa fa-check"></i><b>4.4.3</b> <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><i class="fa fa-check"></i><b>4.5</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-conocida-1"><i class="fa fa-check"></i><b>4.5.1</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.5.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1mathbfsigma_2mathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>4.5.2</b> <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.5.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-para-muestras-grandes.html#mathbfsigma_1-neq-mathbfsigma_2-desconocidas"><i class="fa fa-check"></i><b>4.5.3</b> <span class="math inline">\(\mathbf{\Sigma}_1 \neq \mathbf{\Sigma}_2\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_1-y-underlineboldsymbolmu_2-observaciones-pareadas.html"><i class="fa fa-check"></i><b>4.6</b> Pruebas de Hipótesis Acerca de dos vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_1\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_2\)</span>,      Observaciones Pareadas</a></li>
+<li class="chapter" data-level="4.7" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>4.7</b> PH Acerca de Contrastes para el vector de medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-desconocida"><i class="fa fa-check"></i><b>4.7.1</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-desconocida</a></li>
+<li class="chapter" data-level="4.7.2" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-es-conocida"><i class="fa fa-check"></i><b>4.7.2</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-es conocida</a></li>
+<li class="chapter" data-level="4.7.3" data-path="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-para-el-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#mathbfsigma-desconocida-y-n-grande"><i class="fa fa-check"></i><b>4.7.3</b> <span class="math inline">\(\mathbf{\Sigma}\)</span>-Desconocida y n-Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html"><i class="fa fa-check"></i><b>4.8</b> Inferencia para la Matriz de Covarianza</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#pruba-de-razón-de-verosimilitud"><i class="fa fa-check"></i><b>4.8.1</b> Pruba de Razón de Verosimilitud</a></li>
+<li class="chapter" data-level="4.8.2" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#prueba-de-bartlet"><i class="fa fa-check"></i><b>4.8.2</b> Prueba de Bartlet</a></li>
+<li class="chapter" data-level="4.8.3" data-path="inferencia-para-la-matriz-de-covarianza.html"><a href="inferencia-para-la-matriz-de-covarianza.html#dos-o-más-matrices-de-covarianzas"><i class="fa fa-check"></i><b>4.8.3</b> Dos o más Matrices de Covarianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><i class="fa fa-check"></i><b>4.9</b> Regiones de Confianza y comparaciones simultáneas entre las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#construcción-de-una-región-de-confianza-para-underlinemu-cuando-la-población-tiene-distribución-n_punderlinemumathbfsigma-con-underlinemu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>4.9.1</b> Construcción de una región de confianza para <span class="math inline">\(\underline{\mu}\)</span> cuando la población tiene distribución <span class="math inline">\(N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="4.9.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#región-de-confianza-para-el-caso-de-p2-elipse-de-confianza"><i class="fa fa-check"></i><b>4.9.2</b> Región de Confianza para el caso de <span class="math inline">\(p=2\)</span> (Elipse de Confianza)</a></li>
+<li class="chapter" data-level="4.9.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlinemu"><i class="fa fa-check"></i><b>4.9.3</b> Intervalos de confianza simultáneos para las componentes del vector de medias <span class="math inline">\(\underline{\mu}\)</span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-t2-simultáneos-para-diferencias-de-medias"><i class="fa fa-check"></i><b>4.9.4</b> IC <span class="math inline">\(T^2\)</span> Simultáneos para Diferencias de Medias</a></li>
+<li class="chapter" data-level="4.9.5" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#método-de-bonferroni-para-comparaciones-múltiples"><i class="fa fa-check"></i><b>4.9.5</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+<li class="chapter" data-level="4.9.6" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#intervalos-de-confianza-simultáneos-chi2-caso-n-grande"><i class="fa fa-check"></i><b>4.9.6</b> Intervalos de Confianza Simultáneos <span class="math inline">\(\chi^2\)</span> (caso n-Grande)</a></li>
+<li class="chapter" data-level="4.9.7" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlinemu.html#ic-simultáneos-para-n-grande-usando-la-normal-estándar-z_alpha"><i class="fa fa-check"></i><b>4.9.7</b> IC simultáneos para n-Grande Usando la Normal Estándar <span class="math inline">\(Z_\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>5</b> Análisis de Componentes Principales (AC)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="interpretación-del-acp.html"><a href="interpretación-del-acp.html"><i class="fa fa-check"></i><b>5.2</b> Interpretación del ACP</a></li>
+<li class="chapter" data-level="5.3" data-path="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple.html"><a href="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple.html"><i class="fa fa-check"></i><b>5.3</b> Interpretación Geométrica del ACP Mediante un Ejemplo Simple</a></li>
+<li class="chapter" data-level="5.4" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html"><i class="fa fa-check"></i><b>5.4</b> Mas de dos Ejes</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#min-cuadrados"><i class="fa fa-check"></i><b>5.4.1</b> Ajuste de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="5.4.2" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#relación-entre-los-sub-espacios-de-mathbbrp-y-de-mathbbrn"><i class="fa fa-check"></i><b>5.4.2</b> Relación entre los Sub-espacios de <span class="math inline">\(\mathbb{R}^p\)</span> y de <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="componentes-principales-en-análisis-de-regresión.html"><a href="componentes-principales-en-análisis-de-regresión.html"><i class="fa fa-check"></i><b>5.5</b> Componentes Principales en Análisis de Regresión</a></li>
+<li class="chapter" data-level="5.6" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>5.6</b> Componentes Principales Poblacionales</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#determinación-de-las-cps"><i class="fa fa-check"></i><b>5.6.1</b> Determinación de las CPs</a></li>
+<li class="chapter" data-level="5.6.2" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>5.6.2</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="5.6.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>5.6.3</b> Componentes principales usando variables estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><i class="fa fa-check"></i><b>5.7</b> Componentes Principales para Matrices de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span> con Estructuras Especiales</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-no-correlacionadas"><i class="fa fa-check"></i><b>5.7.1</b> Variables No-Correlacionadas</a></li>
+<li class="chapter" data-level="5.7.2" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-altamente-correlacionadas"><i class="fa fa-check"></i><b>5.7.2</b> Variables Altamente Correlacionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>5.8</b> Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="5.9" data-path="algunos-ejemplos.html"><a href="algunos-ejemplos.html"><i class="fa fa-check"></i><b>5.9</b> Algunos Ejemplos</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="algunos-ejemplos.html"><a href="algunos-ejemplos.html#ejemplo-2"><i class="fa fa-check"></i><b>5.9.1</b> Ejemplo-2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>5.10</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="5.11" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>5.11</b> Interpretación de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="5.12" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>5.12</b> Estandarización de las componentes principales muestrales</a></li>
+<li class="chapter" data-level="5.13" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>5.13</b> Gráficos en una Análisis de componentes principales</a>
+<ul>
+<li class="chapter" data-level="5.13.1" data-path="gráficos-en-una-análisis-de-componentes-principales.html"><a href="gráficos-en-una-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>5.13.1</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehate_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>5.14</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{e}}_i\)</span> en muestras grandes</a></li>
+<li class="chapter" data-level="5.15" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html"><i class="fa fa-check"></i><b>5.15</b> Ejemplos Finales</a>
+<ul>
+<li class="chapter" data-level="5.15.1" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-1"><i class="fa fa-check"></i><b>5.15.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="5.15.2" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-2-1"><i class="fa fa-check"></i><b>5.15.2</b> Ejemplo-2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 3</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="propiedades-de-la-distribución-normal-multivariada" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Propiedades de la distribución Normal Multivariada<a href="propiedades-de-la-distribución-normal-multivariada.html#propiedades-de-la-distribución-normal-multivariada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sea <span class="math inline">\(\underline{\mathbf{x}}\)</span>-un vector aleatorio <span class="math inline">\(p\)</span>-variado.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Propiedad-1:</strong></li>
+</ol>
+<p>Si <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, entonces:
+<span class="math display" id="eq:prop-1">\[\begin{equation}
+E[\underline{\mathbf{x}}]=\underline{\mu} \  \ \ \text{y}\ \ \ Var[\underline{\mathbf{x}}]=\mathbf{\Sigma}
+\tag{3.1}
+\end{equation}\]</span></p>
+<p>La distribución de <span class="math inline">\(\underline{\mathbf{x}}\)</span>-queda completamente determinada por <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Propiedad-2:</strong></li>
+</ol>
+<p>Si <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, entonces
+<span class="math display" id="eq:prop-2">\[\begin{equation}
+\underline{a}^t\underline{\mathbf{x}} =a_1X_1+a_2X_2+\ldots+a_pX_p \sim N_1(\underline{a}^t\underline{\mu}\ ,\ \underline{a}^t \mathbf{\Sigma} \underline{a})
+\tag{3.2}
+\end{equation}\]</span>
+Análogamente, si <span class="math inline">\(\forall \ \underline{a}\in \mathbb{R}^p\)</span> <span class="math inline">\(\underline{a}^t\underline{\mathbf{x}} \sim N_1(\underline{a}^t\underline{\mu}\ ,\ \underline{a}^t \mathbf{\Sigma} \underline{a})\)</span> entonces <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, es decir:
+<span class="math display">\[
+\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma}) \Longleftrightarrow \underline{a}^t \underline{\mathbf{x}} \sim N_1(\underline{a}^t\underline{\mu}\ ,\ \underline{a}^t \mathbf{\Sigma} \underline{a})
+\]</span>
+Luego, si <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span> entonces cada <span class="math inline">\(X_i \sim N_1(\mu_i \ , \  \sigma_{ii})\)</span>, lo cual se logra con <span class="math inline">\(\underline{a}=(0,0,\cdots, 1,\cdots, 0,0)^t\)</span> con 1-en la posición <span class="math inline">\(i\)</span>-ésima del vector <span class="math inline">\(\underline{a}\)</span> y <span class="math inline">\(\underline{\mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> dados por:
+<span class="math display">\[
+\mathbf{\underline{\mu}}=\begin{bmatrix}
+\mu_1\\ \mu_2\\ \vdots \\  \mu_p
+\end{bmatrix} \ \ \text{y} \ \ \ \mathbf{\Sigma}=
+\begin{bmatrix}
+\sigma_{11} &amp; \sigma_{12}&amp; \cdots &amp;  \sigma_{1p}\\
+\sigma_{21} &amp; \sigma_{22}&amp; \cdots &amp;  \sigma_{2p}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+\sigma_{p1}&amp; \sigma_{p2}&amp; \cdots &amp;  \sigma_{pp}
+\end{bmatrix}
+\]</span></p>
+<div class="definition">
+<p><span id="def:fgm-normal-uni" class="definition"><strong>Definición 3.2  (Función Generadora de Momentos-NU) </strong></span>Si una v.a <span class="math inline">\(X\sim N_1(\mu \, \ \sigma^2)\)</span>, entonces la FGM de <span class="math inline">\(X\)</span> es:</p>
+</div>
+<p><span class="math display">\[
+M_X(t):=E[e^{tX}]=e^{\mu t+\frac{1}{2}\sigma^2 t^2}, \ t\in \mathbb{R}
+\]</span></p>
+<div class="definition">
+<p><span id="def:fgm-normal-multiv" class="definition"><strong>Definición 3.3  (Función Generadora de Momentos-NM) </strong></span>Si un vector aleatorio <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, entonces la FGM de <span class="math inline">\(\underline{\mathbf{x}}\)</span> es:
+<span class="math display">\[
+M_{\underline{\mathbf{x}}}(\underline{t}):=E[e^{\underline{t}^t\underline{\mathbf{x}}}]=e^{\underline{t}^t \underline{\mu} +\frac{1}{2}\underline{t}^t  \mathbf{\Sigma}\underline{t}}, \ \ \underline{t} \in \mathbb{R}^p
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-4" class="proof"><em>Demostración</em> (Desmostración prop.2). </span><span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma}) \Longleftrightarrow \underline{a}^t \underline{\mathbf{x}} \sim N_1(\underline{a}^t\underline{\mu}\ ,\ \underline{a}^t \mathbf{\Sigma} \underline{a})\)</span></p>
+</div>
+<p>Sea la v.a <span class="math inline">\(Y=\underline{a}^t\underline{\mathbf{x}}\)</span>
+<span class="math display">\[\begin{align*}
+M_Y(t)&amp;=E[e^{tY}]=E[e^{t(\underline{a}^t\underline{\mathbf{x}})}]\\
+&amp;=E[e^{(\underline{a}t)^t\underline{\mathbf{x}}}]\ , \ \text{pues} \ \ (\underline{a}t)^t=t^t\underline{a}^t=t\underline{a}^t\\
+&amp;=M_{\underline{\mathbf{x}}}(\underline{a}t)\\
+&amp;=e^{(\underline{a}t)^t\underline{\mu} +\frac{1}{2}(\underline{a}t)^t\mathbf{\Sigma}(\underline{a}t)}\\
+&amp;=e^{t^t\underline{a}^t\underline{\mu} +\frac{1}{2}t^t\underline{a}^t\mathbf{ \Sigma} \underline{a}t}\\
+&amp;=e^{t(\underline{a}^t\underline{\mu}) +\frac{1}{2}t(\underline{a}^t\mathbf{\Sigma} \underline{a})t}
+=e^{t (\underline{a}^t\underline{\mu}) +\frac{1}{2} (\underline{a}^t\mathbf{\Sigma} \underline{a}) t^2}
+\end{align*}\]</span>
+es decir, la FGM de <span class="math inline">\(Y=\underline{a}^t\underline{\mathbf{x}}\)</span>-corresponde a la FGM de una v.a normal univariada con media <span class="math inline">\(\underline{a}^t\underline{\mu}\)</span> y varianza <span class="math inline">\(\underline{a}^t\mathbf{\Sigma} \underline{a}\)</span>, es decir:
+<span class="math display">\[
+Y=\underline{a}^t\underline{\mathbf{x}} \sim N_1\left(\underline{a}^t\underline{\mu}\ , \ \underline{a}^t\mathbf{\Sigma} \underline{a}\right), \ \ l.q.q.d
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-prop-1" class="example"><strong>Ejemplo 3.3  </strong></span>Suponga que <span class="math inline">\(\underline{\mathbf{x}}\sim N_3 (\underline{\mu} \ , \ \mathbf{\Sigma})\)</span> y considere la combinación linea de las componentes de <span class="math inline">\(\underline{\mathbf{x}}\)</span> dada por:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{y}}=2X_1-X_2+3X_3=\begin{bmatrix}
+2 &amp; -1 &amp; 3
+\end{bmatrix}\begin{bmatrix}
+X_1 \\ X_2 \\ X_3
+\end{bmatrix}=\underline{a}^t\underline{\mathbf{x}}
+\]</span>
+con <span class="math inline">\(\underline{a}=\begin{bmatrix} 2 &amp; -1 &amp; 3 \end{bmatrix}^t\)</span>, entonces:
+<span class="math display">\[
+E[\underline{\mathbf{y}}]=E[\underline{a}^t\underline{\mathbf{x}}]=
+\underline{a}^t \underline{\mu}=\begin{bmatrix}
+2 &amp; -1 &amp; 3
+\end{bmatrix}\begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \mu_3
+\end{bmatrix}=2\mu_1-\mu_2+3\mu_3\ , \ \ \text{y}
+\]</span>
+<span class="math display">\[\begin{align*}
+Var[\underline{\mathbf{y}}]&amp;=Var[\underline{a}^t\underline{\mathbf{x}}]\\
+&amp;=\underline{a}^t \mathbf{\Sigma} \underline{a}\\
+&amp;= \begin{bmatrix}
+2 &amp; -1 &amp; 3
+\end{bmatrix}\begin{bmatrix}
+\sigma_{11} &amp; \sigma_{12} &amp; \sigma_{13}\\
+\sigma_{12} &amp; \sigma_{22} &amp; \sigma_{23}\\
+\sigma_{13} &amp;\sigma_{23} &amp; \sigma_{33}
+\end{bmatrix} \begin{bmatrix}
+2 \\ -1 \\ 3
+\end{bmatrix}\\
+&amp;=\begin{bmatrix}
+2\sigma_{11}-\sigma_{12}+3\sigma_{13} &amp;
+2\sigma_{12}-\sigma_{22}+3\sigma_{23} &amp;
+2\sigma_{13}-\sigma_{23}+3\sigma_{33}
+\end{bmatrix} \begin{bmatrix}
+2 \\ -1 \\ 3
+\end{bmatrix}\\
+&amp;=4\sigma_{11}-2\sigma_{12}+6\sigma_{13}-
+2\sigma_{12}+\sigma_{22}-3\sigma_{23} +
+6\sigma_{13}-3\sigma_{23}+9\sigma_{33}\\
+&amp;\\
+Var[\underline{\mathbf{y}}]&amp;=4\sigma_{11}
++\sigma_{22}+9\sigma_{33}-4\sigma_{12}+12\sigma_{13}-6\sigma_{23}
+\end{align*}\]</span>
+Es decir que:
+<span class="math display">\[
+\underline{\mathbf{y}}=\underline{a}^t\underline{\mathbf{x}} =2X_1-X_2+3X_3 \sim N_1(\underline{a}^t\underline{\mu}\ ,\ \underline{a}^t \mathbf{\Sigma} \underline{a}).
+\]</span>
+con: <span class="math inline">\(\underline{a}^t \underline{\mu}=2\mu_1-\mu_2+3\mu_3\)</span>   y</p>
+<p><span class="math inline">\(\underline{a}^t \mathbf{\Sigma}\underline{a}=4\sigma_{11}+\sigma_{22}+9\sigma_{33}-4\sigma_{12}+12\sigma_{13}-6\sigma_{23}\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Propiedad-3:</strong></li>
+</ol>
+<p>Si <span class="math inline">\(\underline{\mathbf{x}}\sim N_p (\underline{\mu} \ , \ \mathbf{\Sigma})\)</span>, entonces</p>
+<p><span class="math display" id="eq:prop-3">\[\begin{equation}
+\underline{\mathbf{y}}=A \underline{\mathbf{x}} + \underline{b} \sim N_q(A \underline{\mu}+\underline{b}\ , \ A\mathbf{\Sigma} A^t )
+\tag{3.3}
+\end{equation}\]</span></p>
+<p>Si <span class="math inline">\(\underline{b}=\underline{0}\)</span> se tiene que:
+<span class="math inline">\(\underline{\mathbf{y}}=A \underline{\mathbf{x}} \sim N_q(A \underline{\mu}\ , \ A\mathbf{\Sigma} A^t )\)</span>, con <span class="math inline">\(A_{q\times p}\)</span>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-5" class="proof"><em>Demostración</em>. </span>Se tiene que:</p>
+</div>
+<p><span class="math display">\[\begin{align*}
+M_{\underline{\mathbf{y}}}(\underline{t})&amp;:=E\left[{\text{ $e^{\underline{t}^t\underline{\mathbf{y}}}$}}\right]=E\left[{\text{ $e^{\underline{t}^t(A\underline{\mathbf{x}}+\underline{b})}$}}\right]\\
+&amp;=E\left[{\text{ $e^{\underline{t}^tA\underline{\mathbf{x}}+\underline{t}^t \underline{b}}$}}\right]\\
+&amp;=E\left[{\text{ $e^{\underline{t}^tA\underline{\mathbf{x}}} e^{\underline{t}^t \underline{b}}$}}\right]\\
+&amp;=\text{ $e^{\underline{t}^t \underline{b}}$}  E\left[{\text{ $e^{\underline{t}^tA\underline{\mathbf{x}}}$}}\right]\\
+&amp;=\text{ $e^{\underline{t}^t \underline{b}}$}  E\left[{\text{ $e^{(A^t\underline{t})^t\underline{\mathbf{x}}}$}}\right]\ , \ \text{pues} \ \ (A^t\underline{t})^t=\underline{t}^tA \\
+&amp;=\text{ $e^{\underline{t}^t \underline{b}}$}  M_{\underline{\mathbf{x}}}(A^t\underline{t})\\
+&amp;=\text{ $e^{\underline{t}^t \underline{b}}$}  \left[ \text{ $e^{ (A^t\underline{t})^t \underline{\mu} + \frac{1}{2} (A^t\underline{t})^t \mathbf{\Sigma} (A^t\underline{t})  }$  } \right]
+;\ M_{\underline{\mathbf{x}}}(\underline{t})=e^{\underline{t}^t\underline{\mu} +\frac{1}{2}\underline{t}^t\mathbf{\Sigma}\underline{t}}\\
+&amp;= \text{ $e^{\underline{t}^t \underline{b}}$}  \left[ \text{ $e^{ \underline{t}^tA \underline{\mu} + \frac{1}{2} \underline{t}^t A \mathbf{\Sigma} A^t\underline{t}  }$  } \right]\\
+&amp;= \text{ $e^{\underline{t}^t  \left( A \underline{\mu} + \underline{b} \right) + \frac{1}{2} \underline{t}^t  \left(A\mathbf{\Sigma} A^t   \right) \underline{t}^t }$}
+\end{align*}\]</span></p>
+<p>lo cual corresponde a la FGM de un Vector aleatorio normal multivariado con vector de medias <span class="math inline">\(A \underline{\mu} + \underline{b}\)</span> y matriz de varianzas-covarainzas <span class="math inline">\(A\mathbf{\Sigma} A^t\)</span>, es decir:
+<span class="math display">\[
+\underline{\mathbf{y}}=A \underline{\mathbf{x}} + \underline{b} \sim N_q(A \underline{\mu}+\underline{b}\ , \ A\mathbf{\Sigma} A^t )\ , \ \ l.q.q.d.
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo1-prop-3" class="example"><strong>Ejemplo 3.4  </strong></span>Suponga que <span class="math inline">\(\underline{\mathbf{x}}\sim N_3 (\underline{\mu} \ , \ \mathbf{\Sigma})\)</span> y considere el vector de combinaciones lineales de las variables de <span class="math inline">\(\underline{\mathbf{x}}\)</span> dado por:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{z}}=A\underline{\mathbf{x}}=\begin{bmatrix}
+1 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; -1
+\end{bmatrix}\begin{bmatrix}
+X_1 \\ X_2\\ X_3
+\end{bmatrix}=\begin{bmatrix}
+X_1-X_2 \\ X_2 -X_3
+\end{bmatrix}=\begin{bmatrix}
+Z_1 \\Z_2
+\end{bmatrix}
+\]</span>
+entonces,
+<span class="math display">\[
+\underline{\mathbf{z}}=A \underline{\mathbf{x}}  \sim N_q(A \underline{\mu}\ , \ A\mathbf{\Sigma} A^t )
+\]</span>
+donde
+<span class="math display">\[
+A\underline{\mu}=\begin{bmatrix}
+1 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; -1
+\end{bmatrix}\begin{bmatrix}
+\mu_1 \\ \mu_2\\ \mu_3
+\end{bmatrix}=\begin{bmatrix}
+\mu_1-\mu_2 \\ \mu_2-\mu_3
+\end{bmatrix}=\begin{bmatrix}
+E[Z_1] \\ \\ E[Z_2]
+\end{bmatrix}
+\]</span>
+<span class="math display">\[\begin{align*}
+A\mathbf{\Sigma} A^t&amp;= \begin{bmatrix}
+1 &amp; -1 &amp; 0\\
+0 &amp; 1 &amp; -1
+\end{bmatrix}\begin{bmatrix}
+\sigma_{11} &amp; \sigma_{12} &amp; \sigma_{13}\\
+\sigma_{12} &amp; \sigma_{22} &amp; \sigma_{23}\\
+\sigma_{13} &amp;\sigma_{23} &amp; \sigma_{33}
+\end{bmatrix} \begin{bmatrix}
+1 &amp; 0 \\
+-1 &amp; 1\\
+0 &amp; -1
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\sigma_{11}-\sigma_{12} &amp; \sigma_{12}-\sigma_{22} &amp; \sigma_{13}-
+\sigma_{23}\\
+\sigma_{12}-\sigma_{13} &amp; \sigma_{22}-\sigma_{23} &amp; \sigma_{23}-
+\sigma_{33}
+\end{bmatrix} \begin{bmatrix}
+1 &amp; 0 \\
+-1 &amp; 1\\
+0 &amp; -1
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\sigma_{11}-\sigma_{12}-\sigma_{12}+\sigma_{22} &amp; \sigma_{12}-\sigma_{22}-\sigma_{13}+\sigma_{23} \\
+\sigma_{12}-\sigma_{13}-\sigma_{22}+\sigma_{23} &amp;  \sigma_{22}-\sigma_{23}-\sigma_{23}+
+\sigma_{33}
+\end{bmatrix}\\
+\\
+&amp;=\begin{bmatrix}
+\sigma_{11}-2\sigma_{12}+\sigma_{22} &amp; \sigma_{12}-\sigma_{22}-\sigma_{13}+\sigma_{23} \\
+\sigma_{12}-\sigma_{22}-\sigma_{13}+\sigma_{23} &amp;  \sigma_{22}-2\sigma_{23}+\sigma_{33}
+\end{bmatrix}
+\end{align*}\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo2-prop-3" class="example"><strong>Ejemplo 3.5  </strong></span>Suponga que <span class="math inline">\(\underline{\mathbf{x}}^{T}=(X_1,X_2,X_3) \sim N_3(\underline{\mu} \ , \ \mathbf{\Sigma} )\)</span>, donde:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mu}=\begin{bmatrix}
+2 \\ 1\\ 2
+\end{bmatrix} \ ,\ \ \text{y} \ \ \ \Sigma=\begin{bmatrix}
+2 &amp; 1 &amp;1 \\
+1 &amp; 3 &amp; 0 \\
+1 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span>
+Hallar la distribución conjunta de probabilidad de: <span class="math inline">\(Z_1=X_1+X_2+X_3\)</span>  y   <span class="math inline">\(Z_2=X_1-X_2\)</span>.
+<span class="math display">\[\begin{align*}
+\text{Sea}: \ \ \underline{\mathbf{z}}=\begin{bmatrix}
+Z_1 \\ Z_2
+\end{bmatrix}&amp;=\begin{bmatrix}
+X_1+X_2+X_3 \\ X_1-X_2
+\end{bmatrix}\\
+&amp;=\begin{bmatrix}
+1 &amp; 1 &amp;1 \\ 1 &amp; -1 &amp; 0
+\end{bmatrix}\begin{bmatrix}
+X_1 \\ X_2 \\ X_3
+\end{bmatrix}\\
+\underline{\mathbf{z}}&amp;=A\underline{\mathbf{x}}
+\end{align*}\]</span></p>
+<p>luego,
+<span class="math display">\[
+\underline{\mathbf{z}}=\begin{bmatrix}
+Z_1 \\ Z_2
+\end{bmatrix} \sim N_2 (A \underline{\mu} \ , \ A\mathbf{\Sigma} A^t),
+\]</span></p>
+<p>donde:
+<span class="math display">\[
+A\underline{\mu}= \begin{bmatrix}
+1 &amp; 1 &amp;1 \\ 1 &amp; -1 &amp; 0
+\end{bmatrix}\begin{bmatrix}
+2 \\ 1\\ 2
+\end{bmatrix}=\begin{bmatrix}
+5 \\ 1
+\end{bmatrix}_{2 \times 1}
+\]</span></p>
+<p>y
+<span class="math display">\[
+A\mathbf{\Sigma} A^t= \begin{bmatrix}
+1 &amp; 1 &amp;1 \\ 1 &amp; -1 &amp; 0
+\end{bmatrix}\begin{bmatrix}
+2 &amp; 1 &amp;1 \\
+1 &amp; 3 &amp; 0 \\
+1 &amp; 0 &amp; 1
+\end{bmatrix}\begin{bmatrix}
+1 &amp; 1\\
+1 &amp; -1 \\
+1 &amp; 0
+\end{bmatrix}=\begin{bmatrix}
+4 &amp; 4 &amp;2 \\
+1 &amp; -2 &amp; 1
+\end{bmatrix}\begin{bmatrix}
+1 &amp; 1\\
+1 &amp; -1 \\
+1 &amp; 0
+\end{bmatrix}=\begin{bmatrix}
+10 &amp; 0\\
+0 &amp; 3
+\end{bmatrix}
+\]</span>
+de lo anterior, <span class="math inline">\(Z_1\)</span> y <span class="math inline">\(Z_2\)</span> son independientes, pues <span class="math inline">\(Cov(Z_1,Z_2)=0\)</span> y <span class="math inline">\(Z_1\)</span> y <span class="math inline">\(Z_2\)</span> son distribuidas normales uni-variadas.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Propiedad-4:</strong></li>
+</ol>
+<p>Sea <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span> y sean los vectores y matrices particionadas dadas por:</p>
+<p><span class="math display">\[
+\underline{\mathbf{x}}=\begin{bmatrix}
+X_1 \\ X_2 \\  \vdots  \\ X_p
+\end{bmatrix}=\begin{bmatrix}
+\underline{\mathbf{x}}^{(1)} \\ \cdots \\ \underline{\mathbf{x}}^{(2)}
+\end{bmatrix} \ \ , \ \
+\underline{\mu}=\begin{bmatrix}
+\underline{\mu}^{(1)} \\ \cdots \\ \underline{\mu}^{(2)}
+\end{bmatrix}\ \ \text{y} \ \
+\mathbf{\Sigma}_{p\times p}=
+\begin{bmatrix}
+\mathbf{\Sigma}_{11} &amp; | &amp; \mathbf{\Sigma}_{12} \\
+-- &amp; -- &amp; -- \\
+\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{bmatrix}
+\]</span></p>
+<p>entonces:
+<span class="math display" id="eq:prop-4">\[\begin{align}
+\underline{\mathbf{x}}^{(1)} &amp; \sim N_q\left(\underline{\mu}^{(1)} \ , \ \mathbf{\Sigma}_{11}\right) \notag  \\ \\
+\underline{\mathbf{x}}^{(2)} &amp; \sim N_{p-q}\left(\underline{\mu}^{(2)} \ , \ \mathbf{\Sigma}_{22}\right).
+\tag{3.4}
+\end{align}\]</span></p>
+<p>La anterior propiedad también se puede enunciar como sigue: Todos los subconjuntos de variables de <span class="math inline">\(\underline{\mathbf{x}}\)</span> tienen distribución normal, sea univariada o multivariada.</p>
+<div class="proof">
+<p><span id="unlabeled-div-6" class="proof"><em>Demostración</em>. </span>Para esto se usarán las siguientes matrices particionadas:</p>
+</div>
+<p><span class="math display">\[
+A_{q\times p}=\begin{array}{cc}
+&amp;\hspace{0.5cm}  q \hspace{1.5cm}  p-q \hspace{1.5cm} \\
+q &amp; \begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \hspace{1.0cm} \vdots \hspace{1.0cm} \mathbf{O} \hspace{0.5cm}
+\end{bmatrix}_{q\times p}
+\end{array}=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \hspace{1.0cm} \vdots \hspace{1.0cm} \mathbf{O} \hspace{0.5cm}
+\end{bmatrix}_{q\times p}\ \ \ \ \text{y}\  \ \ \underline{b}=\underline{0}_{q\times 1}
+\]</span>
+Luego,</p>
+<p><span class="math display">\[\begin{align*}
+A\underline{\mathbf{x}} +\underline{b}&amp;=A\underline{\mathbf{x}} \\
+&amp;=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \hspace{1.0cm} \vdots \hspace{1.0cm} \mathbf{O} \hspace{0.5cm}
+\end{bmatrix}_{q\times p}\begin{bmatrix}
+\underline{\mathbf{x}}^{(1)} \\ \cdots \\ \underline{\mathbf{x}}^{(2)}
+\end{bmatrix}_{p\times 1} \\
+&amp;=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \ \underline{\mathbf{x}}^{(1)} \hspace{1.0cm} + \hspace{1.0cm} \mathbf{O}\  \underline{\mathbf{x}}^{(2)} \hspace{0.5cm}
+\end{bmatrix}_{q\times 1}\\
+&amp;=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \ \underline{\mathbf{x}}^{(1)} \hspace{0.5cm}
+\end{bmatrix}_{q\times 1}\\
+&amp;=\begin{bmatrix}
+\hspace{0.5cm}  \underline{\mathbf{x}}^{(1)} \hspace{0.5cm}
+\end{bmatrix}_{q\times 1}
+\end{align*}\]</span></p>
+<p>de donde, usando la propiedad <a href="propiedades-de-la-distribución-normal-multivariada.html#eq:prop-3">(3.3)</a> se tiene que:
+<span class="math display">\[
+A\underline{\mathbf{x}} +\underline{b}=\underline{\mathbf{x}}^{(1)} \sim N_q(A\underline{\mu}\ , \ A\mathbf{\Sigma} A^t)
+\]</span></p>
+<p>Pero,
+<span class="math display">\[\begin{align*}
+A\underline{\mu}&amp;= \begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \hspace{1.0cm} \vdots \hspace{1.0cm} \mathbf{O} \hspace{0.5cm}
+\end{bmatrix} \begin{bmatrix}
+\underline{\mu}^{(1)} \\ \cdots \\ \underline{\mu}^{(2)}
+\end{bmatrix}\\
+&amp;=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \ \underline{\mu}^{(1)} \hspace{1.0cm} + \hspace{1.0cm} \mathbf{O}\  \underline{\mu}^{(2)} \hspace{0.5cm}
+\end{bmatrix}\\
+&amp;=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \ \underline{\mu}^{(1)}  \hspace{0.5cm}
+\end{bmatrix}\\
+&amp;= \begin{bmatrix}
+\hspace{0.5cm}  \underline{\mu}^{(1)}  \hspace{0.5cm}
+\end{bmatrix}_{q\times 1}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+A\mathbf{\Sigma} A^t&amp;=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \hspace{1.0cm} \vdots \hspace{1.0cm} \mathbf{O} \hspace{0.5cm}
+\end{bmatrix}\begin{bmatrix}
+\mathbf{\Sigma}_{11} &amp; | &amp; \mathbf{\Sigma}_{12} \\
+-- &amp; -- &amp; -- \\
+\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{bmatrix}\begin{bmatrix}
+\mathbf{I}_q \\ \cdots \\   \mathbf{O}  
+\end{bmatrix} \\
+&amp;\\
+&amp;=\begin{array}{c}
+\begin{bmatrix}
+\hspace{0.5cm} \mathbf{I}_q \ \mathbf{\Sigma}_{11}+\mathbf{O}\ \mathbf{\Sigma}_{21}\hspace{1.0cm} \vdots  \hspace{1.0cm} \mathbf{I}_q \ \mathbf{\Sigma}_{12}+\mathbf{O}\ \mathbf{\Sigma}_{22} \hspace{0.5cm}
+\end{bmatrix}\\
+\\ \\
+\end{array}  
+\begin{bmatrix}
+\mathbf{I}_q \\ \cdots \\   \mathbf{O}  
+\end{bmatrix} \\
+&amp;=\begin{array}{c}
+\begin{bmatrix}
+\hspace{0.5cm}  \mathbf{\Sigma}_{11}+\mathbf{O} \hspace{1.0cm} \vdots  \hspace{1.0cm}  \mathbf{\Sigma}_{12}+\mathbf{O}\ \hspace{0.5cm}
+\end{bmatrix}\\
+\\ \\
+\end{array}  
+\begin{bmatrix}
+\mathbf{I}_q \\ \cdots \\ \mathbf{O}  
+\end{bmatrix} \\
+&amp;=\begin{array}{c}
+\begin{bmatrix}
+\hspace{0.5cm}  \mathbf{\Sigma}_{11} \hspace{1.0cm} \vdots  \hspace{1.0cm}  \mathbf{\Sigma}_{12}\ \hspace{0.5cm}
+\end{bmatrix}\\
+\\ \\
+\end{array}  
+\begin{bmatrix}
+\mathbf{I}_q \\ \cdots \\ \mathbf{O}  
+\end{bmatrix} \\
+&amp;=\begin{bmatrix}
+\hspace{0.5cm}  \mathbf{\Sigma}_{11} \mathbf{I}_q+ \mathbf{\Sigma}_{12}\mathbf{O}   
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\mathbf{\Sigma}_{11} + \mathbf{O}   
+\end{bmatrix}\\ \\
+&amp; = \mathbf{\Sigma}_{11}
+\end{align*}\]</span></p>
+<p>Es decir que:
+<span class="math display">\[\begin{align*}
+\underline{\mathbf{x}}^{(1)} &amp; \sim N_q\left(A\underline{\mu}\ , \ A\mathbf{\Sigma} A^t\right)\\
+&amp;~  N_q\left(\underline{\mu}^{(1)}\ , \ \mathbf{\Sigma}_{11}\right)\ , \ \ \ \ l.q.q.d.
+\end{align*}\]</span></p>
+<p>De manera similar, se demuestra que:</p>
+<p><span class="math display">\[\begin{align*}
+\underline{\mathbf{x}}^{(2)} &amp; \sim N_q\left(\underline{\mu}^{(2)}\ , \ \mathbf{\Sigma}_{22}\right),
+\end{align*}\]</span></p>
+<p>en este caso usando las matrices particionadas dadas por:
+<span class="math display">\[
+A=\begin{array}{cc}
+&amp;\hspace{0.5cm}  q \hspace{1.5cm}  p-q \hspace{1.5cm} \\
+p-q &amp; \begin{bmatrix}
+\hspace{0.5cm} \mathbf{O} \hspace{1.0cm} \vdots \hspace{1.0cm} \mathbf{I}_{p-q} \hspace{0.5cm}
+\end{bmatrix}_{(p-q)\times p}
+\end{array}=\begin{bmatrix}
+\hspace{0.5cm} \mathbf{O} \hspace{1.0cm} \vdots \hspace{1.0cm} \mathbf{I}_{p-q} \hspace{0.5cm}
+\end{bmatrix}\ \ ; \ \underline{b}=\underline{0}_{(p-q)\times 1}
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo1-prop-4" class="example"><strong>Ejemplo 3.6  </strong></span>Sea  <span class="math inline">\(\underline{\mathbf{x}}\sim N_5 (\underline{\mu} \ , \ \mathbf{\Sigma})\)</span>, hallar la distribución de:</p>
+</div>
+<p><span class="math inline">\(\begin{bmatrix}X_2 \\ X_4 \end{bmatrix}\)</span>.
+Sean
+<span class="math display">\[
+\underline{\mathbf{x}}^{(1)}=\begin{bmatrix}
+X_2 \\ X_4
+\end{bmatrix}\ , \ \ \underline{\mathbf{\mu}}^{(1)}=\begin{bmatrix}
+\mu_2 \\ \mu_4
+\end{bmatrix}\ \ \ \text{y} \ \ \ \mathbf{\Sigma}_{11}=\begin{bmatrix}
+\sigma_{22} &amp; \sigma_{24}\\
+\sigma_{24} &amp; \sigma_{44}
+\end{bmatrix}
+\]</span></p>
+<p>Asumiendo que <span class="math inline">\(\underline{\mathbf{x}}\)</span>, <span class="math inline">\(\underline{\mathbf{\mu}}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> son particionados como sigue:
+<span class="math display">\[
+\hspace{-2.0cm}\underline{\mathbf{x}}=\begin{bmatrix}
+X_2 \\ X_4 \\ \cdots \\ X_1 \\ X_3 \\ X_5
+\end{bmatrix}\ , \ \ \underline{\mathbf{\mu}}=\begin{bmatrix}
+\mu_2 \\ \mu_4 \\ \cdots \\ \mu_1 \\ \mu_3 \\ \mu_5
+\end{bmatrix}\ \ \ \text{y} \ \ \ \mathbf{\Sigma}=\begin{bmatrix}
+\sigma_{22} &amp; \sigma_{24} &amp; \vdots &amp; \sigma_{12} &amp; \sigma_{23} &amp; \sigma_{25}\\
+\sigma_{24} &amp; \sigma_{44}&amp; \vdots &amp; \sigma_{14} &amp; \sigma_{34} &amp; \sigma_{45}\\
+\cdots &amp; \cdots \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots\\
+\sigma_{12} &amp;\sigma_{14} &amp; \vdots &amp; \sigma_{11} &amp;\sigma_{13}
+&amp;\sigma_{15}  \\
+\sigma_{23} &amp;\sigma_{34} &amp; \vdots &amp; \sigma_{13} &amp;\sigma_{33}
+&amp;\sigma_{35}  \\
+\sigma_{25} &amp;\sigma_{45} &amp; \vdots &amp; \sigma_{15} &amp;\sigma_{35}
+&amp;\sigma_{55}  
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\text{es decir}: \ \ \underline{\mathbf{x}}=\begin{bmatrix}
+\underline{\mathbf{x}}^{(1)} \\ \cdots \\ \underline{\mathbf{x}}^{(2)}
+\end{bmatrix} \ \ , \ \
+\underline{\mu}=\begin{bmatrix}
+\underline{\mu}^{(1)} \\ \cdots \\ \underline{\mu}^{(2)}
+\end{bmatrix}\ \ \text{y} \ \
+\mathbf{\Sigma}=
+\begin{bmatrix}
+\mathbf{\Sigma}_{11} &amp; | &amp; \mathbf{\Sigma}_{12} \\
+-- &amp; -- &amp; -- \\
+\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\text{luego}: \ \ \underline{\mathbf{x}}^{(1)}
+\sim  N_2\left(\underline{\mu}^{(1)}\ , \ \mathbf{\Sigma}_{11}\right)\sim N_2 \left(\begin{bmatrix}
+\mu_2 \\ \mu_4
+\end{bmatrix}\ , \begin{bmatrix}
+\sigma_{22} &amp; \sigma_{24}\\
+\sigma_{24} &amp; \sigma_{44}
+\end{bmatrix} \right).
+\]</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Propiedad-5:</strong></li>
+</ol>
+<p>a).
+<span class="math display">\[
+\text{Si}, \ \ \ \underline{\mathbf{x}}=\begin{bmatrix}
+\underline{\mathbf{x}}^{(1)} \\ \cdots \\ \underline{\mathbf{x}}^{(2)}
+\end{bmatrix} \sim N_{p} \begin{bmatrix}
+\begin{pmatrix}
+\underline{\mu}^{(1)} \\ \cdots \\ \underline{\mu}^{(2)}
+\end{pmatrix} \ , \ \begin{pmatrix}
+\mathbf{\Sigma}_{11} &amp; | &amp; \mathbf{\Sigma}_{12} \\
+-- &amp; -- &amp; -- \\
+\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{pmatrix}
+\end{bmatrix}
+\]</span>
+entonces:
+<span class="math display" id="eq:prop-5a">\[\begin{equation}
+\underline{\mathbf{x}}^{(1)} \perp \underline{\mathbf{x}}^{(2)}\ , \ \ \text{si y solo si} \ \ \mathbf{\Sigma}_{12}=\mathbf{\Sigma}_{21}^t=O_{q\times (p-q)}.
+\tag{3.5}
+\end{equation}\]</span></p>
+<p>es decir, <span class="math inline">\(\underline{\mathbf{x}}^{(1)}\ \ \text{y} \ \ \  \underline{\mathbf{x}}^{(2)}\)</span> son estadísticamente independientes si y solo si:
+<span class="math inline">\(\mathbf{\Sigma}_{12}=\mathbf{\Sigma}_{21}^t=O\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo1-prop-5" class="example"><strong>Ejemplo 3.7  </strong></span>Suponga que <span class="math inline">\(\underline{\mathbf{x}}\sim N_3 (\underline{\mu} \ , \ \mathbf{\Sigma)}\)</span>, con</p>
+</div>
+<p><span class="math display">\[
+\mathbf{\Sigma}= \begin{bmatrix}
+4 &amp; 1 &amp; 0\\
+1 &amp; 3 &amp; 0 \\
+0 &amp; 0 &amp; 2
+\end{bmatrix}
+\]</span>
+¿Son las variables <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_2\)</span> independientes? Rta.    NO, porque <span class="math inline">\(\sigma_{12}=1\neq 0\)</span>.</p>
+<p>¿Son los siguientes vectores aleatorios independientes?:</p>
+<p><span class="math inline">\(\begin{bmatrix}X_1 \\ X_3 \end{bmatrix}\  \ \text{y} \ \ \begin{bmatrix} X_3 \end{bmatrix}\)</span>.</p>
+<p>Sean
+<span class="math display">\[
+\underline{\mathbf{x}}=\begin{bmatrix}
+X_1 \\ X_2 \\ \cdots \\ X_3
+\end{bmatrix}\ , \ \ \underline{\mathbf{\mu}}=\begin{bmatrix}
+\mu_1 \\ \mu_2 \\ \cdots \\ \mu_3
+\end{bmatrix}\ \ \ \text{y} \ \ \ \mathbf{\Sigma}=\begin{bmatrix}
+\sigma_{11} &amp; \sigma_{12} &amp; \vdots &amp; \sigma_{13}\\
+\sigma_{21} &amp; \sigma_{22}&amp; \vdots &amp; \sigma_{23}\\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots\\
+\sigma_{31} &amp;\sigma_{32} &amp; \vdots &amp; \sigma_{33}
+\end{bmatrix}=\begin{bmatrix}
+4 &amp; 1 &amp; \vdots &amp; 0\\
+1 &amp; 3&amp; \vdots &amp; 0\\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots\\
+0 &amp;0 &amp; \vdots &amp; 2
+\end{bmatrix}
+\]</span>
+<span class="math display">\[
+\text{luego para}:\  \  \ \underline{\mathbf{x}}^{(1)}=\begin{bmatrix}
+X_1 \\ X_3
+\end{bmatrix}\  \ \text{y} \ \ \underline{\mathbf{x}}^{(2)}=\begin{bmatrix} X_3
+\end{bmatrix}
+\]</span>
+<span class="math display">\[
+\text{se tiene:} \ \ \ \mathbf{\Sigma}_{12}=Cov\left(\underline{\mathbf{x}}^{(1)}\ , \ \underline{\mathbf{x}}^{(2)}\right)=\begin{bmatrix}
+\sigma_{13} \\ \sigma_{23}
+\end{bmatrix}=\begin{bmatrix}
+0\\0
+\end{bmatrix}
+\]</span>
+por lo tanto, si son independientes.</p>
+<p>b). Si <span class="math inline">\(\underline{\mathbf{x}}^{(1)} \perp \underline{\mathbf{x}}^{(2)}\)</span>  tales que:  </p>
+<p><span class="math display">\[
+\underline{\mathbf{x}}^{(1)} \sim  N_q\left(\underline{\mu}^{(1)}\ , \ \mathbf{\Sigma}_{11}\right) \ \ \ \text{y} \ \ \ \underline{\mathbf{x}}^{(2)} \sim  N_q\left(\underline{\mu}^{(2)}\ , \ \mathbf{\Sigma}_{22}\right)
+\]</span></p>
+<p>entonces,
+<span class="math display" id="eq:prop-5b">\[\begin{equation}
+\underline{\mathbf{x}}=\begin{bmatrix}
+\underline{\mathbf{x}}^{(1)} \\ \cdots \\ \underline{\mathbf{x}}^{(2)}
+\end{bmatrix} \sim N_{p} \begin{bmatrix}
+\begin{pmatrix}
+\underline{\mu}^{(1)} \\ \cdots \\ \underline{\mu}^{(2)}
+\end{pmatrix} \ , \ \begin{pmatrix}
+\mathbf{\Sigma}_{11} &amp; | &amp; O \\
+-- &amp; -- &amp; -- \\
+O &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{pmatrix}
+\end{bmatrix}
+\tag{3.6}
+\end{equation}\]</span></p>
+<p>c). Si <span class="math inline">\(\underline{\mathbf{x}}^{(1)} \perp \underline{\mathbf{x}}^{(2)}\)</span>  ,  </p>
+<p><span class="math display">\[
+\underline{\mathbf{x}}^{(1)} \sim  N_q\left(\underline{\mu}^{(1)}\ , \ \mathbf{\Sigma}_{11}\right) \ \ \ \text{y} \ \ \ \underline{\mathbf{x}}^{(2)} \sim  N_q\left(\underline{\mu}^{(2)}\ , \ \mathbf{\Sigma}_{22}\right)
+\]</span></p>
+<p>Además:
+<span class="math display" id="eq:prop-5c">\[\begin{equation}
+\underline{\mathbf{x}}^{(1)}+\underline{\mathbf{x}}^{(2)} \sim N_{k} \left(\underline{\mu}^{(1)}+\underline{\mu}^{(2)} \ , \ \mathbf{\Sigma}_{11}+\mathbf{\Sigma}_{22} \right), \ \ \text{si} \ \ q=p-q=k
+\tag{3.7}
+\end{equation}\]</span></p>
+<div class="proof">
+<p><span id="unlabeled-div-7" class="proof"><em>Demostración</em>. </span>Para esto se usarán la FGM de un vector normal-multivariado dada por:</p>
+</div>
+<p><span class="math display">\[
+M_{\underline{\mathbf{x}}}(\underline{t}):=E[e^{\underline{t}^t\underline{\mathbf{x}}}]={\text{ $e$}}^{\underline{t}^t\underline{\mu} +\frac{1}{2}\underline{t}^t\mathbf{\Sigma}\underline{t}}, \ \ \underline{t} \in \mathbb{R}^p
+\]</span>
+Sean <span class="math inline">\(\underline{\mathbf{x}}^{(1)} \perp \underline{\mathbf{x}}^{(2)}\ , \  \underline{\mathbf{x}}^{(1)} \sim N_q\left(\underline{\mu}^{(1)}\ , \ \mathbf{\Sigma}_{11}\right) \ \ \ \text{y} \ \ \ \underline{\mathbf{x}}^{(2)} \sim N_q\left(\underline{\mu}^{(2)}\ , \ \mathbf{\Sigma}_{22}\right)\)</span></p>
+<p><span class="math display">\[\begin{align*}
+M_{\underline{\mathbf{x}}^{(1)}+\underline{\mathbf{x}}^{(2)}}(\underline{t})&amp;:=E\left[e^{\underline{t}^t
+\left(\underline{\mathbf{x}}^{(1)}+\underline{\mathbf{x}}^{(2)}\right)} \right]\\
+&amp;=E\left[e^{\underline{t}^t\underline{\mathbf{x}}^{(1)}}
+e^{\underline{t}^t\underline{\mathbf{x}}^{(2)})} \right]\\
+&amp;=E\left[e^{\underline{t}^t\underline{\mathbf{x}}^{(1)}}\right] E\left[
+e^{\underline{t}^t\underline{\mathbf{x}}^{(2)})} \right]\ , \ \text{pues}\ \  \ \underline{\mathbf{x}}^{(1)} \perp \underline{\mathbf{x}}^{(2)}\\
+&amp;=M_{\underline{\mathbf{x}}^{(1)}}(\underline{t})M_{\underline{\mathbf{x}}^{(2)}}(\underline{t})\\
+&amp;={\text{ $e$}}^{\underline{t}^t\underline{\mu}^{(1)} +\frac{1}{2}\underline{t}^t\mathbf{\Sigma}_{11}\underline{t}}{\text{ $e$}}^{\underline{t}^t\underline{\mu}^{(2)} +\frac{1}{2}\underline{t}^t\mathbf{\Sigma}_{22}\underline{t}}\\
+&amp;={\text{ $e$}}^{\underline{t}^t\underline{\mu}^{(1)}+{\underline{t}^t\underline{\mu}^{(2)} +\frac{1}{2}\underline{t}^t\mathbf{\Sigma}_{11}\underline{t}} +\frac{1}{2}\underline{t}^t\mathbf{\Sigma}_{22}\underline{t}}\\
+&amp;={\text{ $e$}}^{\underline{t}^t \left( \underline{\mu}^{(1)}+\underline{\mu}^{(2)}\right) +\frac{1}{2}\underline{t}^t  \left( \mathbf{\Sigma}_{11}+\mathbf{\Sigma}_{22}\right)\underline{t}}
+\end{align*}\]</span>
+lo cual corresponde a la FGM de un vector aleatorio normal multivariado con vector de medias <span class="math inline">\(\underline{\mu}^{(1)}+\underline{\mu}^{(2)}\)</span> y matriz de varianzas covarianzas <span class="math inline">\(\mathbf{\Sigma}_{11}+\mathbf{\Sigma}_{22}\)</span>, es decir:
+<span class="math display">\[
+\underline{\mathbf{x}}^{(1)}+\underline{\mathbf{x}}^{(2)} \sim N_{k} \left(\underline{\mu}^{(1)}+\underline{\mu}^{(2)} \ , \ \mathbf{\Sigma}_{11}+\mathbf{\Sigma}_{22} \right)\ , \ \ \ l.q.q.d
+\]</span></p>
+<p>Demostración de 5(a) y 5(b); ver Ejercicio 4.14 del libro de Johnson, sixth edition <span class="citation">(<a href="#ref-johnson2007applied" role="doc-biblioref">Johnson and Wichern 2007</a>)</span>.</p>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Propiedad-6:</strong></li>
+</ol>
+<p><span class="math display">\[
+\text{Si,} \ \ \ \ \ \underline{\mathbf{x}}=\begin{bmatrix} \underline{\mathbf{x}}^{(1)} \\ \cdots \\ \underline{\mathbf{x}}^{(2)} \end{bmatrix} \sim N_{p} \begin{bmatrix} \begin{pmatrix} \underline{\mu}^{(1)} \\ \cdots \\ \underline{\mu}^{(2)} \end{pmatrix} \ , \ \begin{pmatrix} \mathbf{\Sigma}_{11} &amp; | &amp; \mathbf{\Sigma}_{12} \\ -- &amp; -- &amp; -- \\ \mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{\Sigma}_{22} \end{pmatrix} \end{bmatrix},\  \text{con} \  |\mathbf{\Sigma}_{22}|&gt;0
+\]</span></p>
+<p>entonces, la distribución condicional de <span class="math inline">\(\underline{\mathbf{x}}^{(1)}\)</span>
+dado <span class="math inline">\(\underline{\mathbf{x}}^{(2)}\)</span> esta dada por:
+<span class="math display" id="eq:prop-6a">\[\begin{equation}
+\underline{\mathbf{x}}^{(1)}|\underline{\mathbf{x}}^{(2)}=\underline{\mathbf{x}}^{(2)} \sim N_q \left[
+\underline{\mu}^{(1)}+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\left(\underline{\mathbf{x}}^{(2)}-
+\underline{\mu}^{(2)}\right)  \ , \   \mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}  \right]
+\tag{3.8}
+\end{equation}\]</span>
+es decir:
+<span class="math display">\[
+E\left[\underline{\mathbf{x}}^{(1)}|\underline{\mathbf{x}}^{(2)}=\underline{\mathbf{x}}^{(2)}\right]=\underline{\mu}^{(1)}+
+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\left(\underline{\mathbf{x}}^{(2)}-
+\underline{\mu}^{(2)}\right)
+\]</span>
+y
+<span class="math display">\[
+Var\left[\underline{\mathbf{x}}^{(1)}|\underline{\mathbf{x}}^{(2)}=\underline{\mathbf{x}}^{(2)}]\right]=
+\mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}
+\]</span>
+De manera similar, si <span class="math inline">\(|\mathbf{\Sigma}_{11}|&gt;0\)</span>, entonces:
+<span class="math display" id="eq:prop-6b">\[\begin{equation}
+\underline{\mathbf{x}}^{(2)}|\underline{\mathbf{x}}^{(1)}=\underline{\mathbf{x}}^{(1)} \sim N_{p-q} \left[ \underline{\mu}^{(2)}+\mathbf{\Sigma}_{21}\mathbf{\Sigma}_{11}^{-1}\left(\underline{\mathbf{x}}^{(1)}-
+\underline{\mu}^{(1)}\right) \ , \   \mathbf{\Sigma}_{22}-\mathbf{\Sigma}_{21}\mathbf{\Sigma}_{11}^{-1}\mathbf{\Sigma}_{12}  \right]
+\tag{3.9}
+\end{equation}\]</span></p>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Demostración</em>. </span>Considere la matriz <span class="math inline">\(p\times p\)</span> dada por:</p>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=\begin{bmatrix}
+\mathbf{I}_{q\times q} &amp; | &amp; {\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}_{q\times (p-q)} \\
+----- &amp; -- &amp; ----- \\
+\mathbf{0}_{(p-q)\times q} &amp; | &amp; \mathbf{I}_{(p-q)\times (p-q)}
+\end{bmatrix}_{p \times p}
+\]</span>
+teniendo en cuenta que:
+<span class="math display">\[
+(\underline{X}-\underline{\mu})\sim N_p (\underline{0}\ , \ \mathbf{\Sigma})
+\]</span></p>
+<p>se tiene que:
+<span class="math display">\[\begin{align*}
+\underline{Z}_{p\times 1}=\mathbf{A}(\underline{X}-\underline{\mu})&amp;=
+\begin{bmatrix}
+\mathbf{I}_{q\times q} &amp; | &amp; {\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}_{q\times (p-q)} \\
+----- &amp; -- &amp; ----- \\
+\mathbf{0}_{(p-q)\times q} &amp; | &amp; \mathbf{I}_{(p-q)\times (p-q)}
+\end{bmatrix}\begin{bmatrix}
+\underline{X}^{(1)}-\underline{\mu}^{(1)} \\ \\
+\underline{X}^{(2)}-\underline{\mu}^{(2)}
+\end{bmatrix} \\ \\
+&amp;=\begin{bmatrix}
+\underline{X}^{(1)}-\underline{\mu}^{(1)}{\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}\left(\underline{X}^{(2)}-\underline{\mu}^{(2)}\right)\\ \\
+\underline{X}^{(2)}-\underline{\mu}^{(2)}
+\end{bmatrix} \sim N_p (\underline{\mu}_{\underline{Z}} \ , \ \mathbf{\Sigma}_{\underline{Z}})
+\end{align*}\]</span></p>
+<p>con
+<span class="math display">\[
+\underline{\mu}_{\underline{Z}}=\mathbf{A}\underline{0}=\underline{0}
+\]</span></p>
+<p>y
+<span class="math display">\[
+\mathbf{\Sigma}_{\underline{Z}}=\mathbf{A}\mathbf{\Sigma}\mathbf{A}^t
+\]</span>
+<span class="math display">\[\begin{align*}
+\mathbf{A}\mathbf{\Sigma}\mathbf{A}^t&amp;=\begin{bmatrix}
+\mathbf{I} &amp; | &amp; {\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}} \\
+----- &amp; -- &amp; ----- \\
+\mathbf{0} &amp; | &amp; \mathbf{I}
+\end{bmatrix}\begin{bmatrix}
+\mathbf{\Sigma}_{11} &amp; | &amp; \mathbf{\Sigma}_{12} \\
+-- &amp; -- &amp; -- \\
+\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{bmatrix}\mathbf{A}^t \\ \\
+&amp; = \begin{bmatrix}
+\mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{0} \\
+----- &amp; -- &amp; ----- \\
+\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{bmatrix} \begin{bmatrix}
+\mathbf{I} &amp; | &amp; \mathbf{0}  \\
+---- &amp; -- &amp; ---- \\
+-\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}&amp; | &amp; \mathbf{I}
+\end{bmatrix} \\ \\
+&amp;= \begin{bmatrix}
+\mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21} &amp; | &amp; \mathbf{0} \\
+----- &amp; -- &amp; ----- \\
+\mathbf{0} &amp; | &amp; \mathbf{\Sigma}_{22}
+\end{bmatrix}
+\end{align*}\]</span></p>
+<p>de lo anterior se tiene que como los vectores aleatorios:
+<span class="math display">\[
+\underline{X}^{(1)}-\underline{\mu}^{(1)}{\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}\left(\underline{X}^{(2)}-\underline{\mu}^{(2)}\right) \ \ \ \text{y} \ \ \
+\underline{X}^{(2)}-\underline{\mu}^{(2)}
+\]</span></p>
+<p>tienen matriz de var-cov <span class="math inline">\(\mathbf{0}\)</span>, entonces son independientes, y además se cumple que:
+<span class="math display">\[
+\underline{X}^{(1)}-\underline{\mu}^{(1)}{\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}\left[\underline{X}^{(2)}-\underline{\mu}^{(2)}\right] \sim N_p \left(\underline{\mathbf{0}}\ , \ \mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}\right)
+\]</span></p>
+<p>y al ser
+<span class="math display">\[
+\underline{X}^{(1)}-\underline{\mu}^{(1)}{\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}\left(\underline{X}^{(2)}-\underline{\mu}^{(2)}\right) \ \ \ \text{y} \ \ \
+\underline{X}^{(2)}-\underline{\mu}^{(2)}
+\]</span></p>
+<p>independientes, entonces la distribución condicional de:
+<span class="math display">\[
+\underline{X}^{(1)}-\underline{\mu}^{(1)}{\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}\left(\underline{X}^{(2)}-\underline{\mu}^{(2)}\right) \ \ \ \text{dado} \ \ \
+\underline{X}^{(2)}-\underline{\mu}^{(2)}
+\]</span></p>
+<p>es igual a la marginal de:
+<span class="math display">\[
+\underline{X}^{(1)}-\underline{\mu}^{(1)}{\mathbf{-\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}}\left(\underline{X}^{(2)}-\underline{\mu}^{(2)}\right)
+\]</span></p>
+<p>cunado <span class="math inline">\(\underline{X}^{(2)}\)</span> toma un valor fijo, es decir,
+<span class="math display">\[
+\underline{X}^{(1)}|\underline{X}^{(2)}=\underline{X}^{(2)} \sim N_q \left[ \underline{\mu}^{(1)}+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\left(\underline{X}^{(2)}-
+\underline{\mu}^{(2)}\right)  \ , \   \mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}  \right]
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo1-prop-6" class="example"><strong>Ejemplo 3.8  </strong></span>Distribución condicional de una Normal-Bivariada.</p>
+</div>
+<p>Sea
+<span class="math display">\[
+\underline{\mathbf{x}}=\begin{bmatrix} X_1 \\ X_2 \end{bmatrix} \sim N_{2} \begin{bmatrix} \begin{bmatrix} \mu_{1} \\ \mu_{2} \end{bmatrix} \ , \ \begin{pmatrix} \sigma_{11} &amp; | &amp; \sigma_{12} \\ -- &amp; -- &amp; -- \\ \sigma_{21} &amp; | &amp; \sigma_{22} \end{pmatrix} \end{bmatrix},\  \text{con} \  \sigma_{22}&gt;0
+\]</span></p>
+<p>luego, la distribución condicional de <span class="math inline">\(X_1 | X_2\)</span> esta dada por:
+<span class="math display">\[
+X_1 | X_2=x_2 \sim N_1 \left(\mu_1+\frac{\sigma_{12}}{\sigma_{22}}(x_2-\mu_2)\ , \ \sigma_{11}-\frac{\sigma_{12}}{\sigma_{22}}\sigma_{21} \right)
+\]</span></p>
+<p>pues,
+<span class="math display">\[
+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}=\sigma_{12}\sigma_{22}^{-1}=\frac{\sigma_{12}}{\sigma_{22}} \ , \ \ \text{y} \ \
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}=\sigma_{11}-
+\sigma_{12}\sigma_{22}^{-1}\sigma_{21}=\sigma_{11}-\frac{\sigma_{12}}{\sigma_{22}}\sigma_{21}
+\]</span></p>
+<p>y como,
+<span class="math inline">\(\rho_{12}=\frac{\sigma_{12}}{\sqrt{\sigma_{11}}\sqrt{\sigma_{22}}}\)</span>, es decir: <span class="math inline">\(\sqrt{\sigma_{11}}\rho_{12} =\frac{\sigma_{12}}{\sqrt{\sigma_{22}}}\)</span>,</p>
+<p>luego:
+<span class="math display">\[
+\frac{\sigma_{12}}{\sigma_{22}}=\frac{\sqrt{\sigma_{11}}}{\sqrt{\sigma_{22}}}\rho_{12}
+\]</span></p>
+<p>y
+<span class="math display">\[
+\sigma_{11}-\frac{\sigma_{12}}{\sigma_{22}}\sigma_{21}=\sigma_{11}\left[ 1 - \rho_{12}^2\right]
+\]</span></p>
+<p>es decir:
+<span class="math display">\[\begin{align*}
+X_1 | X_2=x_2 &amp; \sim N_1 \left(\mu_1+\frac{\sqrt{\sigma_{11}}}{\sqrt{\sigma_{22}}}\rho_{12}(x_2-\mu_2)\ , \ \sigma_{11}\left[ 1 - \rho_{12}^2\right] \right)\\
+&amp; \sim N_1 \left(\underset{a_0}{\underbrace{ \mu_1-\frac{\sqrt{\sigma_{11}}}{\sqrt{\sigma_{22}}}\rho_{12}\mu_2}}+ \underset{b}{\underbrace{\frac{\sqrt{\sigma_{11}}}{\sqrt{\sigma_{22}}}\rho_{12}}}x_2\ , \ \sigma_{11}\left[ 1 - \rho_{12}^2\right] \right)\\
+&amp;\\
+X_1 | X_2=x_2&amp;\sim N_1 \left(a_0+b x_2\ , \ \sigma_{11}\left[ 1 - \rho_{12}^2\right] \right)
+\end{align*}\]</span></p>
+<p>de donde se observa que la media de la distribución condicional de <span class="math inline">\(X_1 | X_2=x_2\)</span>, corresponde a la ecuación de una línea recta con intecepto <span class="math inline">\(a_0\)</span> y pendiente <span class="math inline">\(b\)</span>, ie. la ecuación del modelo de regresión lineal de <span class="math inline">\(X_1\)</span> v.s <span class="math inline">\(X_2\)</span>.</p>
+<p><strong>Observaciones:</strong></p>
+<ul>
+<li><p>En regresión multivariada, la media condicional
+<span class="math display">\[
+\underline{\mu}_{1.2}=E[\underline{X}^{(1)} |\underline{X}^{(2)}]
+\]</span>
+es llamada la curva de regresión.</p></li>
+<li><p>Entonces la curva de regresión en la normal multivariada, <span class="math inline">\(\underline{\mu}_{1.2}=E[\underline{X}^{(1)} |\underline{X}^{(2)}]\)</span>, se puede escribir como:</p></li>
+</ul>
+<p><span class="math display">\[
+E[\underline{X}^{(1)} |\underline{X}^{(2)}]=\begin{bmatrix}
+E[X_1 | X_{q+1},X_{q+2},\cdots, X_{p}]\\ \\
+E[X_2 | X_{q+1},X_{q+2},\cdots, X_{p}]\\
+\vdots  \hspace{3.5cm} \vdots    \\
+\vdots  \hspace{3.5cm} \vdots    \\
+E[X_q | X_{q+1},X_{q+2},\cdots, X_{p}]
+\end{bmatrix}=
+\underline{\mu}^{(1)}+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\left(\underline{X}^{(2)}-
+\underline{\mu}^{(2)}\right)
+\]</span></p>
+<p>Ahora sea
+<span class="math display">\[
+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}=\begin{bmatrix}
+\beta_{1,q+q} &amp; \beta_{1,q+2} &amp; \cdots &amp;\beta_{1,p}\\ \\
+\beta_{2,q+q} &amp; \beta_{2,q+2} &amp; \cdots &amp;\beta_{2,p}\\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\beta_{q,q+q} &amp; \beta_{q,q+2} &amp; \cdots &amp;\beta_{q,p}\\
+\end{bmatrix}
+\]</span></p>
+<p>entonces, la curva de regresión se puede escribir como
+<span class="math display">\[\begin{align*}
+E[\underline{X}^{(1)} |\underline{X}^{(2)}]&amp;=\underline{\mu}^{(1)}+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\left(\underline{X}^{(2)}-
+\underline{\mu}^{(2)}\right)=  \\ \\
+&amp;\begin{bmatrix}
+E[X_1 | X_{q+1},X_{q+2},\cdots, X_{p}]\\ \\
+E[X_2 | X_{q+1},X_{q+2},\cdots, X_{p}]\\
+\vdots  \hspace{3.5cm} \vdots    \\
+\vdots  \hspace{3.5cm} \vdots    \\
+E[X_q | X_{q+1},X_{q+2},\cdots, X_{p}]
+\end{bmatrix}=\begin{bmatrix}
+\mu_1 \\ \\ \mu_2 \\ \vdots \\ \vdots \\ \mu_q
+\end{bmatrix}+\begin{bmatrix}
+\beta_{1,q+q} &amp; \beta_{1,q+2} &amp; \cdots &amp;\beta_{1,p}\\ \\
+\beta_{2,q+q} &amp; \beta_{2,q+2} &amp; \cdots &amp;\beta_{2,p}\\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\beta_{q,q+q} &amp; \beta_{q,q+2} &amp; \cdots &amp;\beta_{q,p}\\
+\end{bmatrix}\begin{bmatrix}
+X_{q+1}- \mu_{q+1}\\ \\
+X_{q+2}- \mu_{q+2}\\
+\vdots \\ \vdots \\
+X_{p}- \mu_{p}\\
+\end{bmatrix}\\ \\
+&amp;= \begin{bmatrix}
+\mu_1+\beta_{1,q+q}(X_{q+1}- \mu_{q+1}) + \beta_{1,q+2}(X_{q+2}- \mu_{q+2}) + \cdots +\beta_{1,p}(X_{p}- \mu_{p})\\ \\
+\mu_2+\beta_{2,q+q}(X_{q+1}- \mu_{q+1}) + \beta_{2,q+2}(X_{q+2}- \mu_{q+2}) + \cdots +\beta_{2,p}(X_{p}- \mu_{p})\\
+\vdots  \hspace{5.0cm}   \vdots \\
+\vdots \hspace{5.0cm}    \vdots \\
+\mu_q+\beta_{q,q+q}(X_{q+1}- \mu_{q+1}) + \beta_{q,q+2}(X_{q+2}- \mu_{q+2}) + \cdots +\beta_{q,p}(X_{p}- \mu_{p})\\
+\end{bmatrix}
+\end{align*}\]</span></p>
+<p>lo anterior implica que, cuando la distribución conjunta de las variables en una regresión (dependientes e independientes) es normal multivariada, todas las curvas de regresión son lineales.</p>
+<ul>
+<li>La matriz de var-cov condicional</li>
+</ul>
+<p><span class="math display">\[
+\mathbf{\Sigma}_{1.2}=\mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}
+\]</span></p>
+<p>es constante pues no depende de los valores de las variables condicionantes. Por tanto, la curva de regresión es homocedástica.</p>
+<div class="example">
+<p><span id="exm:ejemplo-distrib-condic" class="example"><strong>Ejemplo 3.9  (Distribución Condicional) </strong></span>Suponga que <span class="math inline">\(\underline{\mathbf{x}}^{T}=(X_1,X_2,X_3) \sim N_3(\underline{\mu} \ , \ \mathbf{\Sigma} )\)</span>, donde:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mu}=\begin{bmatrix}
+2 \\ 1\\ 2
+\end{bmatrix} \ ,\ \ \text{y} \ \ \ \mathbf{\Sigma}=\begin{bmatrix}
+2 &amp; 1 &amp;1 \\
+1 &amp; 3 &amp; 0 \\
+1 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p>Hallar la distribución condicional de: <span class="math inline">\(\underline{\mathbf{x}}^{(1)} | \underline{\mathbf{x}}^{(2)}\)</span>, donde:
+<span class="math display">\[
+\underline{\mathbf{x}}^{(1)}=\begin{bmatrix}
+X_1 \\ X_2
+\end{bmatrix} \ \ \text{y} \ \ \underline{\mathbf{x}}^{(2)}=\begin{bmatrix} X_3
+\end{bmatrix}
+\]</span></p>
+<p>La distribución condicional de: <span class="math inline">\(\underline{\mathbf{x}}^{(1)} | \underline{\mathbf{x}}^{(2)}\)</span> es normal bi-variada con vector de medias:
+<span class="math display">\[
+E[\underline{\mathbf{x}}^{(1)} | \underline{\mathbf{x}}^{(2)} ]=
+\underline{\mu}^{(1)}+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\left(\underline{\mathbf{x}}^{(2)}-
+\underline{\mu}^{(2)}\right)
+\]</span></p>
+<p>y matriz de var-cov dada por:
+<span class="math display">\[
+Var(\underline{\mathbf{x}}^{(1)} | \underline{\mathbf{x}}^{(2)})=
+\mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}
+\]</span></p>
+<p>Haciendo,
+<span class="math display">\[
+\underline{\mu}=\begin{bmatrix}
+\underline{\mu}^{(1)} \\ \cdots \\ \underline{\mu}^{(2)}
+\end{bmatrix}=\begin{bmatrix}
+\mu_{1} \\ \mu_2 \\ \cdots \\ \mu_{3}
+\end{bmatrix}=\begin{bmatrix}
+\begin{pmatrix}
+2 \\ 1
+\end{pmatrix}
+\\ \cdots \\ \begin{pmatrix}
+2
+\end{pmatrix}
+\end{bmatrix}
+\]</span></p>
+<p>y
+<span class="math display">\[
+\mathbf{\Sigma}=\begin{bmatrix}
+2 &amp; 1 &amp;1 \\
+1 &amp; 3 &amp; 0 \\
+1 &amp; 0 &amp; 1
+\end{bmatrix}=\begin{pmatrix}
+\mathbf{\Sigma}_{11} &amp; | &amp; \mathbf{\Sigma}_{12} \\
+-- &amp; -- &amp; -- \\
+\mathbf{\Sigma}_{21} &amp; | &amp;\mathbf{\Sigma}_{22}
+\end{pmatrix}=\begin{bmatrix}
+\begin{pmatrix}
+2 &amp; 1 \\ 1 &amp; 3
+\end{pmatrix} &amp; \vdots &amp; \begin{pmatrix}
+1 \\ 0
+\end{pmatrix} \\
+\cdots &amp; &amp; \cdots \\
+\begin{pmatrix}
+1 &amp; 0
+\end{pmatrix} &amp; \vdots &amp; \begin{bmatrix}
+1
+\end{bmatrix}
+\end{bmatrix}
+\]</span></p>
+<p>luego,
+<span class="math display">\[
+E[\underline{\mathbf{x}}^{(1)} | \underline{\mathbf{x}}^{(2)} ]=\underline{\mu}^{(1)}+\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\left(\underline{\mathbf{x}}^{(2)}-
+\underline{\mu}^{(2)}\right)=\begin{pmatrix}
+2 \\1
+\end{pmatrix}+\begin{pmatrix}
+1 \\ 0
+\end{pmatrix} \frac{1}{1}\begin{pmatrix}
+x_3-2
+\end{pmatrix}=\begin{pmatrix}
+x_3 \\ 1
+\end{pmatrix}
+\]</span></p>
+<p>y
+<span class="math display">\[
+\hspace{-3.0cm} Var(\underline{\mathbf{x}}^{(1)} | \underline{\mathbf{x}}^{(2)})=
+\mathbf{\Sigma}_{11}-\mathbf{\Sigma}_{12}\mathbf{\Sigma}_{22}^{-1}\mathbf{\Sigma}_{21}=\begin{pmatrix}
+2 &amp; 1 \\ 1 &amp; 3
+\end{pmatrix}-\begin{pmatrix}
+1 \\ 0
+\end{pmatrix}\frac{1}{1}\begin{pmatrix}
+1 &amp; 0
+\end{pmatrix}=\begin{pmatrix}
+1 &amp; 1 \\ 1 &amp; 3
+\end{pmatrix}
+\]</span></p>
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Propiedad-7:</strong></li>
+</ol>
+<p>Sea <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span>. Si <span class="math inline">\(|\mathbf{\Sigma}|&gt;0\)</span>, entonces:
+<span class="math display" id="eq:prop-7">\[\begin{equation}
+\underline{\mathbf{z}}=\mathbf{\Sigma}^{-1/2}(\underline{\mathbf{x}} -\underline{\mu}) \sim N_p (\underline{0}\ , \ \mathbf{I}_p)
+\tag{3.10}
+\end{equation}\]</span></p>
+<p>ie, <span class="math inline">\(\underline{\mathbf{z}}\)</span>-tiene una distribución normal-multivariada estándar.</p>
+<p>La Demostración de la propiedad <a href="propiedades-de-la-distribución-normal-multivariada.html#eq:prop-7">(3.10)</a> se puede estudiarla del libro de <span class="citation">(<a href="#ref-johnson2007applied" role="doc-biblioref">Johnson and Wichern 2007</a>)</span>.</p>
+<ol start="8" style="list-style-type: decimal">
+<li><strong>Propiedad-8:</strong></li>
+</ol>
+<p>Sea <span class="math inline">\(\underline{\mathbf{x}} \sim N_p(\underline{\mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(|\mathbf{\Sigma}|&gt;0\)</span>.</p>
+<p>a.)
+<span class="math display" id="eq:prop-8a">\[\begin{equation}
+(\underline{\mathbf{x}} -\underline{\mu})^t\mathbf{\Sigma}^{-1}(\underline{\mathbf{x}} -\underline{\mu})\sim \chi_{p}^2
+\tag{3.11}
+\end{equation}\]</span></p>
+<p>b.) La distribución <span class="math inline">\(N_p(\underline{\mu}\ , \ \mathbf{\Sigma})\)</span>-asigna probabilidad de <span class="math inline">\((1-\alpha)100\%\)</span> al elipsoide determinado por:
+<span class="math display" id="eq:prop-8b">\[\begin{equation}
+\left\{\underline{\mathbf{x}}\ : \  (\underline{\mathbf{x}} -\underline{\mu})^t\mathbf{\Sigma}^{-1}(\underline{\mathbf{x}} -\underline{\mu}) \leq \chi_{\alpha;p}^2 \right\}
+\tag{3.12}
+\end{equation}\]</span></p>
+<p>donde, <span class="math inline">\(\chi_{\alpha;p}^2\)</span>-es el percentil superior <span class="math inline">\(\alpha\)</span> de la distribución <span class="math inline">\(\chi_p^2\)</span>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-9" class="proof"><em>Demostración</em>. </span>Sea</p>
+</div>
+<p><span class="math display">\[
+\underline{Z}= \mathbf{\Sigma}^{-1/2} (\underline{X} -\underline{\mu} ),
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{\Sigma}^{-1/2}\)</span> es la matriz inversa de <span class="math inline">\(\mathbf{\Sigma}^{1/2}=\mathbf{\Gamma} \Delta^{1/2}\mathbf{ \Gamma}^{t}\)</span> (llamada la
+matriz raíz cuadrada positiva de la matriz <span class="math inline">\(\mathbf{\Sigma}\)</span>).</p>
+<p>entonces, por el resultado de la prop: <a href="propiedades-de-la-distribución-normal-multivariada.html#eq:prop-7">(3.10)</a> se tiene que:
+<span class="math display">\[
+\underline{Z}= \mathbf{\Sigma}^{-1/2} (\underline{X} -\underline{\mu} ) \sim N_p (\underline{0}\ , \ \mathbf{I}_p)
+\]</span>
+luego, Las marginales de las variables del vector <span class="math inline">\(\underline{Z}\)</span> son <span class="math inline">\(N(0, 1)\)</span> e independientes.</p>
+<p>Ahora, se Considera la variable:
+<span class="math display">\[\begin{align*}
+(\underline{X}-\underline{\mu})^t\mathbf{\Sigma}^{-1}(\underline{X}-\underline{\mu})&amp;=(\underline{X}-\underline{\mu})^t\mathbf{\Sigma}^{-1/2}\mathbf{\Sigma}^{-1/2}(\underline{X}-\underline{\mu}) \\ \\
+&amp;=\left(\mathbf{\Sigma}^{-1/2} (\underline{X} -\underline{\mu} ) \right)^t \left(\mathbf{\Sigma}^{-1/2} (\underline{X} -\underline{\mu} ) \right) \\ \\
+&amp;\hspace{-3.0cm}=\underline{Z}^t\underline{Z} = \sum_{i=1}^p Z_i^2 \sim \chi_{(p)}^2
+\end{align*}\]</span></p>
+<p><strong>Observaciones:</strong></p>
+<ul>
+<li>Por el teorema de descomposición espectral de la
+matriz simétrica y definida positiva <span class="math inline">\(\mathbf{\Sigma}\)</span></li>
+</ul>
+<p><span class="math display">\[
+\mathbf{\Sigma}= \mathbf{\Gamma} \mathbf{\Delta} \mathbf{\Gamma}^t
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{\Gamma}\)</span> es una
+matriz ortogonal con los vectores propios de <span class="math inline">\(\mathbf{\Sigma}\)</span> como columnas, y <span class="math inline">\(\mathbf{\Delta}\)</span> es una matriz diagonal con los valores propios de <span class="math inline">\(\mathbf{\Sigma}\)</span> en su diagonal. Entonces,</p>
+<p><span class="math display">\[
+\mathbf{\Sigma}= \mathbf{\Gamma} \mathbf{\Delta} \mathbf{\Gamma}^t=\mathbf{\Gamma} \mathbf{\Delta}^{1/2}\mathbf{\Delta}^{1/2} \mathbf{\Gamma}^t=(\mathbf{\Gamma} \mathbf{\Delta}^{1/2}\mathbf{\Gamma}^t)(\mathbf{\Gamma}  \mathbf{\Delta}^{1/2} \mathbf{\Gamma}^t)=\mathbf{\Sigma}^{1/2}\mathbf{\Sigma}^{1/2}
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbf{\Delta}^{1/2}\)</span> es una matriz diagonal con la raíz cuadrada de los elementos de la diagonal de <span class="math inline">\(\mathbf{\Delta}\)</span> en su diagonal.</p>
+<p>A <span class="math inline">\(\mathbf{\Sigma}^{1/2}=\mathbf{\Gamma} \mathbf{\Delta}^{1/2}\mathbf{\Gamma}^t\)</span> se le llama la
+matriz raíz cuadrada positiva de la matriz <span class="math inline">\(\mathbf{\Sigma}\)</span>.</p>
+<ul>
+<li>El empleo de la matriz <span class="math inline">\(\mathbf{\Sigma}^{-1/2}\)</span> sobre el vector aleatorio <span class="math inline">\((\underline{X}-\underline{\mu})\)</span> estandariza todas las variables y elimina los efectos de correlación entre ellas.</li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li><strong>Propiedad-9:</strong></li>
+</ol>
+<p>Sean <span class="math inline">\(\underline{\mathbf{x}}_1,\underline{\mathbf{x}}_2,\ldots,\underline{\mathbf{x}}_n\)</span>, vectores aleatorios <span class="math inline">\(p\)</span>-variados mutuamente-independientes tales que:
+<span class="math display">\[
+\underline{\mathbf{x}}_i \sim N_p (\underline{\mu}_i \ , \ \mathbf{\Sigma})\ , \ \ \text{para} \ \ i=1,2,\ldots,n,
+\]</span>
+entonces:
+<span class="math display" id="eq:prop-9a">\[\begin{align}
+\underline{\mathbf{v}}_1&amp;=\sum_{i=1}^n c_i\underline{\mathbf{x}}_i
+= c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+\cdots+c_n \underline{\mathbf{x}}_n \notag \\ \\
+&amp; \sim N_{p} \left(\sum_{i=1}^n c_i \underline{\mu}_i \ , \ \left( \sum_{}^n c_i^2 \right)\mathbf{\Sigma} \right)\\ \\
+&amp; \sim N_p \left( c_1\underline{\mu}_1+c_2\underline{\mu}_2+\cdots+c_n\underline{\mu}_n \ , \ [c_1^2+c_2^2+\cdots+c_n^2]\mathbf{\Sigma} \right) \notag
+\tag{3.13}
+\end{align}\]</span></p>
+<p>además, si
+<span class="math display">\[
+\underline{\mathbf{v}}_2=\sum_{i=1}^n b_i \underline{\mathbf{x}}_i
+= b_1\underline{\mathbf{x}}_1+b_2\underline{\mathbf{x}}_2+\cdots+b_n \underline{\mathbf{x}}_n
+\]</span></p>
+<p>entonces:
+<span class="math display" id="eq:prop-9b">\[\begin{equation}
+\underline{\mathbf{v}}=\begin{bmatrix}
+\underline{\mathbf{v}}_1 \\ \cdots \\ \underline{\mathbf{v}}_2
+\end{bmatrix} \sim N_{2p} \left[ \begin{pmatrix}
+\sum_{i=1}^n c_i \underline{\mathbf{\mu}}_i \\ \cdots\cdots \\ \sum_{i=1}^n b_i \underline{\mathbf{\mu}}_i
+\end{pmatrix} \ , \ \mathbf{\Sigma}_{\underline{\mathbf{v}}_1,\underline{\mathbf{v}}_2} \right]\ , \ \ \text{donde}
+\tag{3.14}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\Sigma_{\underline{\mathbf{v}}_1,\underline{\mathbf{v}}_2}=Cov(\underline{\mathbf{v}}_1\ , \ \underline{\mathbf{v}}_2)&amp;=\begin{bmatrix}
+\left( \sum_{i=1}^n c_i^2\right) \mathbf{\Sigma} &amp; \vdots &amp;  \left( \sum_{i=1}^n b_ic_i\right) \mathbf{\Sigma} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\left( \sum_{i=1}^n b_ic_i\right) \mathbf{\Sigma} &amp; \vdots &amp; \left( \sum_{i=1}^n b_i^2\right) \mathbf{\Sigma}
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\left( \underline{c}^t\underline{c} \right) \mathbf{\Sigma} &amp; \vdots &amp;  \left( \underline{b}^t\underline{c} \right) \mathbf{\Sigma} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\left( \underline{b}^t\underline{c} \right) \mathbf{\Sigma} &amp; \vdots &amp; \left( \underline{b}^t\underline{b}\right)\mathbf{\Sigma}
+\end{bmatrix}_{2p \times 2p}
+\end{align*}\]</span></p>
+<p>y además,   <span class="math inline">\(\underline{\mathbf{v}}_1 \perp \underline{\mathbf{v}}_2\)</span>   si    <span class="math inline">\(\underline{b}^t\underline{c}=\sum_{i=1}^n b_ic_i=0\)</span>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-10" class="proof"><em>Demostración</em>. </span>Considere el vector de <span class="math inline">\(np \times 1\)</span> dado por:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mathbf{z}}=\begin{bmatrix}
+\underline{\mathbf{x}}_1 \\ \underline{\mathbf{x}}_2
+\\ \vdots \\ \vdots \\ \underline{\mathbf{x}}_n\end{bmatrix}_{np\times 1}
+\]</span></p>
+<p>por el resultado de la propiedad 5c <a href="propiedades-de-la-distribución-normal-multivariada.html#eq:prop-5c">(3.7)</a> se tiene que:
+<span class="math display">\[
+\underline{\mathbf{z}} \sim N_{np} (\underline{\mu}_{\underline{\mathbf{z}}} \ , \ \mathbf{\Sigma}_{\underline{\mathbf{z}}})
+\]</span></p>
+<p>donde,
+<span class="math display">\[
+\underline{\mu}_{\underline{\mathbf{z}}}=\begin{bmatrix}
+\underline{\mu}_1
+\\ \underline{\mu}_2 \\ \vdots \\ \vdots \\ \underline{\mu}_n\end{bmatrix}_{np \times 1} \ \ \ \ \text{y} \ \ \ \ \mathbf{\Sigma}_{\underline{\mathbf{z}}}=\begin{bmatrix}
+\mathbf{\Sigma} &amp; \mathbf{0} &amp; \cdots &amp; \mathbf{0}\\
+\mathbf{0} &amp; \mathbf{\Sigma} &amp; \cdots &amp; \mathbf{0}\\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\mathbf{0} &amp; \mathbf{0} &amp; \cdots &amp;  \mathbf{\Sigma}
+\end{bmatrix}_{np \times np}
+\]</span></p>
+<p><strong>para la parte (a):</strong></p>
+<p>Considere la matriz
+<span class="math display">\[
+\mathbf{A}=\left[c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \right]_{p\times np}
+\]</span>
+donde <span class="math inline">\(\mathbf{I}\)</span> es la matriz
+identidad de orden <span class="math inline">\(p\times p\)</span>, entonces
+<span class="math display">\[
+\mathbf{A}\underline{\mathbf{z}}=\left[c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \right]\begin{bmatrix}
+\underline{\mathbf{x}}_1 \\ \underline{\mathbf{x}}_2
+\\ \vdots \\ \vdots \\ \underline{\mathbf{x}}_n
+\end{bmatrix}=c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+\cdots+c_n \underline{\mathbf{x}}_n=\underline{\mathbf{v}}_1
+\]</span></p>
+<p>y por un resultado anterior se tiene que:
+<span class="math display">\[
+\mathbf{A}\underline{\mathbf{z}}= \underline{\mathbf{v}}_1 \sim N_p \left( \mathbf{A} \underline{\mu}_{\underline{\mathbf{z}}} \ , \ \mathbf{A} \mathbf{\Sigma}_{\underline{\mathbf{z}}} \mathbf{A}^t \right)
+\]</span></p>
+<p>donde,
+<span class="math display">\[
+\mathbf{A} \underline{\mu}_{\underline{\mathbf{z}}}=\left[c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \right]\begin{bmatrix}
+\underline{\mu}_1 \\ \underline{\mu}_2
+\\ \vdots \\ \vdots \\ \underline{\mu}_n
+\end{bmatrix}=\sum_{i=1}^n c_i \underline{\mu}_i
+\]</span></p>
+<p>y
+<span class="math display">\[\begin{align*}
+\mathbf{A} \mathbf{\Sigma}_{\underline{Z}} \mathbf{A}^t&amp;= \\
+&amp;= \left[c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \right]\begin{bmatrix}
+\mathbf{\Sigma} &amp; \mathbf{0} &amp; \cdots &amp; \mathbf{0}\\
+\mathbf{0} &amp; \mathbf{\Sigma} &amp; \cdots &amp; \mathbf{0}\\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\mathbf{0} &amp; \mathbf{0} &amp; \cdots &amp;  \mathbf{\Sigma}
+\end{bmatrix}\begin{bmatrix}
+c_1\mathbf{I} \\ c_2 \mathbf{I} \\ \vdots \\ \vdots \\ c_n \mathbf{I}
+\end{bmatrix}  \\ \\
+&amp; =\begin{bmatrix}
+c_1\mathbf{\Sigma} &amp; c_2\mathbf{\Sigma} &amp; \cdots &amp; c_n\mathbf{\Sigma}
+\end{bmatrix}   \begin{bmatrix}
+c_1\mathbf{I} \\ c_2 \mathbf{I} \\ \vdots \\ \vdots \\ c_n \mathbf{I}
+\end{bmatrix} =  \left( \sum_{i=1}^n c_i^2 \right) \mathbf{\Sigma} \ , \  \ \ \text{es decir},
+\end{align*}\]</span></p>
+<p><span class="math display">\[\underline{\mathbf{v}}_1=\sum_{i=1}^n c_i\underline{\mathbf{x}}_i \sim N_p \left( \sum_{i=1}^n c_i \underline{\mu}_i \ , \  \left( \sum_{i=1}^n c_i^2 \right) \mathbf{\Sigma} \right)\ , \ \ \ l.q.q.d
+\]</span></p>
+<p><strong>para la parte (b):</strong></p>
+<p>Sea
+<span class="math display">\[
+\mathbf{B}=\begin{bmatrix}
+c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \\ \\
+  b_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} b_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} b_n\mathbf{I}
+\end{bmatrix}_{2p \times np}
+\]</span></p>
+<p>entonces
+<span class="math display">\[
+\underline{\mathbf{v}}=\begin{bmatrix}
+\underline{\mathbf{v}}_1 \\ \\ \underline{\mathbf{v}}_2
+\end{bmatrix}= \begin{bmatrix}
+c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+\cdots+c_n \underline{\mathbf{x}}_n \\ \\
+b_1\underline{\mathbf{x}}_1+b_2\underline{\mathbf{x}}_2+\cdots+b_n \underline{\mathbf{x}}_n
+\end{bmatrix}=\begin{bmatrix}
+c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \\ \\
+  b_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} b_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} b_n\mathbf{I}
+\end{bmatrix}\begin{bmatrix}
+\underline{\mathbf{x}}_1 \\ \underline{\mathbf{x}}_2 \\ \vdots \\ \vdots \\ \underline{\mathbf{x}}_n
+\end{bmatrix}=\mathbf{B}\underline{\mathbf{z}}
+\]</span></p>
+<p>y de resultados anteriores se tiene que:
+<span class="math display">\[
+\underline{\mathbf{v}}=\mathbf{B}\underline{\mathbf{z}} \sim N_{2p} \left( \mathbf{B} \underline{\mu}_{\underline{\mathbf{z}}} \ , \ \mathbf{B}\mathbf{\Sigma}_{\underline{\mathbf{z}}} \mathbf{B}^t \right)
+\]</span></p>
+<p>donde,
+<span class="math display">\[
+\mathbf{B} \underline{\mu}_{\underline{\mathbf{z}}} = \begin{bmatrix}
+c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \\ \\
+  b_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} b_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} b_n\mathbf{I}
+\end{bmatrix}\begin{bmatrix}
+\underline{\mu}_1 \\ \underline{\mu}_2 \\ \vdots \\ \vdots \\ \underline{\mu}_n
+\end{bmatrix}=  \begin{bmatrix}
+\sum\limits_{=1}^n c_i \underline{\mathbf{\mu}}_i \\ \\ ------ \\ \\  \sum\limits_{=1}^n b_i \underline{\mathbf{\mu}}_i
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{B}\mathbf{\Sigma}_{\underline{\mathbf{z}}} \mathbf{B}^t&amp;=
+\begin{bmatrix}
+c_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{I} \\ \\
+  b_1\mathbf{I} \hspace{0.5cm}| \hspace{0.5cm} b_2\mathbf{I}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} b_n\mathbf{I}
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{\Sigma} &amp; \mathbf{0} &amp; \cdots &amp; \mathbf{0}\\
+\mathbf{0} &amp; \mathbf{\Sigma} &amp; \cdots &amp; \mathbf{0}\\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+\mathbf{0} &amp; \mathbf{0} &amp; \cdots &amp;  \mathbf{\Sigma}
+\end{bmatrix}
+\begin{bmatrix}
+c_1\mathbf{I} &amp; b_1\mathbf{I} \\ c_2\mathbf{I} &amp;b_2 \mathbf{I} \\ \vdots \\ \vdots \\ c_n\mathbf{I} &amp; b_n \mathbf{I}
+\end{bmatrix}  
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+&amp; \mathbf{\Sigma}_{\underline{\mathbf{v}}_1,\underline{\mathbf{v}}_2}=\begin{bmatrix}
+c_1\mathbf{\Sigma} \hspace{0.5cm}| \hspace{0.5cm} c_2\mathbf{\Sigma}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} c_n\mathbf{\Sigma} \\ \\
+  b_1\mathbf{\Sigma} \hspace{0.5cm}| \hspace{0.5cm} b_2\mathbf{\Sigma}  \hspace{0.5cm}| \hspace{0.5cm} \cdots  \hspace{0.5cm}| \hspace{0.5cm} b_n\mathbf{\Sigma}
+\end{bmatrix}\begin{bmatrix}
+c_1\mathbf{I} &amp; b_1\mathbf{I} \\ c_2\mathbf{I} &amp;b_2 \mathbf{I} \\ \vdots \\ \vdots \\ c_n\mathbf{I} &amp; b_n \mathbf{I}
+\end{bmatrix}  \\ \\
+&amp; =\begin{bmatrix}
+\left( \sum_{i=1}^n c_i^2\right) \mathbf{\Sigma} &amp; \vdots &amp;  \left( \sum_{i=1}^n b_ic_i\right) \mathbf{\Sigma} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\left( \sum_{i=1}^n b_ic_i\right) \mathbf{\Sigma} &amp; \vdots &amp; \left( \sum_{i=1}^n b_i^2\right) \mathbf{\Sigma}
+\end{bmatrix}=\begin{bmatrix}
+\left( \underline{c}^t\underline{c} \right) \mathbf{\Sigma} &amp; \vdots &amp;  \left( \underline{b}^t\underline{c} \right) \mathbf{\Sigma} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\left( \underline{b}^t\underline{c} \right) \mathbf{\Sigma} &amp; \vdots &amp; \left( \underline{b}^t\underline{b}\right)\mathbf{\Sigma}
+\end{bmatrix}_{2p \times 2p}
+\end{align*}\]</span></p>
+<p>es decir que,
+<span class="math display">\[
+\underline{\mathbf{v}}=\begin{bmatrix}
+\underline{\mathbf{v}}_1 \\ \cdots \\ \underline{\mathbf{v}}_2
+\end{bmatrix} \sim N_{2p} \left[ \begin{pmatrix}
+\sum_{i=1}^n c_i \underline{\mathbf{\mu}}_i \\ \cdots\cdots \\ \sum_{i=1}^n b_i \underline{\mathbf{\mu}}_i
+\end{pmatrix} \ , \ \mathbf{\Sigma}_{\underline{\mathbf{v}}_1,\underline{\mathbf{v}}_2} \right]
+\]</span></p>
+<p><strong>para la parte (c):</strong> Es evidente por resultado de la propiedad 5b <a href="propiedades-de-la-distribución-normal-multivariada.html#eq:prop-5b">(3.6)</a>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-dist-cl-vect-aleat" class="example"><strong>Ejemplo 3.10  (Distribuciones de CL de Vectores Aleatorios) </strong></span>Suponga que <span class="math inline">\(\underline{\mathbf{x}}_1,\underline{\mathbf{x}}_2,\underline{\mathbf{x}}_3,\underline{\mathbf{x}}_4\)</span>, son vectores aleatorios <span class="math inline">\(3\)</span>-variados independientes e idénticamente distribuidos, ie. <span class="math inline">\(\underline{\mathbf{x}}_i=(X_1,X_2,X_3)^t\)</span>, con:</p>
+</div>
+<p><span class="math display">\[
+\underline{\mu}=E[\underline{\mathbf{x}}_i]=\begin{bmatrix}
+3 \\ -1 \\ 1
+\end{bmatrix}\ , \ \ \text{y} \ \ \ \mathbf{\Sigma}=Var[\underline{\mathbf{x}}_i]=\begin{bmatrix}
+3 &amp; -1 &amp; 1 \\ -1 &amp; 1 &amp; 0 \\ 1 &amp;0 &amp;2
+\end{bmatrix}
+\]</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Hallar la media y varianza de:
+<span class="math display">\[
+\underline{a}^t\underline{\mathbf{x}}_1=a_1X_1+a_2X_2+a_3X_3.
+\]</span></p></li>
+<li><p>Hallar la media y varianza de:
+<span class="math display">\[
+c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+
+c_3\underline{\mathbf{x}}_3+
+c_4\underline{\mathbf{x}}_4=\frac{1}{2}\underline{\mathbf{x}}_1+
+\frac{1}{2}\underline{\mathbf{x}}_2+\frac{1}{2}\underline{\mathbf{x}}_3+\frac{1}{2}\underline{\mathbf{x}}_4
+\]</span></p></li>
+<li><p>Hallar la media y varianza de:
+<span class="math display">\[
+\begin{bmatrix}
+c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+
+c_3\underline{\mathbf{x}}_3+
+c_4\underline{\mathbf{x}}_4\\  \underline{\mathbf{x}}_1+\underline{\mathbf{x}}_2+
+\underline{\mathbf{x}}_3-3\underline{\mathbf{x}}_4.
+\end{bmatrix}
+\]</span></p></li>
+</ol>
+<div class="solution">
+<p><span id="unlabeled-div-11" class="solution"><em>Solución</em>. </span>Se procede como sigue:</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>La distribución de:
+<span class="math display">\[
+\underline{a}^t\underline{\mathbf{x}}_1=a_1X_1+a_2X_2+a_3X_3.
+\]</span>
+Una combinación lineal de las componentes de un vector aleatorio, ie. una c.l de variables, lo cual es solo una variable aleatoria, por lo tanto se tiene que:</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+E[\underline{a}^t\underline{\mathbf{x}}_1]&amp;=E[a_1X_1+a_2X_2+a_3X_3]\\ \\
+&amp;=a_1E[X_1]+a_2E[X_2]+a_3E[X_3]\\ \\
+&amp;=3a_1-a_2+a_3,
+\end{align*}\]</span></p>
+<p>y
+<span class="math display">\[\begin{align*}
+Var[\underline{a}^t\underline{\mathbf{x}}_1]&amp;=Var[a_1X_1+a_2X_2+a_3X_3]\\ \\
+&amp;=a_1^2Var[X_1]+a_2^2Var[X_2]+a_3^2Var[X_3]\\ \\
+&amp;+2a_1a_2Cov(X_1,X_2)+2a_1a_3Cov(X_1,X_3)+
+2a_2a_3Cov(X_2,X_3)\\ \\
+&amp;=3a_1^2+a_2^2+2a_3^2-2a_1a_2+2a_1a_3\\ \\
+&amp;=\underline{a}^t\mathbf{\Sigma} \underline{a}.
+\end{align*}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>La media y varianza de:</li>
+</ol>
+<p><span class="math display">\[
+c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+
+c_3\underline{\mathbf{x}}_3+
+c_4\underline{\mathbf{x}}_4=\frac{1}{2}\underline{\mathbf{x}}_1+
+\frac{1}{2}\underline{\mathbf{x}}_2+\frac{1}{2}\underline{\mathbf{x}}_3+\frac{1}{2}\underline{\mathbf{x}}_4
+\]</span></p>
+<p>En este caso se tiene un combinación lineal de vectores, lo cual a su vez es un vector aleatorio, por lo tanto:
+<span class="math display">\[\begin{align*}
+E[c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+
+c_3\underline{\mathbf{x}}_3+
+c_4\underline{\mathbf{x}}_4]&amp;=c_1E[\underline{\mathbf{x}}_1]+
+c_2E[\underline{\mathbf{x}}_2]+c_3E[\underline{\mathbf{x}}_3]+
+c_4E[\underline{\mathbf{x}}_4]\\ \\
+&amp;=\sum_{i=1}^n c_i \underline{\mu}_i\\ \\
+&amp;=c_1\underline{\mu}+c_2\underline{\mu}+c_3\underline{\mu}+
+c_4\underline{\mu}\\
+&amp;=(c_1+c_2+c_3+c_4)\underline{\mu}\\ \\
+&amp;=\left(\frac{1}{2}+\frac{1}{2}+\frac{1}{2}+\frac{1}{2}\right)\underline{\mu}\\ \\
+&amp;=2\underline{\mu}=2\begin{bmatrix}
+3 \\ -1 \\ 1
+\end{bmatrix}=\begin{bmatrix}
+6 \\-2 \\2
+\end{bmatrix}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+Var[c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+
+c_3\underline{\mathbf{x}}_3+
+c_4\underline{\mathbf{x}}_4]
+&amp;=c_1^2Var[\underline{\mathbf{x}}_1]+
+c_2^2Var[\underline{\mathbf{x}}_2]+c_3^2Var[\underline{\mathbf{x}}_3]
++c_4^2Var[\underline{\mathbf{x}}_4]\\ \\
+&amp;=c_1^2\mathbf{\Sigma}+c_2^2\mathbf{\Sigma}+c_3^2\mathbf{\Sigma}+
+c_4^2\mathbf{\Sigma}\\ \\
+&amp;=\left( \sum_{i=1}^n c_i^2 \right)\mathbf{\Sigma}\\ \\
+&amp;=(c_1^2+c_2^2+c_3^2+c_4^2)\mathbf{\Sigma}\\ \\
+&amp;=\left(\frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4}\right)\mathbf{\Sigma}\\ \\
+&amp;=1 \times \mathbf{\Sigma}\\  \\
+&amp;=\mathbf{\Sigma}\\ \\
+&amp;=\begin{bmatrix}
+3 &amp; -1 &amp; 1\\ -1 &amp; 1 &amp;0 \\ 1 &amp; 0&amp; 2
+\end{bmatrix}
+\end{align*}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>La media y varianza de:</li>
+</ol>
+<p><span class="math display">\[
+\underline{\mathbf{v}}=\begin{bmatrix}
+c_1\underline{\mathbf{x}}_1+c_2\underline{\mathbf{x}}_2+
+c_3\underline{\mathbf{x}}_3+
+c_4\underline{\mathbf{x}}_4\\ \\  b_1\underline{\mathbf{x}}_1+b_2\underline{\mathbf{x}}_2+
+b_3\underline{\mathbf{x}}_3+b_4\underline{\mathbf{x}}_4
+\end{bmatrix}=\begin{bmatrix}
+\frac{1}{2}\underline{\mathbf{x}}_1+
+\frac{1}{2}\underline{\mathbf{x}}_2+\frac{1}{2}\underline{\mathbf{x}}_3+\frac{1}{2}\underline{\mathbf{x}}_4 \\ \\
+\underline{\mathbf{x}}_1+\underline{\mathbf{x}}_2+
+\underline{\mathbf{x}}_3-3\underline{\mathbf{x}}_4
+\end{bmatrix}=\begin{bmatrix}
+\underline{\mathbf{v}}_1 \\ \\ \underline{\mathbf{v}}_2
+\end{bmatrix}_{6 \times 1}
+\]</span></p>
+<p>Sea</p>
+<p><span class="math display">\[
+\underline{\mathbf{v}}=\begin{bmatrix} \underline{\mathbf{v}}_1 \\ \\ \underline{\mathbf{v}}_2 \end{bmatrix}
+\]</span></p>
+<p>luego:
+<span class="math display">\[\begin{align*}
+Var [\underline{\mathbf{v}}]&amp;= \begin{pmatrix}
+Var(\underline{\mathbf{v}}_1) &amp; | &amp; Cov(\underline{\mathbf{v}}_1\ , \ \underline{\mathbf{v}}_2) \\
+-- &amp; -- &amp; -- \\
+Cov(\underline{\mathbf{v}}_2\ , \ \underline{\mathbf{v}}_1) &amp; | &amp; Var(\underline{\mathbf{v}}_2)
+\end{pmatrix}\\
+&amp; \\
+&amp;=\begin{bmatrix}
+\left( \sum_{i=1}^n c_i^2\right) \mathbf{\Sigma}&amp; \vdots &amp;  \left( \sum_{i=1}^n b_ic_i\right) \mathbf{\Sigma} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\left( \sum_{i=1}^n b_ic_i\right) \mathbf{\Sigma} &amp; \vdots &amp; \left( \sum_{i=1}^n b_i^2\right)\mathbf{\Sigma}
+\end{bmatrix}\\
+&amp;\\
+&amp;=\begin{bmatrix}
+\left( \underline{c}^t\underline{c} \right) \mathbf{\Sigma} &amp; \vdots &amp;  \left( \underline{b}^t\underline{c} \right) \mathbf{\Sigma} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\left( \underline{b}^t\underline{c} \right) \mathbf{\Sigma} &amp; \vdots &amp; \left( \underline{b}^t\underline{b}\right) \mathbf{\Sigma}
+\end{bmatrix}_{6 \times 6}\\
+&amp;\\
+&amp;=\begin{bmatrix}
+1 \times \mathbf{\Sigma} &amp; \vdots &amp;  0 \times \mathbf{\Sigma} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+0\times  \mathbf{\Sigma} &amp; \vdots &amp; 12 \times \mathbf{\Sigma}
+\end{bmatrix}=\begin{bmatrix}
+\mathbf{\Sigma} &amp; \vdots &amp;  \mathbf{0} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\mathbf{0} &amp; \vdots &amp; 12\mathbf{\Sigma}
+\end{bmatrix}
+\end{align*}\]</span></p>
+<p>es decir,
+<span class="math display">\[
+Var [\underline{\mathbf{v}}]= \begin{bmatrix}
+\mathbf{\Sigma} &amp; \vdots &amp;  \mathbf{0} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\mathbf{0} &amp; \vdots &amp; 12 \mathbf{\Sigma}
+\end{bmatrix}=\begin{bmatrix}
+\begin{matrix}
+3 &amp; -1 &amp; 1\\ -1 &amp; 1 &amp;0 \\ 1 &amp; 0&amp; 2
+\end{matrix} &amp; \vdots &amp;  \begin{matrix}
+0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp;0 \\ 0 &amp; 0&amp; 0
+\end{matrix} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\begin{matrix}
+0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp;0 \\ 0 &amp; 0&amp; 0
+\end{matrix} &amp; \vdots &amp; \begin{matrix}
+36 &amp; -12 &amp; 12\\ -12 &amp; 12 &amp;0 \\ 12 &amp; 0&amp; 24
+\end{matrix}
+\end{bmatrix}
+\]</span></p>
+<p><strong>Observaciones:</strong></p>
+<ul>
+<li><p>Cada componente de la primera combinación lineal es
+independiente de cada componente de la segunda
+combinación lineal.</p></li>
+<li><p>Conjuntamente las dos combinaciones lineales tienen una
+distribución normal multivariada 6-dimensional.</p></li>
+<li><p>Las dos combinaciones lineales son independientes.</p></li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+\underline{\mathbf{v}}=\begin{bmatrix}
+\underline{\mathbf{v}}_1 \\ \\ \underline{\mathbf{v}}_2
+\end{bmatrix}&amp;=\begin{bmatrix}
+\frac{1}{2}\underline{\mathbf{x}}_1+
+\frac{1}{2}\underline{\mathbf{x}}_2+\frac{1}{2}\underline{\mathbf{x}}_3+\frac{1}{2}\underline{\mathbf{x}}_4 \\ \\
+\underline{\mathbf{x}}_1+\underline{\mathbf{x}}_2+
+\underline{\mathbf{x}}_3-3\underline{\mathbf{x}}_4
+\end{bmatrix}\\ \\
+&amp;= \begin{bmatrix}
+\frac{1}{2}(\underline{\mathbf{x}}_1+
+\underline{\mathbf{x}}_2+\underline{\mathbf{x}}_3+
+\underline{\mathbf{x}}_4) \\ \\
+\underline{\mathbf{x}}_1+\underline{\mathbf{x}}_2+
+\underline{\mathbf{x}}_3-3\underline{\mathbf{x}}_4
+\end{bmatrix}\\ \\
+&amp;=\begin{bmatrix}
+\frac{1}{2}\begin{pmatrix}
+X_{11} \\ X_{12} \\ X_{13}
+\end{pmatrix}+\frac{1}{2}
+\begin{pmatrix}
+X_{21} \\ X_{22} \\ X_{23}
+\end{pmatrix}+\frac{1}{2}\begin{pmatrix}
+X_{31} \\ X_{32} \\ X_{33}
+\end{pmatrix}+\frac{1}{2}
+\begin{pmatrix}
+X_{41} \\ X_{42} \\ X_{43}
+\end{pmatrix} \\ \\
+\begin{pmatrix}
+X_{11} \\ X_{12} \\ X_{13}
+\end{pmatrix}+\begin{pmatrix}
+X_{11} \\ X_{12} \\ X_{13}
+\end{pmatrix}+
+\begin{pmatrix}
+X_{11} \\ X_{12} \\ X_{13}
+\end{pmatrix}-3\begin{pmatrix}
+X_{11} \\ X_{12} \\ X_{13}
+\end{pmatrix}
+\end{bmatrix}
+\end{align*}\]</span></p>
+<p><span class="math display">\[
+\underline{\mathbf{v}}=\begin{bmatrix}
+\underline{\mathbf{v}}_1 \\ \\\underline{\mathbf{v}}_2
+\end{bmatrix}=\begin{bmatrix}
+\frac{1}{2} \left(X_{11} + X_{21} + X_{31}+X_{41} \right) \\
+\\
+\frac{1}{2} \left(X_{12} + X_{22} + X_{32} +X_{42} \right)\\
+\\
+\frac{1}{2} \left(X_{13} + X_{23} + X_{33} + X_{43}\right)\\
+\cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots  
+\\
+X_{11} + X_{21} + X_{31}-3X_{41} \\
+\\
+X_{12} + X_{22} + X_{32} -3X_{42}  \\
+\\
+X_{13} + X_{23} + X_{33} -3X_{43}
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{\Sigma}_{\underline{\mathbf{x}}_i}=\begin{bmatrix}
+3 &amp; -1 &amp; 1\\ -1 &amp; 1 &amp;0 \\ 1 &amp; 0&amp; 2
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{\Sigma}_{\underline{\mathbf{v}}}=\begin{bmatrix}
+\begin{matrix}
+3 &amp; -1 &amp; 1\\ -1 &amp; 1 &amp;0 \\ 1 &amp; 0&amp; 2
+\end{matrix} &amp; \vdots &amp;  \begin{matrix}
+0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp;0 \\ 0 &amp; 0&amp; 0
+\end{matrix} \\
+\cdots\cdots &amp; &amp; \cdots\cdots \\
+\begin{matrix}
+0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp;0 \\ 0 &amp; 0&amp; 0
+\end{matrix} &amp; \vdots &amp; \begin{matrix}
+36 &amp; -12 &amp; 12\\ -12 &amp; 12 &amp;0 \\ 12 &amp; 0&amp; 24
+\end{matrix}
+\end{bmatrix}
+\]</span></p>
+</div>
+<h3>Bibliografía<a href="bibliografía.html#bibliografía" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-johnson2007applied" class="csl-entry">
+Johnson, Richard A, and Dean W Wichern. 2007. <em>Applied Multivariate Statistical Analysis. 6th</em>. <em>New Jersey, US: Pearson Prentice Hall</em>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="normal-multivariada.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="evaluación-del-supuesto-de-normalidad-multivariada.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

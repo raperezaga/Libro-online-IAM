@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10.3 Medidas de Similaridad entre Pares de Observaciones | Chapter 10</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10.3 Medidas de Similaridad entre Pares de Observaciones | Chapter 10" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10.3 Medidas de Similaridad entre Pares de Observaciones | Chapter 10" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="consideraciones-iniciales.html"/>
+<link rel="next" href="medidas-de-similaridad-o-asociación-para-pares-de-variables.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/kePrint/kePrint.js"></script>
+<link href="libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="descripción.html"><a href="descripción.html"><i class="fa fa-check"></i>Descripción</a></li>
+<li class="chapter" data-level="" data-path="acerca-del-autor.html"><a href="acerca-del-autor.html"><i class="fa fa-check"></i>Acerca del Autor</a></li>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep-al.html"><a href="rep-al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="acb-al.html"><a href="acb-al.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="acb-al.html"><a href="acb-al.html#matrices"><i class="fa fa-check"></i><b>1.1.1</b> Matrices</a></li>
+<li class="chapter" data-level="1.1.2" data-path="acb-al.html"><a href="acb-al.html#vectores"><i class="fa fa-check"></i><b>1.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="1.1.3" data-path="acb-al.html"><a href="acb-al.html#operaciones-matrices"><i class="fa fa-check"></i><b>1.1.3</b> Operaciones Matriciales</a></li>
+<li class="chapter" data-level="1.1.4" data-path="acb-al.html"><a href="acb-al.html#matrices-especiales"><i class="fa fa-check"></i><b>1.1.4</b> Matrices Especiales</a></li>
+<li class="chapter" data-level="1.1.5" data-path="acb-al.html"><a href="acb-al.html#descomp-espectral"><i class="fa fa-check"></i><b>1.1.5</b> Descomposición Espectral de una Matriz (eigen-descomposición)</a></li>
+<li class="chapter" data-level="1.1.6" data-path="acb-al.html"><a href="acb-al.html#diagonalización-de-una-matriz"><i class="fa fa-check"></i><b>1.1.6</b> Diagonalización de una Matriz</a></li>
+<li class="chapter" data-level="1.1.7" data-path="acb-al.html"><a href="acb-al.html#diagonalización-ortogonal"><i class="fa fa-check"></i><b>1.1.7</b> Diagonalización Ortogonal</a></li>
+<li class="chapter" data-level="1.1.8" data-path="acb-al.html"><a href="acb-al.html#diagonalizacion-inversa"><i class="fa fa-check"></i><b>1.1.8</b> Diagonalización de la Inversa de una Matriz</a></li>
+<li class="chapter" data-level="1.1.9" data-path="acb-al.html"><a href="acb-al.html#diagonalización-de-la-matriz-raíz-cuadrada"><i class="fa fa-check"></i><b>1.1.9</b> Diagonalización de la Matriz Raíz Cuadrada</a></li>
+<li class="chapter" data-level="1.1.10" data-path="acb-al.html"><a href="acb-al.html#traza-determinante-y-rango-de-una-matriz"><i class="fa fa-check"></i><b>1.1.10</b> Traza, Determinante y Rango de una Matriz</a></li>
+<li class="chapter" data-level="1.1.11" data-path="acb-al.html"><a href="acb-al.html#formas-cuadraticas"><i class="fa fa-check"></i><b>1.1.11</b> Formas Cuadráticas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="algunas-propiedades-estadísticas-de-la-descomposición-de-una-matriz-en-valores-y-vectores-propios.html"><a href="algunas-propiedades-estadísticas-de-la-descomposición-de-una-matriz-en-valores-y-vectores-propios.html"><i class="fa fa-check"></i><b>1.2</b> Algunas Propiedades Estadísticas de la Descomposición de una Matriz en Valores y Vectores Propios</a></li>
+<li class="chapter" data-level="1.3" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.3</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinemathbfx"><i class="fa fa-check"></i><b>1.3.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{\mathbf{x}})\)</span>:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>2</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html"><i class="fa fa-check"></i><b>2.1</b> Resumenes Descriptivos</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#matriz-de-datos"><i class="fa fa-check"></i><b>2.1.1</b> Matriz de Datos</a></li>
+<li class="chapter" data-level="2.1.2" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#estadísticos-descriptivos"><i class="fa fa-check"></i><b>2.1.2</b> Estadísticos descriptivos</a></li>
+<li class="chapter" data-level="2.1.3" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#algunas-notaciones"><i class="fa fa-check"></i><b>2.1.3</b> Algunas Notaciones</a></li>
+<li class="chapter" data-level="2.1.4" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#representación-gráfica-de-observaciones-multivariadas"><i class="fa fa-check"></i><b>2.1.4</b> Representación Gráfica de Observaciones multivariadas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectores-y-matrices-aleatorias.html"><a href="vectores-y-matrices-aleatorias.html"><i class="fa fa-check"></i><b>2.2</b> Vectores y Matrices Aleatorias</a></li>
+<li class="chapter" data-level="2.3" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>2.3</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>2.3.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="2.3.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>2.3.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.4</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.5" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>2.5</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>2.5.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="2.5.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>2.5.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>2.6</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="2.7" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.7</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.8" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>2.8</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.8.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.8.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.8.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.8.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>2.8.3</b> Varianza Generalizada Determinada por la Matriz de Correlación Muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="2.8.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>2.8.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="varianza-total-muestral.html"><a href="varianza-total-muestral.html"><i class="fa fa-check"></i><b>2.9</b> Varianza Total Muestral</a></li>
+<li class="chapter" data-level="2.10" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>2.10</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="2.11" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>2.11</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="distancias.html"><a href="distancias.html#dist_euclidea"><i class="fa fa-check"></i><b>2.11.1</b> Definición de Algunas Distancias</a></li>
+<li class="chapter" data-level="2.11.2" data-path="distancias.html"><a href="distancias.html#relación-de-la-distancia-de-mahalanobis-con-la-distribución-chi-cuadrado"><i class="fa fa-check"></i><b>2.11.2</b> Relación de la Distancia de Mahalanobis con la Distribución chi-Cuadrado</a></li>
+<li class="chapter" data-level="2.11.3" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>2.11.3</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>3</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>3.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="3.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>3.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="3.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>3.3</b> Normal Multivariada</a></li>
+<li class="chapter" data-level="3.4" data-path="algunos-aspectos-geométricos-de-la-nm.html"><a href="algunos-aspectos-geométricos-de-la-nm.html"><i class="fa fa-check"></i><b>3.4</b> Algunos Aspectos Geométricos de la NM</a></li>
+<li class="chapter" data-level="3.5" data-path="prop-nm.html"><a href="prop-nm.html"><i class="fa fa-check"></i><b>3.5</b> Propiedades de la distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="prop-nm.html"><a href="prop-nm.html#prop1"><i class="fa fa-check"></i><b>3.5.1</b> <strong>Propiedad-1:</strong></a></li>
+<li class="chapter" data-level="3.5.2" data-path="prop-nm.html"><a href="prop-nm.html#prop2"><i class="fa fa-check"></i><b>3.5.2</b> <strong>Propiedad-2:</strong></a></li>
+<li class="chapter" data-level="3.5.3" data-path="prop-nm.html"><a href="prop-nm.html#prop3"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Propiedad-3:</strong></a></li>
+<li class="chapter" data-level="3.5.4" data-path="prop-nm.html"><a href="prop-nm.html#prop4"><i class="fa fa-check"></i><b>3.5.4</b> <strong>Propiedad-4:</strong></a></li>
+<li class="chapter" data-level="3.5.5" data-path="prop-nm.html"><a href="prop-nm.html#prop5"><i class="fa fa-check"></i><b>3.5.5</b> <strong>Propiedad-5:</strong></a></li>
+<li class="chapter" data-level="3.5.6" data-path="prop-nm.html"><a href="prop-nm.html#prop6"><i class="fa fa-check"></i><b>3.5.6</b> <strong>Propiedad-6:</strong></a></li>
+<li class="chapter" data-level="3.5.7" data-path="prop-nm.html"><a href="prop-nm.html#prop7"><i class="fa fa-check"></i><b>3.5.7</b> <strong>Propiedad-7:</strong></a></li>
+<li class="chapter" data-level="3.5.8" data-path="prop-nm.html"><a href="prop-nm.html#prop8"><i class="fa fa-check"></i><b>3.5.8</b> <strong>Propiedad-8:</strong></a></li>
+<li class="chapter" data-level="3.5.9" data-path="prop-nm.html"><a href="prop-nm.html#prop9"><i class="fa fa-check"></i><b>3.5.9</b> <strong>Propiedad-9:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.6</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>3.6.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="3.6.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>3.6.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>3.7</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="3.8" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.8</b> Transformaciones para Acercar a la Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>3.8.1</b> Familia de Transformaciones de Potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="3.8.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>3.8.2</b> Transformaciones para el Caso Multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>3.9</b> Muestra Aleatoria Normal <span class="math inline">\(p\)</span>-Variada</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>3.9.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="3.9.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>3.9.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="3.9.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>3.9.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para Tamaños Muestrales Grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>4.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="4.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><i class="fa fa-check"></i><b>4.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>4.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>4.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>4.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>4.4</b> PH Acerca de Contrastes del Vector de Medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#ph-de-contrastes-para-el-caso-de-pnm"><i class="fa fa-check"></i><b>4.4.1</b> PH de Contrastes para el Caso de PNM</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#ph-de-contrastes-en-en-caso-de-n-grande"><i class="fa fa-check"></i><b>4.4.2</b> PH de Contrastes en en caso de <span class="math inline">\(n\)</span>-Grande</a></li>
+<li class="chapter" data-level="4.4.3" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#prueba-de-hipótesis-para-igualdad-de-medias"><i class="fa fa-check"></i><b>4.4.3</b> Prueba de hipótesis para igualdad de medias</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><i class="fa fa-check"></i><b>4.5</b> PH para Igualdad de Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}=\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-1.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-conocida"><i class="fa fa-check"></i><b>4.5.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.5.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-2.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-desconocida"><i class="fa fa-check"></i><b>4.5.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.5.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-3.-mathbfsigma_-underlinemathbfxneq-mathbfsigma_-underlinemathbfy-desconocida"><i class="fa fa-check"></i><b>4.5.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}\neq \mathbf{\Sigma}_{\ \underline{\mathbf{y}}}\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><i class="fa fa-check"></i><b>4.6</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-1.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-conocida-1"><i class="fa fa-check"></i><b>4.6.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.6.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-2.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>4.6.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.6.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-3.-mathbfsigma_-underlinemathbfx-neq-mathbfsigma_-underlinemathbfy-desconocidas"><i class="fa fa-check"></i><b>4.6.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}} \neq \mathbf{\Sigma}_{\ \underline{\mathbf{y}}}\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><i class="fa fa-check"></i><b>4.7</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span>,      Observaciones Pareadas</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#caso-univariado"><i class="fa fa-check"></i><b>4.7.1</b> Caso Univariado</a></li>
+<li class="chapter" data-level="4.7.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#caso-multivariado"><i class="fa fa-check"></i><b>4.7.2</b> Caso Multivariado</a></li>
+<li class="chapter" data-level="4.7.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#uso-de-contrastes-para-la-comparación-de-medias-en-muestras-pareadas"><i class="fa fa-check"></i><b>4.7.3</b> Uso de Contrastes para la Comparación de Medias en Muestras Pareadas</a></li>
+<li class="chapter" data-level="4.7.4" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#un-diseño-de-medidas-repetidas-para-comparar-tratamientos"><i class="fa fa-check"></i><b>4.7.4</b> Un Diseño de Medidas Repetidas para Comparar Tratamientos</a></li>
+<li class="chapter" data-level="4.7.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#análisis-de-perfiles"><i class="fa fa-check"></i><b>4.7.5</b> Análisis de Perfiles</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html"><i class="fa fa-check"></i><b>4.8</b> Inferencia para la Matriz de Varianzas Covarianza</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#prueva-de-rv-sigma"><i class="fa fa-check"></i><b>4.8.1</b> Pruba de Razón de Verosimilitud</a></li>
+<li class="chapter" data-level="4.8.2" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#prueba-de-bartlet"><i class="fa fa-check"></i><b>4.8.2</b> Prueba de Bartlet</a></li>
+<li class="chapter" data-level="4.8.3" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#dos-o-más-matrices-de-varianzas-covarianzas"><i class="fa fa-check"></i><b>4.8.3</b> Dos o más Matrices de Varianzas Covarianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><i class="fa fa-check"></i><b>4.9</b> Regiones de Confianza y Comparaciones Simultáneas entre las Componentes del Vector de Medias <span class="math inline">\(\underline{\boldsymbol \mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#construcción-de-una-región-de-confianza-para-underlineboldsymbol-mu-cuando-la-población-tiene-distribución-n_punderlineboldsymbol-mumathbfsigma-con-underlineboldsymbol-mu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>4.9.1</b> Construcción de una Región de Confianza para <span class="math inline">\(\underline{\boldsymbol \mu}\)</span> Cuando la Población tiene Distribución <span class="math inline">\(N_p(\underline{\boldsymbol \mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\boldsymbol \mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="4.9.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#región-de-confianza-para-el-caso-de-p2-elipse-de-confianza"><i class="fa fa-check"></i><b>4.9.2</b> Región de Confianza para el Caso de <span class="math inline">\(p=2\)</span> (Elipse de Confianza)</a></li>
+<li class="chapter" data-level="4.9.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlineboldsymbol-mu"><i class="fa fa-check"></i><b>4.9.3</b> Intervalos de Confianza Simultáneos para las Componentes del Vector de Medias <span class="math inline">\(\underline{\boldsymbol \mu}\)</span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#ic-t2-simultáneos-para-diferencias-de-medias"><i class="fa fa-check"></i><b>4.9.4</b> IC <span class="math inline">\(T^2\)</span> Simultáneos para Diferencias de Medias</a></li>
+<li class="chapter" data-level="4.9.5" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#IC-Bonferroni"><i class="fa fa-check"></i><b>4.9.5</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+<li class="chapter" data-level="4.9.6" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#intervalos-de-confianza-simultáneos-chi2-caso-n-grande"><i class="fa fa-check"></i><b>4.9.6</b> Intervalos de Confianza Simultáneos <span class="math inline">\(\chi^2\)</span> (caso n-Grande)</a></li>
+<li class="chapter" data-level="4.9.7" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#ic-simultáneos-para-n-grande-usando-la-normal-estándar-z_alpha"><i class="fa fa-check"></i><b>4.9.7</b> IC Simultáneos para n-Grande Usando la Normal Estándar <span class="math inline">\(Z_\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mrlm.html"><a href="mrlm.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regresión Lineal Multivariados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="rlm.html"><a href="rlm.html"><i class="fa fa-check"></i><b>5.2</b> Modelo de Regresión Lineal Múltiple (RLM)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rlm.html"><a href="rlm.html#estimación-de-mínimos-cuadrados"><i class="fa fa-check"></i><b>5.2.1</b> Estimación de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rlm.html"><a href="rlm.html#inferencias-acerca-del-modelo-de-regresión-lineal-múltiple"><i class="fa fa-check"></i><b>5.2.2</b> Inferencias Acerca del Modelo de Regresión Lineal Múltiple</a></li>
+<li class="chapter" data-level="5.2.3" data-path="rlm.html"><a href="rlm.html#inferencias-a-partir-de-la-función-de-regresión-estimada"><i class="fa fa-check"></i><b>5.2.3</b> Inferencias A partir de la Función de Regresión Estimada</a></li>
+<li class="chapter" data-level="5.2.4" data-path="rlm.html"><a href="rlm.html#validación-de-los-supuestos-del-modelo-y-otros-aspectos-del-la-regresión"><i class="fa fa-check"></i><b>5.2.4</b> Validación de los Supuestos del Modelo y Otros Aspectos del la Regresión</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mrl-multiv.html"><a href="mrl-multiv.html"><i class="fa fa-check"></i><b>5.3</b> Modelo de Regresión Lineal Multivariado (RL-Multivariado)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="mrl-multiv.html"><a href="mrl-multiv.html#algunas-notaciones-1"><i class="fa fa-check"></i><b>5.3.1</b> Algunas Notaciones</a></li>
+<li class="chapter" data-level="5.3.2" data-path="mrl-multiv.html"><a href="mrl-multiv.html#mrl-multivariado-en-forma-matricial"><i class="fa fa-check"></i><b>5.3.2</b> MRL-Multivariado en forma Matricial</a></li>
+<li class="chapter" data-level="5.3.3" data-path="mrl-multiv.html"><a href="mrl-multiv.html#m-mrl-múltiples"><i class="fa fa-check"></i><b>5.3.3</b> <span class="math inline">\(m\)</span>-MRL-Múltiples</a></li>
+<li class="chapter" data-level="5.3.4" data-path="mrl-multiv.html"><a href="mrl-multiv.html#estimador-de-mínimos-cuadrados-de-los-parámetros"><i class="fa fa-check"></i><b>5.3.4</b> Estimador de Mínimos Cuadrados de los Parámetros</a></li>
+<li class="chapter" data-level="5.3.5" data-path="mrl-multiv.html"><a href="mrl-multiv.html#propiedades-de-estimadores-de-mínimos-cuadrados-del-mrl-multivariado"><i class="fa fa-check"></i><b>5.3.5</b> Propiedades de Estimadores de Mínimos Cuadrados del MRL-Multivariado</a></li>
+<li class="chapter" data-level="5.3.6" data-path="mrl-multiv.html"><a href="mrl-multiv.html#prv-mrl-multivariado"><i class="fa fa-check"></i><b>5.3.6</b> Prueba de Razón de Verosimilitud para Parámetros de Regresión en MRL-Multivariados</a></li>
+<li class="chapter" data-level="5.3.7" data-path="mrl-multiv.html"><a href="mrl-multiv.html#otras-pruebas-estadísticas-multivariadas"><i class="fa fa-check"></i><b>5.3.7</b> Otras Pruebas Estadísticas Multivariadas</a></li>
+<li class="chapter" data-level="5.3.8" data-path="mrl-multiv.html"><a href="mrl-multiv.html#predicciones-a-partir-de-un-modelo-de-regresión-múltiple-multivariado"><i class="fa fa-check"></i><b>5.3.8</b> Predicciones A Partir de un Modelo de Regresión Múltiple Multivariado</a></li>
+<li class="chapter" data-level="5.3.9" data-path="mrl-multiv.html"><a href="mrl-multiv.html#el-concepto-de-regresión-lineal"><i class="fa fa-check"></i><b>5.3.9</b> El Concepto de Regresión Lineal</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>6</b> Análisis de Componentes Principales (ACP)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="interpretaciones-geométricas-y-algebraícas-del-acp.html"><a href="interpretaciones-geométricas-y-algebraícas-del-acp.html"><i class="fa fa-check"></i><b>6.2</b> Interpretaciones Geométricas y Algebraícas del ACP</a></li>
+<li class="chapter" data-level="6.3" data-path="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple-p2.html"><a href="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple-p2.html"><i class="fa fa-check"></i><b>6.3</b> Interpretación Geométrica del ACP Mediante un Ejemplo Simple <span class="math inline">\(p=2\)</span></a></li>
+<li class="chapter" data-level="6.4" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html"><i class="fa fa-check"></i><b>6.4</b> Mas de dos Ejes</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#min-cuadrados"><i class="fa fa-check"></i><b>6.4.1</b> Ajuste de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="6.4.2" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#relación-entre-los-sub-espacios-de-mathbbrp-y-de-mathbbrn"><i class="fa fa-check"></i><b>6.4.2</b> Relación entre los Sub-espacios de <span class="math inline">\(\mathbb{R}^p\)</span> y de <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="componentes-principales-en-análisis-de-regresión.html"><a href="componentes-principales-en-análisis-de-regresión.html"><i class="fa fa-check"></i><b>6.5</b> Componentes Principales en Análisis de Regresión</a></li>
+<li class="chapter" data-level="6.6" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>6.6</b> Componentes Principales Poblacionales</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#definicón-de-las-cps-poblacionales"><i class="fa fa-check"></i><b>6.6.1</b> Definicón de las CPs Poblacionales</a></li>
+<li class="chapter" data-level="6.6.2" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#determinación-de-las-cps-poblacionales"><i class="fa fa-check"></i><b>6.6.2</b> Determinación de las CPs Poblacionales</a></li>
+<li class="chapter" data-level="6.6.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>6.6.3</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="6.6.4" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>6.6.4</b> Componentes Principales usando Variables Estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><i class="fa fa-check"></i><b>6.7</b> Componentes Principales para Matrices de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span> con Estructuras Especiales</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-no-correlacionadas"><i class="fa fa-check"></i><b>6.7.1</b> Variables No-Correlacionadas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#var-correlacionadas"><i class="fa fa-check"></i><b>6.7.2</b> Variables Altamente Correlacionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.8</b> Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.9" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html"><i class="fa fa-check"></i><b>6.9</b> Algunos Ejemplos de ACP</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo1"><i class="fa fa-check"></i><b>6.9.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="6.9.2" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo-2"><i class="fa fa-check"></i><b>6.9.2</b> Ejemplo-2</a></li>
+<li class="chapter" data-level="6.9.3" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo-3"><i class="fa fa-check"></i><b>6.9.3</b> Ejemplo-3</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>6.10</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="6.11" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.11</b> Interpretación de las Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.12" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.12</b> Estandarización de las Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.13" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>6.13</b> Gráficas en un Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="6.13.1" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html#graficos-de-las-cps"><i class="fa fa-check"></i><b>6.13.1</b> Graficos de las CPS</a></li>
+<li class="chapter" data-level="6.13.2" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>6.13.2</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="6.14" data-path="propiedades-de-hatlambda_i-y-underlinehatmathbfe_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehatmathbfe_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>6.14</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{\mathbf{e}}}_i\)</span> en Muestras Grandes</a></li>
+<li class="chapter" data-level="6.15" data-path="prueba-de-hipótesis-para-estructura-de-correlación-igual.html"><a href="prueba-de-hipótesis-para-estructura-de-correlación-igual.html"><i class="fa fa-check"></i><b>6.15</b> Prueba de Hipótesis para Estructura de Correlación Igual</a></li>
+<li class="chapter" data-level="6.16" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html"><i class="fa fa-check"></i><b>6.16</b> Ejemplos Finales</a>
+<ul>
+<li class="chapter" data-level="6.16.1" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-1"><i class="fa fa-check"></i><b>6.16.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="6.16.2" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-acp-con-individuos-y-variables-suplementarias"><i class="fa fa-check"></i><b>6.16.2</b> Ejemplo ACP con Individuos y Variables Suplementarias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="affc.html"><a href="affc.html"><i class="fa fa-check"></i><b>7</b> Análisis Factorial de Factores Comunes</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="tipos-de-factores.html"><a href="tipos-de-factores.html"><i class="fa fa-check"></i><b>7.2</b> Tipos de Factores</a></li>
+<li class="chapter" data-level="7.3" data-path="motivación-del-análisis-factorial.html"><a href="motivación-del-análisis-factorial.html"><i class="fa fa-check"></i><b>7.3</b> Motivación del Análisis Factorial</a></li>
+<li class="chapter" data-level="7.4" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html"><i class="fa fa-check"></i><b>7.4</b> Enfoques del AF</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#métodos-para-realizar-la-extracción-de-los-factores"><i class="fa fa-check"></i><b>7.4.1</b> Métodos para realizar la extracción de los factores</a></li>
+<li class="chapter" data-level="7.4.2" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#rotación-de-ejes"><i class="fa fa-check"></i><b>7.4.2</b> Rotación de Ejes</a></li>
+<li class="chapter" data-level="7.4.3" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#puntuaciones-o-scores-de-los-sujetos-en-los-factores-extraídos"><i class="fa fa-check"></i><b>7.4.3</b> Puntuaciones o Scores de los Sujetos en los Factores Extraídos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html"><i class="fa fa-check"></i><b>7.5</b> El Modelo de Factor Ortogonal</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html#estructura-de-covarianzas-del-modelo-de-factor-ortogonal"><i class="fa fa-check"></i><b>7.5.1</b> Estructura de Covarianzas del Modelo de Factor Ortogonal</a></li>
+<li class="chapter" data-level="7.5.2" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html#ejemplos"><i class="fa fa-check"></i><b>7.5.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html"><i class="fa fa-check"></i><b>7.6</b> Métodos de Estimación</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-cp"><i class="fa fa-check"></i><b>7.6.1</b> El Método de la Componente Principal</a></li>
+<li class="chapter" data-level="7.6.2" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-pa"><i class="fa fa-check"></i><b>7.6.2</b> Una Aproximación Modificada (La Solución del Factor Principal o de las CP-Iteradas o de Ejes Principales-PA)</a></li>
+<li class="chapter" data-level="7.6.3" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-mle"><i class="fa fa-check"></i><b>7.6.3</b> El Método de Máxima Verosimilitud</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="prueba-para-el-número-de-factores-muestra-grande..html"><a href="prueba-para-el-número-de-factores-muestra-grande..html"><i class="fa fa-check"></i><b>7.7</b> Prueba para el Número de Factores (Muestra Grande).</a></li>
+<li class="chapter" data-level="7.8" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html"><i class="fa fa-check"></i><b>7.8</b> Rotación de Factores</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#rotaciones-cuando-m2-factores"><i class="fa fa-check"></i><b>7.8.1</b> Rotaciones cuando <span class="math inline">\(m=2\)</span>-Factores</a></li>
+<li class="chapter" data-level="7.8.2" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#criterio-varimáx"><i class="fa fa-check"></i><b>7.8.2</b> Criterio Varimáx:</a></li>
+<li class="chapter" data-level="7.8.3" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#rotaciones-oblicuas"><i class="fa fa-check"></i><b>7.8.3</b> Rotaciones Oblicuas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html"><i class="fa fa-check"></i><b>7.9</b> Factores-Scores (o Puntuaciones) de los Factores</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html#método-de-los-mínimos-cuadrados-ponderados"><i class="fa fa-check"></i><b>7.9.1</b> Método de los Mínimos Cuadrados Ponderados</a></li>
+<li class="chapter" data-level="7.9.2" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html#el-método-de-la-regresión"><i class="fa fa-check"></i><b>7.9.2</b> El Método de la Regresión</a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="perspectivas-y-estrategías-para-el-análisis-de-factor.html"><a href="perspectivas-y-estrategías-para-el-análisis-de-factor.html"><i class="fa fa-check"></i><b>7.10</b> Perspectivas y Estrategías para el Análisis de Factor</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="avm.html"><a href="avm.html"><i class="fa fa-check"></i><b>8</b> Análisis de Varianza Multivariado (MANOVA)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i><b>8.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="introducción-5.html"><a href="introducción-5.html#suposiciones-del-manova"><i class="fa fa-check"></i><b>8.1.1</b> Suposiciones del MANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>8.2</b> Análisis de Varianza Univariado (ANOVA)</a></li>
+<li class="chapter" data-level="8.3" data-path="manova.html"><a href="manova.html"><i class="fa fa-check"></i><b>8.3</b> Análisis de Varianza Multivariado (MANOVA)</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="manova.html"><a href="manova.html#modelo-manova-para-comparar-g-vectores-de-medias-poblacionales"><i class="fa fa-check"></i><b>8.3.1</b> Modelo MANOVA para comparar <span class="math inline">\(g\)</span>-Vectores de Medias Poblacionales</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="adiscriminante.html"><a href="adiscriminante.html"><i class="fa fa-check"></i><b>9</b> Análisis Discriminante y Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="introducción-6.html"><a href="introducción-6.html"><i class="fa fa-check"></i><b>9.1</b> Introducción</a></li>
+<li class="chapter" data-level="9.2" data-path="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><a href="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.2</b> Separación y Clasificación para el caso de dos poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><a href="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html#clasificación-de-dos-poblaciones"><i class="fa fa-check"></i><b>9.2.1</b> Clasificación de dos Poblaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.3</b> Regla de Discriminación para dos Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#costo-esperado-de-mal-clasificación"><i class="fa fa-check"></i><b>9.3.1</b> Costo Esperado de Mal Clasificación</a></li>
+<li class="chapter" data-level="9.3.2" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#probabilidad-total-de-mal-clasificación"><i class="fa fa-check"></i><b>9.3.2</b> Probabilidad Total de Mal Clasificación</a></li>
+<li class="chapter" data-level="9.3.3" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#regla-de-clasificación-de-bayes"><i class="fa fa-check"></i><b>9.3.3</b> Regla de Clasificación de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html"><i class="fa fa-check"></i><b>9.4</b> Clasificación con Dos Poblaciones Normales Multivariadas</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html#clasificación-con-dos-poblaciones-normales-donde-mathbfsigma_1mathbfsigma_2mathbfsigma"><i class="fa fa-check"></i><b>9.4.1</b> Clasificación con dos Poblaciones Normales donde <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span></a></li>
+<li class="chapter" data-level="9.4.2" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html#clasificación-con-dos-poblaciones-normales-donde-mathbfsigma_1neq-mathbfsigma_2"><i class="fa fa-check"></i><b>9.4.2</b> Clasificación con dos Poblaciones Normales donde <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html"><i class="fa fa-check"></i><b>9.5</b> Evaluación de las Funciones de Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-óptimo-teo"><i class="fa fa-check"></i><b>9.5.1</b> Tasa de Error Óptimo (TEO)</a></li>
+<li class="chapter" data-level="9.5.2" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-actual"><i class="fa fa-check"></i><b>9.5.2</b> Tasa de Error Actual</a></li>
+<li class="chapter" data-level="9.5.3" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-aparente-teap"><i class="fa fa-check"></i><b>9.5.3</b> Tasa de Error Aparente (TEAP)</a></li>
+<li class="chapter" data-level="9.5.4" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-actual-esperada"><i class="fa fa-check"></i><b>9.5.4</b> Tasa de Error Actual Esperada</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><a href="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.6</b> Clasificación con Varias Poblaciones (Es decir Más de dos Poblaciones)</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><a href="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html#costo-esperado-de-mal-clasificación-ecm"><i class="fa fa-check"></i><b>9.6.1</b> Costo Esperado de Mal Clasificación (ECM)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.7</b> Clasificación con Poblaciones Normales y más de dos Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#un-clasificador-equivalente-para-el-caso-de-matrices-de-var-cov-iguales"><i class="fa fa-check"></i><b>9.7.1</b> Un Clasificador Equivalente para el Caso de Matrices de Var-Cov Iguales</a></li>
+<li class="chapter" data-level="9.7.2" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#comparación-dos-a-dos-de-los-scores-de-la-función-de-clasificación-lineal"><i class="fa fa-check"></i><b>9.7.2</b> Comparación Dos a Dos de los Scores de la Función de Clasificación Lineal</a></li>
+<li class="chapter" data-level="9.7.3" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#tasa-de-error-actual-esperada-aer-estimada"><i class="fa fa-check"></i><b>9.7.3</b> Tasa de Error Actual Esperada (AER) Estimada</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><i class="fa fa-check"></i><b>9.8</b> Método de Fisher Para Discriminar Entre Varias Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#uso-de-la-función-de-discriminación-de-fisher-para-clasificación"><i class="fa fa-check"></i><b>9.8.1</b> Uso de la Función de Discriminación de Fisher Para Clasificación</a></li>
+<li class="chapter" data-level="9.8.2" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#relación-entre-la-regla-de-clasificación-de-fisher-y-las-funciones-de-discriminación-de-la-teoría-normal"><i class="fa fa-check"></i><b>9.8.2</b> Relación entre la Regla de Clasificación de Fisher y las Funciones de Discriminación de la Teoría Normal</a></li>
+<li class="chapter" data-level="9.8.3" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#regla-de-clasificación-de-fisher-basado-en-discriminantes-muestrales"><i class="fa fa-check"></i><b>9.8.3</b> Regla de Clasificación de Fisher Basado en Discriminantes Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html"><i class="fa fa-check"></i><b>9.9</b> Regresión Logística y Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#el-modelo-logit"><i class="fa fa-check"></i><b>9.9.1</b> El Modelo Logit</a></li>
+<li class="chapter" data-level="9.9.2" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#análisis-de-regresión-logística"><i class="fa fa-check"></i><b>9.9.2</b> Análisis de Regresión Logística</a></li>
+<li class="chapter" data-level="9.9.3" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#regresión-logística-con-respuestas-binomiales"><i class="fa fa-check"></i><b>9.9.3</b> Regresión Logística con Respuestas Binomiales</a></li>
+<li class="chapter" data-level="9.9.4" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#chequeo-del-modelo"><i class="fa fa-check"></i><b>9.9.4</b> Chequeo del Modelo</a></li>
+<li class="chapter" data-level="9.9.5" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#prueba-de-residuales-y-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>9.9.5</b> Prueba de Residuales y de Bondad de Ajuste</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="acluster.html"><a href="acluster.html"><i class="fa fa-check"></i><b>10</b> Análisis de Agrupamiento o Cluster</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="introducción-7.html"><a href="introducción-7.html"><i class="fa fa-check"></i><b>10.1</b> Introducción</a></li>
+<li class="chapter" data-level="10.2" data-path="consideraciones-iniciales.html"><a href="consideraciones-iniciales.html"><i class="fa fa-check"></i><b>10.2</b> Consideraciones Iniciales</a></li>
+<li class="chapter" data-level="10.3" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html"><i class="fa fa-check"></i><b>10.3</b> Medidas de Similaridad entre Pares de Observaciones</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#medidas-de-distancia"><i class="fa fa-check"></i><b>10.3.1</b> Medidas de Distancia</a></li>
+<li class="chapter" data-level="10.3.2" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-de-correlación-entre-casos"><i class="fa fa-check"></i><b>10.3.2</b> Coeficientes de Correlación (entre casos)</a></li>
+<li class="chapter" data-level="10.3.3" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-binarios-de-asociación-o-similaridad-entre-observaciones"><i class="fa fa-check"></i><b>10.3.3</b> Coeficientes Binarios de Asociación o Similaridad Entre Observaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="medidas-de-similaridad-o-asociación-para-pares-de-variables.html"><a href="medidas-de-similaridad-o-asociación-para-pares-de-variables.html"><i class="fa fa-check"></i><b>10.4</b> Medidas de Similaridad o Asociación para Pares de Variables</a></li>
+<li class="chapter" data-level="10.5" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html"><i class="fa fa-check"></i><b>10.5</b> Métodos Jerárquicos de Agrupamiento</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html#métodos-jerarquicos-de-enlaces-para-agupamientos-aglomerativos"><i class="fa fa-check"></i><b>10.5.1</b> Métodos Jerarquicos de Enlaces para Agupamientos Aglomerativos</a></li>
+<li class="chapter" data-level="10.5.2" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html#métodos-jerarquicos-de-agrupamientos-desaglomerativos"><i class="fa fa-check"></i><b>10.5.2</b> Métodos Jerarquicos de Agrupamientos Desaglomerativos</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><i class="fa fa-check"></i><b>10.6</b> Métodos NO-Jerárquicos de Partición o Agrupamiento</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html#pasos-o-etapas-de-un-método-de-clasificación-no-jararquico"><i class="fa fa-check"></i><b>10.6.1</b> Pasos o etapas de un Método de Clasificación No-Jararquico</a></li>
+<li class="chapter" data-level="10.6.2" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html#método-de-las-k-medias-o-k-means"><i class="fa fa-check"></i><b>10.6.2</b> Método de las <span class="math inline">\(k\)</span>-Medias o <span class="math inline">\(k\)</span>-means</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="cómo-determinar-el-número-apropiado-de-conglomerados.html"><a href="cómo-determinar-el-número-apropiado-de-conglomerados.html"><i class="fa fa-check"></i><b>10.7</b> Cómo determinar el número apropiado de conglomerados?</a></li>
+<li class="chapter" data-level="10.8" data-path="agrupamientos-basados-en-modelos-estadísticos.html"><a href="agrupamientos-basados-en-modelos-estadísticos.html"><i class="fa fa-check"></i><b>10.8</b> Agrupamientos Basados en Modelos Estadísticos</a></li>
+<li class="chapter" data-level="10.9" data-path="escalamiento-multidimensional.html"><a href="escalamiento-multidimensional.html"><i class="fa fa-check"></i><b>10.9</b> Escalamiento Multidimensional</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="escalamiento-multidimensional.html"><a href="escalamiento-multidimensional.html#el-algoritmo-básico"><i class="fa fa-check"></i><b>10.9.1</b> El Algoritmo Básico</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html"><i class="fa fa-check"></i><b>10.10</b> Análisis de Correspondencia</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#desarrollo-algebraíco-del-análsisi-de-correspondencia"><i class="fa fa-check"></i><b>10.10.1</b> Desarrollo Algebraíco del Análsisi de Correspondencia</a></li>
+<li class="chapter" data-level="10.10.2" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#análisis-de-correspondencia-como-un-problema-de-mínimos-cuadrados-ponderado"><i class="fa fa-check"></i><b>10.10.2</b> Análisis de Correspondencia como un Problema de Mínimos Cuadrados Ponderado</a></li>
+<li class="chapter" data-level="10.10.3" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#análisis-de-correspondencia-medinate-el-método-de-aproximación-de-perfiles"><i class="fa fa-check"></i><b>10.10.3</b> Análisis de Correspondencia Medinate el Método de Aproximación de Perfiles</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><a href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><i class="fa fa-check"></i><b>10.11</b> Biplots para la Visualización de Unidades Muestrales y Variables</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><a href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html#construcción-de-un-biplot"><i class="fa fa-check"></i><b>10.11.1</b> Construcción de un Biplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 10</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="medidas-de-similaridad-entre-pares-de-observaciones" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Medidas de Similaridad entre Pares de Observaciones<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#medidas-de-similaridad-entre-pares-de-observaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para llevar a cabo un Análisis de Conglomerados se necesitan dos elementos que son:</p>
+<ul>
+<li><p>Una Medida que indique o cuantifique el grado de similaridad o proximidad, el grado de disimilaridad o alejamiento, entre dos puntos en un espacio de dimensión <span class="math inline">\(d\)</span>.</p></li>
+<li><p>Un procedimiento para formar los grupos, es decir, métodos de agrupamientos.</p></li>
+</ul>
+<p>La mayoría de los esfuerzos para producir una estructura de grupo bastante simple a partir de un conjunto de datos complejo requieren de una medida de “cercanía” o “similaridad”. A menudo hay una gran cantidad de subjetividad involucrada en la elección de una medida de similaridad. Consideraciones importantes incluyen, la naturaleza de las variables (discretas, continuas, binarias, etc.), las escalas de medición (nominal, ordinal, intervalo, relación) y conocimiento de la materia o tema de estudio.</p>
+<p>Cuando los elementos (es decir, unidades o casos o filas) están agrupados, la proximidad generalmente se indica mediante algún tipo de distancia. Por el contrario, las variables (o columnas) suelen agruparse sobre la base de coeficientes de correlación o mediante medidas de asociación.</p>
+<p>Reconocer objetos como similares o disimilares (próximos o alejados) es fundamental para el proceso de clasificación.</p>
+<p>Las medidas de similaridad se pueden clasificar en dos tipos:</p>
+<ul>
+<li><p>Las que reúnen las propiedades de una métrica, como los son <strong>Las Distancias</strong>.</p></li>
+<li><p>Los coeficientes de asociación que se emplean en datos en escala nominal.</p></li>
+</ul>
+<div class="definition">
+<p><span id="def:metrica" class="definition"><strong>Definición 10.1  (Métrica) </strong></span>Una métrica   <span class="math inline">\(d(\ \cdot \ )\)</span>   es una función o regla que asigna un número a cada par de objetos de un conjunto <span class="math inline">\(\Omega\)</span>, ie.
+<span class="math display">\[
+\begin{align*}
+d \ \ : \ \ &amp; \Omega  \times \Omega \longrightarrow \mathbb{R} \\
+&amp; (x \ , \ y) \longrightarrow d(x \ ,\ y )
+\end{align*}
+\]</span></p>
+</div>
+<p>y que cumple las siguientes propiedades:</p>
+<ul>
+<li><p><strong>No Negativa</strong>. <span class="math inline">\(d(x,y)\geq 0\)</span>,   y   <span class="math inline">\(d(x,y)=0\)</span>  sii <span class="math inline">\(x=y\)</span>.</p></li>
+<li><p><strong>Simetría</strong>. <span class="math inline">\(d(x,y)=d(y,x)\)</span>.</p></li>
+<li><p><strong>Desigualdad Triangular</strong>. <span class="math inline">\(d(x,y)\leq d(x,z)+d(z,y)\)</span>.</p></li>
+</ul>
+<p>Si a cambio de la desigualdad triangular, se cumple que:
+<span class="math display">\[
+d(x,y)\leq \ \text{máx} \left\{d(x,z) \ , \ d(z,y)  \right\},
+\]</span>
+entonces a este tipo de distancias se les denominan: <strong>Ultramétrica</strong>, y juegan un papel importante en <em>Métodos de Clasificación Automática</em>.</p>
+<p><strong>Las medidas de similaridad más utilizadas son</strong>:</p>
+<ul>
+<li><p>Medidas de Distancia.</p></li>
+<li><p>Coeficientes de Correlación.</p></li>
+<li><p>Coeficientes de Asociación.</p></li>
+<li><p>Medidas Probabilísticas de similaridad.</p></li>
+</ul>
+<p>Antes de utilizar algunas de las medidas anteriores, se debe encontrar el conjunto de variables que mejor represente el concepto de similaridad.</p>
+<div id="medidas-de-distancia" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Medidas de Distancia<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#medidas-de-distancia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si <span class="math inline">\(\underline{\mathbf{x}}_i\)</span>
+y <span class="math inline">\(\underline{\mathbf{x}}_j\)</span> son los vectores <span class="math inline">\(p\)</span>-dimensionales que identifican a los objetos <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span>, entonces las distancias de uso más frecuentes son: <a href="distancias.html#def:dist-euclid">2.10</a></p>
+<ul>
+<li><strong>La Distancia Euclídea</strong> definida en el <a href="distancias.html#dist_euclidea">Capítulo-2</a> por:</li>
+</ul>
+<!--
+[Capítulo-2][Definición de Algunas Distancias]  [Definición de Algunas Distancias] [dist_euclidea][Definición de Algunas Distancias]   \@ref(def:dist-euclid) 
+-->
+<p><span class="math display">\[
+d^2(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=\sum_{k=1}^p (x_{ik}-x_{jk})^2=(x_{i1}-x_{j1})^2+(x_{i2}-x_{j2})^2+\cdots+(x_{ip}-x_{jp})^2\\
+=(\underline{\mathbf{x}}_i-\underline{\mathbf{x}}_j)^T(\underline{\mathbf{x}}_i-\underline{\mathbf{x}}_j)
+\]</span></p>
+<p>donde,
+<span class="math display">\[
+\underline{\mathbf{x}}_i=\begin{bmatrix} x_{i1} \\ x_{i2}  \\ \vdots \\ x_{ip} \end{bmatrix} \ \ \ \ \text{y} \ \ \ \ \ \ \underline{\mathbf{x}}_j=\begin{bmatrix} x_{j1} \\ x_{j2}  \\ \vdots \\ x_{jp} \end{bmatrix}
+\]</span></p>
+<ul>
+<li><strong>La Distancia de Mahalanobis</strong>, también llamada distancia generalizada, definida en el <a href="distancias.html#dist_euclidea">Capítulo-2</a> por:</li>
+</ul>
+<p><span class="math display">\[
+D^2=d^2(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=(\underline{\mathbf{x}}_i-\underline{\mathbf{x}}_j)^T\ \mathbf{A}\ (\underline{\mathbf{x}}_i-\underline{\mathbf{x}}_j),
+\]</span></p>
+<p>donde normalmente, <span class="math inline">\(\mathbf{A}=\mathbf{S}^{-1}\)</span> con <span class="math inline">\(\mathbf{S}\)</span>-la matriz de Var-Cov de los datos u observaciones <span class="math inline">\(\underline{\mathbf{x}}_i\)</span>. Sin embargo, sin el conocimiento previo de los distintos grupos, éstas cantidades muestrales no pueden ser calculadas. Por esta razón, la distancia Euclídea es preoferible para Cluster.</p>
+<ul>
+<li><strong>La Distancia de Manhattan</strong>, definida por:</li>
+</ul>
+<p><span class="math display">\[
+d^2(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=\sum_{k=1}^p \left| x_{ik}-x_{jk} \right|=|x_{i1}-x_{j1}|+|x_{i2}-x_{j2}|+\cdots+|x_{ip}-x_{jp}|
+\]</span></p>
+<ul>
+<li><strong>La Distancia de Minkowski</strong>, definida por:</li>
+</ul>
+<p><span class="math display">\[
+d^{\ r}(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)= \sum_{k=1}^p \left| x_{ik}-x_{jk} \right|^r=|x_{i1}-x_{j1}|^r+|x_{i2}-x_{j2}|^r+\cdots+|x_{ip}-x_{jp}|^r
+\]</span></p>
+<p><strong>NOTA:</strong> Para <span class="math inline">\(r=2\)</span>, la distancia de Minkowski es equivalente a la distancia Euclídea.</p>
+<p>Para <span class="math inline">\(r=1\)</span>, la distancia de Minkowski es equivalente a la distancia de Manhattan y mide la distancia entre “bloques o ciudades”.</p>
+<p>Las distancias Euclídea y de Manhattan son adecuadas cuando trabajamos con variables continuas y que además estén en una misma escala de medida. En estas distancias cada una de las componentes del vector pesan igualmente.</p>
+<p>Otras dos medidas adicionales populares de distancias o “disimilaridades” están dadas por <em>La Métrica de Canberra</em> y <em>El Coeficiente de Czekanowski</em>. Ambas medidas están definidas sólo para variables no negativas.</p>
+<ul>
+<li><strong>La Distancia de Camberra</strong>, definida por:</li>
+</ul>
+<p><span class="math display">\[
+d(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=\sum_{k=1}^p \frac{ \left| x_{ik}-x_{jk} \right|}{(x_{ik}+x_{jk})}=\frac{|x_{i1}-x_{j1}|}{x_{i1}+x_{j1}}+\frac{|x_{i2}-x_{j2}|}{x_{i2}+x_{j2}}+\cdots+\frac{|x_{ip}-x_{jp}|}{x_{ip}+x_{jp}}
+\]</span></p>
+<ul>
+<li><strong>El Coeficiente de Czekanowski</strong>, definido por:</li>
+</ul>
+<p><span class="math display">\[
+d(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=1-\frac{ 2\sum_{k=1}^p \min( x_{ik},x_{jk})}{\sum_{k=1}^p ( x_{ik}+x_{jk}) } =1-\biggl(\frac{2\min( x_{i1},x_{j1})}{x_{i1}+x_{j1}}+\frac{2\min( x_{i2},x_{j2})}{x_{i2}+x_{j2}}+\cdots+\frac{2\min( x_{ip},x_{jp})}{x_{ip}+x_{jp}} \biggr)
+\]</span></p>
+<p>Siempre que sea posible, es aconsejable utilizar distancias “verdaderas”, es decir, distancias que satisfacen las propiedades de la definición de métrica dada en la definición <a href="medidas-de-similaridad-entre-pares-de-observaciones.html#def:metrica">10.1</a>, para agrupar objetos. Por otro lado, la mayoría de los algoritmos de agrupamiento aceptan subjetivamente distancias que asignan números que no pueden satisfacer, por ejemplo, la desigualdad del triangular.</p>
+<div class="example">
+<p><span id="exm:ejemplo1-cluster" class="example"><strong>Ejemplo 10.1  (Ejemplo de Matriz de Distancias) </strong></span>Suponga que se tienen 4-personas cuya edad <span class="math inline">\(X_1\)</span> (en años), estatura <span class="math inline">\(X_2\)</span> (en metros) y peso <span class="math inline">\(X_3\)</span> ( en kilogramos) son los siguientes:</p>
+</div>
+<p><span class="math display">\[
+\begin{array}{cccc}
+Personas &amp; Edad &amp; Estatura &amp; Peso \\\hline
+A &amp; 30 &amp; 1.69 &amp; 66\\
+B &amp; 32 &amp; 1.70 &amp; 69\\
+C &amp; 35 &amp; 1.65 &amp; 72\\
+D &amp; 33 &amp; 1.68 &amp; 67
+\end{array}
+\]</span></p>
+<p>Para este conjunto de datos se obtiene que:
+<span class="math display">\[
+\underline{\overline{\mathbf{x}}}=\begin{bmatrix}
+32.50 \\ 1.68 \\ 68.50
+\end{bmatrix} \ \ \ \ \text{y}\ \ \ \ \mathbf{S}=\begin{bmatrix}
+4.3333 &amp; -0.0367 &amp; 4.6667 \\
+&amp; 0.0005 &amp; -0.0400 \\
+  &amp; &amp; 7.0000
+\end{bmatrix}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\mathbf{R}=\begin{bmatrix}
+1.000 &amp; -0.815 &amp; 0.847 \\
+&amp; 1.000 &amp; -0.700 \\
+  &amp; &amp; 1.000
+\end{bmatrix}
+\]</span></p>
+<p>Para estos datos, la matriz de distancias euclídeas es:</p>
+<p><span class="math display">\[
+E=\begin{array}{c|cccc}
+&amp; A &amp; B &amp;  C &amp; D \\\hline
+A &amp; 0.00 &amp; 3.61 &amp; 7.81 &amp; 3.16 \\
+B &amp; &amp; 0.00 &amp; 4.24&amp; 2.24 \\
+C &amp; &amp;  &amp; 0.00 &amp; 5.39\\
+D &amp;&amp;&amp; &amp; 0.00
+\end{array}
+\]</span></p>
+<p>Mientras que la matriz de distancias de Mahalanobis es:</p>
+<p><span class="math display">\[
+\begin{array}{c|cccc}
+&amp; A &amp; B &amp;  C &amp; D \\\hline
+A &amp; 0.00 &amp; 12.31 &amp; 3.72 &amp; 10.73 \\
+B &amp; &amp; 0.00 &amp; 9.28&amp; 1.60 \\
+C &amp; &amp;  &amp; 0.00 &amp; 7.80\\
+D &amp;&amp;&amp; &amp; 0.00
+\end{array}
+\]</span></p>
+</div>
+<div id="coeficientes-de-correlación-entre-casos" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Coeficientes de Correlación (entre casos)<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-de-correlación-entre-casos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si <span class="math inline">\(\underline{\mathbf{x}}_i\)</span>
+y <span class="math inline">\(\underline{\mathbf{x}}_j\)</span> son los vectores <span class="math inline">\(p\)</span>-dimensionales que identifican a los objetos <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span>, entonces con frecuencia se utiliza el Coeficiente Producto Momento de Pearson, el cual mide el grado de correlación o asociación lineal entre los dos casos, y está definido por:</p>
+<p><span class="math display">\[
+r_{ij} = \frac{\sum_{i=1}^p(x_{ij}-\overline{x}_j)(x_{ik}-\overline{x}_k) }{\sqrt{ \sum_{i=1}^p(x_{ij}-\overline{x}_j)^2} \sqrt{\sum_{i=1}^p(x_{ik}-\overline{x}_k)^2 } } .
+\]</span></p>
+<p>Para variables en escala de al menos intervalos, se cumple que:</p>
+<p><span class="math display">\[
+-1 \leq r_{ij} \leq 1.
+\]</span></p>
+<p>Un valor de cero, significa No-Similaridad entre los casos}.</p>
+</div>
+<div id="coeficientes-binarios-de-asociación-o-similaridad-entre-observaciones" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> Coeficientes Binarios de Asociación o Similaridad Entre Observaciones<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-binarios-de-asociación-o-similaridad-entre-observaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Cuando las observaciones no se pueden representar mediante medidas <span class="math inline">\(p\)</span>-dimensionales significativas, a menudo los pares de observaciones se comparan sobre la base de la presencia o ausencia de ciertas características. Las observaciones similares tienen más características en común que las observaciones disímilares. La presencia o ausencia de una característica se puede describir matemáticamente introduciendo una variable binaria o dummy, la cual asume el valor <span class="math inline">\(1\)</span> si la característica está presente y el valor <span class="math inline">\(0\)</span> si la característica no está presente.</p>
+<p>Para <span class="math inline">\(p=5\)</span> variables binarias, por ejemplo, las “puntuaciones” para dos observaciones <span class="math inline">\(\underline{\mathbf{x}}_{i}\)</span> y <span class="math inline">\(\underline{\mathbf{x}}_{j}\)</span> se podrían ordenar como sigue:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Variables</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Observación-<span class="math inline">\(i\)</span></td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">Observación-<span class="math inline">\(j\)</span></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>En este caso, hay dos resultados de coincidencias <span class="math inline">\(1-1\)</span>, y <span class="math inline">\(0-0\)</span> y dos resultados de no coincidencia <span class="math inline">\(1-0\)</span> y <span class="math inline">\(0-1\)</span>.</p>
+<p>Sea <span class="math inline">\(x_{ik}\)</span> la puntuación (1 o 0) de la <span class="math inline">\(k\)</span>-ésima variable binaria sobre la <span class="math inline">\(i\)</span>-ésima observación y <span class="math inline">\(x_{jk}\)</span> la puntuación (nuevamente, 1 o 0) de la <span class="math inline">\(k\)</span>-ésima variable sobre la <span class="math inline">\(j\)</span>-ésima observación, con <span class="math inline">\(k=1,2,\ldots, p\)</span>, por lo tanto, se tiene que:
+<span class="math display" id="eq:diferencia-dummys">\[
+\begin{equation}
+(x_{ik}-x_{jk})^2=\begin{cases} 0 \ \ \  \text{si} \ \ \ \ x_{ik}=x_{jk}=1 \ \ \ \text{o} \ \ \ \ \text{si} \ \ \  x_{ik}=x_{jk}=0 \\
+1 \ \ \  \text{si} \ \ \ \ x_{ik}\neq x_{jk} \end{cases}
+\end{equation}
+\tag{10.1}
+\]</span></p>
+<p>y en este caso la Distancia Euclídea al Cuadrado definida por:
+<span class="math display">\[
+d^2(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=\sum_{k=1}^p (x_{ik}-x_{jk})^2=(x_{i1}-x_{j1})^2+(x_{i2}-x_{j2})^2+\cdots+(x_{ip}-x_{jp})^2
+\]</span></p>
+<p>proporciona el conteo del número de <strong>No-Coincidencias</strong>. <em>Una distancia grande, correpondria a un número grande de No-Coincidwncias, es decir, a:</em> <strong>observaciones NO-Similares</strong>.</p>
+<p>Para la tabla anterior, se tiene que:
+<span class="math display">\[
+d^2(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=\sum_{k=1}^5 (x_{ik}-x_{jk})^2=(x_{i1}-x_{j1})^2+(x_{i2}-x_{j2})^2+(x_{i3}-x_{j3})^2+(x_{i4}-x_{j4})^2+(x_{i5}-x_{j5})^2\\
+=(1-1)^2+(0-1)^2+(0-0)^2+(1-1)^2+(1-0)^2\\
+=1+1\\
+d^2(\underline{\mathbf{x}}_i
+\ , \ \underline{\mathbf{x}}_j)=2
+\]</span></p>
+<p>Aunque una distancia basada en las cantidades dadas en <a href="medidas-de-similaridad-entre-pares-de-observaciones.html#eq:diferencia-dummys">(10.1)</a>, se puede usar para medir similaridad, ésta distancia sufre, al ponderar de forma igual a los empates <span class="math inline">\(1-1\)</span> y <span class="math inline">\(0-0\)</span>. En algunos casos el empate <span class="math inline">\(1-1\)</span> es un indicador más fuerte de similaridad que el empate <span class="math inline">\(0-0\)</span>. Por ejemplo, al agrupar personas, la evidencia de que dos personas leen literatura antigua griega es una evidencia más fuerte de similaridad que la no-presencia o ausencia de esta habilidad. Por lo tanto, podría ser razonable descontar los empates <span class="math inline">\(0-0\)</span> o incluso ignorarlos por completo. Para permitir un trato diferenciado de los empates <span class="math inline">\(1-1\)</span> y <span class="math inline">\(0-0\)</span>, se han sugerido varios esquemas de coeficiente para definir la similaridad entre observaciones.</p>
+<p>Para introducir estos esquemas de coeficientes, se organizan las frecuencias de coincidencias y no-coincidencia para dos observaciones <span class="math inline">\(\underline{\mathbf{x}}_i\)</span> y <span class="math inline">\(\underline{\mathbf{x}}_j\)</span> en forma de una tabla de contingencia como la que sigue.</p>
+<p><span class="math display">\[
+\begin{array}{cc|ccc|c}
+&amp; &amp; &amp; Obs-j &amp; &amp; \\
+&amp;&amp; 1 &amp; &amp; 0 &amp; Total \\ \hline
+&amp;&amp;&amp;&amp;&amp;\\
+&amp; 1 &amp; a &amp; &amp; b &amp;  a+b \\
+Obs-i &amp; &amp; &amp;&amp;&amp; \\
+&amp; 0 &amp; c &amp; &amp; d &amp;  c+d\\
+&amp;&amp;&amp;&amp;&amp;\\\hline
+&amp;&amp;&amp;&amp;&amp;\\
+Total &amp; &amp; a+c &amp; &amp; b+d &amp; a+b+c+d=p
+\end{array}\\
+\]</span></p>
+<p>Por Ejemplo, si se tienen 10-variables o características del tipo ausencia/presencia, medidas sobre 2-individuos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, con los siguientes resultados:</p>
+<p><span class="math display">\[
+\begin{array}{c|cccccccccc}
+&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10\\\hline
+A &amp;0&amp;1&amp;1&amp;0&amp;1&amp;0&amp;1&amp;0&amp;1&amp;0\\
+B &amp;1&amp;1&amp;0&amp;0&amp;1&amp;1&amp;0&amp;0&amp;1&amp;1
+\end{array}
+\]</span></p>
+<p>Al comparar <span class="math inline">\(A\)</span> con <span class="math inline">\(B\)</span> hay 4-posibilidades posibles:</p>
+<ul>
+<li><p>Ambos tengan presente el caracter comparado: <span class="math inline">\((1,1)\)</span>.</p></li>
+<li><p>Ambos tengan ausente el caracter comparado: <span class="math inline">\((0,0)\)</span>.</p></li>
+<li><p>El primero lo tengan y el segundo no lo tenga: <span class="math inline">\((1,0)\)</span>.</p></li>
+<li><p>El primero no lo tengan y el segundo si lo tenga: <span class="math inline">\((0,1)\)</span>.</p></li>
+</ul>
+<p>Las frecuencias de estas cuatro características, se resumen en una tabla de frecuencias como la siguiente:</p>
+<p><span class="math display">\[
+\begin{array}{cc|ccc|c}
+&amp; &amp; &amp; B &amp; &amp; \\
+&amp;&amp; 1 &amp; &amp; 0 &amp; Total \\ \hline
+&amp;&amp;&amp;&amp;&amp;\\
+&amp; 1 &amp; a &amp; &amp; b &amp;  a+b \\
+A &amp; &amp; &amp;&amp;&amp; \\
+&amp; 0 &amp; c &amp; &amp; d &amp;  c+d\\
+&amp;&amp;&amp;&amp;&amp;\\\hline
+&amp;&amp;&amp;&amp;&amp;\\
+Total &amp; &amp; a+c &amp; &amp; b+d &amp; a+b+c+d=p
+\end{array}\\
+\begin{array}{cc|ccc|c}
+&amp; &amp; &amp; B &amp; &amp; \\
+&amp;&amp; 1 &amp; &amp; 0 &amp; Total \\ \hline
+&amp;&amp;&amp;&amp;&amp;\\
+&amp; 1 &amp; a=3 &amp; &amp; b=2 &amp;  a+b= \\
+A &amp; &amp; &amp;&amp;&amp;3+2=5 \\
+&amp; 0 &amp; c=3 &amp; &amp; d=2 &amp;  c+d=\\
+&amp;&amp;&amp;&amp;&amp;3+2=5\\\hline
+Total &amp; &amp; a+c=3+3=6 &amp; &amp; b+d=2+2=4 &amp; a+b+\\
+&amp;&amp;&amp;&amp;&amp;c+d=10
+\end{array}
+\]</span></p>
+<div id="similaridades" class="section level4 hasAnchor" number="10.3.3.1">
+<h4><span class="header-section-number">10.3.3.1</span> Coeficientes Binarios de asociación utilizados en la práctica<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#similaridades" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En cada área particular de estudio, existen diferentes coeficientes de asociación que se utilizan con frecuencia. Entre ellos están los siguientes.</p>
+<p><strong>Coeficientes Binarios Simétricos (incluyen el Empate <span class="math inline">\(0-0\)</span></strong>)</p>
+<ol style="list-style-type: decimal">
+<li><strong>Coeficiente de Asociación Simple: (S)</strong>.</li>
+</ol>
+<p><span class="math display">\[
+S_{ij}=\frac{a+d}{a+b+c+d}=\frac{a+d}{p}=\frac{1}{p}a+\frac{1}{p}d, \ \ \ \ \ \ 1-S_{ij}=\frac{b+c}{p}-Disimil.
+\]</span></p>
+<p><span class="math inline">\(0\leq S_{ij} \leq 1\)</span>.</p>
+<p>En este coeficiente se le dan pesos iguales a los empates <span class="math inline">\(1-1\)</span> y a los empates <span class="math inline">\(0-0\)</span>, es decir, pesos iguales a la presencia o ausencia de un atributo, lo que significa que no hay diferencias entre este tipo de empates. Éste coeficiente, se recomienda usar cuando las <em>variables binaria son simétricas</em>, ie. cuando las dos categorías que indican son intercambiables, ie. cuando no tenemos una preferencia especial en qué resultado lo codificamos como <span class="math inline">\(1\)</span> y qué resultado lo codificamos como <span class="math inline">\(0\)</span>. Un ejemplo frecuente es el género de las personas, ver Sokal <span class="citation">(<a href="#ref-sokal1958">1958</a>)</span>.</p>
+<p>Dos individuos son tanto más disimilares cuantas más variables binarias tienen distintas y más similares cuanto más variables binarias tienen iguales.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Coeficiente de Rogers y Tanimoto: (RT)</strong>.</li>
+</ol>
+<p>Una variante al coeficiente de asociación simple es el coeficiente propuesto por Rogers y Tanimoto <span class="citation">(<a href="#ref-rogers1960">1960</a>)</span>, en el que se da más peso a las diferencias que a las semejanzas, dándole doble peso a las no coincidencias, es decir a los <span class="math inline">\(1-0\)</span> y a los <span class="math inline">\(0-1\)</span>.</p>
+<p><span class="math display">\[
+RT_{ij}=\frac{a+d}{a+2(b+c)+d}=\frac{1}{a+2(b+c)+d}a+\frac{1}{a+2(b+c)+d}d
+\]</span></p>
+<p><span class="math inline">\(0\leq RT_{ij} \leq 1\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Coeficiente de Sokal y Sneath (SS)</strong>.</li>
+</ol>
+<p>Sokal y Sneath <span class="citation">(<a href="#ref-sokal1963">1963</a>)</span> propusieron otras cuatro medidas que incluyen los empates <span class="math inline">\(0-0\)</span>.
+<span class="math display">\[
+S_{ij}=\frac{2(a+d)}{2(a+d)+b+c}=\frac{2}{2(a+d)+b+c}a+\frac{2}{2(a+d)+b+c}d
+\]</span></p>
+<p><span class="math inline">\(0\leq SS_{ij} \leq 1\)</span>.</p>
+<p>En este coeficiente se le da doble peso a los empates <span class="math inline">\(1-1\)</span> y a los empates <span class="math inline">\(0-0\)</span>, es decir, considera que las semejanzas son dos veces mas importantes que las diferencias o no coincidencias.</p>
+<p>Existen otro tipos de coeficientes binarios simétricos o que incluyen el empate <span class="math inline">\(0-0\)</span>, ver. <span class="citation">(<a href="#ref-legendre1983">Legendre 1983</a>)</span> y <span class="citation">(<a href="#ref-legendre2012">Legendre and Legendre 2012</a>)</span>.</p>
+<p><strong>Algunas Observaciones:</strong></p>
+<p>Los coeficientes 1,2 y 3 de la lista anterior, están monotonamente relacionados. Supongamos que se calcula el coeficiente-1 para dos tablas de contingencias, Tabla-I y Tabla-II. Entonces si
+<span class="math display">\[
+\frac{a_I+d_I}{p}\geq \frac{a_{III}+d_{III}}{p},
+\]</span></p>
+<p>entonces, también se tiene que:
+<span class="math display">\[
+\frac{2(a_I + d_I)}{2(a_I+d_I)+b_I+c_I} \geq \frac{2(a_{III}+d_{III})}{2(a_{III}+d_{III})+b_{III}+c_{III}}
+\]</span></p>
+<p>y el coeficiente-2 será al menos tan grande para la Tabla-I como lo sea para la Tabla-II.</p>
+<p>La monotonicidad es una propiedad importante, porque algunos procedimientos de agrupación no se ven afectados si la definición de similaridad se cambia de una manera que deja los ordenamientos relativos de similaridades sin cambios. Los procedimeintos jerarquicos de enlace único y el enlace completo que se discuten en la próxima Sección no se ven afectados. Para estos métodos o procedimientos, cualquier elección entre los coeficientes 1, 2 y 3 de la lista anterior producirán los mismos agrupamientos.</p>
+<p><strong>Coeficientes Binarios Asimétricos (no-incluyen el Empate <span class="math inline">\(0-0\)</span></strong>)</p>
+<p>Se pueden utilizar coeficientes paralelos a los anteriores para comparar observaciones a partir de características de presencia o ausencia, donde en el proceso de comparación se excluyen los empates o coincidencias <span class="math inline">\(0-0\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Coeficiente de Jacard: (J)</strong>.</li>
+</ol>
+<p>Es la medida más conocida de este tipo, ver. Jaccard <span class="citation">(<a href="#ref-jaccard1900">1900</a>)</span>, <span class="citation">(<a href="#ref-jaccard1901">1901</a>)</span> y <span class="citation">(<a href="#ref-jaccard1908">1908</a>)</span>, en el que todos los términos tienen el mismo peso.
+<span class="math display">\[
+J_{ij}=\frac{a}{a+b+c}=\frac{1}{a+b+c}a, \ \ \ \ \ (1-J_{ij}=\frac{b+c}{a+b+c}-Disimil.)
+\]</span></p>
+<p><span class="math inline">\(0\leq J_{ij} \leq 1\)</span>.</p>
+<p>Ejemplos de este tipo de variables pueden ser la presencia o ausencia de un atributo muy poco frecuente. Por ejemplo, tener o no tener sida. Dos personas que tienen el sida, tienen más es común, están más próximas, que dos personas que no lo tienen. Supongamos que codificamos el atributo menos frecuente como <span class="math inline">\(1\)</span> y el más frecuente como <span class="math inline">\(0\)</span>. En este caso es claro que un acoplamiento <span class="math inline">\(1-1\)</span> o acoplamiento positivo es más significativo que un acoplamiento negativo o acoplamiento <span class="math inline">\(0-0\)</span> por lo que los <span class="math inline">\(a\)</span> números de acoplamientos positivos, han de tener más peso que los <span class="math inline">\(d\)</span> números de acoplamientos negativos.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Coeficiente de Sorense o Dice (SD)</strong>.</li>
+</ol>
+<p>Como una varainte al coeficiente de Jacard, Sorense <span class="citation">(<a href="#ref-sorensen1948">1948</a>)</span>, propone el siguiente coeficiente:
+<span class="math display">\[
+SD_{ij}=\frac{2a}{2a+b+c}=\frac{2}{2a+b+c}a
+\]</span></p>
+<p><span class="math inline">\(0\leq SD_{ij} \leq 1\)</span>.</p>
+<p>En este coeficiente se le da doble peso a los empates <span class="math inline">\(1-1\)</span>, es decir a la presencia del atributo, debido a que se puede considerar que la presencia de un atributo es más informativo que su ausencia.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Coeficiente de Sokal y Sneath Asimétrico</strong>.</li>
+</ol>
+<p>La contraparte asimétrica del coeficiente de Rogers y Tanimoto definido anteriormente, fue propuesta por Sokal y Sneath (1963). Este consiste es un coeficiente que da doble peso a diferencias o no-conincidencias en el denominador, ver. Sokal y Sneath <span class="citation">(<a href="#ref-sokal1963">1963</a>)</span>.
+<span class="math display">\[
+SS_{ij}=\frac{a}{a+2(b+c)}=\frac{1}{a+2(b+c)}a
+\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Coeficiente de Russel and Rao</strong></li>
+</ol>
+<p>Russell y Rao <span class="citation">(<a href="#ref-russell1940">1940</a>)</span>, sugirieron una medida que compara el número de dobles presencias, es decir empates <span class="math inline">\(1-1\)</span>, en el numerador, con al número total de observaciones, incluyendo las observaciones que están ausentes (<span class="math inline">\(d\)</span>) del par de sitios considerados, es decir los empate <span class="math inline">\(0-0\)</span>.
+<span class="math display">\[
+RR_{ij}=\frac{a}{p}=\frac{1}{p}a
+\]</span></p>
+<p><span class="math inline">\(n=a+b+c+d\)</span>.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Coeficiente de Kulczynski</strong>.</li>
+</ol>
+<p>Kulczynski <span class="citation">(<a href="#ref-kulczynski1928">1928</a>)</span>, propuso un coeficiente que opone las dobles presencias de la característica de interés, es decir, los empates <span class="math inline">\(1-1\)</span>, con la suma de los desacuerdos o no-coincidencias.
+<span class="math display">\[
+K_{ij}=\frac{a}{b+c}=\frac{1}{b+c}a
+\]</span>
+Existen otro tipos de coeficientes binarios asimétricos o que no-incluyen el empate <span class="math inline">\(0-0\)</span>, ver. <span class="citation">(<a href="#ref-legendre1983">Legendre 1983</a>)</span> y <span class="citation">(<a href="#ref-legendre2012">Legendre and Legendre 2012</a>)</span>.</p>
+<p><strong>Algunas Observaciones:</strong></p>
+<p>Los coeficientes 1, 2 y 3 conservar sus órdenes relativos.</p>
+<p>Similarmente, cualquier elección de los coeficientes 1, 2 y 3 producirá agrupaciones idénticas.</p>
+</div>
+<div id="desventajas-sobre-los-coeficientes-binarios-de-similaridad-entre-objetos" class="section level4 hasAnchor" number="10.3.3.2">
+<h4><span class="header-section-number">10.3.3.2</span> Desventajas sobre los Coeficientes Binarios de Similaridad Entre Objetos<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#desventajas-sobre-los-coeficientes-binarios-de-similaridad-entre-objetos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una objeción de los coeficientes binarios de similaridad, es que su aplicación es solo para respuestas dicotómicas, aunque los datos continuos se puedan transformar a valores del tipo 0 y 1, el problema se reduce a decidir a que valores se les asigna el 0 y a que valores se les asigna el 1, lo cual hace que se pierda información.</p>
+<p>Es frecuente encontramos con variables que aún siendo continuas están medidas en escalas muy diversas o bien tenemos variables que son continuas, otras que son binarias, otras categóricas con más de dos categorías o bien variable ordinales. En resumen, todos los posibles tipos de variables simultáneamente considerados.</p>
+<p>Debido a lo anterior no se habla, en general, de una distancia o una métrica, sino de una medida de disimilaridad. Finalmente, valores grandes estarán asociados con vectores de características que tienen una mayor diferencia. Se han propuesto distintas medidas de disimilaridad entre variables cualitativas (binarias simétricas o asimétricas, cualitativas, ordinales) y cuantitativas.</p>
+<p>Se considera el problema cuando solo tenemos un tipo de variable.</p>
+<div class="example">
+<p><span id="exm:ejemplo1a-cluster" class="example"><strong>Ejemplo 10.2  (Ejemplo-1 Sobre Coeficientes Binarios de Similaridad) </strong></span>Si se tienen 10-variables o características del tipo ausencia/presencia, medidas sobre 2-individuos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, con los siguientes resultados:</p>
+</div>
+<p><span class="math display">\[
+\begin{array}{c|cccccccccc}
+&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10\\\hline
+A &amp;0&amp;1&amp;1&amp;0&amp;1&amp;0&amp;1&amp;0&amp;1&amp;0\\
+B &amp;1&amp;1&amp;0&amp;0&amp;1&amp;1&amp;0&amp;0&amp;1&amp;1
+\end{array}
+\]</span></p>
+<p>Las frecuencias de estas cuatro características, se resumen en una tabla de frecuencias como la siguiente:</p>
+<p><span class="math display">\[
+\begin{array}{cc|ccc|c}
+&amp; &amp; &amp; B &amp; &amp; \\
+&amp;&amp; 1 &amp; &amp; 0 &amp; Total \\ \hline
+&amp;&amp;&amp;&amp;&amp;\\
+&amp; 1 &amp; 3 &amp; &amp; 2 &amp;  5 \\
+A &amp; &amp; &amp;&amp;&amp; \\
+&amp; 0 &amp; 3 &amp; &amp; 2 &amp;  5\\
+&amp;&amp;&amp;&amp;&amp;\\\hline
+Total &amp; &amp; 6 &amp; &amp; 4 &amp; 10 \\
+&amp;&amp;&amp;&amp;&amp;
+\end{array}
+\]</span></p>
+<p>En este caso se tiene que:
+<span class="math display">\[
+\begin{align*}
+S_{A,B}&amp;=\frac{3+2}{3+2+3+2}=0.5\\
+\\
+J_{A,B}&amp;=\frac{3}{3+2+3}=0.375\\
+\\
+RT_{A,B}&amp;=\frac{3+2}{3+2(2)+2(3)+2}=0.33\\
+\\
+SD_{A,B}&amp;=\frac{2(3)}{2(3)+2+3}=0.54\\
+\\
+SS_{A,B}&amp;=\frac{2(3+2)}{2(3+2)+2+3}=0.67\\
+\\
+H_{A,B}&amp;=\frac{(3+2)-(2+3)}{3+2+3+2}=0
+\end{align*}
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo2-cluster" class="example"><strong>Ejemplo 10.3  (Ejemplo-2 Sobre Coeficientes Binarios de Similaridad) </strong></span>Para comparar viviendas de 6 zonas distintas se observan las siguientes 8-variables: <span class="math inline">\(X_1\)</span>: Pisos Acabados, <span class="math inline">\(X_2\)</span>: Servicio de Teléfono, <span class="math inline">\(X_3\)</span>: Servicio de Agua y Luz, <span class="math inline">\(X_4\)</span>: Paredes en Ladrillos y Acabadas, <span class="math inline">\(X_5\)</span>: Cuatro o más Alcobas, <span class="math inline">\(X_6\)</span>: Área Superior a <span class="math inline">\(70m^2\)</span>, <span class="math inline">\(X_7\)</span>: Tres o más personas por Alcoba y <span class="math inline">\(X_8\)</span>: Cuatro o más electrodomésticos diferentes.</p>
+</div>
+<p>Los datos, tomados en la forma presencia/ausencia, sobre 6 viviendas escogidas aleatoriamente de las 6 zonas consideradas, están en la siguiente tabla:</p>
+<p><span class="math display">\[Variables\]</span></p>
+<p><span class="math display">\[
+\begin{array}{c|cccccccc}
+Zona &amp; X_1 &amp; X_2 &amp; X_3 &amp; X_4 &amp; X_5 &amp; X_6 &amp; X_7 &amp; X_8 \\\hline
+A &amp;1&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+B &amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;1&amp;0\\
+C &amp;0&amp;1&amp;0&amp;1&amp;1&amp;0&amp;0&amp;0\\
+D &amp;1&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;0\\
+E &amp;1&amp;1&amp;0&amp;1&amp;1&amp;0&amp;1&amp;1\\
+F &amp;1&amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;0
+\end{array}
+\]</span></p>
+<p>Para la zonas <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se tiene la siguiente tabla de frecuencias:</p>
+<p><span class="math display">\[
+\begin{array}{cc|ccc|c}
+&amp; &amp; &amp; B &amp; &amp; \\
+&amp;&amp; 1 &amp; &amp; 0 &amp; Total \\ \hline
+&amp;&amp;&amp;&amp;&amp;\\
+&amp; 1 &amp; 0 &amp; &amp; 2 &amp;  2 \\
+A &amp; &amp; &amp;&amp;&amp; \\
+&amp; 0 &amp; 2 &amp; &amp; 4 &amp;  6\\
+&amp;&amp;&amp;&amp;&amp;\\\hline
+&amp;&amp;&amp;&amp;&amp;\\
+Totales &amp; &amp; 2 &amp; &amp; 6 &amp; 8
+\end{array}
+\]</span></p>
+<p>de donde los coeficientes de asociación simple y de Jacard son respectivamente:</p>
+<p><span class="math display">\[
+S_{A,B}=\frac{4}{8}=0.5 \  \ \ \text{y} \ \ \ \ J_{A,B}=\frac{0}{4}=0.
+\]</span></p>
+<p>Mientras que el coeficiente de asociación simple dice que hay una buena similitud entre estas dos viviendas, el coeficiente de Jacard dice que dicha similitud no es buena o que son totalmente diferentes.</p>
+<p>En la siguiente matriz aparecen todos los coeficientes de Jacard asociados para las 6-viviendas:</p>
+<p><span class="math display">\[
+\begin{array}{c|cccccc}
+&amp;A&amp;B&amp;C&amp;D&amp;E&amp;F\\\hline
+A &amp;1&amp;0.000&amp; 0.250&amp;0.250&amp;0.333&amp;0.200 \\
+B &amp; &amp; 1 &amp;0.000&amp;0.250&amp;0.143&amp;0.200\\
+C &amp; &amp; &amp; 1 &amp;0.200&amp;0.500&amp;0.167\\
+D &amp; &amp; &amp; &amp; 1 &amp;0.500 &amp;0.750\\
+E &amp; &amp; &amp; &amp; &amp; 1 &amp; 0.429\\
+F &amp; &amp; &amp; &amp; &amp; &amp; 1
+\end{array}
+\]</span></p>
+<p>De acuerdo a esta tabla de similaridades se tiene que las viviendas <span class="math inline">\(D\)</span>, <span class="math inline">\(E\)</span> y <span class="math inline">\(F\)</span> son bastante similares, mientras que las viviendas <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son totalmente disimilares.</p>
+<p>La presencia de muchos empates en los pares de casos, resulta ser un
+problema para la configuración de los conglomerados, en este caso se
+tienen, tres pares de casos con <span class="math inline">\(J=0.25\)</span>, tres pares de casos con
+<span class="math inline">\(J=0.200\)</span> y dos pares de casos con <span class="math inline">\(J=0.500\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo3-cluster" class="example"><strong>Ejemplo 10.4  (Ejemplo-3 Sobre Coeficientes Binarios de Similaridad) </strong></span>Supongamos que 5 individuos poseen las sigueintes características.</p>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Altura</th>
+<th align="center">Peso</th>
+<th align="center">Color de Ojos</th>
+<th align="center">Color del Cabello</th>
+<th align="center">Mano</th>
+<th align="center">Género</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Individuo-1</td>
+<td align="center">68 in</td>
+<td align="center">140 lb</td>
+<td align="center">Verde</td>
+<td align="center">Rubio</td>
+<td align="center">Derecho</td>
+<td align="center">Mujer</td>
+</tr>
+<tr class="even">
+<td align="center">Individuo-2</td>
+<td align="center">73 in</td>
+<td align="center">185 lb</td>
+<td align="center">Marrón</td>
+<td align="center">Marrón</td>
+<td align="center">Derecho</td>
+<td align="center">Hombre</td>
+</tr>
+<tr class="odd">
+<td align="center">Individuo-3</td>
+<td align="center">67 in</td>
+<td align="center">165 lb</td>
+<td align="center">Azul</td>
+<td align="center">Rubio</td>
+<td align="center">Derecho</td>
+<td align="center">Hombre</td>
+</tr>
+<tr class="even">
+<td align="center">Individuo-4</td>
+<td align="center">64 in</td>
+<td align="center">120 lb</td>
+<td align="center">Marrón</td>
+<td align="center">Marrón</td>
+<td align="center">Derecho</td>
+<td align="center">Mujer</td>
+</tr>
+<tr class="odd">
+<td align="center">Individuo-5</td>
+<td align="center">76 in</td>
+<td align="center">210 lb</td>
+<td align="center">Marrón</td>
+<td align="center">Marrón</td>
+<td align="center">Izquierdo</td>
+<td align="center">Hombre</td>
+</tr>
+</tbody>
+</table>
+<p>Se definen las seis variables binarias <span class="math inline">\(X_1,X_2,X_3,X_4,X_5\)</span> y <span class="math inline">\(X_6\)</span> como sigue:</p>
+<p><span class="math display">\[
+X_1=\begin{cases}1 \ \ \ \text{si la altura es} \ \ \geq 72 \ in \\
+0 \ \ \ \text{si la altura es} \ \ &lt; 72 \ in
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+X_2=\begin{cases}1 \ \ \ \text{si el peso es} \ \ \geq 150 \ in \\
+0 \ \ \ \text{si el peso es} \ \ &lt; 150 \ in
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+X_3=\begin{cases}1 \ \ \ \text{si tiene ojos Marrón}  \\
+0 \ \ \ \text{si tiene ojos de otro color}
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+X_4=\begin{cases}1 \ \ \ \text{si tiene cabello Rubio} \\
+0 \ \ \ \text{si tiene cabello de otro color}
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+X_5=\begin{cases}1 \ \ \ \text{si la persona es derecha} \\
+0 \ \ \ \text{si la persona es zurda}
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+X_6=\begin{cases}1 \ \ \ \text{si es mujer}  \\
+0 \ \ \ \text{si es hombre}
+\end{cases}
+\]</span></p>
+<p>Las puntuaciones de los individuos 1 y 2 sobre las 6-variables binarias son:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(X_1\)</span></th>
+<th align="center"><span class="math inline">\(X_2\)</span></th>
+<th align="center"><span class="math inline">\(X_3\)</span></th>
+<th align="center"><span class="math inline">\(X_4\)</span></th>
+<th align="center"><span class="math inline">\(X_5\)</span></th>
+<th align="center"><span class="math inline">\(X_6\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Individuo-1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">Individuo-2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>y el número de empates y no-coincidencias se indican en la siguiente tabla de dos vías o tabla de frecuencias:</p>
+<p><span class="math display">\[
+\begin{array}{cc|ccc|c}
+&amp; &amp; &amp; Indiv &amp; 2 &amp;  \\
+&amp;&amp; 1 &amp; &amp; 0 &amp; Total \\ \hline
+&amp;&amp;&amp;&amp;&amp;\\
+&amp; 1 &amp; 1 &amp; &amp; 2 &amp;  3 \\
+Indv &amp; &amp; &amp;&amp;&amp;  \\
+1 &amp; 0  &amp; 3 &amp; &amp; 0 &amp;  3 \\
+&amp;&amp;&amp;&amp;&amp;\\\hline
+Total &amp; &amp; 4 &amp; &amp; 2 &amp; 6\\
+\end{array}
+\]</span></p>
+<p>Empleando el coeficiente de similaridad-1, que da igual peso a las coincidencias, se obtiene:</p>
+<p><span class="math display">\[
+S_{AB}=\frac{a+d}{p}=\frac{1+0}{6}=\frac{1}{6}
+\]</span></p>
+<p>Continuando con el coeficiente de similaridad-1, calculamos los valores de similaridad restante para los pares de individuos. Los resultados se muestran en la sigueinte matriz simétrica de tamaño <span class="math inline">\(t\times 5\)</span>.</p>
+<p><span class="math display">\[
+D=\begin{bmatrix} 1 &amp; &amp; &amp; &amp; \\
+\frac{1}{6} &amp; 1 &amp; &amp; &amp; \\
+\frac{4}{6} &amp; \frac{3}{6} &amp; 1 &amp;&amp; \\
+\frac{4}{6} &amp; \frac{3}{6} &amp; \frac{2}{6} &amp; 1 &amp; \\
+0 &amp; \frac{5}{6} &amp; \frac{2}{6} &amp; \frac{2}{6} &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p>Con base en las magnitudes del coeficiente de similaridad-1, se debe concluir que los individuos 2 y 5 son los más similares y los individuos 1 y 5 son los menos similares. Otros pares se encuentran entre estos extremos. Si dividiéramos a los individuos en dos subgrupos relativamente homogéneos sobre la base de los números de similaridades, podríamos forman los subgrupos (1, 3, 4) y (2, 5).</p>
+<p>Tenga en cuenta que <span class="math inline">\(X_3=0\)</span> implica una ausencia de ojos marrones, por lo que dos personas, una con ojos azules y uno con ojos verdes, dará como resultado el par <span class="math inline">\(0-0\)</span>. En consecuencia, puede ser inapropiado utilizar el coeficiente de similaridad 1, 2 o 3 porque estos coeficientes dan los mismos pesos a los pares <span class="math inline">\(1-1\)</span> y <span class="math inline">\(0-0\)</span>.</p>
+</div>
+<div id="coeficientes-de-similaridad-a-partir-de-distancias" class="section level4 hasAnchor" number="10.3.3.3">
+<h4><span class="header-section-number">10.3.3.3</span> Coeficientes de Similaridad a Partir de Distancias<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-de-similaridad-a-partir-de-distancias" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Hasta aca se ha descrito la construcción de distancias y similitudes. Siempre es posible construir similaridades a partir de distancias. Por ejemplo, se puede establecer:</p>
+<p><span class="math display">\[
+\tilde{s}_{ik}=\frac{1}{1+d_{ik}}
+\]</span></p>
+<p>donde, <span class="math inline">\(0&lt;\tilde{s}_{ik}&lt;1\)</span>-es la similaridad entre las observaciones <span class="math inline">\(i\)</span>-ésima y <span class="math inline">\(k\)</span>-ésima, y <span class="math inline">\(d_{ik}\)</span>-es la distancia correspondiente.</p>
+</div>
+<div id="distancias-a-partir-de-coeficientes-de-similaridad" class="section level4 hasAnchor" number="10.3.3.4">
+<h4><span class="header-section-number">10.3.3.4</span> Distancias a partir de Coeficientes de Similaridad<a href="medidas-de-similaridad-entre-pares-de-observaciones.html#distancias-a-partir-de-coeficientes-de-similaridad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Debido a que las distancias que deben satisfacer las propiedades de métrica dadas en xxx, no siempre se pueden construir a partir de similaridades. Como ha mostrado Gower <span class="citation">(<a href="#ref-gower1967">1967</a>)</span> y <span class="citation">(<a href="#ref-gower1995">1995</a>)</span>, ésto sólo se puede hacer si la matriz de similaridades es definida no negativa. Con la condición definida no negativa, y con la similitud máxima escalada de modo que <span class="math inline">\(\tilde{s}_{ii}=1\)</span>, se tiene que:
+<span class="math display">\[
+d_{ik}=\sqrt{2(1-\tilde{s}_{ik})}
+\]</span></p>
+<p>tiene las propiedades de distancia.</p>
+</div>
+</div>
+</div>
+<h3>Bibliografía<a href="bibliografía.html#bibliografía" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-gower1967" class="csl-entry">
+Gower, John C. 1967. <span>“Multivariate Analysis and Multidimensional Geometry.”</span> <em>Journal of the Royal Statistical Society Series D: The Statistician</em> 17 (1): 13–28.
+</div>
+<div id="ref-gower1995" class="csl-entry">
+Gower, John C, and David J Hand. 1995. <em>Biplots</em>. Vol. 54. CRC Press.
+</div>
+<div id="ref-jaccard1900" class="csl-entry">
+Jaccard, Paul. 1900. <span>“Contribution Au Probl<span>è</span>me de l’immigration Post-Glaciare de La Flore Alpine.”</span> <em>Bull Soc Vaudoise Sci Nat</em> 36: 87–130.
+</div>
+<div id="ref-jaccard1901" class="csl-entry">
+———. 1901. <span>“<span>É</span>tude Comparative de La Distribution Florale Dans Une Portion Des Alpes Et Des Jura.”</span> <em>Bull Soc Vaudoise Sci Nat</em> 37: 547–79.
+</div>
+<div id="ref-jaccard1908" class="csl-entry">
+———. 1908. <span>“Nouvelles Recherches Sur La Distribution Florale.”</span> <em>Bull. Soc. Vaud. Sci. Nat.</em> 44: 223–70.
+</div>
+<div id="ref-kulczynski1928" class="csl-entry">
+Kulczyński, Stanisław. 1928. <em>Die Pflanzenassoziationen Der Pieninen</em>. Imprimerie de l’Universit<span>é</span>.
+</div>
+<div id="ref-legendre1983" class="csl-entry">
+Legendre, Pierre. 1983. <span>“Numerical Ecology: Developments and Recent Trends.”</span> In <em>Numerical Taxonomy</em>, 505–23. Springer.
+</div>
+<div id="ref-legendre2012" class="csl-entry">
+Legendre, Pierre, and Louis Legendre. 2012. <em>Numerical Ecology</em>. Elsevier.
+</div>
+<div id="ref-rogers1960" class="csl-entry">
+Rogers, David J, and Taffee T Tanimoto. 1960. <span>“A Computer Program for Classifying Plants: The Computer Is Programmed to Simulate the Taxonomic Process of Comparing Each Case with Every Other Case.”</span> <em>Science</em> 132 (3434): 1115–18.
+</div>
+<div id="ref-sokal1958" class="csl-entry">
+RR, SOKAL. 1958. <span>“A Statiscal Method for Evaluating Systematic Relationships.”</span> <em>Univ Kans Sci Bull</em> 38: 1409–38.
+</div>
+<div id="ref-russell1940" class="csl-entry">
+Russell, Paul F, T Ramachandra Rao, et al. 1940. <span>“On Habitat and Association of Species of Anopheline Larvae in South-Eastern Madras.”</span> <em>Journal of the Malaria Institute of India</em> 3 (1).
+</div>
+<div id="ref-sokal1963" class="csl-entry">
+Sokal, Robert R., and Peter Henry Andrews Sneath. 1963. <em>Principles of Numerical Taxonomy</em>. WH Freeman.
+</div>
+<div id="ref-sorensen1948" class="csl-entry">
+Sorensen, Thorvald. 1948. <span>“A Method of Establishing Groups of Equal Amplitude in Plant Sociology Based on Similarity of Species Content and Its Application to Analyses of the Vegetation on Danish Commons.”</span> <em>Biologiske Skrifter</em> 5: 1–34.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="consideraciones-iniciales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="medidas-de-similaridad-o-asociación-para-pares-de-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

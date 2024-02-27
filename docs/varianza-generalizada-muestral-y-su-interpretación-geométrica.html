@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.8 Varianza Generalizada Muestral y su Interpretación Geométrica | Chapter 10</title>
+  <meta name="description" content="Este libro contine ……" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.8 Varianza Generalizada Muestral y su Interpretación Geométrica | Chapter 10" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/imagenes/imagen1.png" />
+  <meta property="og:description" content="Este libro contine ……" />
+  <meta name="github-repo" content="raperezaga/iam" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.8 Varianza Generalizada Muestral y su Interpretación Geométrica | Chapter 10" />
+  
+  <meta name="twitter:description" content="Este libro contine ……" />
+  <meta name="twitter:image" content="/imagenes/imagen1.png" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"/>
+<link rel="next" href="varianza-total-muestral.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/kePrint/kePrint.js"></script>
+<link href="libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preámbulo</a>
+<ul>
+<li class="chapter" data-level="" data-path="descripción.html"><a href="descripción.html"><i class="fa fa-check"></i>Descripción</a></li>
+<li class="chapter" data-level="" data-path="acerca-del-autor.html"><a href="acerca-del-autor.html"><i class="fa fa-check"></i>Acerca del Autor</a></li>
+<li class="chapter" data-level="" data-path="dedicación.html"><a href="dedicación.html"><i class="fa fa-check"></i>Dedicación</a></li>
+<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
+<li class="chapter" data-level="" data-path="paquetes-usados-en-el-libro.html"><a href="paquetes-usados-en-el-libro.html"><i class="fa fa-check"></i>Paquetes usados en el libro</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rep-al.html"><a href="rep-al.html"><i class="fa fa-check"></i><b>1</b> Repaso de álgebra lineal</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="acb-al.html"><a href="acb-al.html"><i class="fa fa-check"></i><b>1.1</b> Algunos conceptos básicos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="acb-al.html"><a href="acb-al.html#matrices"><i class="fa fa-check"></i><b>1.1.1</b> Matrices</a></li>
+<li class="chapter" data-level="1.1.2" data-path="acb-al.html"><a href="acb-al.html#vectores"><i class="fa fa-check"></i><b>1.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="1.1.3" data-path="acb-al.html"><a href="acb-al.html#operaciones-matrices"><i class="fa fa-check"></i><b>1.1.3</b> Operaciones Matriciales</a></li>
+<li class="chapter" data-level="1.1.4" data-path="acb-al.html"><a href="acb-al.html#matrices-especiales"><i class="fa fa-check"></i><b>1.1.4</b> Matrices Especiales</a></li>
+<li class="chapter" data-level="1.1.5" data-path="acb-al.html"><a href="acb-al.html#descomp-espectral"><i class="fa fa-check"></i><b>1.1.5</b> Descomposición Espectral de una Matriz (eigen-descomposición)</a></li>
+<li class="chapter" data-level="1.1.6" data-path="acb-al.html"><a href="acb-al.html#diagonalización-de-una-matriz"><i class="fa fa-check"></i><b>1.1.6</b> Diagonalización de una Matriz</a></li>
+<li class="chapter" data-level="1.1.7" data-path="acb-al.html"><a href="acb-al.html#diagonalización-ortogonal"><i class="fa fa-check"></i><b>1.1.7</b> Diagonalización Ortogonal</a></li>
+<li class="chapter" data-level="1.1.8" data-path="acb-al.html"><a href="acb-al.html#diagonalizacion-inversa"><i class="fa fa-check"></i><b>1.1.8</b> Diagonalización de la Inversa de una Matriz</a></li>
+<li class="chapter" data-level="1.1.9" data-path="acb-al.html"><a href="acb-al.html#diagonalización-de-la-matriz-raíz-cuadrada"><i class="fa fa-check"></i><b>1.1.9</b> Diagonalización de la Matriz Raíz Cuadrada</a></li>
+<li class="chapter" data-level="1.1.10" data-path="acb-al.html"><a href="acb-al.html#traza-determinante-y-rango-de-una-matriz"><i class="fa fa-check"></i><b>1.1.10</b> Traza, Determinante y Rango de una Matriz</a></li>
+<li class="chapter" data-level="1.1.11" data-path="acb-al.html"><a href="acb-al.html#formas-cuadraticas"><i class="fa fa-check"></i><b>1.1.11</b> Formas Cuadráticas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="algunas-propiedades-estadísticas-de-la-descomposición-de-una-matriz-en-valores-y-vectores-propios.html"><a href="algunas-propiedades-estadísticas-de-la-descomposición-de-una-matriz-en-valores-y-vectores-propios.html"><i class="fa fa-check"></i><b>1.2</b> Algunas Propiedades Estadísticas de la Descomposición de una Matriz en Valores y Vectores Propios</a></li>
+<li class="chapter" data-level="1.3" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html"><i class="fa fa-check"></i><b>1.3</b> Diferenciación con Vectores y Matrices</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="diferenc_vectores.html"><a href="diferenc_vectores.html#vector-gradiente-para-diferentes-definiciones-de-funderlinemathbfx"><i class="fa fa-check"></i><b>1.3.1</b> Vector-Gradiente para diferentes definiciones de <span class="math inline">\(f(\underline{\mathbf{x}})\)</span>:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="org_pres_dat.html"><a href="org_pres_dat.html"><i class="fa fa-check"></i><b>2</b> Organización y Presentación de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html"><i class="fa fa-check"></i><b>2.1</b> Resumenes Descriptivos</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#matriz-de-datos"><i class="fa fa-check"></i><b>2.1.1</b> Matriz de Datos</a></li>
+<li class="chapter" data-level="2.1.2" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#estadísticos-descriptivos"><i class="fa fa-check"></i><b>2.1.2</b> Estadísticos descriptivos</a></li>
+<li class="chapter" data-level="2.1.3" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#algunas-notaciones"><i class="fa fa-check"></i><b>2.1.3</b> Algunas Notaciones</a></li>
+<li class="chapter" data-level="2.1.4" data-path="resumenes-descriptivos.html"><a href="resumenes-descriptivos.html#representación-gráfica-de-observaciones-multivariadas"><i class="fa fa-check"></i><b>2.1.4</b> Representación Gráfica de Observaciones multivariadas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectores-y-matrices-aleatorias.html"><a href="vectores-y-matrices-aleatorias.html"><i class="fa fa-check"></i><b>2.2</b> Vectores y Matrices Aleatorias</a></li>
+<li class="chapter" data-level="2.3" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html"><i class="fa fa-check"></i><b>2.3</b> Vectores y Matrices Poblacionales Particionados</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-del-vector-de-medias-poblacionales"><i class="fa fa-check"></i><b>2.3.1</b> Particionamiento del Vector de Medias-Poblacionales</a></li>
+<li class="chapter" data-level="2.3.2" data-path="vectores-y-matrices-poblacionales-particionados.html"><a href="vectores-y-matrices-poblacionales-particionados.html#particionamiento-de-la-matriz-de-var-cov-poblacional-mathbfsigma"><i class="fa fa-check"></i><b>2.3.2</b> Particionamiento de la Matriz de Var-Cov Poblacional <span class="math inline">\(\mathbf{\Sigma}\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.4</b> Propiedades Sobre la Media y Varianza de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.5" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html"><i class="fa fa-check"></i><b>2.5</b> Vectores y Matrices Muestrales Particionadas</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-del-vector-de-medias-muestrales"><i class="fa fa-check"></i><b>2.5.1</b> Particionamiento del Vector de Medias Muestrales</a></li>
+<li class="chapter" data-level="2.5.2" data-path="vectores-y-matrices-muestrales-particionadas.html"><a href="vectores-y-matrices-muestrales-particionadas.html#particionamiento-de-la-matriz-de-var-cov-muestrales"><i class="fa fa-check"></i><b>2.5.2</b> Particionamiento de la Matriz de Var-Cov Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="algunas-formas-matriciales-eficientes.html"><a href="algunas-formas-matriciales-eficientes.html"><i class="fa fa-check"></i><b>2.6</b> Algunas formas matriciales Eficientes</a></li>
+<li class="chapter" data-level="2.7" data-path="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html"><i class="fa fa-check"></i><b>2.7</b> Propiedades Sobre la Media y Varianza Muestral de Combinaciones Lineales</a></li>
+<li class="chapter" data-level="2.8" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><i class="fa fa-check"></i><b>2.8</b> Varianza Generalizada Muestral y su Interpretación Geométrica</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.8.1</b> Interpretación Geométrica-1 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.8.2" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada"><i class="fa fa-check"></i><b>2.8.2</b> Interpretación Geométrica-2 de la Varianza Generalizada</a></li>
+<li class="chapter" data-level="2.8.3" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr"><i class="fa fa-check"></i><b>2.8.3</b> Varianza Generalizada Determinada por la Matriz de Correlación Muestral <span class="math inline">\(\mathbf{R}\)</span></a></li>
+<li class="chapter" data-level="2.8.4" data-path="varianza-generalizada-muestral-y-su-interpretación-geométrica.html"><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr"><i class="fa fa-check"></i><b>2.8.4</b> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="varianza-total-muestral.html"><a href="varianza-total-muestral.html"><i class="fa fa-check"></i><b>2.9</b> Varianza Total Muestral</a></li>
+<li class="chapter" data-level="2.10" data-path="muestra-aleatoria-de-distribuciones-p-variadas.html"><a href="muestra-aleatoria-de-distribuciones-p-variadas.html"><i class="fa fa-check"></i><b>2.10</b> Muestra Aleatoria de Distribuciones <span class="math inline">\(p\)</span>-Variadas</a></li>
+<li class="chapter" data-level="2.11" data-path="distancias.html"><a href="distancias.html"><i class="fa fa-check"></i><b>2.11</b> Distancias</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="distancias.html"><a href="distancias.html#dist_euclidea"><i class="fa fa-check"></i><b>2.11.1</b> Definición de Algunas Distancias</a></li>
+<li class="chapter" data-level="2.11.2" data-path="distancias.html"><a href="distancias.html#relación-de-la-distancia-de-mahalanobis-con-la-distribución-chi-cuadrado"><i class="fa fa-check"></i><b>2.11.2</b> Relación de la Distancia de Mahalanobis con la Distribución chi-Cuadrado</a></li>
+<li class="chapter" data-level="2.11.3" data-path="distancias.html"><a href="distancias.html#ejemplo"><i class="fa fa-check"></i><b>2.11.3</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Normal-Multiv.html"><a href="Normal-Multiv.html"><i class="fa fa-check"></i><b>3</b> Distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="geometria-NM.html"><a href="geometria-NM.html"><i class="fa fa-check"></i><b>3.1</b> Geometría y propiedades de la NM</a></li>
+<li class="chapter" data-level="3.2" data-path="normal-univariada.html"><a href="normal-univariada.html"><i class="fa fa-check"></i><b>3.2</b> Normal Univariada</a></li>
+<li class="chapter" data-level="3.3" data-path="normal-multivariada.html"><a href="normal-multivariada.html"><i class="fa fa-check"></i><b>3.3</b> Normal Multivariada</a></li>
+<li class="chapter" data-level="3.4" data-path="algunos-aspectos-geométricos-de-la-nm.html"><a href="algunos-aspectos-geométricos-de-la-nm.html"><i class="fa fa-check"></i><b>3.4</b> Algunos Aspectos Geométricos de la NM</a></li>
+<li class="chapter" data-level="3.5" data-path="prop-nm.html"><a href="prop-nm.html"><i class="fa fa-check"></i><b>3.5</b> Propiedades de la distribución Normal Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="prop-nm.html"><a href="prop-nm.html#prop1"><i class="fa fa-check"></i><b>3.5.1</b> <strong>Propiedad-1:</strong></a></li>
+<li class="chapter" data-level="3.5.2" data-path="prop-nm.html"><a href="prop-nm.html#prop2"><i class="fa fa-check"></i><b>3.5.2</b> <strong>Propiedad-2:</strong></a></li>
+<li class="chapter" data-level="3.5.3" data-path="prop-nm.html"><a href="prop-nm.html#prop3"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Propiedad-3:</strong></a></li>
+<li class="chapter" data-level="3.5.4" data-path="prop-nm.html"><a href="prop-nm.html#prop4"><i class="fa fa-check"></i><b>3.5.4</b> <strong>Propiedad-4:</strong></a></li>
+<li class="chapter" data-level="3.5.5" data-path="prop-nm.html"><a href="prop-nm.html#prop5"><i class="fa fa-check"></i><b>3.5.5</b> <strong>Propiedad-5:</strong></a></li>
+<li class="chapter" data-level="3.5.6" data-path="prop-nm.html"><a href="prop-nm.html#prop6"><i class="fa fa-check"></i><b>3.5.6</b> <strong>Propiedad-6:</strong></a></li>
+<li class="chapter" data-level="3.5.7" data-path="prop-nm.html"><a href="prop-nm.html#prop7"><i class="fa fa-check"></i><b>3.5.7</b> <strong>Propiedad-7:</strong></a></li>
+<li class="chapter" data-level="3.5.8" data-path="prop-nm.html"><a href="prop-nm.html#prop8"><i class="fa fa-check"></i><b>3.5.8</b> <strong>Propiedad-8:</strong></a></li>
+<li class="chapter" data-level="3.5.9" data-path="prop-nm.html"><a href="prop-nm.html#prop9"><i class="fa fa-check"></i><b>3.5.9</b> <strong>Propiedad-9:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.6</b> Evaluación del Supuesto de Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-a-nivel-marginal-ie.-normalidad-univariada"><i class="fa fa-check"></i><b>3.6.1</b> Evaluación a nivel marginal (ie. Normalidad Univariada)</a></li>
+<li class="chapter" data-level="3.6.2" data-path="evaluación-del-supuesto-de-normalidad-multivariada.html"><a href="evaluación-del-supuesto-de-normalidad-multivariada.html#evaluación-de-la-normalidad-bi-variada"><i class="fa fa-check"></i><b>3.6.2</b> Evaluación de la Normalidad Bi-variada</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="detección-de-observaciones-atípicas.html"><a href="detección-de-observaciones-atípicas.html"><i class="fa fa-check"></i><b>3.7</b> Detección de Observaciones Atípicas</a></li>
+<li class="chapter" data-level="3.8" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><i class="fa fa-check"></i><b>3.8</b> Transformaciones para Acercar a la Normalidad Multivariada</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#familia-de-transformaciones-de-potencia-de-box-y-cox-1964"><i class="fa fa-check"></i><b>3.8.1</b> Familia de Transformaciones de Potencia de Box y Cox (1964)</a></li>
+<li class="chapter" data-level="3.8.2" data-path="transformaciones-para-acercar-a-la-normalidad-multivariada.html"><a href="transformaciones-para-acercar-a-la-normalidad-multivariada.html#transformaciones-para-el-caso-multivariado"><i class="fa fa-check"></i><b>3.8.2</b> Transformaciones para el Caso Multivariado:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html"><i class="fa fa-check"></i><b>3.9</b> Muestra Aleatoria Normal <span class="math inline">\(p\)</span>-Variada</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#estimadores-de-máx-ver-de-una-normal-multivariada"><i class="fa fa-check"></i><b>3.9.1</b> Estimadores de Máx-Ver de una Normal-Multivariada</a></li>
+<li class="chapter" data-level="3.9.2" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#distribución-muestral-de-overlineunderlinemathbfx-y-mathbfs_n"><i class="fa fa-check"></i><b>3.9.2</b> Distribución Muestral de <span class="math inline">\(\overline{\underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\mathbf{S}_n\)</span></a></li>
+<li class="chapter" data-level="3.9.3" data-path="muestra-aleatoria-normal-p-variada.html"><a href="muestra-aleatoria-normal-p-variada.html#comportamiento-de-underlineoverlinemathbfx_p-y-mathbfs-para-tamaños-muestrales-grandes"><i class="fa fa-check"></i><b>3.9.3</b> Comportamiento de <span class="math inline">\(\underline{\overline{\mathbf{x}}}_p\)</span> y <span class="math inline">\(\mathbf{S}\)</span> para Tamaños Muestrales Grandes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferen-estad.html"><a href="inferen-estad.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencia-estadística-para-la-media-mu-caso-univariado.html"><a href="inferencia-estadística-para-la-media-mu-caso-univariado.html"><i class="fa fa-check"></i><b>4.2</b> Inferencia Estadística para la Media (<span class="math inline">\(\mu\)</span>)-caso univariado</a></li>
+<li class="chapter" data-level="4.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><i class="fa fa-check"></i><b>4.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-desconocida-normal"><i class="fa fa-check"></i><b>4.3.1</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Desconocida (Normal)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-cuando-mathbfsigma-es-conocida-población-normal"><i class="fa fa-check"></i><b>4.3.2</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> cuando <span class="math inline">\(\mathbf{\Sigma}\)</span> es Conocida (Población: Normal)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="pruebas-de-hipótesis-para-underlineboldsymbolmu.html"><a href="pruebas-de-hipótesis-para-underlineboldsymbolmu.html#pruebas-de-hipótesis-para-underlineboldsymbolmu-en-muestra-grande"><i class="fa fa-check"></i><b>4.3.3</b> Pruebas de Hipótesis para <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span> en Muestra Grande</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><i class="fa fa-check"></i><b>4.4</b> PH Acerca de Contrastes del Vector de Medias Poblacional <span class="math inline">\(\underline{\boldsymbol{\mu}}\)</span>, de una <span class="math inline">\(N_p(\underline{\boldsymbol{\mu}} \ , \ \mathbf{\Sigma} )\)</span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#ph-de-contrastes-para-el-caso-de-pnm"><i class="fa fa-check"></i><b>4.4.1</b> PH de Contrastes para el Caso de PNM</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#ph-de-contrastes-en-en-caso-de-n-grande"><i class="fa fa-check"></i><b>4.4.2</b> PH de Contrastes en en caso de <span class="math inline">\(n\)</span>-Grande</a></li>
+<li class="chapter" data-level="4.4.3" data-path="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html"><a href="ph-acerca-de-contrastes-del-vector-de-medias-poblacional-underlineboldsymbolmu-de-una-n_punderlineboldsymbolmu-mathbfsigma.html#prueba-de-hipótesis-para-igualdad-de-medias"><i class="fa fa-check"></i><b>4.4.3</b> Prueba de hipótesis para igualdad de medias</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><i class="fa fa-check"></i><b>4.5</b> PH para Igualdad de Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}=\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-1.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-conocida"><i class="fa fa-check"></i><b>4.5.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.5.2" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-2.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-desconocida"><i class="fa fa-check"></i><b>4.5.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.5.3" data-path="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html"><a href="ph-para-igualdad-de-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfxunderlineboldsymbolmu_-underlinemathbfy.html#caso-3.-mathbfsigma_-underlinemathbfxneq-mathbfsigma_-underlinemathbfy-desconocida"><i class="fa fa-check"></i><b>4.5.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}\neq \mathbf{\Sigma}_{\ \underline{\mathbf{y}}}\)</span>-Desconocida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><i class="fa fa-check"></i><b>4.6</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span>,   para muestras grandes</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-1.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-conocida-1"><i class="fa fa-check"></i><b>4.6.1</b> Caso-1. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Conocida</a></li>
+<li class="chapter" data-level="4.6.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-2.-mathbfsigma_-underlinemathbfxmathbfsigma_-underlinemathbfymathbfsigma-desconocida-1"><i class="fa fa-check"></i><b>4.6.2</b> Caso-2. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}}=\mathbf{\Sigma}_{\ \underline{\mathbf{y}}}=\mathbf{\Sigma}\)</span>-Desconocida</a></li>
+<li class="chapter" data-level="4.6.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-para-muestras-grandes.html#caso-3.-mathbfsigma_-underlinemathbfx-neq-mathbfsigma_-underlinemathbfy-desconocidas"><i class="fa fa-check"></i><b>4.6.3</b> Caso-3. <span class="math inline">\(\mathbf{\Sigma}_{\ \underline{\mathbf{x}}} \neq \mathbf{\Sigma}_{\ \underline{\mathbf{y}}}\)</span>-Desconocidas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><i class="fa fa-check"></i><b>4.7</b> Pruebas de Hipótesis Acerca de dos Vectores de Medias Poblacionales <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{x}}}\)</span> y <span class="math inline">\(\underline{\boldsymbol{\mu}}_{\ \underline{\mathbf{y}}}\)</span>,      Observaciones Pareadas</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#caso-univariado"><i class="fa fa-check"></i><b>4.7.1</b> Caso Univariado</a></li>
+<li class="chapter" data-level="4.7.2" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#caso-multivariado"><i class="fa fa-check"></i><b>4.7.2</b> Caso Multivariado</a></li>
+<li class="chapter" data-level="4.7.3" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#uso-de-contrastes-para-la-comparación-de-medias-en-muestras-pareadas"><i class="fa fa-check"></i><b>4.7.3</b> Uso de Contrastes para la Comparación de Medias en Muestras Pareadas</a></li>
+<li class="chapter" data-level="4.7.4" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#un-diseño-de-medidas-repetidas-para-comparar-tratamientos"><i class="fa fa-check"></i><b>4.7.4</b> Un Diseño de Medidas Repetidas para Comparar Tratamientos</a></li>
+<li class="chapter" data-level="4.7.5" data-path="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html"><a href="pruebas-de-hipótesis-acerca-de-dos-vectores-de-medias-poblacionales-underlineboldsymbolmu_-underlinemathbfx-y-underlineboldsymbolmu_-underlinemathbfy-observaciones-pareadas.html#análisis-de-perfiles"><i class="fa fa-check"></i><b>4.7.5</b> Análisis de Perfiles</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html"><i class="fa fa-check"></i><b>4.8</b> Inferencia para la Matriz de Varianzas Covarianza</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#prueva-de-rv-sigma"><i class="fa fa-check"></i><b>4.8.1</b> Pruba de Razón de Verosimilitud</a></li>
+<li class="chapter" data-level="4.8.2" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#prueba-de-bartlet"><i class="fa fa-check"></i><b>4.8.2</b> Prueba de Bartlet</a></li>
+<li class="chapter" data-level="4.8.3" data-path="inferencia-para-la-matriz-de-varianzas-covarianza.html"><a href="inferencia-para-la-matriz-de-varianzas-covarianza.html#dos-o-más-matrices-de-varianzas-covarianzas"><i class="fa fa-check"></i><b>4.8.3</b> Dos o más Matrices de Varianzas Covarianzas</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><i class="fa fa-check"></i><b>4.9</b> Regiones de Confianza y Comparaciones Simultáneas entre las Componentes del Vector de Medias <span class="math inline">\(\underline{\boldsymbol \mu}\)</span></a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#construcción-de-una-región-de-confianza-para-underlineboldsymbol-mu-cuando-la-población-tiene-distribución-n_punderlineboldsymbol-mumathbfsigma-con-underlineboldsymbol-mu-y-mathbfsigma-desconocidos"><i class="fa fa-check"></i><b>4.9.1</b> Construcción de una Región de Confianza para <span class="math inline">\(\underline{\boldsymbol \mu}\)</span> Cuando la Población tiene Distribución <span class="math inline">\(N_p(\underline{\boldsymbol \mu},\mathbf{\Sigma})\)</span>, con <span class="math inline">\(\underline{\boldsymbol \mu}\)</span> y <span class="math inline">\(\mathbf{\Sigma}\)</span> desconocidos</a></li>
+<li class="chapter" data-level="4.9.2" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#región-de-confianza-para-el-caso-de-p2-elipse-de-confianza"><i class="fa fa-check"></i><b>4.9.2</b> Región de Confianza para el Caso de <span class="math inline">\(p=2\)</span> (Elipse de Confianza)</a></li>
+<li class="chapter" data-level="4.9.3" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#intervalos-de-confianza-simultáneos-para-las-componentes-del-vector-de-medias-underlineboldsymbol-mu"><i class="fa fa-check"></i><b>4.9.3</b> Intervalos de Confianza Simultáneos para las Componentes del Vector de Medias <span class="math inline">\(\underline{\boldsymbol \mu}\)</span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#ic-t2-simultáneos-para-diferencias-de-medias"><i class="fa fa-check"></i><b>4.9.4</b> IC <span class="math inline">\(T^2\)</span> Simultáneos para Diferencias de Medias</a></li>
+<li class="chapter" data-level="4.9.5" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#IC-Bonferroni"><i class="fa fa-check"></i><b>4.9.5</b> Método de Bonferroni para Comparaciones Múltiples</a></li>
+<li class="chapter" data-level="4.9.6" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#intervalos-de-confianza-simultáneos-chi2-caso-n-grande"><i class="fa fa-check"></i><b>4.9.6</b> Intervalos de Confianza Simultáneos <span class="math inline">\(\chi^2\)</span> (caso n-Grande)</a></li>
+<li class="chapter" data-level="4.9.7" data-path="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html"><a href="regiones-de-confianza-y-comparaciones-simultáneas-entre-las-componentes-del-vector-de-medias-underlineboldsymbol-mu.html#ic-simultáneos-para-n-grande-usando-la-normal-estándar-z_alpha"><i class="fa fa-check"></i><b>4.9.7</b> IC Simultáneos para n-Grande Usando la Normal Estándar <span class="math inline">\(Z_\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mrlm.html"><a href="mrlm.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regresión Lineal Multivariados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="rlm.html"><a href="rlm.html"><i class="fa fa-check"></i><b>5.2</b> Modelo de Regresión Lineal Múltiple (RLM)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rlm.html"><a href="rlm.html#estimación-de-mínimos-cuadrados"><i class="fa fa-check"></i><b>5.2.1</b> Estimación de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rlm.html"><a href="rlm.html#inferencias-acerca-del-modelo-de-regresión-lineal-múltiple"><i class="fa fa-check"></i><b>5.2.2</b> Inferencias Acerca del Modelo de Regresión Lineal Múltiple</a></li>
+<li class="chapter" data-level="5.2.3" data-path="rlm.html"><a href="rlm.html#inferencias-a-partir-de-la-función-de-regresión-estimada"><i class="fa fa-check"></i><b>5.2.3</b> Inferencias A partir de la Función de Regresión Estimada</a></li>
+<li class="chapter" data-level="5.2.4" data-path="rlm.html"><a href="rlm.html#validación-de-los-supuestos-del-modelo-y-otros-aspectos-del-la-regresión"><i class="fa fa-check"></i><b>5.2.4</b> Validación de los Supuestos del Modelo y Otros Aspectos del la Regresión</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mrl-multiv.html"><a href="mrl-multiv.html"><i class="fa fa-check"></i><b>5.3</b> Modelo de Regresión Lineal Multivariado (RL-Multivariado)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="mrl-multiv.html"><a href="mrl-multiv.html#algunas-notaciones-1"><i class="fa fa-check"></i><b>5.3.1</b> Algunas Notaciones</a></li>
+<li class="chapter" data-level="5.3.2" data-path="mrl-multiv.html"><a href="mrl-multiv.html#mrl-multivariado-en-forma-matricial"><i class="fa fa-check"></i><b>5.3.2</b> MRL-Multivariado en forma Matricial</a></li>
+<li class="chapter" data-level="5.3.3" data-path="mrl-multiv.html"><a href="mrl-multiv.html#m-mrl-múltiples"><i class="fa fa-check"></i><b>5.3.3</b> <span class="math inline">\(m\)</span>-MRL-Múltiples</a></li>
+<li class="chapter" data-level="5.3.4" data-path="mrl-multiv.html"><a href="mrl-multiv.html#estimador-de-mínimos-cuadrados-de-los-parámetros"><i class="fa fa-check"></i><b>5.3.4</b> Estimador de Mínimos Cuadrados de los Parámetros</a></li>
+<li class="chapter" data-level="5.3.5" data-path="mrl-multiv.html"><a href="mrl-multiv.html#propiedades-de-estimadores-de-mínimos-cuadrados-del-mrl-multivariado"><i class="fa fa-check"></i><b>5.3.5</b> Propiedades de Estimadores de Mínimos Cuadrados del MRL-Multivariado</a></li>
+<li class="chapter" data-level="5.3.6" data-path="mrl-multiv.html"><a href="mrl-multiv.html#prv-mrl-multivariado"><i class="fa fa-check"></i><b>5.3.6</b> Prueba de Razón de Verosimilitud para Parámetros de Regresión en MRL-Multivariados</a></li>
+<li class="chapter" data-level="5.3.7" data-path="mrl-multiv.html"><a href="mrl-multiv.html#otras-pruebas-estadísticas-multivariadas"><i class="fa fa-check"></i><b>5.3.7</b> Otras Pruebas Estadísticas Multivariadas</a></li>
+<li class="chapter" data-level="5.3.8" data-path="mrl-multiv.html"><a href="mrl-multiv.html#predicciones-a-partir-de-un-modelo-de-regresión-múltiple-multivariado"><i class="fa fa-check"></i><b>5.3.8</b> Predicciones A Partir de un Modelo de Regresión Múltiple Multivariado</a></li>
+<li class="chapter" data-level="5.3.9" data-path="mrl-multiv.html"><a href="mrl-multiv.html#el-concepto-de-regresión-lineal"><i class="fa fa-check"></i><b>5.3.9</b> El Concepto de Regresión Lineal</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ACP.html"><a href="ACP.html"><i class="fa fa-check"></i><b>6</b> Análisis de Componentes Principales (ACP)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="interpretaciones-geométricas-y-algebraícas-del-acp.html"><a href="interpretaciones-geométricas-y-algebraícas-del-acp.html"><i class="fa fa-check"></i><b>6.2</b> Interpretaciones Geométricas y Algebraícas del ACP</a></li>
+<li class="chapter" data-level="6.3" data-path="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple-p2.html"><a href="interpretación-geométrica-del-acp-mediante-un-ejemplo-simple-p2.html"><i class="fa fa-check"></i><b>6.3</b> Interpretación Geométrica del ACP Mediante un Ejemplo Simple <span class="math inline">\(p=2\)</span></a></li>
+<li class="chapter" data-level="6.4" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html"><i class="fa fa-check"></i><b>6.4</b> Mas de dos Ejes</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#min-cuadrados"><i class="fa fa-check"></i><b>6.4.1</b> Ajuste de Mínimos Cuadrados</a></li>
+<li class="chapter" data-level="6.4.2" data-path="mas-de-dos-ejes.html"><a href="mas-de-dos-ejes.html#relación-entre-los-sub-espacios-de-mathbbrp-y-de-mathbbrn"><i class="fa fa-check"></i><b>6.4.2</b> Relación entre los Sub-espacios de <span class="math inline">\(\mathbb{R}^p\)</span> y de <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="componentes-principales-en-análisis-de-regresión.html"><a href="componentes-principales-en-análisis-de-regresión.html"><i class="fa fa-check"></i><b>6.5</b> Componentes Principales en Análisis de Regresión</a></li>
+<li class="chapter" data-level="6.6" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html"><i class="fa fa-check"></i><b>6.6</b> Componentes Principales Poblacionales</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#definicón-de-las-cps-poblacionales"><i class="fa fa-check"></i><b>6.6.1</b> Definicón de las CPs Poblacionales</a></li>
+<li class="chapter" data-level="6.6.2" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#determinación-de-las-cps-poblacionales"><i class="fa fa-check"></i><b>6.6.2</b> Determinación de las CPs Poblacionales</a></li>
+<li class="chapter" data-level="6.6.3" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-derivadas-de-una-normal-multivariada"><i class="fa fa-check"></i><b>6.6.3</b> Componentes Principales Derivadas de una Normal Multivariada</a></li>
+<li class="chapter" data-level="6.6.4" data-path="componentes-principales-poblacionales.html"><a href="componentes-principales-poblacionales.html#componentes-principales-usando-variables-estandarizadas"><i class="fa fa-check"></i><b>6.6.4</b> Componentes Principales usando Variables Estandarizadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><i class="fa fa-check"></i><b>6.7</b> Componentes Principales para Matrices de Var-Cov <span class="math inline">\(\mathbf{\Sigma}\)</span> con Estructuras Especiales</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#variables-no-correlacionadas"><i class="fa fa-check"></i><b>6.7.1</b> Variables No-Correlacionadas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html"><a href="componentes-principales-para-matrices-de-var-cov-mathbfsigma-con-estructuras-especiales.html#var-correlacionadas"><i class="fa fa-check"></i><b>6.7.2</b> Variables Altamente Correlacionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="componentes-principales-muestrales.html"><a href="componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.8</b> Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.9" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html"><i class="fa fa-check"></i><b>6.9</b> Algunos Ejemplos de ACP</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo1"><i class="fa fa-check"></i><b>6.9.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="6.9.2" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo-2"><i class="fa fa-check"></i><b>6.9.2</b> Ejemplo-2</a></li>
+<li class="chapter" data-level="6.9.3" data-path="algunos-ejemplos-de-acp.html"><a href="algunos-ejemplos-de-acp.html#ejemplo-3"><i class="fa fa-check"></i><b>6.9.3</b> Ejemplo-3</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="cómo-elegir-el-número-de-componentes-principales.html"><a href="cómo-elegir-el-número-de-componentes-principales.html"><i class="fa fa-check"></i><b>6.10</b> Cómo elegir el número de Componentes Principales?</a></li>
+<li class="chapter" data-level="6.11" data-path="interpretación-de-las-componentes-principales-muestrales.html"><a href="interpretación-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.11</b> Interpretación de las Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.12" data-path="estandarización-de-las-componentes-principales-muestrales.html"><a href="estandarización-de-las-componentes-principales-muestrales.html"><i class="fa fa-check"></i><b>6.12</b> Estandarización de las Componentes Principales Muestrales</a></li>
+<li class="chapter" data-level="6.13" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html"><i class="fa fa-check"></i><b>6.13</b> Gráficas en un Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="6.13.1" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html#graficos-de-las-cps"><i class="fa fa-check"></i><b>6.13.1</b> Graficos de las CPS</a></li>
+<li class="chapter" data-level="6.13.2" data-path="gráficas-en-un-análisis-de-componentes-principales.html"><a href="gráficas-en-un-análisis-de-componentes-principales.html#el-gráfico-biplot"><i class="fa fa-check"></i><b>6.13.2</b> El gráfico biplot:</a></li>
+</ul></li>
+<li class="chapter" data-level="6.14" data-path="propiedades-de-hatlambda_i-y-underlinehatmathbfe_i-en-muestras-grandes.html"><a href="propiedades-de-hatlambda_i-y-underlinehatmathbfe_i-en-muestras-grandes.html"><i class="fa fa-check"></i><b>6.14</b> Propiedades de <span class="math inline">\(\hat{\lambda}_i\)</span> y <span class="math inline">\(\underline{\hat{\mathbf{e}}}_i\)</span> en Muestras Grandes</a></li>
+<li class="chapter" data-level="6.15" data-path="prueba-de-hipótesis-para-estructura-de-correlación-igual.html"><a href="prueba-de-hipótesis-para-estructura-de-correlación-igual.html"><i class="fa fa-check"></i><b>6.15</b> Prueba de Hipótesis para Estructura de Correlación Igual</a></li>
+<li class="chapter" data-level="6.16" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html"><i class="fa fa-check"></i><b>6.16</b> Ejemplos Finales</a>
+<ul>
+<li class="chapter" data-level="6.16.1" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-1"><i class="fa fa-check"></i><b>6.16.1</b> Ejemplo-1</a></li>
+<li class="chapter" data-level="6.16.2" data-path="ejemplos-finales.html"><a href="ejemplos-finales.html#ejemplo-acp-con-individuos-y-variables-suplementarias"><i class="fa fa-check"></i><b>6.16.2</b> Ejemplo ACP con Individuos y Variables Suplementarias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="affc.html"><a href="affc.html"><i class="fa fa-check"></i><b>7</b> Análisis Factorial de Factores Comunes</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="tipos-de-factores.html"><a href="tipos-de-factores.html"><i class="fa fa-check"></i><b>7.2</b> Tipos de Factores</a></li>
+<li class="chapter" data-level="7.3" data-path="motivación-del-análisis-factorial.html"><a href="motivación-del-análisis-factorial.html"><i class="fa fa-check"></i><b>7.3</b> Motivación del Análisis Factorial</a></li>
+<li class="chapter" data-level="7.4" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html"><i class="fa fa-check"></i><b>7.4</b> Enfoques del AF</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#métodos-para-realizar-la-extracción-de-los-factores"><i class="fa fa-check"></i><b>7.4.1</b> Métodos para realizar la extracción de los factores</a></li>
+<li class="chapter" data-level="7.4.2" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#rotación-de-ejes"><i class="fa fa-check"></i><b>7.4.2</b> Rotación de Ejes</a></li>
+<li class="chapter" data-level="7.4.3" data-path="enfoques-del-af.html"><a href="enfoques-del-af.html#puntuaciones-o-scores-de-los-sujetos-en-los-factores-extraídos"><i class="fa fa-check"></i><b>7.4.3</b> Puntuaciones o Scores de los Sujetos en los Factores Extraídos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html"><i class="fa fa-check"></i><b>7.5</b> El Modelo de Factor Ortogonal</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html#estructura-de-covarianzas-del-modelo-de-factor-ortogonal"><i class="fa fa-check"></i><b>7.5.1</b> Estructura de Covarianzas del Modelo de Factor Ortogonal</a></li>
+<li class="chapter" data-level="7.5.2" data-path="el-modelo-de-factor-ortogonal.html"><a href="el-modelo-de-factor-ortogonal.html#ejemplos"><i class="fa fa-check"></i><b>7.5.2</b> Ejemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html"><i class="fa fa-check"></i><b>7.6</b> Métodos de Estimación</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-cp"><i class="fa fa-check"></i><b>7.6.1</b> El Método de la Componente Principal</a></li>
+<li class="chapter" data-level="7.6.2" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-pa"><i class="fa fa-check"></i><b>7.6.2</b> Una Aproximación Modificada (La Solución del Factor Principal o de las CP-Iteradas o de Ejes Principales-PA)</a></li>
+<li class="chapter" data-level="7.6.3" data-path="métodos-de-estimación.html"><a href="métodos-de-estimación.html#metodo-mle"><i class="fa fa-check"></i><b>7.6.3</b> El Método de Máxima Verosimilitud</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="prueba-para-el-número-de-factores-muestra-grande..html"><a href="prueba-para-el-número-de-factores-muestra-grande..html"><i class="fa fa-check"></i><b>7.7</b> Prueba para el Número de Factores (Muestra Grande).</a></li>
+<li class="chapter" data-level="7.8" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html"><i class="fa fa-check"></i><b>7.8</b> Rotación de Factores</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#rotaciones-cuando-m2-factores"><i class="fa fa-check"></i><b>7.8.1</b> Rotaciones cuando <span class="math inline">\(m=2\)</span>-Factores</a></li>
+<li class="chapter" data-level="7.8.2" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#criterio-varimáx"><i class="fa fa-check"></i><b>7.8.2</b> Criterio Varimáx:</a></li>
+<li class="chapter" data-level="7.8.3" data-path="rotación-de-factores.html"><a href="rotación-de-factores.html#rotaciones-oblicuas"><i class="fa fa-check"></i><b>7.8.3</b> Rotaciones Oblicuas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html"><i class="fa fa-check"></i><b>7.9</b> Factores-Scores (o Puntuaciones) de los Factores</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html#método-de-los-mínimos-cuadrados-ponderados"><i class="fa fa-check"></i><b>7.9.1</b> Método de los Mínimos Cuadrados Ponderados</a></li>
+<li class="chapter" data-level="7.9.2" data-path="factores-scores-o-puntuaciones-de-los-factores.html"><a href="factores-scores-o-puntuaciones-de-los-factores.html#el-método-de-la-regresión"><i class="fa fa-check"></i><b>7.9.2</b> El Método de la Regresión</a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="perspectivas-y-estrategías-para-el-análisis-de-factor.html"><a href="perspectivas-y-estrategías-para-el-análisis-de-factor.html"><i class="fa fa-check"></i><b>7.10</b> Perspectivas y Estrategías para el Análisis de Factor</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="avm.html"><a href="avm.html"><i class="fa fa-check"></i><b>8</b> Análisis de Varianza Multivariado (MANOVA)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i><b>8.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="introducción-5.html"><a href="introducción-5.html#suposiciones-del-manova"><i class="fa fa-check"></i><b>8.1.1</b> Suposiciones del MANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>8.2</b> Análisis de Varianza Univariado (ANOVA)</a></li>
+<li class="chapter" data-level="8.3" data-path="manova.html"><a href="manova.html"><i class="fa fa-check"></i><b>8.3</b> Análisis de Varianza Multivariado (MANOVA)</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="manova.html"><a href="manova.html#modelo-manova-para-comparar-g-vectores-de-medias-poblacionales"><i class="fa fa-check"></i><b>8.3.1</b> Modelo MANOVA para comparar <span class="math inline">\(g\)</span>-Vectores de Medias Poblacionales</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="adiscriminante.html"><a href="adiscriminante.html"><i class="fa fa-check"></i><b>9</b> Análisis Discriminante y Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="introducción-6.html"><a href="introducción-6.html"><i class="fa fa-check"></i><b>9.1</b> Introducción</a></li>
+<li class="chapter" data-level="9.2" data-path="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><a href="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.2</b> Separación y Clasificación para el caso de dos poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html"><a href="separación-y-clasificación-para-el-caso-de-dos-poblaciones.html#clasificación-de-dos-poblaciones"><i class="fa fa-check"></i><b>9.2.1</b> Clasificación de dos Poblaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.3</b> Regla de Discriminación para dos Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#costo-esperado-de-mal-clasificación"><i class="fa fa-check"></i><b>9.3.1</b> Costo Esperado de Mal Clasificación</a></li>
+<li class="chapter" data-level="9.3.2" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#probabilidad-total-de-mal-clasificación"><i class="fa fa-check"></i><b>9.3.2</b> Probabilidad Total de Mal Clasificación</a></li>
+<li class="chapter" data-level="9.3.3" data-path="regla-de-discriminación-para-dos-poblaciones.html"><a href="regla-de-discriminación-para-dos-poblaciones.html#regla-de-clasificación-de-bayes"><i class="fa fa-check"></i><b>9.3.3</b> Regla de Clasificación de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html"><i class="fa fa-check"></i><b>9.4</b> Clasificación con Dos Poblaciones Normales Multivariadas</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html#clasificación-con-dos-poblaciones-normales-donde-mathbfsigma_1mathbfsigma_2mathbfsigma"><i class="fa fa-check"></i><b>9.4.1</b> Clasificación con dos Poblaciones Normales donde <span class="math inline">\(\mathbf{\Sigma}_1=\mathbf{\Sigma}_2=\mathbf{\Sigma}\)</span></a></li>
+<li class="chapter" data-level="9.4.2" data-path="dos-pob-nm.html"><a href="dos-pob-nm.html#clasificación-con-dos-poblaciones-normales-donde-mathbfsigma_1neq-mathbfsigma_2"><i class="fa fa-check"></i><b>9.4.2</b> Clasificación con dos Poblaciones Normales donde <span class="math inline">\(\mathbf{\Sigma}_1\neq \mathbf{\Sigma}_2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html"><i class="fa fa-check"></i><b>9.5</b> Evaluación de las Funciones de Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-óptimo-teo"><i class="fa fa-check"></i><b>9.5.1</b> Tasa de Error Óptimo (TEO)</a></li>
+<li class="chapter" data-level="9.5.2" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-actual"><i class="fa fa-check"></i><b>9.5.2</b> Tasa de Error Actual</a></li>
+<li class="chapter" data-level="9.5.3" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-aparente-teap"><i class="fa fa-check"></i><b>9.5.3</b> Tasa de Error Aparente (TEAP)</a></li>
+<li class="chapter" data-level="9.5.4" data-path="evaluación-de-las-funciones-de-clasificación.html"><a href="evaluación-de-las-funciones-de-clasificación.html#tasa-de-error-actual-esperada"><i class="fa fa-check"></i><b>9.5.4</b> Tasa de Error Actual Esperada</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><a href="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.6</b> Clasificación con Varias Poblaciones (Es decir Más de dos Poblaciones)</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html"><a href="clasificación-con-varias-poblaciones-es-decir-más-de-dos-poblaciones.html#costo-esperado-de-mal-clasificación-ecm"><i class="fa fa-check"></i><b>9.6.1</b> Costo Esperado de Mal Clasificación (ECM)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><i class="fa fa-check"></i><b>9.7</b> Clasificación con Poblaciones Normales y más de dos Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#un-clasificador-equivalente-para-el-caso-de-matrices-de-var-cov-iguales"><i class="fa fa-check"></i><b>9.7.1</b> Un Clasificador Equivalente para el Caso de Matrices de Var-Cov Iguales</a></li>
+<li class="chapter" data-level="9.7.2" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#comparación-dos-a-dos-de-los-scores-de-la-función-de-clasificación-lineal"><i class="fa fa-check"></i><b>9.7.2</b> Comparación Dos a Dos de los Scores de la Función de Clasificación Lineal</a></li>
+<li class="chapter" data-level="9.7.3" data-path="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html"><a href="clasificación-con-poblaciones-normales-y-más-de-dos-poblaciones.html#tasa-de-error-actual-esperada-aer-estimada"><i class="fa fa-check"></i><b>9.7.3</b> Tasa de Error Actual Esperada (AER) Estimada</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><i class="fa fa-check"></i><b>9.8</b> Método de Fisher Para Discriminar Entre Varias Poblaciones</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#uso-de-la-función-de-discriminación-de-fisher-para-clasificación"><i class="fa fa-check"></i><b>9.8.1</b> Uso de la Función de Discriminación de Fisher Para Clasificación</a></li>
+<li class="chapter" data-level="9.8.2" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#relación-entre-la-regla-de-clasificación-de-fisher-y-las-funciones-de-discriminación-de-la-teoría-normal"><i class="fa fa-check"></i><b>9.8.2</b> Relación entre la Regla de Clasificación de Fisher y las Funciones de Discriminación de la Teoría Normal</a></li>
+<li class="chapter" data-level="9.8.3" data-path="método-de-fisher-para-discriminar-entre-varias-poblaciones.html"><a href="método-de-fisher-para-discriminar-entre-varias-poblaciones.html#regla-de-clasificación-de-fisher-basado-en-discriminantes-muestrales"><i class="fa fa-check"></i><b>9.8.3</b> Regla de Clasificación de Fisher Basado en Discriminantes Muestrales</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html"><i class="fa fa-check"></i><b>9.9</b> Regresión Logística y Clasificación</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#el-modelo-logit"><i class="fa fa-check"></i><b>9.9.1</b> El Modelo Logit</a></li>
+<li class="chapter" data-level="9.9.2" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#análisis-de-regresión-logística"><i class="fa fa-check"></i><b>9.9.2</b> Análisis de Regresión Logística</a></li>
+<li class="chapter" data-level="9.9.3" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#regresión-logística-con-respuestas-binomiales"><i class="fa fa-check"></i><b>9.9.3</b> Regresión Logística con Respuestas Binomiales</a></li>
+<li class="chapter" data-level="9.9.4" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#chequeo-del-modelo"><i class="fa fa-check"></i><b>9.9.4</b> Chequeo del Modelo</a></li>
+<li class="chapter" data-level="9.9.5" data-path="regresión-logística-y-clasificación.html"><a href="regresión-logística-y-clasificación.html#prueba-de-residuales-y-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>9.9.5</b> Prueba de Residuales y de Bondad de Ajuste</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="acluster.html"><a href="acluster.html"><i class="fa fa-check"></i><b>10</b> Análisis de Agrupamiento o Cluster</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="introducción-7.html"><a href="introducción-7.html"><i class="fa fa-check"></i><b>10.1</b> Introducción</a></li>
+<li class="chapter" data-level="10.2" data-path="consideraciones-iniciales.html"><a href="consideraciones-iniciales.html"><i class="fa fa-check"></i><b>10.2</b> Consideraciones Iniciales</a></li>
+<li class="chapter" data-level="10.3" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html"><i class="fa fa-check"></i><b>10.3</b> Medidas de Similaridad entre Pares de Observaciones</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#medidas-de-distancia"><i class="fa fa-check"></i><b>10.3.1</b> Medidas de Distancia</a></li>
+<li class="chapter" data-level="10.3.2" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-de-correlación-entre-casos"><i class="fa fa-check"></i><b>10.3.2</b> Coeficientes de Correlación (entre casos)</a></li>
+<li class="chapter" data-level="10.3.3" data-path="medidas-de-similaridad-entre-pares-de-observaciones.html"><a href="medidas-de-similaridad-entre-pares-de-observaciones.html#coeficientes-binarios-de-asociación-o-similaridad-entre-observaciones"><i class="fa fa-check"></i><b>10.3.3</b> Coeficientes Binarios de Asociación o Similaridad Entre Observaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="medidas-de-similaridad-o-asociación-para-pares-de-variables.html"><a href="medidas-de-similaridad-o-asociación-para-pares-de-variables.html"><i class="fa fa-check"></i><b>10.4</b> Medidas de Similaridad o Asociación para Pares de Variables</a></li>
+<li class="chapter" data-level="10.5" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html"><i class="fa fa-check"></i><b>10.5</b> Métodos Jerárquicos de Agrupamiento</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html#métodos-jerarquicos-de-enlaces-para-agupamientos-aglomerativos"><i class="fa fa-check"></i><b>10.5.1</b> Métodos Jerarquicos de Enlaces para Agupamientos Aglomerativos</a></li>
+<li class="chapter" data-level="10.5.2" data-path="métodos-jerárquicos-de-agrupamiento.html"><a href="métodos-jerárquicos-de-agrupamiento.html#métodos-jerarquicos-de-agrupamientos-desaglomerativos"><i class="fa fa-check"></i><b>10.5.2</b> Métodos Jerarquicos de Agrupamientos Desaglomerativos</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><i class="fa fa-check"></i><b>10.6</b> Métodos NO-Jerárquicos de Partición o Agrupamiento</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html#pasos-o-etapas-de-un-método-de-clasificación-no-jararquico"><i class="fa fa-check"></i><b>10.6.1</b> Pasos o etapas de un Método de Clasificación No-Jararquico</a></li>
+<li class="chapter" data-level="10.6.2" data-path="métodos-no-jerárquicos-de-partición-o-agrupamiento.html"><a href="métodos-no-jerárquicos-de-partición-o-agrupamiento.html#método-de-las-k-medias-o-k-means"><i class="fa fa-check"></i><b>10.6.2</b> Método de las <span class="math inline">\(k\)</span>-Medias o <span class="math inline">\(k\)</span>-means</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="cómo-determinar-el-número-apropiado-de-conglomerados.html"><a href="cómo-determinar-el-número-apropiado-de-conglomerados.html"><i class="fa fa-check"></i><b>10.7</b> Cómo determinar el número apropiado de conglomerados?</a></li>
+<li class="chapter" data-level="10.8" data-path="agrupamientos-basados-en-modelos-estadísticos.html"><a href="agrupamientos-basados-en-modelos-estadísticos.html"><i class="fa fa-check"></i><b>10.8</b> Agrupamientos Basados en Modelos Estadísticos</a></li>
+<li class="chapter" data-level="10.9" data-path="escalamiento-multidimensional.html"><a href="escalamiento-multidimensional.html"><i class="fa fa-check"></i><b>10.9</b> Escalamiento Multidimensional</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="escalamiento-multidimensional.html"><a href="escalamiento-multidimensional.html#el-algoritmo-básico"><i class="fa fa-check"></i><b>10.9.1</b> El Algoritmo Básico</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html"><i class="fa fa-check"></i><b>10.10</b> Análisis de Correspondencia</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#desarrollo-algebraíco-del-análsisi-de-correspondencia"><i class="fa fa-check"></i><b>10.10.1</b> Desarrollo Algebraíco del Análsisi de Correspondencia</a></li>
+<li class="chapter" data-level="10.10.2" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#análisis-de-correspondencia-como-un-problema-de-mínimos-cuadrados-ponderado"><i class="fa fa-check"></i><b>10.10.2</b> Análisis de Correspondencia como un Problema de Mínimos Cuadrados Ponderado</a></li>
+<li class="chapter" data-level="10.10.3" data-path="análisis-de-correspondencia.html"><a href="análisis-de-correspondencia.html#análisis-de-correspondencia-medinate-el-método-de-aproximación-de-perfiles"><i class="fa fa-check"></i><b>10.10.3</b> Análisis de Correspondencia Medinate el Método de Aproximación de Perfiles</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><a href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><i class="fa fa-check"></i><b>10.11</b> Biplots para la Visualización de Unidades Muestrales y Variables</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html"><a href="biplots-para-la-visualización-de-unidades-muestrales-y-variables.html#construcción-de-un-biplot"><i class="fa fa-check"></i><b>10.11.1</b> Construcción de un Biplot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Chapter 10</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="varianza-generalizada-muestral-y-su-interpretación-geométrica" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Varianza Generalizada Muestral y su Interpretación Geométrica<a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-muestral-y-su-interpretación-geométrica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para una sola variable aleatoria, la varianza muestral generalmente se usa para describir la variación de las mediciones de la variable.</p>
+<p>Cuando se observan <span class="math inline">\(p\)</span> variables, asociadas al vector aleatorio
+<span class="math display">\[
+\underline{\mathbf{x}}=\begin{bmatrix}
+X_1\\X_2\\ \vdots \\ X_p
+\end{bmatrix}_{p\times 1}
+\]</span></p>
+<p>y una muestra de dicho vector dada por:
+<span class="math display">\[
+\mathbf{X}_{n\times p}=\begin{bmatrix} x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p}\\ x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p}\\ \vdots &amp; \vdots &amp; &amp; \vdots \\ x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np} \end{bmatrix}
+\]</span></p>
+<p>Una manera de describir la variación de dichos datos es usar la Matriz de Varianzas-Covarianzas Muestral, <span class="math inline">\(\mathbf{S}\)</span>.</p>
+<p><span class="math display">\[
+\mathbf{S}=\begin{bmatrix}   s_{11} &amp; s_{12} &amp; \cdots &amp; s_{1p}\\   s_{21} &amp; s_{22} &amp; \cdots &amp; s_{2p}\\   \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\   s_{p1} &amp; s_{p2} &amp; \cdots &amp; s_{pp}\\   \end{bmatrix}=\frac{1}{n-1}\sum_{i=1}^n(\underline{\mathbf{x}}_{\ i} - \underline{\overline{\mathbf{x}}})(\underline{\mathbf{x}}_{\ i} - \underline{\overline{\mathbf{x}}})^T
+\]</span></p>
+<p>donde, <span class="math inline">\(\mathbf{S}\)</span> contiene <span class="math inline">\(p\)</span> varianzas y <span class="math inline">\(p(p-1)/2\)</span>-covarianzas, las cuales describen la variabilidad de los datos de cada variable y la asociación lineal para los datos de cada par de variables.</p>
+<p>Otra generalización de la varianza muestral es llamada la: <strong>Varianza Generalizada Muestral</strong> definida como:
+<span class="math display">\[
+\text{Varianza generalizada muestral}=|\mathbf{S}|
+\]</span>
+A diferencia de <span class="math inline">\(\mathbf{S}\)</span>, <span class="math inline">\(|\mathbf{S}|\)</span> es un solo número.</p>
+<p>La varianza generalizada pierde alguna información sobre la muestra.</p>
+<div id="interpretación-geométrica-1-de-la-varianza-generalizada" class="section level3 hasAnchor" number="2.8.1">
+<h3><span class="header-section-number">2.8.1</span> Interpretación Geométrica-1 de la Varianza Generalizada<a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-1-de-la-varianza-generalizada" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Considere el vector que contiene los datos para la j-ésima variable:
+<span class="math display">\[
+\underline{X}^{(j)}=\begin{bmatrix}
+X_{1j} \\ X_{2j} \\ \vdots \\ X_{nj}
+\end{bmatrix}
+\]</span>
+y el vector de desviaciones con respecto a la media
+<span class="math display">\[
+\underline{\mathbf{d}}_{\ j}=\begin{bmatrix}
+X_{1j} -\overline{X}_j \\ X_{2j}-\overline{X}_j \\ \vdots \\ X_{nj}-\overline{X}_j
+\end{bmatrix}
+\]</span></p>
+<p>para <span class="math inline">\(j=1,2\)</span>, se tendrían:
+<span class="math display">\[
+\underline{\mathbf{d}}_{\ 1}=\begin{bmatrix}
+X_{11} -\overline{X}_1 \\ X_{21}-\overline{X}_1 \\ \vdots \\ X_{n1}-\overline{X}_1
+\end{bmatrix}   \ \ \ \  \ \ \ \ \ \text{y} \ \ \ \ \ \ \ \  \underline{\mathbf{d}}_{\ 2}=\begin{bmatrix}
+X_{12} -\overline{X}_2 \\ X_{22}-\overline{X}_2 \\ \vdots \\ X_{n2}-\overline{X}_2
+\end{bmatrix}
+\]</span></p>
+<p>Sean <span class="math inline">\(L\underline{\mathbf{d}}_{\ 1}\)</span> y <span class="math inline">\(L\underline{\mathbf{d}}_{\ 2}\)</span> las longitudes de dichos vectores de desviación y considere el siguiente paralelogramo:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-paralelogramo1"></span>
+<img src="imagenes/graf4.png" alt="Paralelogramo de Vectores de Desviaciones" width="80%" />
+<p class="caption">
+Figura 2.8: Paralelogramo de Vectores de Desviaciones
+</p>
+</div>
+<p>El área del paralelogramo es:
+<span class="math display">\[
+\text{Área}=b\times h=L\underline{\mathbf{d}}_{\ 2}\ |L\underline{\mathbf{d}}_{\ 1}\sin(\theta)|
+\]</span>
+Esta área también se puede escribir de la siguiente forma, utilizando la igualdad trigonométrica:
+<span class="math display">\[
+\sin^2(\theta)+\cos^2(\theta)=1\ , \ \ \ \text{es decir}, \ \  \sin(\theta)=\sqrt{1-\cos^2(\theta)},
+\]</span>
+<span class="math display">\[
+\text{Área}=L\underline{\mathbf{d}}_{\ 2}\ L\underline{\mathbf{d}}_{\ 1} \sqrt{1-\cos^2(\theta)},
+\]</span></p>
+<p>Además, dado que</p>
+<p><span class="math display">\[
+L\underline{\mathbf{d}}_{\ j}^2=\|L\underline{\mathbf{d}}_{\ j}\|^2=\biggl\langle L\underline{\mathbf{d}}_{\ j}\ ,\ L\underline{\mathbf{d}}_{\ j} \biggr\rangle=L\underline{\mathbf{d}}_{\ j}^T\ L\underline{\mathbf{d}}_{\ j}=\sum_{i=1}^n (X_{ij}-\overline{X}_j)^2 =(n-1)S_{jj}
+\]</span></p>
+<p>para, <span class="math inline">\(\ , \ j=1,2\)</span>, es decir:
+<span class="math display">\[
+L\underline{\mathbf{d}}_{\ 1}^2=(n-1)S_{11}  \ \ \ \  \ \ \ \ \ \text{y} \ \ \ \ \ \ \ \  L\underline{\mathbf{d}}_{\ 2}^2=(n-1)S_{22}
+\]</span></p>
+<p>Entonces el área se puede escribir como:
+<span class="math display">\[
+\begin{align*}
+\text{Área}&amp;=L\underline{\mathbf{d}}_{\ 1}\ L\underline{\mathbf{d}}_{\ 2} \sqrt{1-\cos^2(\theta)}\\ \\
+&amp;=\sqrt{(n-1)S_{11}}\sqrt{(n-1)S_{22}} \sqrt{1-\cos^2(\theta)}\\ \\
+&amp;=(n-1) \sqrt{S_{11}}\sqrt{S_{22}} \sqrt{1-\cos^2(\theta)}
+\end{align*}
+\]</span></p>
+<p>Ahora, recuerde que si <span class="math inline">\(\underline{z}\)</span> y <span class="math inline">\(\underline{w}\)</span> son dos vectores <span class="math inline">\(n\)</span>-dimensionales, entonces el ángulo <span class="math inline">\(\theta\)</span> entre ellos satisface la siguiente ecuación:
+<span class="math display">\[
+\cos(\theta)=\frac{\left \langle\underline{z}\ ,\  \underline{w} \right\rangle }{L\underline{z}\  L\underline{w}}=
+\frac{\sum_{i=1}^n z_i\  w_i }{L\underline{z}\  L\underline{w}}
+\]</span></p>
+<p>Aplicando el resultado anterior a los vectores <span class="math inline">\(n\)</span>-dimensionales <span class="math inline">\(\underline{\mathbf{d}}_{\ 1}\)</span> y <span class="math inline">\(\underline{\mathbf{d}}_{\ 2}\)</span>, el ángulo entre ellos cumple lo siguiente:
+<span class="math display">\[
+\begin{align*}
+\cos (\theta)=\frac{\sum_{i=1}^n d_{i1}\ d_{i2} }{L\underline{\mathbf{d}}_{\ 1}\ L\underline{\mathbf{d}}_{\ 2}}&amp;=\frac{\sum_{i=1}^n (X_{i1}-\overline{X}_1)(X_{i2}-\overline{X}_2) }{\sqrt{\sum_{i=1}^n (X_{i1}-\overline{X}_1)^2 }\sqrt{\sum_{i=1}^n (X_{i2}-\overline{X}_2)^2 } }\\ \\
+&amp;=\frac{(n-1) S_{12}   }{(n-1) \sqrt{S_{11}}\sqrt{S_{22}} } \\ \\
+&amp;=\frac{S_{12}}{\sqrt{S_{11}}\sqrt{S_{22} } }=r_{12} \\ \\
+\cos (\theta)&amp;= r_{12} \ \ , \text{correlación entre} \ X_1 \ \ y \ \ X_2
+\end{align*}
+\]</span></p>
+<p>de donde el área del paralelogramo se escribe como:</p>
+<p><span class="math display">\[
+\text{Área}=(n-1) \sqrt{S_{11}}\sqrt{S_{22}} \sqrt{1-\cos^2(\theta)}
+=  (n-1) \sqrt{S_{11}}\sqrt{S_{22}} \sqrt{1-r_{12}^2}
+\]</span></p>
+<p>Ahora, Considere el determinante de la matriz <span class="math inline">\(\mathbf{S}\)</span> (ie. la varianza generalizada de los datos),
+<span class="math display">\[
+\mathbf{S}=\begin{bmatrix}
+S_{11} &amp; S_{12}\\ S_{21} &amp; S_{22}
+\end{bmatrix},
+\]</span></p>
+<p>es decir,
+<span class="math display">\[
+|\mathbf{S}|=\det \begin{bmatrix}
+S_{11} &amp; S_{12}\\ S_{21} &amp; S_{22}
+\end{bmatrix}  = S_{11}S_{22}-S_{12}^2
+\]</span></p>
+<p>y como:
+<span class="math display">\[
+\frac{S_{12}}{\sqrt{S_{11}}\sqrt{S_{22} } } =r_{12},
+\]</span></p>
+<p>entonces,
+<span class="math display">\[
+S_{12}=\sqrt{S_{11}}\sqrt{S_{22}}\ r_{12} \ \ \ \text{y} \ \ \ S_{12}^2=S_{11}S_{22}r_{12}^2
+\]</span></p>
+<p>de donde el determinante de <span class="math inline">\(\mathbf{S}\)</span> es:
+<span class="math display">\[
+|\mathbf{S}|=\det \begin{bmatrix}
+S_{11} &amp; S_{12}\\ S_{21} &amp; S_{22}
+\end{bmatrix}  = S_{11}S_{22}-S_{12}^2
+=S_{11}S_{22}-S_{11}S_{22}r_{12}^2\\
+  |\mathbf{S}|=  S_{11}S_{22}(1-r_{12}^2)
+\]</span></p>
+<p>Luego de,
+<span class="math display">\[
+\text{Área}=(n-1) \sqrt{S_{11}}\sqrt{S_{22}} \sqrt{1-r_{12}^2}
+\]</span>
+se tiene que:
+<span class="math display">\[
+\text{Área}^2=(n-1)^2 \underbrace{ S_{11} S_{22} (1-r_{12}^2)}= (n-1)^2 |\mathbf{S}|
+\]</span>
+de donde,
+<span class="math display">\[
+|\mathbf{S}|=\frac{1}{(n-1)^2} (\text{Área})^2=k (\text{Área})^2
+\]</span></p>
+<p><strong>Varianza Generalizada muestral = constante(<span class="math inline">\(Área^2\)</span>)</strong></p>
+<p>Por tanto, la <span class="math inline">\(VGM\)</span> es proporcional al cuadrado del área generada por los vectores de desviación.</p>
+<p>Es decir, a <strong>mayor área mayor</strong> <span class="math inline">\(\bigl|\mathbf{S}\bigr|\)</span> (VGM), lo que equivale igualmente a que, a <strong>menos dependencia lineal entre las variables del vector, mayor</strong> <span class="math inline">\(\bigl|\mathbf{S}\bigr|\)</span> (VGM).</p>
+<p><strong>En general, para <span class="math inline">\(p\)</span>-vectores de desviaciones:</strong>
+<span class="math display">\[
+|\mathbf{S}|=\frac{1}{(n-1)^p}(\text{Volumen})^2
+\]</span></p>
+<p>Es decir, para un conjunto fijo de datos, la <span class="math inline">\(VGM\)</span> es proporcional al cuadrado del volumen generado por los <span class="math inline">\(p\)</span>-vectores de desviaciones.</p>
+<p><strong>Para p=3, es decir, para 3-vectores de desviaciones se tiene que:</strong>
+<span class="math display">\[
+|\mathbf{S}|=\frac{1}{(n-1)^3} (\text{Volumen})^2
+\]</span></p>
+<p><strong>Observaciones:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Para una muestra de tamaño fijo <span class="math inline">\(n\)</span>, <span class="math inline">\(\bigl|\mathbf{S}\bigr|\)</span> aumenta cuando:</li>
+</ol>
+<ul>
+<li><p>La longitud de cualquier <span class="math inline">\(\underline{\mathbf{d}}_{\ j}\)</span> aumenta (o cuando <span class="math inline">\(S_{jj}\)</span> aumenta).</p></li>
+<li><p>Los vectores de desviaciones de longitud fija son movidos hasta que formen ángulos rectos con los demás. (menos dependencias entre las dos variables involucradas).</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Para una muestra de tamaño fijo <span class="math inline">\(n\)</span>, <span class="math inline">\(|\mathbf{S}|\)</span> disminuye cuando:</li>
+</ol>
+<ul>
+<li><p>La longitud de cualquier <span class="math inline">\(\underline{\mathbf{d}}_{\ j}\)</span> disminuyen (o cuando <span class="math inline">\(S_{jj}\)</span> disminuye).</p></li>
+<li><p>Uno de los vectores cae cerca del hiperplano formado por los otros.</p></li>
+<li><p>Se dan los dos casos anteriores.</p></li>
+<li><p>Los vectores de desviaciones de longitud fija son movidos hasta que formen ángulos casi nulos con los demás. (más dependencias entre las variables involucradas)</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-paralelogramo2"></span>
+<img src="bookdown-iam_files/figure-html/graf-paralelogramo2-1.png" alt="Paralelepípedo de Vectores de Desviaciones" width="600px" />
+<p class="caption">
+Figura 2.9: Paralelepípedo de Vectores de Desviaciones
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-paralelogramo4"></span>
+<img src="bookdown-iam_files/figure-html/graf-paralelogramo4-1.png" alt="Paralelepípedo de Vectores de Desviaciones" width="600px" />
+<p class="caption">
+Figura 2.10: Paralelepípedo de Vectores de Desviaciones
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-paralelogramo3"></span>
+<img src="bookdown-iam_files/figure-html/graf-paralelogramo3-1.png" alt="Paralelepípedo de Vectores de Desviaciones" width="600px" />
+<p class="caption">
+Figura 2.11: Paralelepípedo de Vectores de Desviaciones
+</p>
+</div>
+</div>
+<div id="interpretación-geométrica-2-de-la-varianza-generalizada" class="section level3 hasAnchor" number="2.8.2">
+<h3><span class="header-section-number">2.8.2</span> Interpretación Geométrica-2 de la Varianza Generalizada<a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#interpretación-geométrica-2-de-la-varianza-generalizada" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <span class="math inline">\(VGM\)</span> también tiene interpretación en el gráfico de dispersión <span class="math inline">\(p\)</span>- dimensional que representa los datos.</p>
+<p>La interpretación más intuitiva tiene que ver con la dispersión de los puntos alrededor del vector de medias muestrales.</p>
+<p>Se puede probar que el volumen de la hiper-elipsoide (sólido) dada por:
+<span class="math display">\[
+\left\{ \underline{\mathbf{x}} \in \mathbb{R}^p \ \ : \ \ (\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}})^T\mathbf{S}^{-1}(\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}}) \leq c^2 \right\}
+\]</span>
+es tal que:
+<span class="math display">\[
+\text{Volúmen} \left(\left\{ \underline{\mathbf{x}} \in \mathbb{R}^p \ \ : \ \ (\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}})^T\mathbf{S}^{-1}(\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}}) \leq c^2 \right\} \right)  =
+k_p |\mathbf{S}|^{1/2}c^p
+\]</span></p>
+<p>es decir:
+<span class="math display">\[
+\text{Volúmen(hiperelipsoide)}^2=k |\mathbf{S}|
+\]</span></p>
+<p>Por tanto, un volumen grande (<strong>datos muy dispersos</strong>) corresponde a una <span class="math inline">\(VGM\)</span> grande.</p>
+<p><strong>Observación:</strong></p>
+<p>Aunque la <span class="math inline">\(VGM\)</span> tiene interpretaciones geométricas intuitivas muy importantes, ésta sufre de debilidades básicas, como un resumen descriptivo de la matriz de var-cov muestrales <span class="math inline">\(\mathbf{S}\)</span>, y esto sucede con toda medida de resumen descriptiva básica, como se ve en el siguiente ejemplo.</p>
+<div class="example">
+<p><span id="exm:ejemplo-interpret-vg1" class="example"><strong>Ejemplo 2.7  (Interpretación de la varianza generalizada) </strong></span>Suponga que se tienen datos para tres vectores aleatorios bidimensionales los cuales tienen el mismo vector de media muestral <span class="math inline">\(\underline{\overline{\mathbf{x}}} =\begin{bmatrix} 1 \\ 2 \end{bmatrix}\)</span> y sus matrices de var-cov muestrales son:</p>
+</div>
+<p><span class="math display">\[
+\mathbf{S}_1=\begin{bmatrix}
+5 &amp; 4 \\ 4 &amp; 5
+\end{bmatrix} \ , \ \ \ \text{con:} \ r=0.8 \ \ \ , \ \ |\mathbf{S}_1|=9
+\]</span>
+<span class="math display">\[
+\mathbf{S}_2=\begin{bmatrix}
+3 &amp; 0 \\ 0 &amp; 3
+\end{bmatrix} \ , \ \ \ \ \text{con:} \ r=0.0 \ \ \ \ , \ \ |\mathbf{S}_2|=9
+\]</span>
+<span class="math display">\[\mathbf{S}_3=\begin{bmatrix}
+5 &amp; -4 \\ -4 &amp; 5
+\end{bmatrix} \ , \ \text{con} \ r=-0.8 \ \ \ \ \ , \ \  |\mathbf{S}_3|=9
+\]</span></p>
+<p>Los diagramas de dispersión de dichos datos son:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom1"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom1-1.png" alt="Gráfico de Dispersión-1" width="600px" />
+<p class="caption">
+Figura 2.12: Gráfico de Dispersión-1
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom2"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom2-1.png" alt="Gráfico de Dispersión-2" width="600px" />
+<p class="caption">
+Figura 2.13: Gráfico de Dispersión-2
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom3"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom3-1.png" alt="Gráfico de Dispersión-3" width="600px" />
+<p class="caption">
+Figura 2.14: Gráfico de Dispersión-3
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom7"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom7-1.png" alt="Gráficos de Dispersión" width="600px" />
+<p class="caption">
+Figura 2.15: Gráficos de Dispersión
+</p>
+</div>
+<p><strong>Estos gráficos muestran patrones de correlación muy diferentes</strong>.</p>
+<p>Cada matriz de covarianza muestral contiene la información sobre la variabilidad de las variables y la información requerida para calcular el coeficiente de correlación muestral correspondiente.</p>
+<p>En este caso <span class="math inline">\(\mathbf{S}\)</span> captura la orientación y el tamaño del patrón de dispersión.</p>
+<p>Sin embargo, la varianza generalizada muestral, <span class="math inline">\(|\mathbf{S}|\)</span> da el mismo valor, <span class="math inline">\(|\mathbf{S}|=9\)</span> para los tres casos y no proporciona información sobre la orientación del patrón de dispersión.</p>
+<p>Solamente nos informa que los tres patrones de dispersión tienen aproximadamente la misma área.</p>
+<p>Por lo tanto, <strong>la varianza generalizada es más fácil de interpretar cuando las muestras que se comparan tienen aproximadamente la misma orientación</strong>.</p>
+<p>Se puede probar que <span class="math inline">\(\mathbf{S}\)</span> contiene la información sobre la orientación y el tamaño del patrón de dispersión de los datos a través de sus <strong>valores y vectores propios</strong>, es decir, <strong>la dirección de los vectores propios</strong> de <span class="math inline">\(\mathbf{S}\)</span> <strong>determinan la direcciones de mayor variabilidad del patrón de dispersión de los datos</strong>, y <strong>sus valores propios proporcionan información sobre la variabilidad en cada una de estas direcciones</strong>.</p>
+<p><strong>Cuál es la razón de lo anterior?</strong></p>
+<p>Considere el conjunto de datos <span class="math inline">\(\mathbf{X}\)</span> que tienen una distancia estadística al vector <span class="math inline">\(\underline{\overline{\mathbf{x}}}\)</span> que es igual o menor que <span class="math inline">\(c\)</span>. Entonces estos puntos satisfacen:
+<span class="math display">\[
+(\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}})^T\mathbf{S}^{-1}(\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}}) \leq c^2 \ , \ \ c&gt;0
+\]</span>
+la cual es una elipse (sólida) centrada en <span class="math inline">\(\underline{\overline{\mathbf{x}}}\)</span>.</p>
+<p>En esta elipse <strong>la longitud de los ejes principales están determinados por los valores propios de la matriz</strong> <span class="math inline">\(\mathbf{S}^{-1}\)</span>, y son proporcionales a los recíprocos de las raíces cuadradas de dichos valores propios.</p>
+<p><strong>Las direcciones de los ejes principales están definidas por la dirección de los vectores propios de la matriz</strong> <span class="math inline">\(\mathbf{S}^{-1}\)</span>, <strong>pasando por el punto</strong> <span class="math inline">\(\underline{\overline{\mathbf{x}}}\)</span>.</p>
+<p><strong>La semi-longitud del eje en la dirección de un vector propio</strong> es igual a:
+<span class="math display">\[
+c\sqrt{(\text{valor propio})^{-1}}
+\]</span>
+Ahora bien, observe que si <span class="math inline">\((\lambda,\mathbf{\underline{e}})\)</span> es un par valor-vector propio de <span class="math inline">\(\mathbf{S}\)</span>, entonces <span class="math inline">\((\lambda^{-1},\mathbf{\underline{e}})\)</span> es un par valor-vector propio de <span class="math inline">\(\mathbf{S}^{-1}\)</span>.</p>
+<p>En efecto, si <span class="math inline">\((\lambda,\mathbf{\underline{e}})\)</span> es el par valor-vector propio de <span class="math inline">\(\mathbf{S}\)</span> entonces se cumple que
+<span class="math display">\[
+\mathbf{S}\mathbf{\underline{e}}=\lambda \mathbf{\underline{e}}
+\]</span></p>
+<p>Multiplicando esta expresión a la izquierda por se <span class="math inline">\(\mathbf{S}^{-1}\)</span>
+se obtiene:
+<span class="math display">\[
+\mathbf{S}^{-1}\mathbf{S}\mathbf{\underline{e}}=\mathbf{S}^{-1}\lambda \mathbf{\underline{e}} \ \  \Longleftrightarrow  \mathbf{S}^{-1}\mathbf{\underline{e}}=\lambda^{-1}\mathbf{\underline{e}}
+\]</span></p>
+<p>de donde <span class="math inline">\((\lambda^{-1},\mathbf{\underline{e}})\)</span> es un par valor-vector propio de <span class="math inline">\(\mathbf{S}^{-1}\)</span>.</p>
+<p>Por lo tanto, usando los valores propios de <span class="math inline">\(\mathbf{S}\)</span>, se sabe que la elipse se extiende <span class="math inline">\(c\sqrt{\lambda_i}\)</span> en la dirección de <span class="math inline">\(\mathbf{\underline{e}}_i\)</span> a partir de <span class="math inline">\(\underline{\overline{\mathbf{x}}}\)</span>.</p>
+<p>Este resultado implica que para describir el comportamiento de la elipse anterior no necesitamos encontrar los valores y vectores propios de <span class="math inline">\(\mathbf{S}^{-1}\)</span>, sino que podemos utilizar los valores y vectores propios de <span class="math inline">\(\mathbf{S}\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-interpret-vg2" class="example"><strong>Ejemplo 2.8  (Interpretación de la varianza generalizada) </strong></span>Para el vector aleatorio bidimensional con:</p>
+</div>
+<p><span class="math display">\[
+\mathbf{S}=\begin{bmatrix}
+5 &amp; 4 \\ 4 &amp; 5
+\end{bmatrix}
+\]</span>
+Los valores propios deben satisfacer la ecuación:
+<span class="math display">\[
+|\lambda\mathbf{I}-\mathbf{S}|=0,
+\]</span>
+es decir que,
+<span class="math display">\[
+\begin{vmatrix}
+\lambda-5 &amp; -4 \\ -4 &amp; \lambda-5
+\end{vmatrix}=0 \  \ \ \Longleftrightarrow \ \ \ (\lambda-5)^2-4^2=0 \ \ \Longleftrightarrow \ \ (\lambda-9)(\lambda-1)=0
+\]</span>
+de donde los valores propios de <span class="math inline">\(\mathbf{S}\)</span> son: <span class="math inline">\(\lambda_1=9\)</span> y <span class="math inline">\(\lambda_2=1\)</span>.</p>
+<p>Luego de resolver las ecuaciones:
+<span class="math display">\[
+\mathbf{S}\mathbf{\underline{e}}_1=\lambda_1\mathbf{\underline{e}}_1 \ \ \  \text{y}\ \ \ \ \mathbf{S}\mathbf{\underline{e}}_2=\lambda_1\mathbf{\underline{e}}_2
+\]</span>
+que para <span class="math inline">\(\mathbf{\underline{e}}_1\)</span>, son equivalentes a:
+<span class="math display">\[
+\begin{bmatrix}
+5 &amp; 4 \\ 4 &amp; 5
+\end{bmatrix}\begin{bmatrix}
+e_{11} \\ e_{21}
+\end{bmatrix}=9\begin{bmatrix}
+e_{11} \\ e_{21}
+\end{bmatrix} \ \ \ \Longleftrightarrow \ \ \ \begin{cases}
+5e_{11}+4e_{21}=9e_{11} \\
+4e_{11}+5e_{21}=9e_{21}
+\end{cases}
+\]</span></p>
+<p>de la primera ecuación se tiene que: <span class="math inline">\(-4e_{11}+4e_{21}=0\)</span>, es decir, <span class="math inline">\(e_{11}=e_{21}\)</span>.</p>
+<p>De donde el primer vector propio tiene sus componentes iguales y al ser normalizado debe cumplir que: <span class="math inline">\(e_{11}^2+e_{21}^2=1\)</span>, dichas condiciones son satisfechas por el vector:
+<span class="math display">\[
+\mathbf{\underline{e}}_1=\begin{bmatrix}
+1/\sqrt{2} \\ 1/\sqrt{2}
+\end{bmatrix}
+\]</span>
+Ahora, de forma similar se procede para el segundo vector propio, obteniendo que este tiene sus componentes iguales en magnitud pero de signos contrarios y al normalizar se obtiene que:
+<span class="math display">\[
+\mathbf{\underline{e}}_2=\begin{bmatrix}
+1/\sqrt{2} \\ -1/\sqrt{2}
+\end{bmatrix}
+\]</span>
+Ahora, considere la elipse (sólida) centrada en la media <span class="math inline">\(\underline{\overline{\mathbf{x}}}=[1 \ \ 2]^T\)</span>, dada por:
+<span class="math display">\[
+(\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}})^T\mathbf{S}^{-1}(\underline{\mathbf{x}}-\underline{\overline{\mathbf{x}}}) \leq c^2 \ , \ \ c&gt;0
+\]</span></p>
+<p>Como se observó antes, para describir esta elipse se necesitan los
+valores y vectores propios de la matriz <span class="math inline">\(\mathbf{S}^{-1}\)</span>, los cuales pueden derivarse de los valores y vectores propios de <span class="math inline">\(\mathbf{S}\)</span>.</p>
+<p>Esto implica que la semi-longitud del <span class="math inline">\(i\)</span>-ésimo eje es <span class="math inline">\(c\sqrt{\lambda_i}\)</span> a partir del origen <span class="math inline">\(\underline{\overline{\mathbf{x}}}\)</span>, y su dirección es la dirección del vector propio <span class="math inline">\(\mathbf{\underline{e}}_i\)</span> pasando por <span class="math inline">\(\underline{\overline{\mathbf{x}}}\)</span>.</p>
+<div class="example">
+<p><span id="exm:ejemplo-interpret-vg3" class="example"><strong>Ejemplo 2.9  (Interpretación de la varianza generalizada) </strong></span>Para el vector aleatorio bidimensional con:</p>
+</div>
+<p><span class="math display">\[
+\mathbf{S}=\begin{bmatrix}
+3 &amp; 0 \\ 0 &amp; 3
+\end{bmatrix}
+\]</span>
+Los valores propios deben satisfacer la ecuación:
+<span class="math display">\[
+|\lambda\mathbf{I}-\mathbf{S}|=0
+\]</span>
+es decir que,
+<span class="math display">\[
+\begin{vmatrix}
+\lambda-3 &amp; 0 \\ 0 &amp; \lambda-3
+\end{vmatrix}=0 \  \ \ \Longleftrightarrow \ \ \ (\lambda-3)^2=0
+\]</span>
+de donde los valores propios de <span class="math inline">\(\mathbf{S}\)</span> son: <span class="math inline">\(\lambda_1=3\)</span> y <span class="math inline">\(\lambda_2=3\)</span>.
+Y los respectivos vectores propios son:
+<span class="math display">\[
+\mathbf{\underline{e}}_1=\begin{bmatrix}
+1 \\ 0
+\end{bmatrix} \ \ \ \ \text{y} \ \ \ \ \
+\mathbf{\underline{e}}_2=\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+\]</span></p>
+<div class="example">
+<p><span id="exm:ejemplo-interpret-vg4" class="example"><strong>Ejemplo 2.10  (Interpretación de la varianza generalizada) </strong></span>Para el vector aleatorio bidimensional con:</p>
+</div>
+<p><span class="math display">\[
+\mathbf{S}=\begin{bmatrix}
+5 &amp; -4 \\ -4 &amp; 5
+\end{bmatrix}
+\]</span>
+Los valores propios deben satisfacer la ecuación:
+<span class="math display">\[
+|\lambda\mathbf{I}-\mathbf{S}|=0
+\]</span>
+<span class="math display">\[
+\begin{vmatrix}
+\lambda-5 &amp; 4 \\ 4 &amp; \lambda-5
+\end{vmatrix}=0 \   \ \Longleftrightarrow \ \ (\lambda-5)^2+4^2=0  \ \ \Longleftrightarrow \ \ (\lambda-9)(\lambda-1)=0
+\]</span>
+de donde los valores propios de <span class="math inline">\(\mathbf{S}\)</span> son: <span class="math inline">\(\lambda_1=9\)</span> y <span class="math inline">\(\lambda_2=1\)</span>.
+Y los respectivos vectores propios son:
+<span class="math display">\[
+\mathbf{\underline{e}}_1=\begin{bmatrix}
+1/\sqrt{2} \\ -1/\sqrt{2}
+\end{bmatrix} \ \ \ \ \text{y} \ \ \ \ \
+\mathbf{\underline{e}}_2=\begin{bmatrix}
+1/\sqrt{2} \\ 1/\sqrt{2}
+\end{bmatrix}
+\]</span>
+Por último, para c=5.99, la siguiente gráfica muestra, para cada patrón de dispersión, las direcciones de mayor variabilidad y el tamaño de ella.</p>
+<p>Como vimos anteriormente, la varianza generalizada <span class="math inline">\(|\mathbf{S}|=9\)</span> para todos los 3 patrones y esta medida no contiene información sobre la orientación de los patrones de dispersión.</p>
+<p>La varianza generalizada nos informa que los tres patrones de dispersión cubren aproximadamente una misma área.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom8"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom8-1.png" alt="Gráfico de Dispersión-1" width="600px" />
+<p class="caption">
+Figura 2.16: Gráfico de Dispersión-1
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom9"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom9-1.png" alt="Gráfico de Dispersión-2" width="600px" />
+<p class="caption">
+Figura 2.17: Gráfico de Dispersión-2
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom10"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom10-1.png" alt="Gráfico de Dispersión-3" width="600px" />
+<p class="caption">
+Figura 2.18: Gráfico de Dispersión-3
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom11"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom11-1.png" alt="Gráficos de Dispersión" width="600px" />
+<p class="caption">
+Figura 2.19: Gráficos de Dispersión
+</p>
+</div>
+</div>
+<div id="varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr" class="section level3 hasAnchor" number="2.8.3">
+<h3><span class="header-section-number">2.8.3</span> Varianza Generalizada Determinada por la Matriz de Correlación Muestral <span class="math inline">\(\mathbf{R}\)</span><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#varianza-generalizada-determinada-por-la-matriz-de-correlación-muestral-mathbfr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <span class="math inline">\(VGM\)</span>, <span class="math inline">\(|\mathbf{S}|\)</span>, está afectada por las unidades de medición de cada variable.</p>
+<p>Por ejemplo, suponga que una <span class="math inline">\(S_{jj}\)</span> es grande o muy pequeña, entonces geométricamente, el correspondiente vector de
+desviaciones <span class="math inline">\(\underline{\mathbf{d}}_{\ j}\)</span> es muy largo o muy corto, y por tanto será un factor determinante en el cálculo del volumen.</p>
+<p>En consecuencia, algunas veces es útil escalar todos los
+vectores de desviaciones de manera que todos tengan la misma
+longitud.</p>
+<p>Esto se puede hacer reemplazando las observaciones <span class="math inline">\(X_{ij}\)</span> por su
+valor estandarizado:
+<span class="math display">\[
+Z_{ij}=\frac{(X_{ij}-\overline{X}_j)}{\sqrt{S}_{jj}}
+\]</span></p>
+<p>La matriz de var-cov muestral de las variables estandarizadas es <span class="math inline">\(\mathbf{R}\)</span>, ie. la matriz de correlación muestral de las variables originales.
+<span class="math display">\[
+\begin{pmatrix}
+\text{Varianza Generalizada} \\
+\text{muestral de las} \\
+\text{variables estandarizadas}
+\end{pmatrix}= |\mathbf{R}|
+\]</span></p>
+<p>Ahora, ya que los vectores estandarizados:
+<span class="math display">\[
+Z_{ij}=\begin{bmatrix}
+\frac{X_{1j}-\overline{X}_j}{\sqrt{S_{jj}}}\\ \\
+\frac{X_{2j}-\overline{X}_j}{\sqrt{S_{jj}}}\\
+\vdots \\ \vdots \\
+\frac{X_{nj}-\overline{X}_j}{\sqrt{S_{jj}}}\\
+\end{bmatrix}=\frac{(\underline{y}_j-\overline{X}_j\underline{1})}{\sqrt{S_{jj}}}=\frac{\underline{\mathbf{d}}_{\ j}}{\sqrt{S_{jj}}}=\frac{1}{\sqrt{S_{jj}}}\begin{bmatrix}
+X_{1j}-\overline{X}_j \\ X_{2j}-\overline{X}_j \\ \vdots \\ X_{nj}-\overline{X}_j
+\end{bmatrix} = \frac{1}{\sqrt{S_{jj}}} \underline{\mathbf{d}}_{\ j}
+\]</span>
+para, <span class="math inline">\(j=1,2,\ldots ,p\)</span>.</p>
+<p>Tienen todos la misma longitud <span class="math inline">\(\frac{\sqrt{(n-1)S_{jj}}}{\sqrt{S_{jj}}}=\sqrt{n-1}\)</span>, <em>la varianza generalizada muestral de las variables estandarizadas será grande cuando estos vectores sean aproximadamente perpendiculares y será pequeña cuando dos o más vectores están casi en la misma dirección</em>.</p>
+<p>Como <span class="math inline">\(\cos (\theta_{jk})=r_{jk}\)</span>, donde <span class="math inline">\(\theta_{jk}\)</span> es el ángulo entre los vectores
+<span class="math display">\[
+Z_{ij}=\frac{\underline{\mathbf{d}}_{\ j}}{\sqrt{S_{jj}}}=\frac{(\underline{y}_j-\overline{X}_j\underline{1})}{\sqrt{S}_{jj}} \ \ \  \ \ \ \text{y} \ \ \ \ \ \ Z_{ik}=\frac{\underline{d}_k}{\sqrt{S_{kk}}}=\frac{(\underline{y}_k-\overline{X}_k\underline{1})}{\sqrt{S}_{kk}},
+\]</span></p>
+<p>entonces, se puede afirmar que <span class="math inline">\(|\mathbf{R}|\)</span> <strong>es grande</strong> cuando todos los <span class="math inline">\(r_{jk}\)</span> están cercanos a cero (casi perpendiculares), y <strong>será pequeño</strong> cuando uno o más <span class="math inline">\(r_{jk}\)</span> están cerca de <span class="math inline">\(1\)</span> o <span class="math inline">\(-1\)</span>. (Ver siguiente gráfico).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom-var-estand1"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom-var-estand1-1.png" alt="Paralelepípedo Var-Estandarizadas" width="600px" />
+<p class="caption">
+Figura 2.20: Paralelepípedo Var-Estandarizadas
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graf-ejemplo-inter-geom-var-estand2"></span>
+<img src="bookdown-iam_files/figure-html/graf-ejemplo-inter-geom-var-estand2-1.png" alt="Paralelepípedo Var-Estandarizadas" width="600px" />
+<p class="caption">
+Figura 2.21: Paralelepípedo Var-Estandarizadas
+</p>
+</div>
+<p>Ahora, como en el caso de <span class="math inline">\(\mathbf{S}\)</span>, el volumen generado por los vectores de desviaciones de las variables estandarizadas está relacionado con la varianza generalizada como sigue:
+<span class="math display">\[
+\begin{pmatrix}
+\text{Varianza Generalizada} \\
+\text{muestral de las} \\
+\text{variables estandarizadas}
+\end{pmatrix}= |\mathbf{R}|=\frac{1}{(n-1)^{p}}(\text{Volumen})^2
+\]</span></p>
+</div>
+<div id="relación-entre-mathbfs-y-mathbfr" class="section level3 hasAnchor" number="2.8.4">
+<h3><span class="header-section-number">2.8.4</span> Relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span><a href="varianza-generalizada-muestral-y-su-interpretación-geométrica.html#relación-entre-mathbfs-y-mathbfr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las varianzas generalizadas <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span> están conectadas por medio de relación:
+<span class="math display">\[
+|\mathbf{S}|=(S_{11}S_{22}\cdots S_{pp} )|\mathbf{R}|\ \ , \ \ \  \text{(Ejercicio)}
+\]</span></p>
+<p>Entonces,
+<span class="math display">\[
+(n-1)^p|\mathbf{S} |=(n-1)^p(S_{11}S_{22}\cdots S_{pp} )|\mathbf{R}|
+\]</span></p>
+<p>Lo anterior implica que el volumen al cuadrado <span class="math inline">\((\text{Volumen})^2=(n-1)^p|\mathbf{S}|\)</span> es proporcional al volumen al cuadrado <span class="math inline">\((\text{Volumen})^2=(n-1)^p|\mathbf{R}|\)</span>.</p>
+<p>La constante de proporcionalidad es el producto de las varianzas, la cual a su vez es proporcional al producto de las longitudes cuadráticas <span class="math inline">\((n-1)S_{jj}\)</span> de las <span class="math inline">\(\underline{d}_{j}\)</span>, la ecuación<br />
+<span class="math display">\[
+|\mathbf{S}|=(S_{11}S_{22}\cdots S_{pp} )|\mathbf{R}|
+\]</span></p>
+<p>muestra cómo un cambio de escala en la medición de alguna de las variables afecta la relación entre las varianzas generalizadas.</p>
+<p>Puesto que <span class="math inline">\(|\mathbf{R}|\)</span> está basado en las variables estandarizadas, no se afecta por el cambio de escala en alguna variable original.</p>
+<div class="example">
+<p><span id="exm:ejemplo-propiedad-vg" class="example"><strong>Ejemplo 2.11  </strong></span>Ilustración de la relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span>.</p>
+<p>Suponga que,
+<span class="math display">\[
+\mathbf{S}=\begin{bmatrix}
+4 &amp; 3 &amp; 1 \\ 3 &amp; 9 &amp; 2 \\ 1 &amp; 2 &amp; 1
+\end{bmatrix}, \ \ \text{de donde} \ \ \ |\mathbf{S}|=14
+\]</span>
+Ahora, usando la relación entre <span class="math inline">\(|\mathbf{S}|\)</span> y <span class="math inline">\(|\mathbf{R}|\)</span>, se obtiene que:
+<span class="math display">\[
+|\mathbf{R}|=(S_{11}S_{22}S_{33})^{-1}|\mathbf{S}|=((4)(9)(1))^{-1}(14)=\frac{7}{18}=0.388
+\]</span>
+pues,
+<span class="math display">\[
+|\mathbf{S}|=(S_{11}S_{22}S_{33})|\mathbf{R}|
+\]</span></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="propiedades-sobre-la-media-y-varianza-muestral-de-combinaciones-lineales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="varianza-total-muestral.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-iam.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsubsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
